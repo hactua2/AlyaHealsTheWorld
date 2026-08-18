@@ -12,84 +12,97 @@ This audit inventories source material that contributes concrete game-design int
 - **TR — Translation Required:** theme-specific terminology that contains gameplay information and must be re-expressed functionally.
 - **HY — Hybrid:** mixed source; split into independent gameplay and presentation concepts.
 
-## Initial audited sources
+## Audited sources
 
 ### Character roster CSV
 
 **Path:** `Ayla heals the World - Characters.csv`
 
-**Observed design information:** sixteen named character IDs with roles including ally, neutral, quest giver, quest target, and allies gated by quest completion.
+Preserves sixteen character IDs and roles including ally, neutral, quest giver, quest target, and quest-gated ally.
 
-**Classification:** NI + GI + PT/HY.
+**Classification:** NI + GI + HY.
 
-**Translated intent:** preserve character identity and quest relationships, but model access as explicit recruitment/availability conditions rather than relying on presentation. Required concepts include `CharacterRole`, `AvailabilityCondition`, `QuestRole`, and `RecruitmentState`.
-
-**Confidence:** High for roster/role data; low for combat statistics because those columns are currently empty.
+**Translation:** `content/characters.md`.
 
 ### Enemy roster CSV
 
 **Path:** `Ayla heals the World - Enemies.csv`
 
-**Observed design information:** enemy IDs, world/faction archetypes, progression tiers, encounter roles, and weakness categories.
+Preserves enemy IDs, archetypes/factions, tiers, encounter roles, and weakness categories.
 
 **Classification:** GI + TR.
 
-**Translated intent:** preserve faction/archetype, tier, and encounter role. Replace theme-specific weakness terminology with a neutral affinity/channel system after skill data is fully audited.
-
-**Confidence:** High for taxonomy and progression; medium for exact weakness semantics pending cross-reference with skills.
-
-### Village mechanics CSV
-
-**Path:** `Ayla heals the World - Mechanics.csv`
-
-**Observed design information:** enemy capture/integration through facilities, farming, transmutation using farmed resources, dispatching allies on expeditions, and character curse progression.
-
-**Classification:** GI + TR.
-
-**Translated intent:** implement as `Integration/Rehabilitation`, `Resource Production`, `Equipment Transmutation`, `Expedition Dispatch`, and `Persistent Character Progression`. The exact fictional framing of behavior change is not required by the implementation contract.
-
-**Confidence:** High that these are intended systems; medium for detailed rules because the source is sparse.
-
-### Main character CSV
-
-**Path:** `Ayla heals the World - MainCharacter - Ayla.csv`
-
-**Observed design information:** multiple appearance states; four primary attributes; four theme-specific secondary traits; active/passive/curse effect layers; preferences; experience counters; contextual multipliers; defeat history.
-
-**Classification:** HY + TR + PT.
-
-**Translated intent:**
-
-- preserve primary-stat structure after confirming naming;
-- preserve four permanent secondary attributes, with neutral names derived from their mechanical effects;
-- preserve active effects, equipment passives, skill passives, persistent afflictions, preference profiles, usage/experience counters, multipliers where mechanically meaningful, and history statistics;
-- move outfits entirely to the presentation layer as `AppearanceState`.
-
-**Confidence:** High for existence of these data layers; medium for final neutral taxonomy.
+**Translation:** `content/enemies.md`.
 
 ### Skills CSV
 
 **Path:** `Ayla heals the World - Skills.csv`
 
-**Observed design information:** skills are grouped by role/type, element or affinity, target rule, tier, special effects, and interactions with both Health and the second combat meter.
+Preserves skill type, affinity/channel, target rule, tier, special effects, requirements, and interactions with Health and Moral.
 
 **Classification:** GI + TR + HY.
 
-**Translated intent:** preserve skill roles, targeting, tiers, costs, effects, prerequisites, combo conditions, finishers, and interactions with the two combat-resolution channels. Theme-specific descriptions must be translated into functional effects.
-
-**Confidence:** High for the existence of a dual-channel combat model; medium for final affinity naming pending complete cross-reference.
+**Translation:** `content/skills.md`.
 
 ### Items CSV
 
 **Path:** `Ayla heals the World - Items.csv`
 
-**Observed design information:** equipment slots, primary and secondary stat modifiers, blessed/cursed progression states, persistent restrictions, usage-based evolution, and special conditional effects.
+Preserves stable item identity, stat modifiers, secondary-attribute modifiers, persistent restrictions, usage-based evolution, and conditional effects.
 
 **Classification:** GI + TR + HY.
 
-**Translated intent:** preserve all mechanical modifiers and progression behavior. Slot IDs must be stable mechanical identifiers with configurable display names. The appearance or fictional nature of an item must not determine its gameplay behavior.
+**Translation:** `content/items.md`.
 
-**Confidence:** High for equipment behavior; medium for exact final slot taxonomy.
+### Main character CSV
+
+**Path:** `Ayla heals the World - MainCharacter - Ayla.csv`
+
+Preserves primary attributes, four permanent secondary attributes, effect layers, preferences, extensible counters, contextual multipliers, history statistics, and appearance-state architecture.
+
+**Classification:** GI + TR + HY + PT.
+
+**Translation:** `content/protagonist.md`.
+
+### Mechanics CSV
+
+**Path:** `Ayla heals the World - Mechanics.csv`
+
+Preserves integration/rehabilitation, resource production, equipment transmutation, expedition dispatch, and persistent affliction progression.
+
+**Classification:** GI + TR.
+
+**Translation:** `content/mechanics.md`.
+
+### HTML exports
+
+**Paths:** `HTML/Characters.html`, `Enemies.html`, `Items.html`, `MainCharacter - Ayla.html`, `Mechanics.html`, `Skills.html`.
+
+**Finding:** These are large spreadsheet-style exports corresponding to the planning tables. The mechanics HTML confirms the same concrete mechanics rows as the CSV, including integration, production, transmutation, expedition dispatch, and progression, rather than introducing a separate canonical ruleset.
+
+**Classification:** HY, primarily source presentation/verification.
+
+**Translation treatment:** HTML is not required by the implementation layer after extraction.
+
+### Visual asset directories
+
+**Paths:** `Characters/`, `Enemies/`, `Items/`, `MainCharacter/`.
+
+**Finding:** Asset files are image-oriented and filenames are largely opaque identifiers. They provide presentation references but do not reliably encode gameplay contracts in filenames.
+
+**Classification:** PT, with possible HY role-reference value.
+
+**Translation treatment:** no source asset path is required by gameplay logic. Future presentation bindings should map stable content IDs to replaceable asset references.
+
+### Character description / scenario source
+
+**Path:** `CharDesc`
+
+**Observed design information:** a fantasy-world premise, magical creatures, unexplored wilds, and an explicit source-specific philosophy that conflicts—including combat—can be resolved through an alternative relationship/intimacy route.
+
+**Classification:** NI + TR + PT.
+
+**Translation:** `content/world.md` preserves the fantasy setting, wild exploration, community growth, and alternative conflict-resolution structure while separating source-specific presentation and adult-theme details.
 
 ## Canonical decisions from project owner
 
@@ -97,7 +110,7 @@ This audit inventories source material that contributes concrete game-design int
 
 **Decision:** The neutral canonical name is **Moral**.
 
-**Implementation rule:** Combatants have at least two independent resolution resources: `Health` and `Moral`. Health represents conventional combat endurance. Moral represents willingness or capacity to continue opposition. Systems may damage, restore, resist, or modify either resource independently.
+**Implementation rule:** Combatants have at least two independent resolution resources: `Health` and `Moral`. Health represents conventional combat endurance. Moral represents willingness or capacity to continue opposition.
 
 **Status:** CANON.
 
@@ -105,15 +118,15 @@ This audit inventories source material that contributes concrete game-design int
 
 **Decision:** The four translated secondary axes remain **permanent character attributes**.
 
-**Implementation rule:** The translation layer must preserve four persistent secondary attributes. Their neutral names will be derived from demonstrated mechanical effects rather than literal source terminology.
+**Implementation rule:** The translation layer preserves four persistent secondary attributes. Their neutral names remain configurable/temporary while stable IDs are used internally.
 
-**Status:** CANON; neutral naming pending cross-reference.
+**Status:** CANON.
 
 ### ND-03 — Moral resolution outcome
 
 **Decision:** Reaching the Moral defeat condition causes **Surrender**.
 
-**Implementation rule:** A surrendered combatant enters a post-combat resolution state. A dialogue or narrative event then determines whether recruitment is available and whether the player accepts it. Surrender itself is not automatically recruitment.
+**Implementation rule:** Surrender enters a post-combat dialogue or narrative event that determines recruitment or another authored outcome. Surrender is not automatic recruitment.
 
 **Status:** CANON.
 
@@ -121,7 +134,7 @@ This audit inventories source material that contributes concrete game-design int
 
 **Decision:** Slot naming is presentation/configuration data and may change without affecting mechanics.
 
-**Implementation rule:** Equipment uses stable internal slot IDs. Each slot has a configurable display name. Item effects, restrictions, compatibility, saves, and code references must depend on IDs/tags rather than localized or presentation-facing names.
+**Implementation rule:** Equipment uses stable internal IDs and configurable display names. Code, saves, restrictions, and compatibility depend on IDs/tags.
 
 **Status:** CANON.
 
@@ -129,56 +142,47 @@ This audit inventories source material that contributes concrete game-design int
 
 **Decision:** Detailed numerical and operational rules will be decided later.
 
-**Implementation rule:** Translate only behavior directly supported by source material. Do not invent canonical costs, durations, capacities, failure probabilities, or progression formulas.
+**Implementation rule:** Translate only behavior directly supported by source material. Do not invent canonical costs, durations, capacities, probabilities, or formulas.
 
 **Status:** CANON.
 
 ## Explicit suggestion policy
 
-When the translated documentation needs to discuss an implementation option that is not established by source material or a project-owner decision, it must be marked exactly as:
+When translated documentation discusses an implementation option not established by source material or a project-owner decision, it must be marked exactly as:
 
 > **DESIGN SUGGESTION — NOT CANON**
 
-Suggestions must be separated from canonical requirements and must never be phrased as existing game rules.
+Suggestions must be separated from canonical requirements and never phrased as existing game rules.
 
 ## Current village-system suggestions
 
-These are not canonical decisions and are provided only as possible future directions.
-
 ### Integration/Rehabilitation
 
-> **DESIGN SUGGESTION — NOT CANON:** Use staged integration rather than an instant conversion. A surrendered or captured unit could require facility capacity, time, or assigned supervision before becoming fully available.
+> **DESIGN SUGGESTION — NOT CANON:** Use staged integration rather than instant conversion, with future capacity/time/supervision parameters represented as data.
 
 ### Resource Production
 
-> **DESIGN SUGGESTION — NOT CANON:** Give each production assignment an explicit input, output, interval, and capacity so balancing can later be data-driven.
+> **DESIGN SUGGESTION — NOT CANON:** Give each production assignment explicit input, output, interval, and capacity fields for future balancing.
 
 ### Equipment Transmutation
 
-> **DESIGN SUGGESTION — NOT CANON:** Define transmutation recipes as data records containing required resources, output pools, and optional risk parameters rather than hardcoded logic.
+> **DESIGN SUGGESTION — NOT CANON:** Define recipes as data records with required resources, output pools, and optional risk parameters.
 
 ### Expedition Dispatch
 
-> **DESIGN SUGGESTION — NOT CANON:** Resolve expeditions from party capability, assigned roles, risk tier, and duration, returning deterministic or weighted outcomes. The exact formula remains undecided.
+> **DESIGN SUGGESTION — NOT CANON:** Resolve expeditions from party capability, assigned roles, risk tier, and duration; exact formulas remain undecided.
 
 ### Persistent Character Progression
 
-> **DESIGN SUGGESTION — NOT CANON:** Model persistent afflictions and long-term traits as data-driven states with explicit acquisition, modification, and removal rules so the future design can change them without rewriting combat.
+> **DESIGN SUGGESTION — NOT CANON:** Model persistent states as data-driven records with explicit acquisition, modification, progression, and removal rules.
 
-## Audit findings so far
+## Audit conclusions
 
-1. The source material already contains a useful separation between entity identity and behavior, even though the data is not yet normalized.
-2. The strongest hidden implementation dependency is the second combat-resolution channel. Enemy weaknesses and skill metadata must be audited together before final neutral terminology is chosen.
-3. Character appearance states are suitable for a fully decoupled presentation-binding system.
-4. The source contains systems not yet sufficiently detailed to implement safely. Those systems remain open rather than being silently invented.
-5. Canonical decisions and design suggestions are now explicitly separated.
-
-## Next audit targets
-
-1. HTML representations and their relationship to CSV data
-2. visual asset directories as role/presentation references only
-3. existing `Design/` documentation and current game implementation
-4. cross-reference of skill, enemy, item, and main-character terminology
+1. CSV and corresponding HTML files describe the same planning layer; HTML primarily serves as verification/presentation and does not need to be exposed to the implementation model.
+2. Visual assets can be fully decoupled because gameplay contracts do not depend on their filenames or paths.
+3. The source supports a coherent fantasy RPG premise with exploration, wild regions, conventional and alternative conflict resolution, recruitment, and community growth.
+4. Several concrete content fields remain intentionally empty or underspecified. The translated layer preserves those gaps rather than inventing canonical content.
+5. No additional `NEEDS DECISION` was required during this audit pass.
 
 ## Translation rule
 

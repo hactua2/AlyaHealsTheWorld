@@ -1,0 +1,64 @@
+Skill,Cut-in,Type,Element,H-act,Body Parts,Target,Skill Tier,Special effect,Description
+Sensory Enhancement,,Active,Magical,Tease,Mind,Enemy,Tier 1,Debuff,Increases target h-damage and health damage taken
+Mstrbate,,Active,Physical,Intercourse,Crotch,"Enemy, Self",Tier 1,"Buff, Debuff",Heals self and increase enemy chance of h-attacks
+Dancing moves,,Active,Physical,Tease,All,Self,Tier 1,Buff,Increases dodge chance
+Flirt,,"Active, Dominant",Magical,Tease,Mouth,Enemy,Tier 1,H-Damage,"Speaks soft words to enemy, enticing them"
+Hypnotize,,"Active, Dominant",Magical,Tease,Mind,Enemy,Tier 1,"H-Damage, Debuff","Stuns target for a few turns, dealing h-damage over time"
+Get Spanked,,"Active, Masochist, Submissive",Physical,Tease,Ass,"Enemy, Self",Tier 1,H-Damage,"Entices enemy to spank Ayla, dealing h-damage"
+Sensory Deprivation,,"Active, Sadist, Dominant",Magical,Tease,Mind,Enemy,Tier 1,"H-Damage, Debuff","Lowers enemy accuracy, defense and dodge chance"
+Spank,,"Active, Sadist, Dominant",Physical,Tease,Ass,Enemy,Tier 1,"H-Damage, Health Damage",Spanks enemy
+Instill protectiveness,,"Active, Submissive",Magical,Tease,All,Ally,Tier 1,Buff,Increases chance that allies will be targeted by enemy attacks
+Bl-job,,"Active, Submissive",Physical,Intercourse,Mouth,Enemy,Tier 1,H-Damage,-
+Lay,,"Active, Submissive",Physical,Intercourse,Crotch,Enemy,Tier 1,H-Damage,Gets fked by enemy
+Grope,,"Active, Submissive",Physical,Tease,"Ass, Breast",Enemy,Tier 1,H-Damage,Gets groped by enemy
+Service,,"Active, Submissive",Physical,Intercourse,Mouth,Ally,Tier 1,Buff,Heals ally
+H-job,,"Active, Submissive",Physical,Intercourse,Mind,Enemy,Tier 1,H-Damage,Uses hands on sensitive spots
+Bend,,"Active, Submissive, Masochist",Physical,Intercourse,Ass,Enemy,Tier 1,Debuff,H-damage over time to 1 enemy
+AS,,"Active, Submissive, Masochist",Physical,Intercourse,Ass,Enemy,Tier 1,"H-Damage, Debuff",Increases enemy H-damage taken every turn this is used in a row
+S Symbol,,Passive,Magical,Intercourse,All,"Ally, Self",Tier 1,Buff,Heals when H-gauge overfills
+Otherworldy Charm,,Passive,Magical,Tease,All,Enemy,Tier 1,Debuff,"Increases chance of H-attacks, lowers chance of health attacks"
+Piercing Stares,,Passive,Physical,Tease,Breast,Enemy,Tier 1,Debuff,Deals H-damage every turn if wearing piercings
+Sadism,,Passive,Physical,Intercourse,"Crotch, Mouth",Enemy,Tier 1,Buff,Increases health damage given
+Masochism,,Passive,Physical,Intercourse,"Ass, Breast",Enemy,Tier 1,Buff,Lowers health damage taken
+Moans,,Passive,Physical,Tease,Mouth,"Ally, Enemy",Tier 1,"Buff, Debuff",Reflects some H-damage received
+Encourage,,Active,Magical,Tease,Ass,Ally,Tier 2,Buff,Buffs allies' attacks
+Flaunt,,Active,Physical,Tease,All,Enemy,Tier 2,AoE H-Damage,"Flaunts ""assets"" to deal h-damage to all enemies"
+Autof,,Active,Physical,Intercourse,"Breast, Crotch, Mouth",Self,Tier 2,Buff,"Requires P-growth, heals self, removes negative status effects"
+Aphrodisiac,,"Active, Dominant",Magical,Tease,Mind,Enemy,Tier 2,"H-Damage, Buff","Deals h-damage over time to enemy, increasing their chance of h-attacks"
+P-growth,,"Active, Dominant",Magical,Tease,"Crotch, Mind",Ally,Tier 2,Buff,"Turns into a fta, enabling certain skills"
+Facesit,,"Active, Dominant",Physical,Intercourse,Crotch,"Enemy, Self",Tier 2,"H-Damage, Health Damage",Smothers enemy with own crotch
+Bondage,,"Active, Masochist",Magical,Tease,All,"Enemy, Self",Tier 2,AoE H-Damage,Binds self with magical ropes for a brief moment
+Bully,,"Active, Sadist",Magical,Tease,Mouth,Enemy,Tier 2,Debuff,"Insults enemy, lowering their attack and defense"
+Bite,,"Active, Sadist",Physical,Tease,Mouth,Enemy,Tier 2,"H-Damage, Health Damage",Bites enemy
+Bind,,"Active, Sadist, Dominant",Magical,Tease,Mind,Enemy,Tier 2,"H-Damage, Debuff",Paralyzes enemy
+Prolonged Pl-,,"Active, Sadist, Dominant",Magical,Tease,Crotch,Enemy,Tier 2,"H-Damage, Debuff","Unable to overfill h-gauge, takes health damage on every h-attack while gauge is filled"
+F-fk,,"Active, Sadist, Dominant",Physical,Intercourse,Crotch,Enemy,Tier 2,"H-Damage, Health Damage","Requires P-growth, makes target choke on it, deals more H-damage the lower the enmy health is"
+Paizuri,,"Active, Submissive",Physical,Intercourse,Breast,Enemy,Tier 2,H-Damage,-
+Summon c-s,,"Active, Submissive, Dominant",Magical,Intercourse,Mind,Enemy,Tier 2,"H-Damage, AoE H-Damage","Summons magical c-s to h-attack all enemies, damage increases the less enemies are present"
+Swallow,,"Active, Submissive, Masochist",Physical,Finisher,Mouth,Enemy,Tier 2,H-Damage,"If enemy is within a h-gauge threshold, finishes them"
+Extra tips,,Passive,Magical,Tease,Mind,Enemy,Tier 2,Buff,Finds more rewards upon victory
+Cuteness,,Passive,Magical,Tease,"Breast, Mouth",Ally,Tier 2,Buff,Increases allies' attack
+Naughty Thoughts,,Passive,Magical,Tease,Mind,Self,Tier 2,Buff,Increases H-accuracy and damage
+C-drinker,,Passive,Physical,Tease,Mind,Ally,Tier 2,Buff,Heals whenever enemy is defeated with H-moves
+Strip,,Active,Physical,Tease,All,Enemy,Tier 3,"AoE H-Damage, Buff","Removes clothing, dealing h-damage to enemies and increases player's chance to dodge"
+Pink mist,,"Active, Dominant",Magical,Tease,Mind,Enemy,Tier 3,"AoE H-Damage, Debuff","Deals h-damage over time to all enemies, lowering their defences"
+Penetrate,,"Active, Dominant",Physical,Intercourse,Crotch,Enemy,Tier 3,H-Damage,"Requires P-growth, fks target crotch"
+A-penetration,,"Active, Sadist, Dominant",Physical,Intercourse,Crotch,Enemy,Tier 3,"H-Damage, Debuff","Requires P-growth, stuns target"
+Stomp,,"Active, Sadist, Dominant",Physical,Tease,Crotch,Enemy,Tier 3,"H-Damage, Health Damage","stomps on target crotch, deals more health damage the higher the H-gauge is"
+Summon Tentacles,,"Active, Sadist, Masochist, Submissive, Dominant",Magical,Intercourse,All,"Ally, Enemy, Self",Tier 3,"AoE H-Damage, AoE Health Damage",Summons otherwordly tentacles that aggros everyone. Damage increases the less enemies are present
+Enslave,,"Active, Sadist, Dominant",Magical,Finisher,Mind,Enemy,Tier 3,"H-Damage, Health Damage, Debuff",Forces target into submission
+G-bang,,"Active, Submissive",Physical,Intercourse,All,Enemy,Tier 3,AoE H-Damage,-
+Bkakke,,"Active, Submissive",Physical,Finisher,"Mouth, Breast","Enemy, Self",Tier 3,AoE H-Damage,"If all enemies are within a certain h-gauge threshold, wins combat, takes heavy H-damage if at least 1 enemy survives"
+Deepth,,"Active, Submissive, Masochist",Physical,Intercourse,Mouth,Enemy,Tier 3,H-Damage,-
+Worship C,,"Active, Submissive, Masochist",Physical,Tease,"Breast, Mouth",Enemy,Tier 3,"AoE H-Damage, Debuff",Increases chance of H-attacks
+Ecstasy Aftershocks,,Passive,Magical,Intercourse,All,Enemy,Tier 3,AoE H-Damage,Deals H-damage to all enemies when Ayla's h-gauge overfills
+Divine Health,,Passive,Magical,Tease,Mind,Ally,Tier 3,Buff,"Immune to debuffs, healing allies removes debuffs"
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,
+,,,,,,,,Buff,

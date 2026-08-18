@@ -78,7 +78,7 @@ Preserves integration/rehabilitation, resource production, equipment transmutati
 
 **Paths:** `HTML/Characters.html`, `Enemies.html`, `Items.html`, `MainCharacter - Ayla.html`, `Mechanics.html`, `Skills.html`.
 
-**Finding:** These are large spreadsheet-style exports corresponding to the planning tables. The mechanics HTML confirms the same concrete mechanics rows as the CSV, including integration, production, transmutation, expedition dispatch, and progression, rather than introducing a separate canonical ruleset.
+**Finding:** These are spreadsheet-style exports corresponding to the planning tables. They verify the CSV mechanics rather than introducing a separate canonical ruleset.
 
 **Classification:** HY, primarily source presentation/verification.
 
@@ -88,21 +88,21 @@ Preserves integration/rehabilitation, resource production, equipment transmutati
 
 **Paths:** `Characters/`, `Enemies/`, `Items/`, `MainCharacter/`.
 
-**Finding:** Asset files are image-oriented and filenames are largely opaque identifiers. They provide presentation references but do not reliably encode gameplay contracts in filenames.
+**Finding:** Asset files are image-oriented and filenames are largely opaque identifiers. They provide presentation references but do not reliably encode gameplay contracts.
 
 **Classification:** PT, with possible HY role-reference value.
 
-**Translation treatment:** no source asset path is required by gameplay logic. Future presentation bindings should map stable content IDs to replaceable asset references.
+**Translation treatment:** no source asset path is required by gameplay logic. Future presentation bindings map stable content IDs to replaceable asset references.
 
 ### Character description / scenario source
 
 **Path:** `CharDesc`
 
-**Observed design information:** a fantasy-world premise, magical creatures, unexplored wilds, and an explicit source-specific philosophy that conflicts—including combat—can be resolved through an alternative relationship/intimacy route.
+**Observed design information:** a fantasy-world premise, magical creatures, unexplored wilds, and an explicit alternative conflict-resolution route.
 
 **Classification:** NI + TR + PT.
 
-**Translation:** `content/world.md` preserves the fantasy setting, wild exploration, community growth, and alternative conflict-resolution structure while separating source-specific presentation and adult-theme details.
+**Translation:** `content/world.md` preserves the fantasy setting, wild exploration, community growth, and alternative conflict-resolution structure while separating source-specific presentation.
 
 ## Canonical decisions from project owner
 
@@ -146,6 +146,30 @@ Preserves integration/rehabilitation, resource production, equipment transmutati
 
 **Status:** CANON.
 
+### ND-07 — Health defeat resolution
+
+**Decision:** Health defeat uses a data-driven `DefeatResolution` pipeline.
+
+**Implementation rule:** Reaching the Health defeat condition does not require a single hardcoded outcome. Each encounter may define its own resolution, including ordinary defeat, incapacitation, narrative events, or other authored consequences. Resolution logic must depend on stable encounter/content data.
+
+**Status:** CANON.
+
+### ND-08 — Universal Moral route
+
+**Decision:** All enemies can be defeated through the Moral route.
+
+**Implementation rule:** Every enemy participates in the `Moral -> Surrender` resolution path. Individual post-surrender outcomes may differ by encounter or narrative data, but Moral defeat always reaches the Surrender state.
+
+**Status:** CANON.
+
+### ND-09 — Generic item effect hooks
+
+**Decision:** Source effects without a complete neutral subsystem contract remain generic `EffectHook` records.
+
+**Implementation rule:** Items and other content may reference extensible hooks/events through stable IDs and parameter payloads. The implementation must provide registration, activation, validation, and safe no-op or disabled behavior for unresolved hooks. New item effects should be addable without changing core item/equipment architecture.
+
+**Status:** CANON.
+
 ## Explicit suggestion policy
 
 When translated documentation discusses an implementation option not established by source material or a project-owner decision, it must be marked exactly as:
@@ -182,7 +206,7 @@ Suggestions must be separated from canonical requirements and never phrased as e
 2. Visual assets can be fully decoupled because gameplay contracts do not depend on their filenames or paths.
 3. The source supports a coherent fantasy RPG premise with exploration, wild regions, conventional and alternative conflict resolution, recruitment, and community growth.
 4. Several concrete content fields remain intentionally empty or underspecified. The translated layer preserves those gaps rather than inventing canonical content.
-5. No additional `NEEDS DECISION` was required during this audit pass.
+5. The final review decisions close the previously identified blocking ambiguities around Health defeat, universal Moral surrender, and unresolved item mechanics.
 
 ## Translation rule
 

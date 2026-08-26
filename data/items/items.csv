@@ -1,0 +1,27 @@
+Item,Slot,Primary Stat effects,Secondary Stat effects,Special effect (Cursed and Blessed evolve the longer the player uses them. Cursed cannot be removed normally),Description
+Crux of enlightenment,Accessories,"Soul Increase, Body Increase",Dominance Increase,Non-applicable,H-damage given goes up
+(Stat) Amulet,Accessories,,,Non-applicable,
+(Stat) Ring,Accessories,,,Non-applicable,
+Oath of Obedience,Bottom1,Body Increase,Submission Increase,Blessed,Heals on every h-attack received
+Underwear of restoration,Bottom1,"Soul Increase, Body Increase",Submission Increase,Non-applicable,Heals stat debuffs on H-gauge overfill
+B-plug,Bottom1,Soul Increase,Submission Increase,Non-applicable,
+A-beads,Bottom1,Soul Increase,"Submission Increase, Masochism Increase",Non-applicable,
+True-size cage->The forever cage,Bottom2,Agility Increase,"Submission Increase, Masochism Increase, Dominance Decrease, Sadism Decrease",Cursed,H-gauge goes up on taking health damage
+Chast belt,Bottom2,Agility Increase,"Masochism Increase, Dominance Increase",Non-applicable,Impedes v-penetration and skills that lead to it
+Ofuda chast,Bottom2,"Charm Increase, Soul Increase","Masochism Increase, Dominance Increase",Blessed,Impedes v-penetration and skills that lead to it
+Magic-C,Key Item,,,Non-applicable,Allows alone time
+Rod of craving,Key Item,,,Non-applicable,Enhances alone time
+Hypnosis->Reprogram->Slave,Tattoo,"Charm Increase, Agility Decrease","Submission Increase, Masochism Increase, Dominance Decrease, Sadism Decrease",Cursed,Difficulty refusing/resisting requests/H-attacks
+Sensitivity->Receptacle->Fulfilled,Tattoo,Charm Increase,"Submission Increase, Masochism Increase",Cursed,Increase h-damage taken->Stat buff when recently filled->Further stat buff the more h-attacks are received
+Restraint->Suffer->Canvas,Tattoo,"Charm Increase, Body Increase","Submission Increase, Masochism Increase",Cursed,Damage resistance goes up
+Forlorn->Abandon,Tattoo,"Charm Increase, Soul Decrease","Masochism Increase, Sadism Decrease",Cursed,Increase stats on debuff
+Mindmelt->Mind break,Tattoo,"Charm Increase, Soul Decrease",Submission Increase,Cursed,Debuffs every H+
+Messaging->Sway->Pheromone,Tattoo,"Charm Increase, Body Increase",Dominance Increase,Blessed,H-damage on everyone nearby
+Vibrancy->Siphoning,Tattoo,Charm Increase,Dominance Increase,Blessed,Stats increase as H-gauge fills
+Oral->C-diction,Tattoo,Charm Increase,"Submission Increase, Dominance Decrease",Cursed,Needs CIM
+Pearls of the Maiden,Top,Charm Increase,"Submission Increase, Masochism Increase",Non-applicable,Increases H-damage given and received
+Barbell Piercings,Top,Charm Increase,"Submission Increase, Masochism Increase",Non-applicable,
+N-Rings,Top,Charm Increase,"Submission Increase, Masochism Increase",Non-applicable,
+N-Chain,Top,Charm Increase,"Submission Increase, Masochism Increase",Non-applicable,
+Pasties,Top,Charm Increase,Dominance Increase,Non-applicable,
+Ofuda pasties,Top,"Charm Increase, Soul Increase","Masochism Increase, Dominance Increase",Blessed,

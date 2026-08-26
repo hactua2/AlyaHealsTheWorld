@@ -1,6 +1,0 @@
-Name,Type,Description,Example
-Rehabilitation,Village,"Player can capture and emprison enemies to place them in ""training facilities"" to override behavior, change stats and maybe become allies. Each enemy can have their own strengths and weaknesses in the process.",
-Farming,Village,,
-Transmutation,Village,Use village-farmed components to empower equipment,
-"""Spread the word""",Village,"Allies can be sent to adventures, where they'll get rare resources and occasionally more allies (via rehabilitation or not)",
-Curse progression,Character,,

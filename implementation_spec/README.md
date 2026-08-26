@@ -1,20 +1,23 @@
 # Implementation Specification Layer
 
-This directory is a neutral, implementation-oriented specification of the game.
+This directory is a self-contained, neutral implementation specification. A consumer must be able to design and implement the planned systems using this directory alone, without consulting repository history, narrative documents, thematic source material, or external project context.
 
-It intentionally describes systems through abstract gameplay concepts, data contracts, states, events, resources, progression, and interfaces. It does not require knowledge of the narrative or thematic origin of individual mechanics.
+It describes systems through abstract gameplay concepts, data contracts, state machines, resources, progression, events, deterministic ordering, and ownership boundaries.
 
 ## Reading order
 1. CORE_MODEL.md
 2. DATA_MODEL.md
-3. COMBAT.md and STATUS_EFFECTS.md
-4. ECONOMY.md, ITEMS_AND_EQUIPMENT.md, BUILDINGS.md
-5. COMMUNITY.md, EXPLORATION.md, PROCEDURAL_GENERATION.md
-6. PROGRESSION_AND_GATING.md and REWARDS.md
-7. IMPLEMENTATION_RULES.md
+3. CONTENT_CONTRACTS.md
+4. STATE_MACHINES.md
+5. COMBAT.md, TURN_RESOLUTION.md, STATUS_EFFECTS.md, SKILL_CATALOG.md
+6. ECONOMY.md, ITEMS_AND_EQUIPMENT.md, BUILDINGS.md, COMMUNITY.md
+7. EXPLORATION.md, PROCEDURAL_GENERATION.md
+8. PROGRESSION_AND_GATING.md, REWARDS.md, DIRECTION_FEEDBACK.md
+9. INTEGRATION_CONTRACTS.md
+10. IMPLEMENTATION_RULES.md
 
 ## Vocabulary policy
-The names in this layer are canonical for implementation. Content-facing labels may differ through localization or presentation.
+The names in this layer are canonical implementation identifiers. Content-facing labels may differ through localization or presentation.
 
 | Implementation term | Meaning |
 |---|---|
@@ -28,4 +31,7 @@ The names in this layer are canonical for implementation. Content-facing labels 
 | Overflow | Excess secondary-meter state beyond its normal threshold |
 | Aspect | A tagged target domain used by skills and modifiers |
 
-Do not infer theme from these names. Treat them as mechanical identifiers.
+Do not infer presentation, narrative, genre, or theme from these identifiers. Treat them only as mechanical vocabulary.
+
+## Completeness rule
+When two documents appear to overlap, resolve conflicts by preferring: explicit lifecycle contract -> explicit integration contract -> system-specific rule -> core model. Do not invent a parallel subsystem to resolve an ambiguity; add or extend a contract using the existing architecture.

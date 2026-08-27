@@ -1,6 +1,6 @@
 # Ayla Heals the World — Auditoria e Expansão do Sistema de Skills
 
-> Documento de design consolidado. Decisões aprovadas na análise de lacunas do sistema de skills.
+> Documento de design consolidado. Decisões aprovadas na análise de lacunas do sistema de skills e atualizadas após a auditoria de convergência.
 
 ## 1. Objetivo
 
@@ -84,39 +84,24 @@ As skills existentes permanecem válidas e são reinterpretadas dentro das famí
 
 Após as 14 novas skills, não há lacuna crítica que justifique adicionar mais habilidades genéricas agora.
 
-O sistema cobre:
+O sistema cobre ataque físico e mágico, H-damage e Health Damage, controle, vulnerabilidade, Submission/Surrender, Sadism/Cruelty, Masochism/Endurance, retaliação, defesa ativa, suporte, manipulação de H-gauge, Thresholds, Chains, Consume, Exploit, Overflow, finishers e builds híbridas.
 
-- ataque físico e mágico;
-- H-damage e Health Damage;
-- controle;
-- vulnerabilidade;
-- Submission/Surrender como recurso;
-- Sadism/Cruelty;
-- Masochism/Endurance;
-- retaliação;
-- defesa ativa;
-- suporte;
-- manipulação de H-gauge;
-- Thresholds;
-- Chains;
-- Consume;
-- Exploit;
-- Overflow;
-- finishers;
-- builds híbridas.
+## 7. Estado das antigas lacunas
 
-## 7. Lacunas deliberadamente adiadas
+A arquitetura posterior resolveu estruturalmente várias dependências que antes estavam abertas:
 
-| Lacuna | Dependência |
+| Tema | Estado atual |
 |---|---|
-| Sinergias específicas com aliados | Análise de NPCs/Allies |
-| Positioning | Definição final da estrutura de combate |
-| Ações específicas de captura | Análise de Enemies e Rehabilitation |
-| Técnicas específicas por facção | Análise de Enemies |
-| Skills exclusivas de outfits | Análise de Items/Outfits |
-| Maior profundidade por Body Part | Distribuição futura de skills, itens e passivas |
-| Reações avançadas a Enemy Intent | Implementação final de Enemy Intent |
+| Sinergias específicas com aliados | Arquitetura de aliados definida; conteúdo concreto ainda pendente. |
+| Ações específicas de captura | Encerramento de combate pode abrir elegibilidade para reabilitação; ações concretas ainda pendentes. |
+| Técnicas específicas por facção | Arquitetura de inimigos/famílias e camadas Organization/Wound definida; distribuição concreta pendente. |
+| Skills exclusivas de outfits | Itens/equipamentos funcionam como habilitadores de build; roster concreto pendente. |
+| Positioning | Continua pendente de definição da estrutura final de combate; não é necessário expandir skills antes disso. |
+| Maior profundidade por Body Part | Conteúdo futuro de skills, itens e passivas. |
+| Reações avançadas a Enemy Intent | Dependente da implementação final de Enemy Intent. |
 
-## 8. Próxima etapa
+## 8. Regra de continuidade
 
-A análise deve seguir para **Items**, com foco em equipamentos como modificadores e habilitadores de build, progressão Blessed/Cursed, interação com Body Parts e recursos compartilhados, e integração de outfits como loadouts mecânicos.
+A auditoria de skills está estruturalmente fechada. Próximas adições devem ser conteúdo específico ou responder a uma lacuna demonstrada por testes/implementação, não simplesmente aumentar a quantidade de skills.
+
+A próxima camada de trabalho é a especificação de contratos entre combate, status, equipamento, aliados, encounters e encerramentos de combate, incluindo a ponte entre elegibilidade de recrutamento e reabilitação comunitária.

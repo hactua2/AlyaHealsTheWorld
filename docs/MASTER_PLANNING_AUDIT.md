@@ -8,13 +8,13 @@ This document consolidates the current architecture, narrative canon, R1–R15 c
 
 ## Planning Completion Standard
 
-A domain is **CLOSED** only when a competent implementer can execute it without making a material design decision on the project's behalf.
+A domain is **CLOSED** when its design contract is decided. A domain may still require a later **implementation specification** (schemas, formulas, interfaces, exact state transitions, edge cases) or **content production** without reopening its design.
 
 Statuses:
-- **CLOSED** — final decision is established and documented.
-- **SPECIFICATION NEEDED** — macro decision exists, but deterministic rules/contracts are missing.
-- **CONTENT NEEDED** — system is specified enough structurally, but the complete content set is missing.
-- **DEPENDENCY** — cannot be closed until another domain is resolved.
+- **CLOSED** — design decision is established.
+- **SPECIFICATION NEEDED** — design is closed, but the implementation contract still needs to be written.
+- **CONTENT NEEDED** — system design is closed enough structurally, but the complete content set is missing.
+- **DEPENDENCY** — cannot be completed until another domain is resolved.
 - **OPTIONAL** — deliberately deferred and not required for the base game.
 - **OPEN DECISION** — a genuine design choice remains unresolved.
 
@@ -26,9 +26,9 @@ Statuses:
 The macro architecture is closed. R1–R15 and convergence decisions are closed; `GAME_ARCHITECTURE.md` is the current high-level source of truth.
 
 ### Checkpoint B — Rules Complete
-**STATUS: IN PROGRESS**
+**STATUS: COMPLETE**
 
-B4–B18 established a large portion of the rules architecture. Detailed formulas, schemas, exact state transitions, cross-system contracts, and remaining edge cases are still required before B can be declared complete.
+B4–B18 and the Checkpoint B Mega-Batch closed the remaining macro gameplay decisions. Remaining work under domains marked **SPECIFICATION NEEDED** is implementation specification, not new design discovery: exact schemas, formulas, interfaces, deterministic lifecycle contracts, and edge cases must still be written before production implementation.
 
 ### Checkpoint C — Content Complete
 **STATUS: NOT STARTED AS A FORMAL GATE**
@@ -44,243 +44,141 @@ Every content/system requirement has implementation, UI, art, audio, localizatio
 
 # 1. Master Domain Audit
 
-| # | Domain | Status | Current basis | Remaining work | Gate |
-|---|---|---|---|---|---|
-| 1 | Game identity / pillars | CLOSED | Architecture + prior decisions | None unless implementation exposes contradiction | A |
-| 2 | Core gameplay loop | CLOSED | Architecture + R1–R15 | None | A |
-| 3 | World structure | SPECIFICATION NEEDED | Regions and procedural/hand-authored split + B17 world map | Final world graph, region rules | B/C |
-| 4 | Narrative canon | CLOSED | `NARRATIVE_CANON.md` | Content implementation still needed | A |
-| 5 | Narrative implementation | CONTENT NEEDED | Canon + B18 quest/event/world-state model | Scene/quest/flag graph | C |
-| 6 | Character architecture | CLOSED | Population/ally architecture + B10–B13 | Concrete roster and data | A/C |
-| 7 | Character content | CONTENT NEEDED | Existing character CSV + architecture | Final roster, stats, skills, arcs, recruitment, assets | C |
-| 8 | Enemy architecture | CLOSED | Family/role/power/encounter/narrative separation + B7 AI contract | Concrete data | A/C |
-| 9 | Enemy content | CONTENT NEEDED | Existing enemy CSV + architecture | Final roster, AI, stats, drops, variants | C |
-| 10 | Combat rules | SPECIFICATION NEEDED | B5–B8 | Exact formulas, lifecycle, action queue/resolution, full edge cases | B |
-| 11 | Status/effects | SPECIFICATION NEEDED | B4 + architecture | Formal effect contract, timing, stacking/cleanse edge cases | B |
-| 12 | Skills | SPECIFICATION NEEDED | `SKILLS_AUDIT.md` + B5/B9/B10/B11 | Final schema, formulas, costs, targeting, transformations, acquisition | B/C |
-| 13 | Equipment/items | SPECIFICATION NEEDED | Item architecture + B9/B11 | Full schema, transformation vocabulary, catalog, acquisition | B/C |
-| 14 | Curses/blessings | SPECIFICATION NEEDED | Architecture + B9 | Exact state/progression rules and content | B/C |
-| 15 | Recruitment | SPECIFICATION NEEDED | Recruitment architecture | Exact eligibility conditions and transitions | B |
-| 16 | Rehabilitation/integration | SPECIFICATION NEEDED | Architecture + mechanics CSV | Facility/process states, requirements, outcomes | B/C |
-| 17 | Community architecture | CLOSED | R1–R15 + architecture + B13–B15 | None at macro level | A |
-| 18 | Buildings/facilities | CONTENT NEEDED | B15 + architectural rules | Final building catalog, costs, upgrades, effects | C |
-| 19 | Assignments/aptitude | SPECIFICATION NEEDED | B12/B13 | Growth/competence/output formulas and edge cases | B |
-| 20 | Resources | SPECIFICATION NEEDED | B16 + resource/ecology architecture | Resource taxonomy, acquisition, rates, storage footprint, sinks | B/C |
-| 21 | Economy/trade | SPECIFICATION NEEDED | B16 + economy architecture | Prices, inventories, refresh, reward curves | B/C |
-| 22 | Ecology/production | SPECIFICATION NEEDED | Architecture + B15/B16 | Production cycles, renewable/unique rules | B/C |
-| 23 | Exploration | SPECIFICATION NEEDED | B17 | Sidequest vs Expedition contracts, travel, generation, persistence | B |
-| 24 | Encounters | SPECIFICATION NEEDED | Encounter hierarchy + B17/B18 | Encounter schema, generation, resolution | B |
-| 25 | Quests | SPECIFICATION NEEDED | B18 | Quest state machine, objective semantics, trigger contract | B |
-| 26 | Quest content | CONTENT NEEDED | Narrative canon + B18 quest architecture | Full quest graph and data | C |
-| 27 | Time/day-night | SPECIFICATION NEEDED | B14 | Exact time blocks, ticks, waiting, day/night transitions | B |
-| 28 | Defeat/recovery | SPECIFICATION NEEDED | B8 + retreat/consequence model | Exact post-combat/post-defeat resolution, recovery, edge cases | B |
-| 29 | Progression | SPECIFICATION NEEDED | B10–B12 | XP/level curves, skill-point rules, natural growth formulas, power bands | B/C |
-| 30 | Information architecture | SPECIFICATION NEEDED | Discover→available→explain→depth | Screen-level information flows | B/D |
-| 31 | UX/UI | CONTENT NEEDED | IA principles + system decisions | Screen inventory, wireframes, interaction contracts | C/D |
-| 32 | Save/persistence | SPECIFICATION NEEDED | Not yet fully formalized | Persistence model and save boundaries | B/D |
-| 33 | Art direction | SPECIFICATION NEEDED | Existing AI/reference assets | Art bible, asset standards, pipeline | D |
-| 34 | Audio | SPECIFICATION NEEDED | Existing/legacy audio assets | Audio bible, event mapping, pipeline | D |
-| 35 | Localization | OPEN DECISION | Not formally closed | Base language, string architecture, scope | D |
-| 36 | Accessibility/settings | OPEN DECISION | Not formally closed | Required options and accessibility targets | D |
-| 37 | Technical implementation contracts | SPECIFICATION NEEDED | Repository architecture principles + B rules | Data schemas, interfaces, state ownership | B/D |
-| 38 | QA/testing | SPECIFICATION NEEDED | Not formally closed | Acceptance tests and regression strategy | D |
-| 39 | Tutorial/onboarding | CONTENT NEEDED | Narrative entry and community introduction established | First-session flow and teaching beats | C/D |
-| 40 | Release/publishing | OPTIONAL / LATER | Outside core design | Platform/store/release decisions | Post-D |
+| # | Domain | Status | Remaining work | Gate |
+|---|---|---|---|---|
+| 1 | Game identity / pillars | CLOSED | None unless implementation exposes contradiction | A |
+| 2 | Core gameplay loop | CLOSED | None | A |
+| 3 | World structure | CLOSED | Final world graph, region rules | C |
+| 4 | Narrative canon | CLOSED | Content implementation | A/C |
+| 5 | Narrative implementation | CLOSED | Scene/quest/flag graph | B/C |
+| 6 | Character architecture | CLOSED | Concrete roster and data | C |
+| 7 | Character content | CLOSED | Final roster, stats, skills, arcs, recruitment, assets | C |
+| 8 | Enemy architecture | CLOSED | Concrete data | C |
+| 9 | Enemy content | CLOSED | Final roster, AI, stats, drops, variants | C |
+| 10 | Combat rules | CLOSED | Formal formulas, lifecycle, action queue/resolution, edge-case spec | B-spec |
+| 11 | Status/effects | CLOSED | Formal effect contract, timing, stacking/cleanse edge-case spec | B-spec |
+| 12 | Skills | CLOSED | Final data schema, formulas, costs, targeting, transformations, acquisition content | B-spec/C |
+| 13 | Equipment/items | CLOSED | Final schema, transformation vocabulary, catalog, acquisition | B-spec/C |
+| 14 | Curses/blessings | CLOSED | Exact state/progression specification and content | B-spec/C |
+| 15 | Recruitment | CLOSED | Exact data contract and content | B-spec/C |
+| 16 | Rehabilitation/integration | CLOSED | Facility/process state contract and content | B-spec/C |
+| 17 | Community architecture | CLOSED | None at macro level | A |
+| 18 | Buildings/facilities | CLOSED | Final building catalog, costs, upgrades, effects | C |
+| 19 | Assignments/aptitude | CLOSED | Growth/competence/output formulas and edge-case spec | B-spec |
+| 20 | Resources | CLOSED | Resource taxonomy, acquisition, rates, storage footprint, sinks | B-spec/C |
+| 21 | Economy/trade | CLOSED | Prices, inventories, refresh, reward curves | B-spec/C |
+| 22 | Ecology/production | CLOSED | Production cycles, renewable/unique rules | B-spec/C |
+| 23 | Exploration | CLOSED | Sidequest vs Expedition contracts, travel, generation, persistence spec | B-spec/C |
+| 24 | Encounters | CLOSED | Encounter schema, generation, resolution spec | B-spec/C |
+| 25 | Quests | CLOSED | Quest state machine, objective semantics, trigger contract | B-spec/C |
+| 26 | Quest content | CLOSED | Full quest graph and data | C |
+| 27 | Time/day-night | CLOSED | Exact time blocks, ticks, waiting, day/night transitions | B-spec |
+| 28 | Defeat/recovery | CLOSED | Exact post-combat/post-defeat resolution, recovery, edge cases | B-spec |
+| 29 | Progression | CLOSED | XP/level curves, skill-point rules, natural growth formulas, power bands | B-spec/C |
+| 30 | Information architecture | CLOSED | Screen-level information flows | B-spec/D |
+| 31 | UX/UI | CLOSED | Screen inventory, wireframes, interaction contracts | C/D |
+| 32 | Save/persistence | CLOSED | Persistence model, save boundaries, migration details | B-spec/D |
+| 33 | Art direction | SPECIFICATION NEEDED | Art bible, asset standards, pipeline | D |
+| 34 | Audio | SPECIFICATION NEEDED | Audio bible, event mapping, pipeline | D |
+| 35 | Localization | OPEN DECISION | Base language, string architecture, scope | D |
+| 36 | Accessibility/settings | OPEN DECISION | Required options and accessibility targets | D |
+| 37 | Technical implementation contracts | CLOSED | Concrete schemas, interfaces, state ownership | B-spec/D |
+| 38 | QA/testing | SPECIFICATION NEEDED | Acceptance tests and regression strategy | D |
+| 39 | Tutorial/onboarding | CLOSED | First-session flow and teaching content | C/D |
+| 40 | Release/publishing | OPTIONAL / LATER | Platform/store/release decisions | Post-D |
 
 ---
 
-# 2. Interim Audit — B4–B18
+# 2. Checkpoint B — Final Closure Record
 
 ## Overall verdict
 
-**No hard architectural contradiction was found between the newly decided B4–B18 rules and the current high-level architecture.** The architecture has been updated to reflect the decisions below.
+**CHECKPOINT B IS CLOSED.**
 
-There are, however, several **reconciliation points that must remain explicit** in future specifications:
+The Checkpoint B Mega-Batch completed the remaining macro gameplay decisions. No hard architectural contradiction was identified against the established architecture. The project can now move from **design discovery** to **implementation specification** without reopening the core gameplay model.
 
-1. **Player-controlled expeditions vs delegated Expeditions:** the older architecture phrase "standard expedition" referred to Alya + one selected ally. B17 introduced a distinct autonomous community-delegated Expedition. The architecture now explicitly distinguishes player-controlled sidequest/expedition parties from delegated Expeditions.
-2. **Victory taxonomy vs combat termination:** the combat engine ends when one team has no Active combatants because all members are Surrendered or Incapacitated. Kill/Knockout/Capture/Submission/etc. are post-combat/contextual resolution outcomes, not separate engine termination conditions.
-3. **HP semantics:** HP remains the combat health/capacity stat, but its design meaning is physical capacity/exhaustion tolerance rather than a literal wound counter. This must be reflected consistently in UI, recovery, damage, and narrative language.
-4. **Skill transformations:** equipment may change skill structure/function, especially cursed equipment, but transformations must use a finite declarative vocabulary supported by the skill schema rather than arbitrary item-specific scripts.
-5. **Surrendered targets:** Surrendered characters do not act, but may remain targetable by explicitly permitted interactions. Incapacitated characters are not valid targets.
-6. **Intent lock:** Enemy Intent is revealed before the enemy acts and remains locked. A later state change can make the intended action invalid; a formal fallback rule is still required.
-7. **Time-driven activities:** construction, production, travel, assignments, recovery, and Expeditions continue while explicit time advancement occurs. Exact tick/time-block semantics remain open for B specification.
-8. **H-gauge outside combat:** it decays toward a baseline, while contextual modifiers may change its behavior. Exact curve/baseline remain tuning/specification work.
+The batches B4–B18 remain useful as decision history, but the domain documents and this audit are the source of truth. Do not create separate B-batch documents unless a later audit specifically requires one.
 
-## B4 — Effects and Modifiers
+## Final reconciliation points
 
-Closed decisions:
-- Temporary, Permanent, and Conditional durations.
-- Explicit Stacking Groups and Stacking Policies.
-- Effects in different stacking groups can coexist and accumulate.
-- Strongest Wins is the default competing-effect policy.
-- Cleanse/dispel can use tags.
-- Source tracking is retained.
-- Applicable effects are removed immediately when their source is removed/dead or equipment is removed.
+1. **Sidequest vs Expedition:** Sidequests are player-controlled activities involving Alya and normally one selected ally, with explicit narrative exceptions. Expeditions are delegated community activities performed by NPCs without Alya.
+2. **Combat termination vs outcome taxonomy:** combat ends when all members of one team are Surrendered or Incapacitated. Kill, Knockout, Capture, Submission, Escape, and Objective Complete remain contextual post-combat/result outcomes where applicable.
+3. **HP semantics:** HP represents physical capacity/exhaustion tolerance rather than a literal wound counter. HP-cost skills cannot reduce their user below 1 HP.
+4. **Initiative:** Agility influences the initial initiative roll; the result is determined once at combat start and produces a fixed full combatant order for the combat.
+5. **Turn lifecycle:** the game uses rounds/timeline semantics; each active combatant receives its action according to the established order. Incapacitated/Surrendered combatants do not act.
+6. **Actions:** the action economy supports normal actions plus explicitly defined free/reaction behavior. H-skills share normal active skill slots.
+7. **Targeting:** targeting is skill-defined and supports manual, automatic, and explicit random targeting. Invalid targets cause action failure unless the skill's explicit policy says otherwise. Incapacitated targets are invalid; Surrendered targets are valid only for explicitly permitted interactions.
+8. **Damage:** skills use reusable formula templates plus explicit skill parameters. Modifier order is deterministic; damage cannot resolve below 1 after mitigation unless a future explicit system rule introduces an exception.
+9. **Effects:** application is immediate; duration follows the established start-of-turn/decrement lifecycle; explicit stacking groups govern coexistence; source tracking is retained; effect-specific removal policies are supported.
+10. **Enemy Intent:** Intent is the planned action/goal, not necessarily an immutable target/action script. Intent visibility varies. Revealed Intent is locked. If it becomes invalid, resolution uses the defined fallback target policy rather than silently rewriting the prior turn's intent.
+11. **H-system:** H-gauge is one combat value per combatant; Flirt/Intercourse/Finisher use separate acceptance thresholds. Thresholds can be adjusted per combat. H-gauge resets between combats and decays toward baseline outside combat. Overflow is part of the H-system state, not a fifth economy resource.
+12. **Defeat:** 0 HP causes Incapacitation immediately; Surrender is distinct and can occur before 0 HP. Combat ends when one team has no active members because all members are Surrendered or Incapacitated.
+13. **Equipment:** equipment belongs exclusively to Alya; allied NPCs do not use the equipment system. Equipment may modify/transform supported skill properties, including cursed equipment, using a finite declarative transformation vocabulary rather than arbitrary scripts.
+14. **Progression:** XP is individual; levels award Skill Points; skills have no levels; active/passive loadouts are limited; natural attribute growth depends on use/context/results; skill acquisition can additionally require community buildings/events/context.
+15. **Assignments:** each character has one primary Assignment; competence is discrete and non-decaying; assignment XP is below adventure/combat XP; production depends on competence, facilities, and conditions; assignment can be interrupted freely.
+16. **Time:** explicit player-controlled advancement drives a day/night cycle and calendar. Long-running activities continue during advancement. Menus do not advance time. Completion ordering uses timestamp plus priority.
+17. **Buildings:** the community has a physical layout with expandable space. Buildings may have tiers or be unique. Construction uses resources, time, and prerequisites; workers can affect construction; destruction/relocation has a cost.
+18. **Economy:** resources use layered taxonomy; storage exists; Food is continuous upkeep; Currency and barter coexist; selling is possible with restrictions; external trade exists with variable market state; resources do not have rarity/quality tiers.
+19. **Exploration:** the world uses an abstract regional/locality map. Travel consumes time. Sidequests are direct player activities; Expeditions are delegated NPC activities. Expeditions use stats/competence/context with controlled randomness and return automatically.
+20. **Narrative:** quests have persistent state and multiple objectives; objective retroactivity is defined per objective; events can be deterministic or random; world changes may be temporary or permanent; relationships persist; choices can affect gameplay; global and local state coexist.
+21. **Save:** autosave plus manual slots; saving is not permitted during combat; critical decision boundaries use explicit save/checkpoint handling.
+22. **Content architecture:** content is data-driven, uses stable semantic IDs, stores balance in data/configuration, and supports content versioning/migration.
 
-## B5 — Skill/Action Resolution
+## Remaining work after Checkpoint B
 
-Closed decisions:
-- Skills contain ordered lists of effects.
-- Effects can have dependencies.
-- Conditions are reusable.
-- Skill costs can reference any valid resource, including HP.
-- Invalid targets cause action failure rather than automatic retargeting.
-- Targeting supports reusable patterns and explicit exceptions.
-- Criticals participate in the modifier pipeline.
+The following are **not new gameplay decisions**. They are implementation-specification or content tasks:
 
-## B6 — Targeting and Positioning
+- Formal combat state machine + turn-resolution contract.
+- Effect/condition/trigger schemas and ordering rules.
+- Skill schema, formula templates, cost/targeting contracts, and transformation vocabulary.
+- Item/equipment/cursed-item schemas.
+- Recruitment/rehabilitation state machines.
+- Assignment/aptitude/growth formulas.
+- Resource/economy/production schemas and rates.
+- Sidequest and delegated Expedition schemas.
+- Encounter and quest state-machine schemas.
+- Time tick/block contract.
+- Defeat/recovery resolution contract.
+- XP/level/natural-growth formulas and power bands.
+- Information/UI screen contracts.
+- Save schema and migration implementation.
+- Concrete content catalogs and assets.
 
-Closed decisions:
-- No spatial/grid positioning.
-- No separate range system.
-- Manual, automatic, and explicitly random targeting are supported.
-- Friendly fire is skill-specific.
-- Incapacitated characters are invalid targets.
-- Surrendered characters no longer act but remain targetable by explicitly permitted interactions.
-
-## B7 — Enemy Intent / AI
-
-Closed decisions:
-- Intent visibility varies by enemy/skill.
-- Intent is revealed in the preceding turn.
-- AI uses deterministic priorities with controlled weighted/equivalent choices.
-- Personality and AI Profile are separate.
-- AI considers H-gauge and the full combat state.
-- Revealed intent is locked.
-- Finisher eligibility is threshold/condition-gated; AI decides whether to use an eligible Finisher.
-
-## B8 — Victory / Defeat / Finisher
-
-Closed decisions:
-- 0 HP immediately causes Incapacitated.
-- Surrender can happen before 0 HP.
-- Surrender remains distinct from Incapacitation.
-- Finishers may be powerful ordinary skills or special finalization actions.
-- Allies and enemies can use Finishers.
-- Finishers become invalid if their action requirements cease to be true before resolution.
-- Combat ends when all members of one team are Surrendered or Incapacitated.
-- Post-combat resolution determines contextual outcomes.
-
-## B9 — Equipment and Modifiers
-
-Closed decisions:
-- Equipment can modify skill values and explicitly supported skill properties/structure.
-- Skill property changes are constrained to exposed schema capabilities.
-- Modifiers can be absolute or percentage-based.
-- Modifier order is deterministic by category.
-- Global and specific caps can coexist.
-- Effective primary stats do not fall below zero.
-- Modifier changes recalculate immediately.
-
-## B10 — Character Progression
-
-Closed decisions:
-- Level + XP exist.
-- Level provides Skill Points plus limited base growth/unlocks.
-- Attributes also develop through natural growth and direct/distributable growth.
-- Natural growth is influenced by skill usage, context/results, and community role.
-- Skill acquisition is hybrid and may require community buildings/events/context in addition to Skill Points.
-- Skills have no levels.
-- Active loadouts are limited.
-- Passives are a separate limited pool.
-- Traits/passives share the Effects/Conditions/Modifiers framework.
-
-## B11 — Loadout
-
-Closed decisions:
-- Active skill slots are base + modifiers.
-- Passives have a separate limited pool.
-- H-skills share normal active skill slots.
-- Loadout is locked during combat.
-- Loadouts can be changed outside combat and support presets.
-- Unlocked skills are permanent.
-- Skill Point respec is possible with cost/condition.
-
-## B12 — Species / Aptitude / Growth
-
-Closed decisions:
-- Species provides attribute predisposition.
-- Aptitude is visible.
-- Aptitude influences growth through curves.
-- Skill use + context + results influence natural growth.
-- Community role influences attributes.
-- Characters can exceed natural aptitude with diminishing returns.
-- Individual potential exists; training/equipment can temporarily exceed it.
-
-## B13 — Assignments
-
-Closed decisions:
-- One primary Assignment per character.
-- Assignment stops functioning while the character is outside the community.
-- Competence has discrete levels.
-- Competence does not decay.
-- Assignments grant XP at a lower rate than adventures/combat.
-- Assignments may produce resources or support according to function.
-- Assignment can be interrupted freely.
-
-## B14 — Time
-
-Closed decisions:
-- Multiple time scales with an explicit day/night cycle and calendar.
-- Time advances explicitly by player choice.
-- Long-running activities continue while time advances.
-- Idle menus do not advance the world.
-- Production is rate-based per unit of game time.
-- HP recovers passively and is modified by facilities/skills/status.
-- H-gauge decays toward baseline outside combat, with contextual modifiers.
-
-## B15 — Buildings
-
-Closed decisions:
-- Community has a physical layout/map.
-- Space is limited but expandable.
-- Some buildings have upgrades/tiers; others are unique.
-- Construction requires resources, time, and prerequisites.
-- Workers can participate and modify construction efficiency/results.
-- Buildings may be passive or worker-dependent.
-- Destruction/relocation is possible with a cost.
-
-## B16 — Economy / Resources
-
-Closed decisions:
-- Layered resource taxonomy: few fundamentals + specialized resources.
-- Storage/capacity exists with per-resource footprint behavior where needed.
-- Food is continuous community upkeep.
-- Currency and barter coexist.
-- Resource selling is possible with restrictions.
-- External trade exists with potentially variable inventories/prices.
-- Resources do not have rarity/quality tiers.
-
-## B17 — Exploration / Expeditions
-
-Closed decisions:
-- Abstract regional/locality world map.
-- Travel consumes time.
-- Sidequests are player-controlled; Expeditions are delegated community activities.
-- Expeditions can have non-combat checks and variable composition.
-- Region progression gates exist.
-- Expeditions return automatically.
-
-## B18 — Quests / Events / Narrative State
-
-Closed decisions:
-- Quests have persistent states.
-- Quests can have multiple objectives.
-- Objective retroactivity is decided per objective.
-- Events use deterministic and random mechanisms.
-- World changes can be temporary or permanent.
-- NPC relationships persist.
-- Narrative choices can affect gameplay.
-- Global world state coexists with local quest state.
+These should be handled as **Implementation Specification Pass**, not another round of macro design discovery unless implementation exposes a genuine contradiction or structural gap.
 
 ---
 
-# 3. Decisions Explicitly Closed
+# 3. Decision History — B4–B18 + Mega-Batch
+
+The B batches are retained here as traceability rather than as independent specifications.
+
+| Batch | Scope | Result |
+|---|---|---|
+| B4 | Effects / modifiers | Closed |
+| B5 | Skills / action resolution | Closed |
+| B6 | Targeting / positioning | Closed |
+| B7 | Enemy Intent / AI | Closed |
+| B8 | Victory / defeat / finisher | Closed |
+| B9 | Equipment / modifiers | Closed |
+| B10 | Character progression | Closed |
+| B11 | Loadout | Closed |
+| B12 | Species / aptitude / growth | Closed |
+| B13 | Assignments | Closed |
+| B14 | Time | Closed |
+| B15 | Buildings | Closed |
+| B16 | Economy / resources | Closed |
+| B17 | Exploration / Expeditions | Closed |
+| B18 | Quests / events / narrative state | Closed |
+| B19 | Checkpoint B Mega-Batch | Closed; final macro rules consolidated |
+
+---
+
+# 4. Explicitly Closed Decisions
 
 These should not be reopened casually:
 
 - Alya is the fixed protagonist.
-- Standard player-controlled expedition/sidequest structure is Alya + one selected ally, with narrative exceptions; delegated Expeditions are a separate community activity.
+- Standard player-controlled sidequest/expedition structure is Alya + one selected ally, with narrative exceptions; delegated Expeditions are a separate community activity and do not include Alya.
 - The game loop interconnects narrative, exploration, combat, resources, community, and progression.
 - Main Quest is the principal structural progression gate.
 - Regions remain relevant after unlock where appropriate.
@@ -289,6 +187,7 @@ These should not be reopened casually:
 - Assignment experience persists permanently.
 - Combat-capable recruited entities enter through eligibility followed by rehabilitation/integration rather than instant membership.
 - Cursed equipment can be removed through dedicated community infrastructure but remains cursed and can later be voluntarily re-equipped.
+- Equipment is exclusive to Alya; allied NPCs do not use equipment.
 - The primary stat layer contains exactly eight mechanical attributes: Body, Agility, Soul, Charm, Dominance, Submission, Sadism, Masochism.
 - Enemy power/progression band, encounter class, and narrative role are separate dimensions; the old mixed Tier terminology is deprecated.
 - Encounter hierarchy is Normal → Elite → Mini-Boss → Boss.
@@ -300,140 +199,22 @@ These should not be reopened casually:
 
 ---
 
-# 4. Known Deliberate Deferrals
+# 5. Next Gate — Implementation Specification Pass
 
-These are not accidental gaps and should remain out of scope unless later evidence requires them:
+**Objective:** turn the closed Checkpoint B rules into deterministic implementation contracts without reopening macro design.
 
-1. General expedition fatigue/escalating risk.
-2. Specialized non-combat encounter archetypes such as pursuit/survival.
-3. Alternate narrative versions of bosses.
-4. Detailed farming simulation.
-5. Separate adult economy/inventory.
-6. Separate sexual crafting subsystem.
-7. Recurring Wound currency.
-8. Duplicate combat currencies.
-9. Universal enemy scaling.
-10. Excessive building proliferation.
+Recommended order:
 
----
+1. Combat state machine + turn lifecycle.
+2. Effects / Conditions / Triggers.
+3. Skill / Action schema.
+4. Equipment / transformations / curses.
+5. Character / progression / aptitude.
+6. Recruitment / rehabilitation / community.
+7. Time / production / economy.
+8. Exploration / encounters / Sidequests / Expeditions.
+9. Quests / events / world state.
+10. Save / persistence / migration.
+11. Information architecture / UX contracts.
 
-# 5. Critical Dependencies for Checkpoint B
-
-Checkpoint B should proceed in this order:
-
-1. Combat state model and turn lifecycle.
-2. Targeting and action resolution.
-3. Health/H-gauge and damage formulas.
-4. Core combat resources: Control, Surrender, Cruelty, Endurance.
-5. Status/effect lifecycle and stacking.
-6. Enemy Intent and AI contract.
-7. Victory/defeat/escape/capture resolution.
-8. Skill implementation schema and resolution contract.
-9. Equipment-derived effects and curse/blessing hooks.
-10. Recruitment eligibility → rehabilitation handoff.
-11. Encounter contract.
-12. Exploration/expedition contract.
-13. Community assignment/time contracts where combat dependencies exist.
-14. Progression and natural-growth formulas.
-15. Quest/event/world-state contract.
-16. Persistence/save contract.
-17. UX information contracts required by the above rules.
-
-The purpose is to close interfaces, not to balance every content entry immediately.
-
----
-
-# 6. Content Completion Checklist
-
-Before Checkpoint C can be declared complete, the project must have closed catalogs for:
-
-- [ ] Main Quest graph
-- [ ] Regional Quest graph
-- [ ] Character Quest graph
-- [ ] Handcrafted Sidequests
-- [ ] Reusable/Procedural Tasks
-- [ ] Alya final progression
-- [ ] Major ally roster
-- [ ] Specialized resident roster
-- [ ] Generic worker rules
-- [ ] Recruitable combat entities
-- [ ] Enemy roster
-- [ ] Boss roster
-- [ ] Region/world graph
-- [ ] Encounter tables
-- [ ] Skills
-- [ ] Passives
-- [ ] Equipment
-- [ ] Consumables
-- [ ] Resources/components
-- [ ] Recipes/transmutation definitions
-- [ ] Buildings/facilities
-- [ ] Production chains
-- [ ] Vendors/inventories
-- [ ] Rewards/drop tables
-- [ ] Narrative scenes/dialogues
-- [ ] Choices/flags/consequences
-- [ ] Endings
-
----
-
-# 7. Production Completion Checklist
-
-Before Checkpoint D can be declared complete, every implemented content item must have:
-
-- [ ] stable ID
-- [ ] implementation specification
-- [ ] data schema entry
-- [ ] acquisition/unlock conditions
-- [ ] UI presentation requirement
-- [ ] art requirement
-- [ ] audio requirement, if applicable
-- [ ] localization strings, if applicable
-- [ ] save/persistence behavior, if applicable
-- [ ] QA acceptance cases
-
----
-
-# 8. Checkpoint B Batch Register
-
-This is a historical index only. The domain sections above and their linked source documents are authoritative.
-
-| Batch | Primary topic | Result |
-|---|---|---|
-| B4 | Effects, duration, stacking, cleansing, source tracking | CLOSED |
-| B5 | Skill composition, dependencies, conditions, costs, target validation, criticals | CLOSED |
-| B6 | Targeting and absence of spatial positioning | CLOSED |
-| B7 | Enemy Intent and AI | CLOSED |
-| B8 | Victory, defeat, surrender, incapacitation, finishers | CLOSED |
-| B9 | Equipment, skill transformation, modifiers, caps | CLOSED |
-| B10 | Level, XP, Skill Points, character growth | CLOSED |
-| B11 | Skill/passive/H-skill loadouts | CLOSED |
-| B12 | Species, aptitude, natural growth, individual potential | CLOSED |
-| B13 | Assignments and competence | CLOSED |
-| B14 | Time, day/night, recovery, H-gauge decay | CLOSED |
-| B15 | Buildings, construction, workers, space | CLOSED |
-| B16 | Resources, storage, upkeep, economy, trade | CLOSED |
-| B17 | World map, travel, Sidequests vs Expeditions | CLOSED |
-| B18 | Quests, objectives, events, relationships, world state | CLOSED |
-
----
-
-# 9. Working Rule Going Forward
-
-We should stop asking "what other systems could the game have?" unless a real gap appears.
-
-The default question is now:
-
-> **Which existing system/interface owns this requirement, and is that interface specified tightly enough to implement it?**
-
-A proposed new mechanic must identify the gap it solves and why existing systems cannot solve it through content, configuration, specialization, or extension.
-
-## Current verdict
-
-**Checkpoint A: COMPLETE**
-
-**Checkpoint B: IN PROGRESS — macro rules substantially consolidated; deterministic contracts/formulas still required**
-
-**Checkpoint C: PENDING — Content Complete**
-
-**Checkpoint D: PENDING — Production Complete**
+**Checkpoint B exit condition:** every system above has a deterministic contract; any remaining unknowns are tuning or content, not design decisions.

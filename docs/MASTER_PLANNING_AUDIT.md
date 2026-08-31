@@ -4,41 +4,38 @@
 
 This is the master checklist for reaching **Planning Complete**: the point at which the game's design and content specification are sufficiently closed that implementation/production can proceed without requiring new major design decisions.
 
-This document consolidates the current architecture, narrative canon, R1–R15 checkpoint, Skills Audit, existing structured data, and Checkpoint B decisions. It is a planning-status document, not a replacement for domain-specific source-of-truth documents.
+This document consolidates the current architecture, narrative canon, R1–R15 checkpoint, Skills Audit, existing structured data, Checkpoint B decisions, and the completed Implementation Specification Pass. It is a planning-status document, not a replacement for domain-specific source-of-truth documents.
 
 ## Planning Completion Standard
 
-A domain is **CLOSED** when its design contract is decided. A domain may still require a later **implementation specification** (schemas, formulas, interfaces, exact state transitions, edge cases) or **content production** without reopening its design.
+A domain is **CLOSED** when its design and implementation contract are decided. A domain may still require **content production**, implementation, art, audio, localization, QA, and balance work without reopening its design.
 
 Statuses:
-- **CLOSED** — design decision is established.
-- **SPECIFICATION NEEDED** — design is closed, but the implementation contract still needs to be written.
-- **CONTENT NEEDED** — system design is closed enough structurally, but the complete content set is missing.
+- **CLOSED** — design/specification is established.
+- **CONTENT NEEDED** — system is closed but final content set is still missing.
 - **DEPENDENCY** — cannot be completed until another domain is resolved.
 - **OPTIONAL** — deliberately deferred and not required for the base game.
-- **OPEN DECISION** — a genuine design choice remains unresolved.
+- **OPEN DECISION** — a genuine design/specification choice remains unresolved.
 
 ## Gate Model
 
 ### Checkpoint A — Architecture Complete
 **STATUS: COMPLETE**
 
-The macro architecture is closed. R1–R15 and convergence decisions are closed; `GAME_ARCHITECTURE.md` is the current high-level source of truth.
-
 ### Checkpoint B — Rules Complete
 **STATUS: COMPLETE**
 
-B4–B18 and the Checkpoint B Mega-Batch closed the remaining macro gameplay decisions. Remaining work under domains marked **SPECIFICATION NEEDED** is implementation specification, not new design discovery: exact schemas, formulas, interfaces, deterministic lifecycle contracts, and edge cases must still be written before production implementation.
+### Implementation Specification I1–I11
+**STATUS: COMPLETE**
+
+### I12 — Cross-System Integration & Final Specification Audit
+**STATUS: COMPLETE**
 
 ### Checkpoint C — Content Complete
 **STATUS: NOT STARTED AS A FORMAL GATE**
 
-Every planned region, character, enemy, item, building, quest, encounter, resource, vendor, and narrative sequence exists in the content specification.
-
 ### Checkpoint D — Production Complete
 **STATUS: NOT STARTED AS A FORMAL GATE**
-
-Every content/system requirement has implementation, UI, art, audio, localization, save, and QA requirements defined.
 
 ---
 
@@ -48,173 +45,179 @@ Every content/system requirement has implementation, UI, art, audio, localizatio
 |---|---|---|---|---|
 | 1 | Game identity / pillars | CLOSED | None unless implementation exposes contradiction | A |
 | 2 | Core gameplay loop | CLOSED | None | A |
-| 3 | World structure | CLOSED | Final world graph, region rules | C |
+| 3 | World structure | CLOSED | Final world graph, region content | C |
 | 4 | Narrative canon | CLOSED | Content implementation | A/C |
-| 5 | Narrative implementation | CLOSED | Scene/quest/flag graph | B/C |
-| 6 | Character architecture | CLOSED | Concrete roster and data | C |
-| 7 | Character content | CLOSED | Final roster, stats, skills, arcs, recruitment, assets | C |
+| 5 | Narrative implementation | CLOSED | Implement scene/quest/flag graph | C/D |
+| 6 | Character architecture | CLOSED | Concrete roster/data | C |
+| 7 | Character content | CLOSED | Final roster, stats, skills, arcs, recruitment, assets | C/D |
 | 8 | Enemy architecture | CLOSED | Concrete data | C |
 | 9 | Enemy content | CLOSED | Final roster, AI, stats, drops, variants | C |
-| 10 | Combat rules | CLOSED | Formal formulas, lifecycle, action queue/resolution, edge-case spec | B-spec |
-| 11 | Status/effects | CLOSED | Formal effect contract, timing, stacking/cleanse edge-case spec | B-spec |
-| 12 | Skills | CLOSED | Final data schema, formulas, costs, targeting, transformations, acquisition content | B-spec/C |
-| 13 | Equipment/items | CLOSED | Final schema, transformation vocabulary, catalog, acquisition | B-spec/C |
-| 14 | Curses/blessings | CLOSED | Exact state/progression specification and content | B-spec/C |
-| 15 | Recruitment | CLOSED | Exact data contract and content | B-spec/C |
-| 16 | Rehabilitation/integration | CLOSED | Facility/process state contract and content | B-spec/C |
-| 17 | Community architecture | CLOSED | None at macro level | A |
-| 18 | Buildings/facilities | CLOSED | Final building catalog, costs, upgrades, effects | C |
-| 19 | Assignments/aptitude | CLOSED | Growth/competence/output formulas and edge-case spec | B-spec |
-| 20 | Resources | CLOSED | Resource taxonomy, acquisition, rates, storage footprint, sinks | B-spec/C |
-| 21 | Economy/trade | CLOSED | Prices, inventories, refresh, reward curves | B-spec/C |
-| 22 | Ecology/production | CLOSED | Production cycles, renewable/unique rules | B-spec/C |
-| 23 | Exploration | CLOSED | Sidequest vs Expedition contracts, travel, generation, persistence spec | B-spec/C |
-| 24 | Encounters | CLOSED | Encounter schema, generation, resolution spec | B-spec/C |
-| 25 | Quests | CLOSED | Quest state machine, objective semantics, trigger contract | B-spec/C |
+| 10 | Combat rules | CLOSED | Implementation, content, balance, QA | D |
+| 11 | Status/effects | CLOSED | Content and QA | C/D |
+| 12 | Skills | CLOSED | Final catalog/content, implementation, balance | C/D |
+| 13 | Equipment/items | CLOSED | Final catalog/content, implementation, balance | C/D |
+| 14 | Curses/blessings | CLOSED | Exact content and implementation | C/D |
+| 15 | Recruitment | CLOSED | Final content and implementation | C/D |
+| 16 | Rehabilitation/integration | CLOSED | Facility/content implementation | C/D |
+| 17 | Community architecture | CLOSED | Implementation | D |
+| 18 | Buildings/facilities | CLOSED | Final catalog, costs, upgrades, effects | C |
+| 19 | Assignments/aptitude | CLOSED | Final tuning/content | C/D |
+| 20 | Resources | CLOSED | Final taxonomy/content, rates, sinks | C/D |
+| 21 | Economy/trade | CLOSED | Prices, inventories, refresh, reward curves | C/D |
+| 22 | Ecology/production | CLOSED | Production content and tuning | C/D |
+| 23 | Exploration | CLOSED | Final region/travel content | C/D |
+| 24 | Encounters | CLOSED | Final encounter catalog/content | C/D |
+| 25 | Quests | CLOSED | Final quest graph/content | C/D |
 | 26 | Quest content | CLOSED | Full quest graph and data | C |
-| 27 | Time/day-night | CLOSED | Exact time blocks, ticks, waiting, day/night transitions | B-spec |
-| 28 | Defeat/recovery | CLOSED | Exact post-combat/post-defeat resolution, recovery, edge cases | B-spec |
-| 29 | Progression | CLOSED | XP/level curves, skill-point rules, natural growth formulas, power bands | B-spec/C |
-| 30 | Information architecture | CLOSED | Screen-level information flows | B-spec/D |
-| 31 | UX/UI | CLOSED | Screen inventory, wireframes, interaction contracts | C/D |
-| 32 | Save/persistence | CLOSED | Persistence model, save boundaries, migration details | B-spec/D |
+| 27 | Time/day-night | CLOSED | Implementation and balance | D |
+| 28 | Defeat/recovery | CLOSED | Implementation and content | D |
+| 29 | Progression | CLOSED | XP/level curves and balance | C/D |
+| 30 | Information architecture | CLOSED | Screen-level production implementation | D |
+| 31 | UX/UI | CLOSED | Screen inventory, wireframes, interaction implementation | D |
+| 32 | Save/persistence | CLOSED | Implementation, migration tests | D |
 | 33 | Art direction | SPECIFICATION NEEDED | Art bible, asset standards, pipeline | D |
 | 34 | Audio | SPECIFICATION NEEDED | Audio bible, event mapping, pipeline | D |
 | 35 | Localization | OPEN DECISION | Base language, string architecture, scope | D |
 | 36 | Accessibility/settings | OPEN DECISION | Required options and accessibility targets | D |
-| 37 | Technical implementation contracts | CLOSED | Concrete schemas, interfaces, state ownership | B-spec/D |
+| 37 | Technical implementation contracts | CLOSED | Implementation | D |
 | 38 | QA/testing | SPECIFICATION NEEDED | Acceptance tests and regression strategy | D |
-| 39 | Tutorial/onboarding | CLOSED | First-session flow and teaching content | C/D |
+| 39 | Tutorial/onboarding | CLOSED | First-session content and implementation | C/D |
 | 40 | Release/publishing | OPTIONAL / LATER | Platform/store/release decisions | Post-D |
+
+**Important:** rows 33, 35, 36 and 38 are production/publishing concerns rather than missing core gameplay design. They must be resolved before final production/release, but they do not block the conclusion that the gameplay implementation specification is closed.
 
 ---
 
-# 2. Checkpoint B — Final Closure Record
+# 2. Implementation Specification Pass — Final Closure Record
 
 ## Overall verdict
 
-**CHECKPOINT B IS CLOSED.**
+**I1–I11 are CLOSED and I12 is COMPLETE.**
 
-The Checkpoint B Mega-Batch completed the remaining macro gameplay decisions. No hard architectural contradiction was identified against the established architecture. The project can now move from **design discovery** to **implementation specification** without reopening the core gameplay model.
+The implementation pass converted the macro rules into deterministic contracts and the final integration audit found no blocking cross-system contradiction.
 
-The batches B4–B18 remain useful as decision history, but the domain documents and this audit are the source of truth. Do not create separate B-batch documents unless a later audit specifically requires one.
+### I1 — Combat State Machine + Turn Lifecycle
+- Initiative is randomized once at combat start; Agility modifies the initial result; the resulting order remains stable.
+- Turn start processes start-of-turn effects, duration update/expiration and derived-state recalculation before checking whether the actor can act.
+- Incapacitated/Surrendered actors cannot select or perform actions.
+- Combat terminates when all members of one team are Surrendered and/or Incapacitated.
+- Reinforcements enter at the end of the current order.
+- An atomic action completes its declared resolution pipeline before terminal combat state is committed.
 
-## Final reconciliation points
+### I2 — Actions + Resolution Pipeline
+- Insufficient resources make an action unselectable.
+- Player invalid-action handling requests another action; AI retains the selected action and changes target when possible.
+- Costs are validated before action resolution.
+- Multi-hit skills resolve as independent sub-actions.
+- Randomness uses deterministic per-combat/per-action RNG structures.
 
-1. **Sidequest vs Expedition:** Sidequests are player-controlled activities involving Alya and normally one selected ally, with explicit narrative exceptions. Expeditions are delegated community activities performed by NPCs without Alya.
-2. **Combat termination vs outcome taxonomy:** combat ends when all members of one team are Surrendered or Incapacitated. Kill, Knockout, Capture, Submission, Escape, and Objective Complete remain contextual post-combat/result outcomes where applicable.
-3. **HP semantics:** HP represents physical capacity/exhaustion tolerance rather than a literal wound counter. HP-cost skills cannot reduce their user below 1 HP.
-4. **Initiative:** Agility influences the initial initiative roll; the result is determined once at combat start and produces a fixed full combatant order for the combat.
-5. **Turn lifecycle:** the game uses rounds/timeline semantics; each active combatant receives its action according to the established order. Incapacitated/Surrendered combatants do not act.
-6. **Actions:** the action economy supports normal actions plus explicitly defined free/reaction behavior. H-skills share normal active skill slots.
-7. **Targeting:** targeting is skill-defined and supports manual, automatic, and explicit random targeting. Invalid targets cause action failure unless the skill's explicit policy says otherwise. Incapacitated targets are invalid; Surrendered targets are valid only for explicitly permitted interactions.
-8. **Damage:** skills use reusable formula templates plus explicit skill parameters. Modifier order is deterministic; damage cannot resolve below 1 after mitigation unless a future explicit system rule introduces an exception.
-9. **Effects:** application is immediate; duration follows the established start-of-turn/decrement lifecycle; explicit stacking groups govern coexistence; source tracking is retained; effect-specific removal policies are supported.
-10. **Enemy Intent:** Intent is the planned action/goal, not necessarily an immutable target/action script. Intent visibility varies. Revealed Intent is locked. If it becomes invalid, resolution uses the defined fallback target policy rather than silently rewriting the prior turn's intent.
-11. **H-system:** H-gauge is one combat value per combatant; Flirt/Intercourse/Finisher use separate acceptance thresholds. Thresholds can be adjusted per combat. H-gauge resets between combats and decays toward baseline outside combat. Overflow is part of the H-system state, not a fifth economy resource.
-12. **Defeat:** 0 HP causes Incapacitation immediately; Surrender is distinct and can occur before 0 HP. Combat ends when one team has no active members because all members are Surrendered or Incapacitated.
-13. **Equipment:** equipment belongs exclusively to Alya; allied NPCs do not use the equipment system. Equipment may modify/transform supported skill properties, including cursed equipment, using a finite declarative transformation vocabulary rather than arbitrary scripts.
-14. **Progression:** XP is individual; levels award Skill Points; skills have no levels; active/passive loadouts are limited; natural attribute growth depends on use/context/results; skill acquisition can additionally require community buildings/events/context.
-15. **Assignments:** each character has one primary Assignment; competence is discrete and non-decaying; assignment XP is below adventure/combat XP; production depends on competence, facilities, and conditions; assignment can be interrupted freely.
-16. **Time:** explicit player-controlled advancement drives a day/night cycle and calendar. Long-running activities continue during advancement. Menus do not advance time. Completion ordering uses timestamp plus priority.
-17. **Buildings:** the community has a physical layout with expandable space. Buildings may have tiers or be unique. Construction uses resources, time, and prerequisites; workers can affect construction; destruction/relocation has a cost.
-18. **Economy:** resources use layered taxonomy; storage exists; Food is continuous upkeep; Currency and barter coexist; selling is possible with restrictions; external trade exists with variable market state; resources do not have rarity/quality tiers.
-19. **Exploration:** the world uses an abstract regional/locality map. Travel consumes time. Sidequests are direct player activities; Expeditions are delegated NPC activities. Expeditions use stats/competence/context with controlled randomness and return automatically.
-20. **Narrative:** quests have persistent state and multiple objectives; objective retroactivity is defined per objective; events can be deterministic or random; world changes may be temporary or permanent; relationships persist; choices can affect gameplay; global and local state coexist.
-21. **Save:** autosave plus manual slots; saving is not permitted during combat; critical decision boundaries use explicit save/checkpoint handling.
-22. **Content architecture:** content is data-driven, uses stable semantic IDs, stores balance in data/configuration, and supports content versioning/migration.
+### I3 — Effects / Conditions / Triggers
+- Effects are instances with definition, source character/definition, duration, stacks and runtime state.
+- Stacking policies are data-driven.
+- Triggers are event-driven and may chain under an execution budget.
+- Effect removal/expiration behavior is definition-driven.
+- Source provenance supports parent execution/effect references.
 
-## Remaining work after Checkpoint B
+### I4 — Skills / Targeting / Formulas
+- Gameplay, AI and presentation data are separated.
+- Targeting uses composable queries; selection policy is skill-defined.
+- Random targeting supports filters and weights.
+- Formulas use constrained data-driven expressions.
+- Modifier ordering is deterministic.
+- Criticals and accuracy use the established generic result systems.
 
-The following are **not new gameplay decisions**. They are implementation-specification or content tasks:
-
-- Formal combat state machine + turn-resolution contract.
-- Effect/condition/trigger schemas and ordering rules.
-- Skill schema, formula templates, cost/targeting contracts, and transformation vocabulary.
-- Item/equipment/cursed-item schemas.
-- Recruitment/rehabilitation state machines.
-- Assignment/aptitude/growth formulas.
-- Resource/economy/production schemas and rates.
-- Sidequest and delegated Expedition schemas.
-- Encounter and quest state-machine schemas.
-- Time tick/block contract.
-- Defeat/recovery resolution contract.
-- XP/level/natural-growth formulas and power bands.
-- Information/UI screen contracts.
-- Save schema and migration implementation.
-- Concrete content catalogs and assets.
-
-These should be handled as **Implementation Specification Pass**, not another round of macro design discovery unless implementation exposes a genuine contradiction or structural gap.
-
----
-
-# 3. Decision History — B4–B18 + Mega-Batch
-
-The B batches are retained here as traceability rather than as independent specifications.
-
-| Batch | Scope | Result |
-|---|---|---|
-| B4 | Effects / modifiers | Closed |
-| B5 | Skills / action resolution | Closed |
-| B6 | Targeting / positioning | Closed |
-| B7 | Enemy Intent / AI | Closed |
-| B8 | Victory / defeat / finisher | Closed |
-| B9 | Equipment / modifiers | Closed |
-| B10 | Character progression | Closed |
-| B11 | Loadout | Closed |
-| B12 | Species / aptitude / growth | Closed |
-| B13 | Assignments | Closed |
-| B14 | Time | Closed |
-| B15 | Buildings | Closed |
-| B16 | Economy / resources | Closed |
-| B17 | Exploration / Expeditions | Closed |
-| B18 | Quests / events / narrative state | Closed |
-| B19 | Checkpoint B Mega-Batch | Closed; final macro rules consolidated |
-
----
-
-# 4. Explicitly Closed Decisions
-
-These should not be reopened casually:
-
-- Alya is the fixed protagonist.
-- Standard player-controlled sidequest/expedition structure is Alya + one selected ally, with narrative exceptions; delegated Expeditions are a separate community activity and do not include Alya.
-- The game loop interconnects narrative, exploration, combat, resources, community, and progression.
-- Main Quest is the principal structural progression gate.
-- Regions remain relevant after unlock where appropriate.
-- Procedural generation is used for repeatable exploration/gathering/selected reusable quests; handcrafted maps are reserved for places where authored design adds value.
-- Community construction can be destroyed or relocated.
-- Assignment experience persists permanently.
-- Combat-capable recruited entities enter through eligibility followed by rehabilitation/integration rather than instant membership.
-- Cursed equipment can be removed through dedicated community infrastructure but remains cursed and can later be voluntarily re-equipped.
+### I5 — Equipment / Transformations / Curses
 - Equipment is exclusive to Alya; allied NPCs do not use equipment.
-- The primary stat layer contains exactly eight mechanical attributes: Body, Agility, Soul, Charm, Dominance, Submission, Sadism, Masochism.
-- Enemy power/progression band, encounter class, and narrative role are separate dimensions; the old mixed Tier terminology is deprecated.
-- Encounter hierarchy is Normal → Elite → Mini-Boss → Boss.
-- Combat termination occurs when all members of one team are Surrendered or Incapacitated; contextual victory/post-combat outcomes retain the Kill, Knockout, Capture, Submission, Escape, and Objective Complete taxonomy where applicable.
-- Time uses an explicit day/night cycle with player-controlled advancement; permanent time pressure is exceptional.
-- Defeat primarily uses retreat/consequence rather than generic Game Over or systemic permadeath.
-- Information is progressively revealed using discover → available → explain → additional depth.
-- New macro-systems require a demonstrated structural gap.
+- Equipment changes occur outside combat.
+- Equipment can declaratively transform supported skill properties.
+- Transform conflicts use explicit priority.
+- Cursed equipment combines curse definition and active effect state and preserves curse state when unequipped.
+
+### I6 — Characters / Progression / Aptitude
+- Character architecture separates species/base data, personality, growth and modifiers.
+- Natural growth is derived from recorded activity/use and converted through periodic growth processing.
+- Skill points are persistent and spendable; skill requirements are data-driven and may include community/event gates.
+- Passives may be permanent or loadout-based.
+- Aptitude is derived from species, attributes, experience and modifiers.
+
+### I7 — Recruitment / Rehabilitation / Community
+- Recruitment, eligibility and rehabilitation/integration are separate states.
+- Rehabilitation is progress-driven and can use facilities, assignments and events.
+- Community members have availability/assignment states.
+- Assignment interruption follows the defined progress/output policy.
+- **Expedition = NPC-only delegated activity. Sidequest = activity requiring Alya.**
+
+### I8 — Time / Economy / Production / Assignments
+- Time is represented internally with continuous timestamps.
+- Day/night is a gameplay state and can gate availability.
+- Time advancement processes intermediate timestamps chronologically; same-timestamp events use priority.
+- Waiting supports semantic and custom durations.
+- Facilities/skills/statuses can modify recovery.
+- Production and upkeep use the defined time/tick model.
+- Inventory has **no fixed capacity limit**.
+
+### I9 — Exploration / Encounters / Sidequests / Expeditions
+- World navigation uses a regional/locality graph.
+- Travel duration is affected by route and modifiers.
+- Encounters use pools, conditions and weights.
+- Sidequests require Alya; Expeditions use NPCs only and resolve through checkpoints.
+- Expedition outcomes can include configured success/failure consequences.
+
+### I10 — Quests / Events / World State
+- Quest state uses a graph with objective progress and configurable policies.
+- Retroactivity is objective-defined.
+- Event processing is event-driven with explicit priority.
+- World state separates global/local, quest, relationship and simulation state.
+- Relationship state supports values, flags and stages.
+- Choices can modify narrative, gameplay and world state.
+
+### I11 — Save / Persistence / Data Contracts
+- Persistent state contains everything needed to reconstruct gameplay; reconstructible runtime state is not unnecessarily serialized.
+- Combat is not saved mid-resolution.
+- Autosaves and manual slots follow the established boundaries.
+- Save schema versioning is independent from game versioning.
+- Migrations are automatic and preserve the original save.
+- Randomness persists enough seed/RNG/execution state to reproduce relevant bugs.
+- Stable semantic IDs and immutable identity are used where required.
+- Gameplay, balance, localization and presentation data remain separated.
 
 ---
 
-# 5. Next Gate — Implementation Specification Pass
+# 3. I12 — Cross-System Integration & Final Audit
 
-**Objective:** turn the closed Checkpoint B rules into deterministic implementation contracts without reopening macro design.
+## Final decisions
 
-Recommended order:
+1. **Turn lifecycle:** `TurnStarted → Start-of-Turn Effects → Duration Update/Expiration → Derived State Recalculation → CanAct Check → Intent/Action Selection → Action Resolution → Triggered Reactions → End-of-Turn Effects → TurnEnded → Terminal Check`.
+2. **Atomic actions:** a resolving atomic action completes its declared pipeline before terminal combat state is committed.
+3. **Combat state composition:** participation state is distinct from other character state; Surrendered and Incapacitated cannot act.
+4. **HP:** current HP is clamped at 0; no overkill value is required or persisted.
+5. **Derived stats:** mutations invalidate derived state immediately; effective calculation may be lazy.
+6. **Effect provenance:** direct source plus optional parent execution/effect reference is sufficient.
+7. **Event ordering:** canonical mutation commits, derived state updates, domain event emits, then handlers cause subsequent mutations.
+8. **Transactions:** atomic by default; content may explicitly define partial behavior where appropriate. Inventory has no capacity ceiling.
+9. **Time advancement:** process intermediate timestamps chronologically; equal timestamps use explicit priority.
+10. **Randomness:** persist seed/RNG state and execution information required for deterministic reproduction/debugging.
+11. **AI:** preserve Intent/action when target becomes invalid; retarget if possible; otherwise use explicit fallback policy.
+12. **Architecture boundary:** new behavior requiring a new capability must update the specification/schema; ad-hoc special-case behavior is not an accepted design mechanism.
 
-1. Combat state machine + turn lifecycle.
-2. Effects / Conditions / Triggers.
-3. Skill / Action schema.
-4. Equipment / transformations / curses.
-5. Character / progression / aptitude.
-6. Recruitment / rehabilitation / community.
-7. Time / production / economy.
-8. Exploration / encounters / Sidequests / Expeditions.
-9. Quests / events / world state.
-10. Save / persistence / migration.
-11. Information architecture / UX contracts.
+## Audit result
 
-**Checkpoint B exit condition:** every system above has a deterministic contract; any remaining unknowns are tuning or content, not design decisions.
+**NO BLOCKING GAPS FOUND.**
+
+The audit did not identify a remaining cross-system contradiction that requires reopening macro design. Remaining production work consists of implementation, content, assets, UX, audio, localization, QA and numerical balancing.
+
+---
+
+# 4. Production Gate — What “Planning Complete” Means Now
+
+The project can now leave the planning/specification phase for the core game systems when:
+
+- the GDD remains aligned with this audit;
+- implementation contracts remain the source of truth for runtime behavior;
+- content is represented through data rather than one-off code;
+- new design decisions are explicitly recorded if implementation exposes a genuine gap;
+- production can proceed system-by-system without rediscovering intended game rules.
+
+**Current conclusion: CORE GAME DESIGN + IMPLEMENTATION SPECIFICATION CLOSED. PROCEED TO PRODUCTION.**
+
+This does **not** mean the game is content-complete or release-ready. Checkpoints C and D remain production gates.

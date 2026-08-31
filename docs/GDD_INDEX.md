@@ -25,20 +25,20 @@ The GDD is considered complete when every required domain below points to a curr
 | 02 Game Loop | Architecture | CLOSED |
 | 03 World | `docs/systems/world/` + data | SPECIFICATION NEEDED |
 | 04 Narrative | `docs/NARRATIVE_CANON.md` + narrative implementation docs | CANON CLOSED / CONTENT NEEDED |
-| 05 Characters | `docs/systems/characters/` + `data/characters/` | CONTENT NEEDED |
-| 06 Combat | `docs/systems/combat/` | SPECIFICATION NEEDED |
-| 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | STRUCTURE CLOSED / SPECIFICATION NEEDED |
-| 08 Status Effects | `docs/systems/combat/` | SPECIFICATION NEEDED |
-| 09 Enemies | `docs/systems/combat/` + `data/enemies/` | CONTENT NEEDED |
-| 10 Items | `docs/systems/items/` + `data/items/` | SPECIFICATION NEEDED |
-| 11 Economy | `docs/systems/economy/` | SPECIFICATION NEEDED |
-| 12 Resources | `docs/systems/resources/` | SPECIFICATION NEEDED |
-| 13 Buildings | `docs/systems/community/` | CONTENT NEEDED |
-| 14 Community | `docs/systems/community/` | MACRO CLOSED / SPECIFICATION NEEDED |
-| 15 Exploration | `docs/systems/exploration/` | SPECIFICATION NEEDED |
-| 16 Quests | `docs/systems/quests/` | SPECIFICATION NEEDED |
-| 17 Progression | `docs/systems/progression/` | SPECIFICATION NEEDED |
-| 18 Time | `docs/systems/time/` | SPECIFICATION NEEDED |
+| 05 Characters | `docs/systems/characters/` + `data/characters/` | SPECIFICATION NEEDED / CONTENT NEEDED |
+| 06 Combat | `docs/systems/combat/` | IN PROGRESS — B5–B8 CLOSED |
+| 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | STRUCTURE CLOSED / B5 CONTRACTS CLOSED / CONTENT NEEDED |
+| 08 Status Effects | `docs/systems/combat/` | B4 CLOSED / FORMAL SPECIFICATION NEEDED |
+| 09 Enemies | `docs/systems/combat/` + `data/enemies/` | ARCHITECTURE CLOSED / CONTENT NEEDED |
+| 10 Items | `docs/systems/items/` + `data/items/` | B9 PARTIALLY CLOSED / SPECIFICATION + CONTENT NEEDED |
+| 11 Economy | `docs/systems/economy/` | B16 MACRO CLOSED / SPECIFICATION NEEDED |
+| 12 Resources | `docs/systems/resources/` | B16 MACRO CLOSED / SPECIFICATION NEEDED |
+| 13 Buildings | `docs/systems/community/` | B15 MACRO CLOSED / CONTENT NEEDED |
+| 14 Community | `docs/systems/community/` | B13–B15 MACRO CLOSED / SPECIFICATION NEEDED |
+| 15 Exploration | `docs/systems/exploration/` | B17 MACRO CLOSED / SPECIFICATION NEEDED |
+| 16 Quests | `docs/systems/quests/` | B18 MACRO CLOSED / SPECIFICATION NEEDED |
+| 17 Progression | `docs/systems/progression/` | B10–B12 MACRO CLOSED / SPECIFICATION NEEDED |
+| 18 Time | `docs/systems/time/` | B14 MACRO CLOSED / SPECIFICATION NEEDED |
 | 19 Recruitment | `docs/systems/recruitment/` | SPECIFICATION NEEDED |
 | 20 Rehabilitation | `docs/systems/recruitment/` or community docs | SPECIFICATION NEEDED |
 | 21 Transmutation | `docs/systems/items/` / resources docs | SPECIFICATION NEEDED |
@@ -58,7 +58,7 @@ The GDD is considered complete when every required domain below points to a curr
 Macro architecture closed. **COMPLETE.**
 
 ### Checkpoint B — Rules Complete
-Deterministic rules, formulas, state transitions, edge cases, and system interfaces closed. **NEXT.**
+Deterministic rules, formulas, state transitions, edge cases, and system interfaces closed. **IN PROGRESS.** B4–B18 macro decisions are consolidated; detailed contracts/formulas remain.
 
 ### Checkpoint C — Content Complete
 Complete game content catalog and dependency graph closed. **PENDING.**
@@ -72,4 +72,4 @@ The GDD should explain what the game means and how it behaves. Large concrete ca
 
 ## Maintenance rule
 
-Whenever a planning decision is finalized, update the relevant domain source first and then update this index/audit status. Historical audits may preserve rationale but must not become competing sources of truth.
+Whenever a planning decision is finalized, update the relevant domain source first and then update this index/audit status. Historical batch logs are secondary context only and must not become competing sources of truth.

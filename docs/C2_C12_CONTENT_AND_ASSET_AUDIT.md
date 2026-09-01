@@ -6,26 +6,6 @@ This document consolidates the audits from C2 through C12. Its purpose is to det
 
 This is intentionally an **audit and production-readiness pass**, not a claim that every still-undefined content item has already been designed. Where upstream content is missing, the audit records the gap instead of inventing content silently.
 
-## Overall conclusion
-
-**Core systems: locked.**
-
-**Content inventory: audited.**
-
-**Content lock: not yet fully achieved.**
-
-The project can now move through the remaining content decisions in a controlled way. The largest unresolved content dependencies are:
-
-1. recruitable ally roster;
-2. named/generic NPC roster;
-3. enemy encounter-role matrix and boss roster;
-4. facilities;
-5. world/region/location roster;
-6. scene-to-CG mapping;
-7. asset registry/classification of existing source art.
-
-Skills, items and Alya's outfit count are comparatively healthy and should be consolidated rather than expanded indiscriminately.
-
 ---
 
 # C2 — Protagonist & Outfit Audit
@@ -61,19 +41,38 @@ The remaining work is classification rather than expansion:
 - required icons and thumbnails;
 - asset reuse opportunities.
 
+## Decisions now locked
+
+- Target final scope: **8–10 main outfits**.
+- Outfits are a **unified equipment layer**; every outfit occupies the equipment slot and may provide stats/effects.
+- Small visual variants may exist, but should remain limited.
+- Each outfit is treated as a **separate AI-generated visual asset set**; do not assume modular reuse.
+- Every final outfit needs **battle representation**.
+- Only narratively special outfits need additional dedicated CG/cut-in treatment.
+- The existing 11 slots are **not sacred**; retain, replace or remove them based on final content needs.
+- Alya uses **sprite + portrait** in exploration/base presentation.
+- Target base expression coverage: **~8–12 expressions**.
+- Portraits may vary by outfit/equipment.
+- Battle representation should be available per outfit, with shared animations where practical.
+- Maintain an internal body/anatomy reference and versions required for CG/H-content production.
+- Maintain a full Alya character reference bible covering identity, outfits, expressions, proportions and generation rules.
+- Every skill has an icon and **every final skill has a cut-in**; whether cut-ins vary by Alya outfit remains a separate pending decision.
+- Only visually important gameplay states require dedicated art.
+- Some outfits may have special damaged/altered states.
+
 ## Recommendation
 
-Do not add outfits merely to increase variety. Treat the 11 existing slots as the candidate final set and only add one if a gameplay, narrative or meaningful visual role is uncovered.
+Do not add outfits merely to increase variety. Consolidate the existing slots into the 8–10 final candidates after narrative/gameplay mapping.
 
-## Art requirements to resolve
+## Art requirements
 
-For each outfit:
+For each final outfit:
 - full-body reference;
-- battle representation if visible;
+- battle representation;
 - portrait variant if required;
 - inventory/equipment icon if gameplay-linked;
-- event/CG variant only when the outfit is materially important;
-- any special cut-in dependency.
+- event/CG variant only when narratively important;
+- cut-in dependency, if any.
 
 ---
 
@@ -81,19 +80,71 @@ For each outfit:
 
 ## Existing baseline
 
-The character catalog contains several ally-oriented entries, including Ranger, WitchAlly, Dancer, Nun, RebelCommander, Wanderer and Monk. However, these records are role/archetype placeholders rather than a complete recruitable roster. fileciteturn104file0L2-L2
+The character catalog contains several ally-oriented entries, including Ranger, WitchAlly, Dancer, Nun, RebelCommander, Wanderer and Monk. However, these records are role/archetype placeholders rather than a complete recruitable roster.
 
 ## Assessment
 
-**🔴 Not locked.**
+**🟡 Strong candidate roster; final character-level specification still in progress.**
 
 Recommended final scope: **8–12 recruitable allies; 10 is the preferred planning target.**
 
-## Required lock fields
+The current candidate roster contains 10 conceptual slots. The roster is treated as a target, not a hard mathematical requirement; a final range of roughly 8–12 remains acceptable if the audit identifies a genuine redundancy or missing role.
 
-Every recruitable ally needs:
+## Global ally rules locked so far
+
+- All recruitable allies can participate in H-content.
+- H-specialization is a **secondary dimension**, not a formal class.
+- Classes/roles are flavor rather than rigid gameplay classes.
+- Species influence natural aptitudes but do not rigidly determine builds.
+- Characters without natural aptitude take longer to develop a function.
+- Allies are special community members and may be assigned to community activities.
+- **Expedition = NPC/community-only activity; Alya does not participate.**
+- An ally sent on an Expedition is unavailable to the active party while away.
+- Sidequests require Alya/player participation.
+- Some allies are major narrative characters; others may be more gameplay/community-focused.
+- At least one ally is a jack-of-all-trades.
+- At least one ally has high potential but poor initial performance and a faster-than-normal development curve.
+- At least one ally is an explicit rival and is eventually recruitable.
+- Some allies are highly specialized in community functions; community coverage is intentional but does not require one ally per facility.
+- Some allies overlap in function, provided their execution and identity differ.
+
+## Candidate roster after C3-A–G
+
+| # | Provisional concept | Species | Presentation | Combat identity | Community identity | Narrative/recruitment role |
+|---|---|---|---|---|---|---|
+| 1 | First Ally / Generalist | Humanoid | **Femboy** | Generalist | Generalist | First ally; initially joins from a survival-oriented situation |
+| 2 | Guardian | **Minotaur-like / strong wild species** | **Futanari** | Tank/Support | Security + training | **First ally recruited through combat**; doubles as an organic combat tutorial |
+| 3 | Rival | Species pending | **Feminine** | Bruiser/DPS | Community function unlocks after recruitment | Mid-game recruitable antagonist; ideology/pragmatism/leadership conflict with Alya |
+| 4 | Scholar / Erudite | Species pending; elf-like candidate | **Feminine** | Hybrid mage | Research | Fascinated by Alya's healing and treats it as something to understand/study |
+| 5 | Caregiver | Species pending | **Futanari** | Healer/Support | Physical health and recovery | Community-focused support specialist |
+| 6 | Artisan | Species pending | **Feminine** | Utility/control | Production; improvisation; equipment modification | Unexpected production specialist; initially works for rewards before bonding with the community |
+| 7 | Fox Huntress | **Fox beastfolk** | **Futanari** | **Ranged DPS + traps** | Expeditions | Adventurous explorer; high-value Expedition specialist |
+| 8 | Merchant | Species pending | **Femboy** | Utility/debuffer | Commerce/economy | Charismatic opportunist; wants to build a commercial empire and believes money solves many problems |
+| 9 | Misfit / Inadapted | Species pending | **Futanari** | Generalist with high growth potential | Unexpectedly high aptitude in a specific community area | Optional sidequest recruit; initially poor due to mismatched attributes/aptitudes and lack of training, but develops unusually fast |
+| 10 | Devotee / Community Anchor | **Faerie-like species** | **Feminine** | Protection + buffs | Social cohesion, morale, mediation, integration and welfare | Encountered helping people during a crisis; initially shy about H-content but becomes comfortable |
+
+## Roster audit decisions
+
+- Target remains **10 allies**, with **8–12 acceptable** if later evidence justifies adjustment.
+- Approximately **8–9 allies should be meaningfully combat-capable**, while 1–2 may be much more community-oriented.
+- Approximately **7–8 allies should be excellent community contributors**.
+- The first ally and the Misfit are both generalists but deliberately distinct: the first has immediate versatility; the Misfit has unusually high long-term learning/growth.
+- The Guardian and Caregiver are considered sufficiently distinct: **Guardian prevents/mitigates harm; Caregiver restores physical condition/recovery**.
+- The Huntress and Artisan have utility overlap but different execution and identity; no change required.
+- The Merchant should be combat-viable but is not intended to be a specialist; his kit is primarily item/resource-driven. No dedicated combat specialization is required for him.
+- No additional melee DPS is currently required; only add one if a concrete later gap appears.
+- Magic should be distributed across multiple characters; the Scholar is the most obvious magical specialist but does not need to be a rigid "mage class".
+- The Rival should gain a community function only after recruitment, reinforcing the character's transition from antagonist to ally.
+- No deliberately useless-in-combat ally is required.
+- Community coverage should not be expanded merely to create one ally per facility. Generic NPCs, facilities and systems can cover functions without dedicated allies.
+- Species diversity is considered healthy without requiring ten unique species.
+
+## Character specification still required
+
+Every final recruitable ally needs:
 - stable character ID;
-- species/body archetype;
+- exact species;
+- sex/presentation classification;
 - natural stats/aptitudes;
 - combat role;
 - starting skills;
@@ -103,13 +154,13 @@ Every recruitable ally needs:
 - recruitment condition;
 - narrative role;
 - relationship hooks;
-- outfit/visual requirements;
+- visual requirements;
 - portrait/battle representation requirements;
-- H-content applicability where relevant.
+- H-content applicability and presentation requirements.
 
 ## Art implication
 
-Every bespoke ally creates a dependency cluster. Avoid creating ally art before the roster and roles are locked.
+Every bespoke ally creates a dependency cluster. Avoid creating final ally art before the character-level roster is locked.
 
 ---
 
@@ -117,7 +168,7 @@ Every bespoke ally creates a dependency cluster. Avoid creating ally art before 
 
 ## Existing baseline
 
-There are 16 character records, but many are generic role labels such as Quest Giver, Quest Target, Ally or Ally that has quest. fileciteturn104file0L2-L2
+There are 16 character records, but many are generic role labels such as Quest Giver, Quest Target, Ally or Ally that has quest.
 
 ## Assessment
 
@@ -137,13 +188,15 @@ Generic NPCs should not require bespoke art for every generated person.
 
 Named characters require a character package; generic archetypes should be designed as reusable templates with controlled variation.
 
+All NPC sex/presentation remains open at the character level, subject to the global visual direction defined for the project.
+
 ---
 
 # C5 — Enemy & Boss Audit
 
 ## Existing baseline
 
-The enemy catalog contains **25 concrete entries** spanning Tier 1–3 and Mob, Elite and Quest Target classifications. Examples include Guard, Slime, Goblin, Augmented, Kunoichi, Krakenblood, Witch, Mummy, Dullahan, Angel, Dragonkin, Fallen Angel, Lamia and Demon. fileciteturn105file0L2-L2
+The enemy catalog contains **25 concrete entries** spanning Tier 1–3 and Mob, Elite and Quest Target classifications. Examples include Guard, Slime, Goblin, Augmented, Kunoichi, Krakenblood, Witch, Mummy, Dullahan, Angel, Dragonkin, Fallen Angel, Lamia and Demon.
 
 ## Assessment
 
@@ -176,13 +229,15 @@ The existing Tier 3 Quest Targets are boss candidates, not automatic bosses.
 
 Prefer adding enemies to fill tactical gaps over adding species purely for visual novelty. A family can share a visual base while gaining meaningful gameplay/presentation differences.
 
+All enemy sex/presentation remains open until the enemy-level visual audit, while the global aesthetic should remain predominantly feminine/futanari with no masculine male archetypes.
+
 ---
 
 # C6 — Skill Presentation Audit
 
 ## Existing baseline
 
-The skills audit states that the existing catalog plus 14 approved additions has no remaining critical need for generic skills. fileciteturn109file0L2-L2
+The skills audit states that the existing catalog plus 14 approved additions has no remaining critical need for generic skills.
 
 ## Assessment
 
@@ -190,29 +245,33 @@ The skills audit states that the existing catalog plus 14 approved additions has
 
 Recommended final roster: **~55–70 skills**.
 
+## Locked presentation rule
+
+**Every final skill requires both:**
+1. a skill icon representing the action;
+2. a dedicated cut-in.
+
+This supersedes the earlier planning assumption that only selected/signature skills would receive cut-ins.
+
+Whether a cut-in changes based on Alya's equipped outfit remains **pending**.
+
 ## Required presentation classification
 
 Every skill:
 - icon;
 - name/description UI data;
+- cut-in;
 - VFX/presentation class.
 
-Active combat skills:
-- combat presentation requirement.
-
-Signature/H-skills:
-- dedicated cut-in when justified.
-
-Passive skills:
-- generally no cut-in.
+Passive skills also require the icon and cut-in under the global rule; the cut-in can use an appropriate non-combat presentation if a conventional attack animation is not applicable.
 
 ## Production target
 
 Approximately:
 - **55–70 skill icons**;
-- **~35–45 cut-ins**, subject to actual eligibility.
+- **55–70 cut-ins**, subject to the final skill count.
 
-Do not create a cut-in for every skill automatically.
+Do not create additional skill content solely to increase asset volume.
 
 ---
 
@@ -220,7 +279,7 @@ Do not create a cut-in for every skill automatically.
 
 ## Existing baseline
 
-`items.csv` contains 25 concrete entries, including ordinary equipment, Blessed items, Cursed chains and gameplay-changing effects. fileciteturn106file0L2-L2
+`items.csv` contains 25 concrete entries, including ordinary equipment, Blessed items, Cursed chains and gameplay-changing effects.
 
 ## Assessment
 
@@ -329,13 +388,13 @@ These are planning ranges, not mandatory quotas.
 
 ## Existing baseline
 
-The source tree already has category areas for characters, enemies, items, main character, cut-ins, mechanics and UI, plus an `audio_legacy` area. fileciteturn103file0L2-L2
+The source tree already has category areas for characters, enemies, items, main character, cut-ins, mechanics and UI, plus an `audio_legacy` area.
 
 ## Assessment
 
 **🔴 Registry still required before production can be treated as deterministic.**
 
-Existing source filenames include generated/hash-like identifiers, so filenames alone cannot establish what content an asset belongs to. fileciteturn107file0L2-L2
+Existing source filenames include generated/hash-like identifiers, so filenames alone cannot establish what content an asset belongs to.
 
 ## Required asset registry
 
@@ -373,7 +432,7 @@ This audit therefore produces the **definitive requirement matrix** now, and ide
 
 ### Main character
 - Alya base character package
-- 11 outfit variants
+- 8–10 final outfit variants
 - required portrait/expression variants
 - battle presentation variants
 - equipment-linked presentation variants
@@ -381,7 +440,7 @@ This audit therefore produces the **definitive requirement matrix** now, and ide
 
 ### Skills
 - one icon per final skill
-- cut-ins for eligible/signature skills
+- **one cut-in per final skill**
 - VFX/presentation assets according to skill class
 
 ### Allies / NPCs

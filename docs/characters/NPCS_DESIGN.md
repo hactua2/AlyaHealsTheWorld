@@ -1,7 +1,7 @@
 # Alya Heals the World — NPC Design & Tier System
 
 ## Status
-**C4 — Conceptually LOCKED.** Source of truth for NPC structure and production tiers. Exact roster, numerical data, dialogue, quests and assets remain downstream. NPC relevance may be promoted/reduced later without redesigning the architecture.
+**C4 — Conceptually LOCKED.** Source of truth for NPC structure, production tiers and the canonical Named NPC roster. NPC relevance may be promoted/reduced later without redesigning the architecture.
 
 ## Core boundary: NPC vs Ally vs Enemy
 - Recruitable allies are persistent special community members with meaningful combat and/or community identities; see `ALLIES_ROSTER.md`.
@@ -87,7 +87,7 @@ Named NPCs receive, when justified by importance: full visual reference, portrai
 The global visual direction remains rigidly consistent with the project's extremely feminine aesthetic. NPCs should have substantially more species diversity than allies. Reusable templates are encouraged for lower tiers, with controlled variations.
 
 ## Visual Safety & Identity Constraints
-These constraints apply to the NPC roster and should also be treated as a global visual-direction rule for character design unless a more specific system rule overrides them.
+These constraints apply globally to NPCs and should also be treated as a global character-design rule. They are duplicated in `CHARACTER_BIBLE.md` because the Bible is the production-facing identity source.
 
 1. **Adult visual readability:** all characters are adults and must have an unambiguous adult visual read. Young-adult characters must still look clearly adult.
 2. **No child-coded body archetypes:** do not use `petite` as a character-design category or intentionally infantilized proportions. Avoid loli, shota, childlike, adolescent-coded or otherwise minor-coded presentation.
@@ -97,36 +97,58 @@ These constraints apply to the NPC roster and should also be treated as a global
 6. **Species, culture and function are separate axes:** a character's species should not automatically determine their faction, culture or gameplay role.
 7. **Subspecies may be visual/cultural only:** visual subspecies such as `Desert Elf` may exist without creating mechanical differentiation when the distinction is intended to be purely aesthetic/cultural.
 8. **No mechanical inflation from visual taxonomy:** purely visual/cultural species or subspecies distinctions should not create unnecessary stat, aptitude, combat or progression branches.
+9. **Character reference minimum:** each Named character's production reference must record species/subspecies, presentation, adult age bracket, height class, body type, distinctive visual traits and relevant generation constraints.
+10. **Presentation is not age:** Feminine, Futanari and Femboy are presentation categories and never imply a younger age bracket.
 
-## Legacy seed handling
-Existing CSV concepts are seeds, not automatically canonized. Preserve only concepts that pass the C4 audit.
+## Canonical Named NPC roster
+The finalized planning target is **21 Named recurring NPCs**. `NPC-020 Wanderer` was removed because the concept is already represented by the locked First Ally; it must not be recreated without new narrative/system justification.
 
-Current seeds requiring explicit audit:
-- `Tavernkeeper` — must be part of the community.
-- `Reaper` — neutral mysterious recurring NPC.
-- `Dryad` — nature/exploration quest giver and recurring multi-function narrative character.
-- `Priestess` — candidate NPC, subject to non-duplication audit.
-- `Dancer` — candidate for social/entertainment/world-event use, subject to non-duplication audit.
-- `EnemyCommander` — recurring faction commander; NPC + separate Enemy/Boss representation.
-- `Demonkin` — prisoner/slave of a faction; central to the legacy rescue concept.
-- `DemonAlly` — legacy rescue-quest seed associated with Demonkin; final entity structure remains downstream and should not assume two unrelated final characters.
+| ID | Concept | Scope/Faction | Species | Presentation | H Tier | Core function |
+|---|---|---|---|---|---|---|
+| NPC-001 | Tavernkeeper | Community | Human | Futanari | H3 | Tavern, social hub, rumors and community information |
+| NPC-002 | Dancer | Community | Desert Elf | Feminine | H2/H3 | Entertainment, social events and world-event participation |
+| NPC-003 | Community Elder | Community | Human | Feminine | H3 | Community memory, mediation and historical context |
+| NPC-004 | Mediator | Community | Human | Futanari | H2/H3 | Interpersonal disputes and community mediation |
+| NPC-005 | Pragmatic Mentor | Organization | Human | Feminine | H3 | Practical institutional guidance and training |
+| NPC-006 | Institutional Representative | Organization | Human | Femboy | H3 | Formal organizational interface, supervision and negotiation |
+| NPC-007 | Ferida Researcher | Organization | Augmented | Feminine | H3 | Ferida research, investigation and specialist information |
+| NPC-008 | Hardliner | Organization | Human | Futanari | H3/H4 | Institutional opposition, enforcement and political pressure |
+| NPC-009 | Regional Authority | Regional Center | Angel | Feminine | H3 | Regional governance and political legitimacy |
+| NPC-010 | Trade Representative | Regional Center | Lamia | Futanari | H2/H3 | Trade, routes, commerce and regional opportunities |
+| NPC-011 | Priestess | Regional Center | Human | Feminine | H3 | Spiritual community, compassionate counsel and rites |
+| NPC-012 | Tribal Matriarch | Tribe A | Mycelia | Feminine | H3 | Tribal leadership, spiritual authority and culture |
+| NPC-013 | Tribal Guide | Tribe A | Mycelia | Futanari | H2/H3 | Exploration, cultural mediation and tribal guidance |
+| NPC-014 | War-Chief | Tribe B | Orc | Futanari | H3 | Strength/status culture, duels and rites of passage |
+| NPC-015 | EnemyCommander | Adversarial | Human | Futanari | H3/H4 | Recurring faction commander; separate Enemy/Boss representation |
+| NPC-016 | Faction Dissident | Adversarial | Human | Femboy | H3 | Internal faction conflict and alternative perspective |
+| NPC-017 | Ferida Manipulator | Adversarial | Fallen Angel | Feminine | H4 | Major Ferida-linked antagonist and psychological manipulation |
+| NPC-018 | Reaper | World | Dullahan | Feminine | H3/H4 | Neutral mystery, death/threshold themes and recurring encounters |
+| NPC-019 | Dryad | World | Dryad | Feminine | H3 | Nature, exploration and multi-function quest hooks |
+| NPC-021 | Survivor | World | Orc | Futanari | H2/H3 | Vulnerability, recovery and consequences of regional conflict |
+| NPC-022 | Demonkin | Demon / World | Demon | Futanari | H3/H4 | Rescue, rehabilitation and legacy conflict |
 
-Other legacy seeds that strongly overlap the locked ally roster should not be duplicated merely because they exist in the old CSV.
+IDs remain stable; the unused `NPC-020` slot is intentional after the Wanderer retirement.
 
-## Addition/removal rule
-Create a new NPC when a clear narrative or system function benefits from a distinct entity. A quest may also legitimately create a new NPC when required by its story.
+## Species / culture decisions
 
-Do not create NPCs merely to hit a count, fill every facility, or duplicate an ally identity.
+- **Tribe A = Mycelia.** Distinct species-based tribal society with matriarchal spiritual organization.
+- **Tribe B = Orc.** Distinct species-based tribal society centered on strength, status, duels and rites of passage.
+- The two tribes remain species-distinct without requiring unique mechanics for every member.
+- **Desert Elf** is a visual/cultural Elf subspecies. The Dancer has darker skin and an athletic adult body; there is no mechanical distinction from Elf.
+- Existing CSV species/concepts are seeds rather than mandatory limits. The current enemy catalog includes Mycelia, Augmented, Orc, Dullahan, Angel, Fallen Angel, Lamia and Demon among other concepts, supporting a humanoid/supernatural-heavy roster without beastfolk saturation.
 
-NPC relevance is deliberately **elastic**: an NPC may be promoted from Template/Background to Named, or from a lower Named/H tier to a more important role, when later evidence supports it. Such changes should primarily affect content/asset scope, not architecture.
+## Cross-roster audit
 
-## Cross-system constraints
-- NPCs may provide services, relationships, quests, information, faction state, community functions and Expedition modifiers.
-- NPCs do not use combat turns as NPCs.
-- Separate Enemy/Boss representations are allowed for narrative characters.
-- Recruitable allies remain the principal persistent combat-capable community characters.
-- H-content follows the tier model rather than forcing bespoke assets for every NPC.
-- Persistent IDs allow promotion/demotion and state changes without rewriting references.
+- **Combat boundary:** NPCs never participate in combat while functioning as NPCs. Enemy/Boss representations are separate when needed.
+- **Ally boundary:** persistent combat-capable community identity remains concentrated in the 10 recruitable allies.
+- **Functional overlap:** NPC services may overlap with ally community capabilities only when the ally's distinctive identity remains intact.
+- **Species balance:** the NPC roster is deliberately human/humanoid/supernatural-heavy; strongly animal-derived species are a small minority.
+- **Visual safety:** no `petite` category, no child-coded proportions, and every character requires an unmistakably adult visual read.
+- **Relationship density:** dedicated relationship content is reserved for meaningful recurring connections rather than a complete matrix.
+- **H-content:** H tier is relevance-driven; H4 is reserved for major NPCs and dedicated CG scope.
+
+## Downstream production data
+Stable IDs, exact relationship variables, recruitment/rehabilitation state machines, quest hooks, H scene definitions, dialogue, localization, visual references, portraits, sprites, CGs, asset IDs and audio mapping remain downstream specifications.
 
 ## Content-lock verdict
-**C4 is conceptually closed.** Remaining work is the concrete NPC roster and downstream implementation data: stable IDs, exact functions, faction assignments, recruitment candidates, quest hooks, relationship states, H tiers, dialogue, visual assets and asset IDs.
+**C4 concrete NPC roster LOCKED. Character identity rules LOCKED.** Reopen the roster only when a concrete narrative/system gap is demonstrated.

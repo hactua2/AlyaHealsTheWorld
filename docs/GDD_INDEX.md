@@ -26,7 +26,7 @@ The GDD is considered complete when every required domain points to a current so
 | 02 Game Loop | Architecture | CLOSED |
 | 03 World | `docs/systems/world/` + data | CONTENT/SPEC DETAIL NEEDED |
 | 04 Narrative | `docs/NARRATIVE_CANON.md` + narrative implementation docs | CANON CLOSED / CONTENT NEEDED |
-| 05 Characters | `docs/systems/characters/` + `docs/characters/ALLIES_ROSTER.md` + `docs/characters/NPCS_DESIGN.md` | **ALLY ROSTER LOCKED / NPC MODEL LOCKED / NPC ROSTER CONTENT NEEDED** |
+| 05 Characters | `docs/characters/CHARACTER_BIBLE.md` + `docs/characters/ALLIES_ROSTER.md` + `docs/characters/NPCS_DESIGN.md` | **CHARACTER BIBLE LOCKED / DOWNSTREAM DATA & PRODUCTION NEEDED** |
 | 06 Combat | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
 | 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | STRUCTURE CLOSED / CONTENT LOCK PENDING |
 | 08 Status Effects | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
@@ -68,7 +68,7 @@ Implementation-facing contracts established. **COMPLETE.**
 Cross-system ordering, state composition, transactions, time advancement, determinism, AI fallback and source-of-truth boundaries audited. **COMPLETE.**
 
 ### Checkpoint C — Content Complete
-Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC model is conceptually locked; the concrete NPC roster is the next active content-lock pass.
+Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC model and concrete Named roster are locked; the Character Bible is now the consolidated character-identity source.
 
 ### Checkpoint D — Production Complete
 Implementation, UI, art, audio, localization, persistence, and QA requirements closed for every planned content item. **PENDING.**
@@ -79,9 +79,9 @@ The GDD should explain what the game means and how it behaves. Large concrete ca
 
 ## Current planning-to-production boundary
 
-Core gameplay rules and implementation contracts are closed. Remaining work is primarily content lock and production specification: roster completeness, concrete content definitions, asset requirements/dependencies, narrative content, UI presentation, audio, localization, accessibility and QA requirements.
+Core gameplay rules and implementation contracts are closed. Remaining work is primarily content lock and production specification: concrete content definitions, asset requirements/dependencies, narrative content, UI presentation, audio, localization, accessibility and QA requirements.
 
-The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_ROSTER.md`. NPC structure and the relevance/H-tier model are conceptually closed in `docs/characters/NPCS_DESIGN.md`. Numerical stats, exact skills, AI parameters, operational recruitment scripting, detailed H-content implementation and final asset IDs remain downstream specifications and should not be confused with open roster decisions.
+The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_ROSTER.md`. NPC structure and the relevance/H-tier model are conceptually closed in `docs/characters/NPCS_DESIGN.md`. `docs/characters/CHARACTER_BIBLE.md` consolidates the locked character identity rules and concrete Named NPC roster. Numerical stats, exact skills, AI parameters, operational recruitment scripting, detailed H-content implementation and final asset IDs remain downstream specifications.
 
 ## Maintenance rule
 

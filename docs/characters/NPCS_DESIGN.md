@@ -86,6 +86,18 @@ Named NPCs receive, when justified by importance: full visual reference, portrai
 
 The global visual direction remains rigidly consistent with the project's extremely feminine aesthetic. NPCs should have substantially more species diversity than allies. Reusable templates are encouraged for lower tiers, with controlled variations.
 
+## Visual Safety & Identity Constraints
+These constraints apply to the NPC roster and should also be treated as a global visual-direction rule for character design unless a more specific system rule overrides them.
+
+1. **Adult visual readability:** all characters are adults and must have an unambiguous adult visual read. Young-adult characters must still look clearly adult.
+2. **No child-coded body archetypes:** do not use `petite` as a character-design category or intentionally infantilized proportions. Avoid loli, shota, childlike, adolescent-coded or otherwise minor-coded presentation.
+3. **Adult body diversity:** acceptable silhouettes include slim, athletic, curvy, voluptuous, muscular, tall, average-height and mature bodies, provided the overall presentation remains clearly adult.
+4. **No furry-first identity:** AHTW is a humanoid fantasy RPG, not a furry-focused setting. Beastfolk/animal-derived species are minority elements and should remain clearly humanoid rather than animal-dominant in visual identity.
+5. **Species diversity without beastfolk saturation:** prefer Human, Elf/subspecies, supernatural humanoid and other established humanoid species where appropriate instead of defaulting to beastfolk.
+6. **Species, culture and function are separate axes:** a character's species should not automatically determine their faction, culture or gameplay role.
+7. **Subspecies may be visual/cultural only:** visual subspecies such as `Desert Elf` may exist without creating mechanical differentiation when the distinction is intended to be purely aesthetic/cultural.
+8. **No mechanical inflation from visual taxonomy:** purely visual/cultural species or subspecies distinctions should not create unnecessary stat, aptitude, combat or progression branches.
+
 ## Legacy seed handling
 Existing CSV concepts are seeds, not automatically canonized. Preserve only concepts that pass the C4 audit.
 

@@ -13,8 +13,9 @@ The GDD is considered complete when every required domain points to a current so
 3. `docs/systems/` — current system behavior and cross-system rules.
 4. `docs/implementation/` — implementation-facing contracts.
 5. `data/` — structured concrete content.
-6. `assets/` — visual/reference assets.
-7. `docs/archive/` — historical material only; never overrides current sources.
+6. `docs/characters/` and other dedicated content documents — canonical content definitions where a structured table alone is insufficient.
+7. `assets/` — visual/reference assets.
+8. `docs/archive/` — historical material only; never overrides current sources.
 
 ## GDD structure
 
@@ -25,7 +26,7 @@ The GDD is considered complete when every required domain points to a current so
 | 02 Game Loop | Architecture | CLOSED |
 | 03 World | `docs/systems/world/` + data | CONTENT/SPEC DETAIL NEEDED |
 | 04 Narrative | `docs/NARRATIVE_CANON.md` + narrative implementation docs | CANON CLOSED / CONTENT NEEDED |
-| 05 Characters | `docs/systems/characters/` + `data/characters/` | CONTENT NEEDED |
+| 05 Characters | `docs/systems/characters/` + `docs/characters/ALLIES_ROSTER.md` + NPC content docs | **ALLY ROSTER LOCKED / NPC CONTENT NEEDED** |
 | 06 Combat | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
 | 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | STRUCTURE CLOSED / CONTENT LOCK PENDING |
 | 08 Status Effects | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
@@ -67,7 +68,7 @@ Implementation-facing contracts established. **COMPLETE.**
 Cross-system ordering, state composition, transactions, time advancement, determinism, AI fallback and source-of-truth boundaries audited. **COMPLETE.**
 
 ### Checkpoint C — Content Complete
-Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.**
+Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC content is the next active content-lock pass.
 
 ### Checkpoint D — Production Complete
 Implementation, UI, art, audio, localization, persistence, and QA requirements closed for every planned content item. **PENDING.**
@@ -79,6 +80,8 @@ The GDD should explain what the game means and how it behaves. Large concrete ca
 ## Current planning-to-production boundary
 
 Core gameplay rules and implementation contracts are closed. Remaining work is primarily content lock and production specification: roster completeness, concrete content definitions, asset requirements/dependencies, narrative content, UI presentation, audio, localization, accessibility and QA requirements.
+
+The recruitable ally roster is now conceptually closed in `docs/characters/ALLIES_ROSTER.md`. Numerical stats, exact skills, AI parameters, operational recruitment scripting, detailed H-content integration and final asset IDs remain downstream specifications and should not be confused with an open roster decision.
 
 ## Maintenance rule
 

@@ -83,6 +83,12 @@ Core gameplay rules and implementation contracts are closed. Remaining work is p
 
 The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_ROSTER.md`. NPC structure and the relevance/H-tier model are conceptually closed in `docs/characters/NPCS_DESIGN.md`. `docs/characters/CHARACTER_BIBLE.md` consolidates the locked character identity rules and concrete Named NPC roster. Numerical stats, exact skills, AI parameters, operational recruitment scripting, detailed H-content implementation and final asset IDs remain downstream specifications.
 
+## Current project orientation and adult-content production references
+
+- `docs/PROJECT_STATE_AND_ROADMAP.md` — current project summary, canon, locked decisions, remaining work and recommended next sequence.
+- `docs/art/CHARACTER_IMAGE_PROMPTS.md` — full-body character reference prompts and generation guidance.
+- `docs/art/CHARACTER_EROTIC_CG_MATRIX.md` — first-pass situations and CG beats for 31 adult characters; non-graphic direction, not a final asset/unlock specification.
+
 ## Maintenance rule
 
 Whenever a planning decision is finalized, update the relevant domain source first and then update this index/audit status. Historical batch logs are secondary context only and must not become competing sources of truth.

@@ -79,12 +79,12 @@ In each row, the first attributes are suggested leading contributors, not approv
 
 | Skill | Suggested scaling | Proposed effect | Synergy / distinct identity |
 |---|---|---|---|
-| Flaunt | CHARM + DOM / AGI; All/composite | Area Strain action with explicit target set and one distinctive rider/filter | Area pressure. Share mechanics with G-bang/Strip if only damage and presentation differ. |
+| Flaunt | CHARM + DOM / AGI; All/composite | Mechanically distinct area Strain pressure action; define a unique targeting/scaling/cost rule | Owner decision: retain as distinct. Proposed role: broad, reliable area pressure without Strip's evasion rider; distinguish it from G-bang with a documented mechanical rule. |
 | Summon c-s | SOUL + SUB / CHARM; Mind | Summoned area Strain effect whose per-target output increases as enemy count falls, with curve/floor/cap | Distinct summon that concentrates force against fewer targets. Define target set and friendly-fire policy. |
-| Strip | AGI + CHARM / DOM; All/composite | Area Strain plus temporary evasion only if the combination creates a coherent trade-off | Supports tempo/evasion. Distinct from Flaunt/G-bang if the evasion window changes turn planning. |
+| Strip | AGI + CHARM / DOM; All/composite | Area Strain plus temporary evasion with defined duration and eligible incoming attacks | Owner decision: retain as distinct. The evasion window is its defining tactical identity and must resolve in a fixed order relative to the area effect. |
 | Pink mist | SOUL + DOM / CHARM; Mind | Area Strain-over-time plus one named defense debuff, with duration/ticks/stacking | Persistent area pressure and debuff synergy; distinct from direct AoE because value persists and may be cleansed/resisted. |
-| Summon Tentacles | SOUL + DOM + MAS / SUB; Mind/All composite | HighRisk area action affecting explicitly declared sides, with deterministic friendly-fire risk and target-count scaling | Distinct from Summon c-s because risk to allies/self is central. Do not use vague “aggro everyone”; declare targets and consequences. |
-| G-bang | SUB + CHARM / SOUL; All/composite | Area Strain attack with declared target set and scaling | Broad pressure. If no unique target rule, cost, risk, scaling or rider distinguishes it from Flaunt, share its template. |
+| Summon Tentacles | SOUL + DOM + MAS / SUB; Mind/All composite | HighRisk area action affecting explicitly declared sides, with deterministic friendly-fire consequences and target-count scaling | Owner decision: use declared sides/targets. Define whether allies/self are included, their effect channel, and the consequence if they are hit. Do not use vague “aggro everyone.” |
+| G-bang | SUB + CHARM / SOUL; All/composite | Mechanically distinct area Strain attack with declared target set and a unique scaling rule | Owner decision: retain as distinct. Proposed role: area pressure that scales upward with the number of valid enemies, with explicit cap; distinguish from Summon c-s, which concentrates output against fewer enemies. |
 
 ### E. Threshold conversion and finishers
 
@@ -96,8 +96,8 @@ In each row, the first attributes are suggested leading contributors, not approv
 | A-penetration | BODY + DOM / SAD; Crotch | P-growth-gated focused attack with control rider or Break setup, with resistance/duration | Supports Command/Break investment. Keep separate from Penetrate only if the rider changes the decision. |
 | Stomp | BODY + SAD / DOM; Crotch | Convert target Strain at a declared threshold into Vitality damage, with cap and mitigation order | Strain setup becomes primary defeat progress. Distinct due to damage-channel conversion. |
 | Swallow | SUB + MAS / CHARM; Mouth | Single-target finisher request at a declared Strain/state threshold; use encounter-permitted outcome | Uses threshold and resistance rules. Never unconditional instant victory. |
-| Bkakke | SUB + MAS / SOUL; Mouth + Breasts composite | All-target finisher request resolved per target; survivors trigger a defined self-risk consequence | Distinct from Swallow through multi-target risk. Never directly ends combat; encounter outcome rules decide. |
-| Enslave | DOM + SOUL / CHARM; Mind | Control/outcome request with eligibility, resistance, duration and a permitted result such as Yield/Disable/Capture when authored | Supports Command/Break. Keep with Absolute Control only if setup/resource loop or result differs materially. |
+| Bkakke | SUB + MAS / SOUL; Mouth + Breasts composite | All-target finisher request; encounter victory only if every enemy is eligible and every request succeeds | Owner decision: strict all-target victory condition. The skill never directly ends combat; if any enemy is ineligible or any request fails, the encounter continues. Atomicity of partial target outcomes remains open. |
+| Enslave / Absolute Control | DOM + SOUL / CHARM; Mind | One shared top-tier finisher identity with canonical eligibility, resistance, duration, permitted outcome and failure behavior | Owner decision: merge Enslave and Absolute Control. Legacy names may be presentation variants, not duplicate mechanical entries. |
 
 ### F. Passives, Overflow, capability and team support
 
@@ -132,7 +132,7 @@ These are candidates from the current audit, not rows currently present in the C
 | SKILL_TURN_THE_TABLES — Turn the Tables | AGI + MAS / SAD | Consume a specific recent event to recover, retaliate or reverse a state | Uses event history/resource conversion, unlike an immediate direct counter. |
 | SKILL_FOCUS_SURGE — Focus Surge | SOUL + CHARM / DOM | Temporary focus buff to a named action channel, with duration/cost | Setup turns and caster builds. Distinct from Naughty Thoughts if active commitment differs from passive tag bonus. |
 | SKILL_DIRECT_ALLY — Direct Ally | CHARM + DOM / SOUL | Improve ally's next action or grant a tactical action only if action-economy rules permit | Coordinated team turns. Distinct from Encourage if it changes action opportunity/targeting, not just buff magnitude. |
-| SKILL_ABSOLUTE_CONTROL — Absolute Control | DOM + SOUL / CHARM | High-investment Command/Break conversion into a permitted outcome request with strict eligibility/resistance | Distinct from Enslave only if setup/resource investment or outcome semantics materially differ. |
+| SKILL_ABSOLUTE_CONTROL — Absolute Control | DOM + SOUL / CHARM | Merged into the shared Enslave/Absolute Control finisher identity | No separate mechanical catalog row unless a future decision establishes a distinct requirement/scaling profile. |
 | SKILL_UNBROKEN — Unbroken | BODY + MAS / SAD | Prevent one narrowly defined defeat/disable event, with strict cooldown/once-per-encounter limit | Emergency exception after mitigation fails, not ordinary damage reduction. |
 | SKILL_OVERFLOW_ENGINE — Overflow Engine | SOUL + DOM / MAS | Active/configurable conversion of a resolved Overflow event into one declared output, with recursion/output caps | Distinct from automatic recovery or reactive damage only if player choice matters. |
 | SKILL_MUTUAL_RUIN — Mutual Ruin | BODY + SAD + MAS / DOM | HighRisk exchange of a declared self-cost for a bounded substantial target effect | Synergizes with Resolve, Fortitude and Unbroken. Retain only if risk/payoff creates a real decision; never bypass encounter outcomes. |

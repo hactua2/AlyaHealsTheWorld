@@ -159,8 +159,7 @@
           "id": "VS1_CHOICE_GATE_WITHDRAW",
           "flag": "VS1_WITHDREW",
           "effects": [
-            "THREAT_PRESSURE_UP",
-            "NO_IMMEDIATE_RESOURCE_COST"
+            "THREAT_PRESSURE_UP"
           ]
         }
       ],

@@ -20,7 +20,7 @@
       "objectives": ["Meet Mara Venn", "Inspect the cistern", "Ask one local for context"],
       "set_flags": ["VS1_MARA_MET", "VS1_CISTERN_INSPECTED"],
       "next_quest_id": "VS1_Q02",
-      "optional_content_ids": ["VS1_DISCOVERY_CISTERN_RESIDUE"],
+      "optional_content_ids": ["VS1_DISCOVERY_CHANNEL_SAMPLE"],
       "failure_policy": "No hard failure; allow revisiting conversations."
     },
     {

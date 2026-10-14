@@ -64,10 +64,10 @@ Preserve the fantasy and player-facing intention where useful, but **reformulate
 
 ## 3. Current inventory and confidence
 
-- Legacy CSV: **53 named skill rows** observed in the current file.
+- Legacy CSV: **54 named skill rows** observed in the current file.
 - Previously approved additions: **14 proposed skills** (5 Tier 1, 5 Tier 2, 4 Tier 3).
-- Arithmetic planning total: **67 entries before deduplication, ID normalization, passives review, or replacement**.
-- The CSV currently has legacy field names, free-text effects, no stable skill IDs, inconsistent capitalization/naming, and eight trailing rows with no skill name. Those trailing rows are malformed/placeholder records and are not counted as skills.
+- Arithmetic planning total: **68 entries before deduplication, ID normalization, passives review, or replacement**.
+- The CSV currently has legacy field names, free-text effects, no stable skill IDs, inconsistent capitalization/naming, and nine trailing rows with no skill name. Those trailing rows are malformed/placeholder records and are not counted as skills.
 - The 14 approved additions are not fully reconciled into the CSV.
 - Current count is a planning inventory, not a claim that 67 distinct skills should ship.
 

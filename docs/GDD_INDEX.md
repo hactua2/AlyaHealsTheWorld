@@ -85,6 +85,7 @@ The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_RO
 - `docs/vertical_slice/ACT_I_QUEST_GRAPH.md` and `docs/vertical_slice/ACT_I_QUEST_GRAPH_CONTINUATION.md` — authored Act I quest graph, choice/state consequences, climax objective, leadership transition and first Expedition.
 - `docs/vertical_slice/ACT_I_DIALOGUE_PACK.md` — first-pass dialogue anchors and choice labels for the vertical slice.
 - `docs/vertical_slice/ACT_I_CONTENT_CATALOG.md` — human-readable content decisions, enemy/encounter roles, resource/facility economy and implementation gate.
+- `docs/vertical_slice/UNITY_IMPLEMENTATION_HANDOFF.md` — Unity implementation handoff for an implementation LLM: SOLID boundaries, service locator/event bus guardrails, content validation, system responsibilities, persistence, tests, implementation phases, and acceptance criteria.
 - `data/vertical_slice/act_i_quests.json` and `data/vertical_slice/act_i_content.json` — structured stable-ID quest and content data; numeric values are provisional pending runtime integration and balance QA.
 - `data/vertical_slice/act_i_effects.json` — slice-specific choice effects, conditional costs, and encounter modifiers mapped to deterministic handlers.
 - `docs/art/CHARACTER_IMAGE_PROMPTS.md` — full-body character reference prompts and generation guidance.

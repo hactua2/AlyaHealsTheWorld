@@ -1,23 +1,98 @@
 # Skill Catalog Framework
 
-Skills are data definitions using shared tags and primitives rather than bespoke logic.
+The skill catalog is the concrete data source for skills. It uses shared tags, declarative requirements, and reusable effect primitives rather than bespoke behavior.
+
+## Source-of-truth hierarchy
+1. `data/skills/skills.csv`: primary concrete inventory, stable IDs, tier, requirements, categories, and links to mechanics/presentation.
+2. Companion skill-definition files: complex ordered effects, formulas, targeting rules, requirement graphs, or reusable effect sequences that are unsuitable as opaque CSV strings.
+3. This file: schema and constraints.
+4. `implementation_spec/COMBAT.md`, `STATUS_EFFECTS.md`, `TURN_RESOLUTION.md`, `CONTENT_CONTRACTS.md`, and `PROGRESSION_AND_GATING.md`: runtime semantics and shared contracts.
+
+Descriptions and display labels are not runtime source-of-truth. Presentation names may be localized or themed independently from stable IDs.
 
 ## Approved functional families
-- Control: generate Command, alter target intent or resistance, prepare Break.
-- Reactive: convert recent damage or exposure into a response.
-- Fortification: mitigate damage and generate Fortitude.
-- Exploitation: gain bonuses against tagged states or convert damage channels.
-- Recovery: reduce Strain and remove selected negative effects.
-- Support: improve an ally's next action or grant a tactical action.
-- Overflow: transform excess Strain into offensive, defensive, healing, or resource effects.
-- HighRisk: creates significant impact on both sides.
+- Control: generate/spend Command, alter intent or resistance, and prepare Break.
+- Reactive: convert a declared recent event or exposure into a response.
+- Fortification: mitigate damage and generate/spend Fortitude.
+- Exploitation: gain bonuses against tagged states/aspects or convert damage channels.
+- Recovery: reduce Strain or remove selected negative effects.
+- Support: improve an ally's next action or grant a tactical action only when action-economy rules permit it.
+- Overflow: transform a declared Overflow condition into a defined effect.
+- HighRisk: creates significant impact on both sides and must include counterplay/eligibility constraints.
+- Damage, Debuff, Mobility/Positioning, Utility, Finisher, Passive, Capability/Transformation: additional functional tags where relevant; these are tags, not rigid classes.
 
-## Representative neutral skill IDs
-Provoke, Endure, Counter, Command, RecoverComposure, ExploitWeakness, BreakResistance, TurnTheTables, FocusSurge, DirectAlly, AbsoluteControl, Unbroken, OverflowEngine, MutualRuin.
+## Canonical neutral IDs for the fourteen approved additions
+- `SKILL_PROVOKE`
+- `SKILL_ENDURE`
+- `SKILL_COUNTER`
+- `SKILL_COMMAND`
+- `SKILL_RECOVER_COMPOSURE`
+- `SKILL_EXPLOIT_WEAKNESS`
+- `SKILL_BREAK_RESISTANCE`
+- `SKILL_TURN_THE_TABLES`
+- `SKILL_FOCUS_SURGE`
+- `SKILL_DIRECT_ALLY`
+- `SKILL_ABSOLUTE_CONTROL`
+- `SKILL_UNBROKEN`
+- `SKILL_OVERFLOW_ENGINE`
+- `SKILL_MUTUAL_RUIN`
 
-Presentation names may be localized independently from IDs.
+These IDs are proposed canonical identifiers; use them in production data only when the corresponding reconciled skill record is approved. Display names may differ.
 
-## Skill schema minimum
-id, familyTags, targeting, meterCosts, generatedResources, conditions, effects, cooldown, chainRule, thresholdRule, overflowRule, outcomeInteractions.
+## Required schema
+
+Every CSV record must support these logical fields. Fields with complex nested data may point to companion definitions by stable ID.
+
+| Field | Requirement |
+|---|---|
+| `id` | Required, unique, stable ID such as `SKILL_PROVOKE`. |
+| `display_name` | Required presentation label; not used as identity. |
+| `kind` | Required: Active, Passive, Capability, or another explicitly registered kind. |
+| `tier` | Required for tiered skills; Tier 1, Tier 2, or Tier 3. A deliberately untiered definition must state why. |
+| `skill_point_cost` | Required numeric unlock cost. |
+| `requirements_ref` | Required reference to declarative requirements; use an explicit no-requirements value when none apply. |
+| `milestone_gate` | Optional milestone/content gate reference. |
+| `family_tags` | Required normalized tags, not prose. |
+| `targeting_ref` | Required target query/reference. |
+| `resource_costs` | Structured costs for meters/resources. |
+| `generated_resources` | Structured resource generation. |
+| `conditions_ref` | Optional condition definition. |
+| `effects_ref` | Required ordered effect definition/reference. |
+| `cooldown` | Explicit numeric value or explicit no-cooldown value. |
+| `chain_rule_ref` | Optional Chain definition. |
+| `threshold_rule_ref` | Optional Threshold definition. |
+| `overflow_rule_ref` | Optional Overflow definition. |
+| `outcome_interactions` | Declared interaction with Defeat, Disable, Capture, Yield, Retreat, or ObjectiveComplete. |
+| `aspect_tags` | Optional target-domain tags such as Body Part, Mind, or other supported Aspect. |
+| `presentation_ref` | Optional icon, cut-in, animation, VFX, SFX, localization, and descriptive text reference. |
+
+The physical CSV header may use compact names, but it must map unambiguously to this logical schema. Avoid storing arbitrary nested JSON in a single cell when a stable companion ID will be clearer.
+
+## Requirements and progression
+
+Unlocks combine Skill Points, declarative prerequisites, and optional milestone/content gates. Requirements use the shared predicates and logical composition defined in `CONTENT_CONTRACTS.md` (AllOf, AnyOf, NoneOf, Not). Use milestone gates when early access would destabilize pacing or when a skill represents a capability discovered in the world. Avoid arbitrary level-only rules and hidden mandatory requirements.
+
+Tiers represent both progression expectation and expected power:
+- Tier 1: foundational and reliable, early access, limited setup.
+- Tier 2: specialization, synergy, or efficiency requiring meaningful investment.
+- Tier 3: build-defining impact, major conversion/utility, or exceptional risk/reward.
+
+Tier is not a damage ranking. Compare reliability, action economy, cost, setup, flexibility, encounter relevance, and availability.
+
+## Approved shared primitives
+Use existing deterministic effects and resource rules, including ModifyMeter, ModifyResource, ApplyEffect, RemoveEffect, AddStack, RemoveStack, ModifyStat, ChangeIntent, ChangeState, GrantCapability, and UnlockContent. Any additional effect type requires a stable type ID and deterministic handler.
+
+## Validation requirements
+A catalog validator should reject:
+- duplicate/missing IDs or display names;
+- invalid tier/kind values;
+- negative or missing costs where required;
+- unresolved requirement/effect/targeting/presentation references;
+- unregistered family or Aspect tags;
+- malformed resource expressions;
+- passive definitions that duplicate the same modifier already owned elsewhere without an explicit stacking rule;
+- finisher or defeat-prevention effects that bypass encounter outcome contracts;
+- action grants that violate action economy;
+- named rows with missing required fields.
 
 A skill should reuse shared primitives before introducing a custom mechanic.

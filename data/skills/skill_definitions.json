@@ -537,14 +537,15 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "effect_kind": "TaggedVulnerability",
+              "tags": [
+                "strain_damage",
+                "strain_dot"
+              ],
+              "magnitude": 0.25,
+              "duration_turns": 2,
+              "refresh": "max_remaining_or_new",
+              "stack_policy": "strongest_equivalent_only"
             }
           ]
         }
@@ -644,16 +645,17 @@
           "template": "risk_recovery",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy",
-                "Self"
-              ]
+              "direction": "restore",
+              "amount": 18,
+              "target": "self"
+            },
+            {
+              "type": "ChangeIntent",
+              "target": "selected_enemy",
+              "bias": "StrainOriented",
+              "duration_turns": 2
             }
           ]
         }
@@ -753,14 +755,11 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Self"
-              ]
+              "effect_kind": "EvasionBonus",
+              "magnitude": 25,
+              "duration_turns": 1,
+              "expires_after": "one_enemy_action",
+              "stack_policy": "refresh"
             }
           ]
         }
@@ -866,6 +865,7 @@
               "meter": "Strain",
               "direction": "damage",
               "formula": "round(base_effectiveness*0.65)",
+              "target": "selected_enemy",
               "cap": 14
             },
             {
@@ -972,15 +972,11 @@
           "template": "intent_control",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "type": "ChangeIntent",
+              "target": "selected_enemy",
+              "bias": "authored_intent_bias",
+              "duration_turns": 1,
+              "resistance": "MentalControlResistance"
             }
           ]
         }
@@ -1087,15 +1083,21 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy",
-                "Self"
-              ]
+              "effect_kind": "ExposureWindow",
+              "target": "self",
+              "trigger": "next_qualifying_incoming_strain_action",
+              "max_triggers": 1
+            },
+            {
+              "type": "OnTrigger",
+              "event": "QualifyingIncomingStrainActionResolved",
+              "effect": {
+                "type": "ModifyResource",
+                "resource": "Resolve",
+                "direction": "gain",
+                "amount": 2,
+                "cap": 4
+              }
             }
           ]
         }
@@ -1194,15 +1196,20 @@
           "template": "stat_debuff",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "type": "ModifyStat",
+              "target": "selected_enemy",
+              "stat": "Accuracy",
+              "operation": "multiply",
+              "value": 0.85,
+              "duration_turns": 2
+            },
+            {
+              "type": "ModifyStat",
+              "target": "selected_enemy",
+              "stat": "Evasion",
+              "operation": "multiply",
+              "value": 0.85,
+              "duration_turns": 2
             }
           ]
         }
@@ -1301,15 +1308,22 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
+            },
+            {
+              "type": "ConditionalEffect",
+              "condition": "target_has_explicit_vulnerability_tag",
+              "effect": {
+                "type": "ModifyMeter",
+                "meter": "Vitality",
+                "direction": "damage",
+                "formula": "0.2*base_effectiveness",
+                "cap": 4
+              }
             }
           ]
         }
@@ -1408,15 +1422,17 @@
           "template": "protect_ally",
           "ordered_steps": [
             {
+              "type": "ChangeIntent",
+              "target": "selected_enemy",
+              "beneficiary": "selected_ally",
+              "bias": "prefer_protected_ally",
+              "duration_turns": 2
+            },
+            {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Ally"
-              ]
+              "effect_kind": "AllyProtection",
+              "target": "selected_ally",
+              "duration_turns": 2
             }
           ]
         }
@@ -1513,15 +1529,11 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
             }
           ]
         }
@@ -1620,15 +1632,11 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
             }
           ]
         }
@@ -1727,15 +1735,12 @@
           "template": "focused_strain_multi",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy",
+              "aspect_affinity_combination": "arithmetic_mean"
             }
           ]
         }
@@ -1939,6 +1944,13 @@
           "template": "strain_dot",
           "ordered_steps": [
             {
+              "type": "ModifyMeter",
+              "meter": "Strain",
+              "direction": "damage",
+              "formula": "base_effectiveness",
+              "target": "selected_enemy"
+            },
+            {
               "type": "ApplyEffect",
               "effect_kind": "StrainDoT",
               "magnitude": 4,
@@ -1947,7 +1959,7 @@
               "decrement_after_tick": true,
               "refresh": "max_remaining_or_new",
               "stack_policy": "strongest_equivalent_only",
-              "resistance": "StrainResistance"
+              "resistance": "MentalSensoryResistance"
             }
           ]
         }
@@ -2053,8 +2065,7 @@
               "tick": "target_turn_start",
               "decrement_after_tick": true,
               "refresh": "max_remaining_or_new",
-              "stack_policy": "strongest_equivalent_only",
-              "resistance": "StrainResistance"
+              "stack_policy": "strongest_equivalent_only"
             }
           ]
         }
@@ -2288,6 +2299,20 @@
               "max_chain_depth": 1,
               "output_cap": 15,
               "listener_priority": 10
+            },
+            {
+              "type": "ModifyMeter",
+              "meter": "Strain",
+              "direction": "restore",
+              "amount": 10,
+              "target": "owner"
+            },
+            {
+              "type": "ModifyMeter",
+              "meter": "Strain",
+              "direction": "restore",
+              "amount": 5,
+              "target": "lowest_strain_ally"
             }
           ]
         }
@@ -2390,15 +2415,14 @@
           "template": "intent_bias",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "type": "ConditionalPassive",
+              "condition": "enemy_ai_selects_intent",
+              "effect": {
+                "type": "ModifyIntentWeight",
+                "intent_family": "StrainOriented",
+                "value": 0.15
+              },
+              "stack_policy": "unique"
             }
           ]
         }
@@ -2495,15 +2519,18 @@
           "template": "equipment_dot",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDoT",
-              "magnitude": 4,
-              "duration_turns": 2,
-              "tick": "target_turn_start",
-              "decrement_after_tick": true,
-              "refresh": "max_remaining_or_new",
-              "stack_policy": "strongest_equivalent_only",
-              "resistance": "StrainResistance"
+              "type": "ConditionalPassive",
+              "condition": "required_piercing_equipment_equipped",
+              "effect": {
+                "type": "ApplyEffect",
+                "effect_kind": "StrainDoT",
+                "magnitude": 4,
+                "duration_turns": 2,
+                "tick": "target_turn_start",
+                "decrement_after_tick": true,
+                "refresh": "max_remaining_or_new",
+                "stack_policy": "strongest_equivalent_only"
+              }
             }
           ]
         }
@@ -2602,15 +2629,13 @@
           "template": "damage_passive",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Self"
-              ]
+              "type": "ModifyStat",
+              "target": "self",
+              "stat": "VitalityDamageDealt",
+              "operation": "add_percent",
+              "value": 0.12,
+              "stack_group": "SADISM_DAMAGE",
+              "stack_cap": 0.3
             }
           ]
         }
@@ -2710,15 +2735,22 @@
           "template": "resistance_passive",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Self"
-              ]
+              "type": "ModifyStat",
+              "target": "self",
+              "stat": "VitalityResistance",
+              "operation": "add_percent",
+              "value": 0.1,
+              "stack_group": "MASOCHISM_RESISTANCE",
+              "stack_cap": 0.25
+            },
+            {
+              "type": "ModifyStat",
+              "target": "self",
+              "stat": "StrainResistance",
+              "operation": "add_percent",
+              "value": 0.1,
+              "stack_group": "MASOCHISM_RESISTANCE",
+              "stack_cap": 0.25
             }
           ]
         }
@@ -2818,15 +2850,18 @@
           "template": "strain_reflect",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ListenEvent",
+              "event": "QualifyingIncomingStrainDamageResolved",
+              "max_triggers_per_enemy_action": 1,
+              "recursion_guard": true,
+              "output_cap": 8
+            },
+            {
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "source_enemy",
+              "formula": "min(0.2*incoming_strain,8)"
             }
           ]
         }
@@ -2926,14 +2961,12 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Ally"
-              ]
+              "effect_kind": "NextQualifyingAttackBonus",
+              "target": "selected_ally",
+              "magnitude": 0.2,
+              "expires_after": "next_qualifying_attack",
+              "duration_turns": 2,
+              "stack_policy": "refresh"
             }
           ]
         }
@@ -3032,12 +3065,18 @@
           "template": "area_flat",
           "ordered_steps": [
             {
+              "type": "SnapshotTargets",
+              "scope": "valid_enemies",
+              "at": "validation"
+            },
+            {
               "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "target": "all_valid_enemies",
-              "per_target_cap": 18
+              "target_snapshot": "validation",
+              "per_target_cap": 18,
+              "total_cap": 36
             }
           ]
         }
@@ -3271,8 +3310,14 @@
               "tick": "target_turn_start",
               "decrement_after_tick": true,
               "refresh": "max_remaining_or_new",
-              "stack_policy": "strongest_equivalent_only",
-              "resistance": "StrainResistance"
+              "stack_policy": "strongest_equivalent_only"
+            },
+            {
+              "type": "ChangeIntent",
+              "target": "selected_enemy",
+              "bias": "StrainOriented",
+              "duration_turns": 2,
+              "resistance": "MentalControlResistance"
             }
           ]
         }
@@ -3480,15 +3525,11 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
             }
           ]
         }
@@ -3588,14 +3629,14 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Self"
-              ]
+              "effect_kind": "SelfRestraint",
+              "target": "self",
+              "duration_turns": 2,
+              "stat_modifiers": {
+                "Evasion": -10
+              },
+              "next_qualifying_strain_action_bonus": 0.25,
+              "stack_policy": "refresh"
             }
           ]
         }
@@ -3692,15 +3733,20 @@
           "template": "attack_defense_debuff",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "type": "ModifyStat",
+              "target": "selected_enemy",
+              "stat": "Attack",
+              "operation": "multiply",
+              "value": 0.88,
+              "duration_turns": 2
+            },
+            {
+              "type": "ModifyStat",
+              "target": "selected_enemy",
+              "stat": "Defense",
+              "operation": "multiply",
+              "value": 0.88,
+              "duration_turns": 2
             }
           ]
         }
@@ -3800,14 +3846,21 @@
           "ordered_steps": [
             {
               "type": "ModifyMeter",
-              "effect_kind": "",
               "meter": "Vitality",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
+            },
+            {
+              "type": "ConditionalEffect",
+              "condition": "target_has_explicit_vulnerability_tag",
+              "effect": {
+                "type": "ModifyMeter",
+                "meter": "Strain",
+                "direction": "damage",
+                "formula": "0.2*base_effectiveness",
+                "cap": 4
+              }
             }
           ]
         }
@@ -3907,13 +3960,17 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
+              "effect_kind": "Restraint",
+              "target": "selected_enemy",
+              "duration_turns": 1,
+              "blocked_action_tags": [
+                "Mobility"
+              ],
+              "resistance": "ControlResistance",
+              "removal": [
+                "duration_expiry",
+                "cleanse",
+                "source_removed"
               ]
             }
           ]
@@ -4015,6 +4072,7 @@
             {
               "type": "ApplyEffect",
               "effect_kind": "OverflowLock",
+              "target": "selected_enemy",
               "duration_turns": 2,
               "prevents_overflow": true,
               "does_not_change_strain": true,
@@ -4124,15 +4182,13 @@
           "template": "missing_vitality_bonus",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy",
+              "formula": "base_effectiveness*(1+min(0.5,missing_vitality_ratio*0.5))",
+              "snapshot": "target_vitality_at_validation",
+              "order": "before_target_resistance"
             }
           ]
         }
@@ -4234,15 +4290,11 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
             }
           ]
         }
@@ -4343,16 +4395,18 @@
             {
               "type": "SnapshotTargets",
               "scope": "valid_enemies",
-              "at": "validation"
+              "at": "validation",
+              "max_targets": 6
             },
             {
               "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
-              "formula": "min(48/N, base_effectiveness*(1+0.25*(max_valid_targets-N)))",
+              "formula": "min(48/N,base_effectiveness*(1+0.25*(6-N)))",
               "per_target_cap": 24,
               "total_cap": 48,
-              "target_snapshot": "validation"
+              "target_snapshot": "validation",
+              "invalid_if_N_zero": true
             }
           ]
         }
@@ -4455,6 +4509,7 @@
           "ordered_steps": [
             {
               "type": "RequestOutcome",
+              "target": "selected_enemy",
               "outcome": "authored_permitted_outcome",
               "threshold_ratio": 0.8,
               "allowed_outcomes": [
@@ -4462,8 +4517,8 @@
                 "Disable",
                 "Capture"
               ],
-              "no_implicit_defeat": true,
-              "no_global_victory": true
+              "invalid_if_outcome_not_permitted": true,
+              "no_implicit_defeat": true
             }
           ]
         }
@@ -4569,15 +4624,14 @@
           "template": "reward_bonus",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Self"
-              ]
+              "type": "ModifyReward",
+              "target": "encounter_reward",
+              "operation": "multiply",
+              "value": 1.1,
+              "stack_group": "EXTRA_TIPS_REWARD",
+              "stack_cap": 1.2,
+              "event": "RewardResolution",
+              "no_extra_roll": true
             }
           ]
         }
@@ -4676,15 +4730,13 @@
           "template": "ally_attack_passive",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Ally"
-              ]
+              "type": "ModifyStat",
+              "target": "all_allies",
+              "stat": "DamageDealt",
+              "operation": "add_percent",
+              "value": 0.08,
+              "stack_group": "ALLY_DAMAGE_PASSIVES",
+              "stack_cap": 0.2
             }
           ]
         }
@@ -4784,15 +4836,13 @@
           "template": "strain_accuracy_passive",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Self"
-              ]
+              "type": "ModifyStat",
+              "target": "self",
+              "stat": "StrainAccuracyAndEffectiveness",
+              "operation": "add_percent",
+              "value": 0.1,
+              "stack_group": "NAUGHTY_THOUGHTS",
+              "stack_cap": 0.2
             }
           ]
         }
@@ -4891,15 +4941,17 @@
           "template": "defeat_recovery",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ListenEvent",
+              "event": "QualifyingEnemyDefeated",
+              "predicate": "defeating_skill_has_eligible_tag",
+              "once_per_event": true
+            },
+            {
+              "type": "ModifyMeter",
               "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Ally"
-              ]
+              "direction": "restore",
+              "amount": 8,
+              "target": "lowest_strain_ally"
             }
           ]
         }
@@ -5107,15 +5159,28 @@
           "template": "area_dot_debuff",
           "ordered_steps": [
             {
+              "type": "SnapshotTargets",
+              "scope": "valid_enemies",
+              "at": "validation"
+            },
+            {
               "type": "ApplyEffect",
               "effect_kind": "StrainDoT",
+              "target_snapshot": "validation",
               "magnitude": 5,
               "duration_turns": 2,
               "tick": "target_turn_start",
               "decrement_after_tick": true,
               "refresh": "max_remaining_or_new",
-              "stack_policy": "strongest_equivalent_only",
-              "resistance": "StrainResistance"
+              "stack_policy": "strongest_equivalent_only"
+            },
+            {
+              "type": "ModifyStat",
+              "target_snapshot": "validation",
+              "stat": "Defense",
+              "operation": "multiply",
+              "value": 0.9,
+              "duration_turns": 2
             }
           ]
         }
@@ -5221,15 +5286,11 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
             }
           ]
         }
@@ -5338,15 +5399,22 @@
           "template": "strain_control_rider",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
+            },
+            {
+              "type": "ApplyEffect",
+              "effect_kind": "ControlState",
+              "target": "selected_enemy",
+              "duration_turns": 1,
+              "resistance": "ControlResistance",
+              "blocked_action_tags": [
+                "Mobility"
+              ],
+              "not_full_disable": true
             }
           ]
         }
@@ -5448,15 +5516,17 @@
           "template": "strain_to_vitality",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
+              "type": "ModifyMeter",
+              "meter": "Vitality",
               "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy",
+              "formula": "base_effectiveness*(1+min(0.5,0.4*target_strain_ratio))",
+              "threshold": {
+                "meter": "Strain",
+                "minimum_ratio": 0.6
+              },
+              "bonus_cap": 0.5,
+              "snapshot": "target_strain_at_validation"
             }
           ]
         }
@@ -5561,7 +5631,12 @@
             {
               "type": "SnapshotTargets",
               "scope": "enabled_sides",
-              "at": "validation"
+              "at": "validation",
+              "sides": [
+                "Enemies",
+                "Allies",
+                "Self"
+              ]
             },
             {
               "type": "ModifyMeter",
@@ -5574,7 +5649,8 @@
                 "enemies",
                 "allies",
                 "self"
-              ]
+              ],
+              "friendly_fire": true
             }
           ]
         }
@@ -5677,13 +5753,11 @@
           "ordered_steps": [
             {
               "type": "RequestOutcome",
-              "outcome": "authored_permitted_outcome",
+              "target": "selected_enemy",
+              "outcome": "authored_one_of_Yield_Disable_Capture",
               "threshold_ratio": 0.8,
-              "allowed_outcomes": [
-                "Yield",
-                "Disable",
-                "Capture"
-              ],
+              "resistance": "ControlResistance",
+              "invalid_if_outcome_not_permitted": true,
               "no_implicit_defeat": true,
               "no_global_victory": true
             }
@@ -5802,8 +5876,8 @@
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness*min(1+0.10*(N-1),1.30)",
-              "total_cap": 36,
-              "target_snapshot": "validation"
+              "target_snapshot": "validation",
+              "total_cap": 36
             }
           ]
         }
@@ -5903,6 +5977,11 @@
           "effect_id": "FX_BKKAKE",
           "template": "all_target_finisher",
           "ordered_steps": [
+            {
+              "type": "SnapshotTargets",
+              "scope": "valid_enemies",
+              "at": "validation"
+            },
             {
               "type": "RequestOutcomePerTarget",
               "outcome": "authored_per_target_outcome",
@@ -6032,15 +6111,11 @@
           "template": "focused_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
               "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Enemy"
-              ]
+              "target": "selected_enemy"
             }
           ]
         }
@@ -6139,10 +6214,16 @@
           "template": "area_intent_bias",
           "ordered_steps": [
             {
+              "type": "SnapshotTargets",
+              "scope": "valid_enemies",
+              "at": "validation"
+            },
+            {
               "type": "ChangeIntent",
-              "target": "all_valid_enemies",
+              "target_snapshot": "validation",
               "bias": "StrainOriented",
-              "duration_turns": 2
+              "duration_turns": 2,
+              "resistance": "MentalControlResistance"
             }
           ]
         }
@@ -6351,15 +6432,18 @@
           "template": "recovery_resistance",
           "ordered_steps": [
             {
+              "type": "ListenEvent",
+              "event": "AllyRecoverySucceeded",
+              "predicate": "recovered_ally_is_target",
+              "once_per_recovery": true
+            },
+            {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Allies"
-              ]
+              "effect_kind": "DebuffResistance",
+              "target": "recovered_ally",
+              "magnitude": 0.15,
+              "duration_turns": 1,
+              "stack_policy": "refresh"
             }
           ]
         }
@@ -6458,15 +6542,12 @@
           "template": "provoke",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Enemy"
-              ]
+              "type": "ChangeIntent",
+              "target": "selected_enemy",
+              "preferred_target": "selected_actor",
+              "bias": "PreferDeclaredActor",
+              "duration_turns": 1,
+              "resistance": "TauntResistance"
             }
           ]
         }
@@ -6573,14 +6654,18 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Self"
-              ]
+              "effect_kind": "IncomingVitalityDamageReduction",
+              "target": "self",
+              "magnitude": 0.3,
+              "expires_after": "next_incoming_vitality_hit",
+              "duration_turns": 1
+            },
+            {
+              "type": "ModifyResource",
+              "resource": "Fortitude",
+              "direction": "gain",
+              "amount": 1,
+              "cap": 2
             }
           ]
         }
@@ -6680,14 +6765,22 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "effect_kind": "CounterWindow",
+              "target": "self",
+              "trigger": "declared_enemy_action_resolves",
+              "duration_turns": 1,
+              "max_triggers": 1
+            },
+            {
+              "type": "OnTrigger",
+              "event": "DeclaredEnemyActionResolved",
+              "effect": {
+                "type": "ModifyMeter",
+                "meter": "Vitality",
+                "direction": "damage",
+                "target": "source_enemy",
+                "formula": "min(0.5*base_effectiveness,12)"
+              }
             }
           ]
         }
@@ -6789,15 +6882,11 @@
           "template": "command_generator",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Self"
-              ]
+              "type": "ModifyResource",
+              "resource": "Command",
+              "direction": "gain",
+              "amount": 4,
+              "cap": 8
             }
           ]
         }
@@ -6896,15 +6985,11 @@
           "template": "recover_strain",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
               "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 24,
-              "target_scope": [
-                "Self"
-              ]
+              "direction": "restore",
+              "amount": 20,
+              "target": "self"
             }
           ]
         }
@@ -7010,15 +7095,25 @@
           "template": "exploit_weakness",
           "ordered_steps": [
             {
+              "type": "ConsumeTag",
+              "target": "selected_enemy",
+              "tag": "Vulnerability",
+              "max_stacks": 1
+            },
+            {
+              "type": "ModifyResource",
+              "resource": "Pressure",
+              "direction": "gain",
+              "amount": 2,
+              "cap": 6
+            },
+            {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "effect_kind": "NextQualifyingEffectBonus",
+              "target": "self",
+              "magnitude": 0.25,
+              "duration_turns": 1,
+              "expires_after": "next_qualifying_effect"
             }
           ]
         }
@@ -7119,15 +7214,19 @@
           "template": "break_resistance",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Enemy"
-              ]
+              "type": "ModifyStat",
+              "target": "selected_enemy",
+              "stat": "RelevantControlResistance",
+              "operation": "multiply",
+              "value": 0.8,
+              "duration_turns": 2
+            },
+            {
+              "type": "ModifyResource",
+              "resource": "BreakProgress",
+              "direction": "gain",
+              "amount": 1,
+              "target": "selected_enemy"
             }
           ]
         }
@@ -7228,15 +7327,24 @@
           "template": "turn_tables",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ConsumeEvent",
+              "event": "QualifyingRecentEnemyHit",
+              "max_age_actions": 1,
+              "max_uses": 1
+            },
+            {
+              "type": "ModifyMeter",
               "meter": "Strain",
+              "direction": "restore",
+              "amount": 10,
+              "target": "self"
+            },
+            {
+              "type": "ModifyMeter",
+              "meter": "Vitality",
               "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Self"
-              ]
+              "formula": "0.5*base_effectiveness",
+              "target": "source_enemy"
             }
           ]
         }
@@ -7336,14 +7444,12 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Self"
-              ]
+              "effect_kind": "NextQualifyingActionBonus",
+              "target": "self",
+              "magnitude": 0.25,
+              "duration_turns": 2,
+              "expires_after": "next_qualifying_action",
+              "stack_policy": "refresh"
             }
           ]
         }
@@ -7443,14 +7549,12 @@
           "ordered_steps": [
             {
               "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 32,
-              "target_scope": [
-                "Ally"
-              ]
+              "effect_kind": "NextActionBonus",
+              "target": "selected_ally",
+              "magnitude": 0.15,
+              "duration_turns": 2,
+              "expires_after": "next_action",
+              "grants_extra_action": false
             }
           ]
         }
@@ -7549,15 +7653,15 @@
           "template": "unbroken",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
-              "meter": "Strain",
-              "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Self"
-              ]
+              "type": "PreventOutcome",
+              "target": "self",
+              "outcomes": [
+                "Defeat",
+                "Disable"
+              ],
+              "max_triggers_per_encounter": 1,
+              "only_if": "explicitly_eligible_event",
+              "never_grants_immunity": true
             }
           ]
         }
@@ -7663,6 +7767,15 @@
               "max_chain_depth": 1,
               "output_cap": 16,
               "listener_priority": 30
+            },
+            {
+              "type": "ConfiguredConversion",
+              "allowed_outputs": [
+                "restore_strain",
+                "enemy_strain_damage",
+                "gain_command"
+              ],
+              "max_chain_depth": 1
             }
           ]
         }
@@ -7770,16 +7883,30 @@
           "template": "mutual_ruin",
           "ordered_steps": [
             {
-              "type": "ApplyEffect",
-              "effect_kind": "StrainDamage",
+              "type": "ModifyMeter",
+              "meter": "Vitality",
+              "direction": "damage",
+              "amount": 15,
+              "target": "self"
+            },
+            {
+              "type": "ModifyMeter",
               "meter": "Strain",
               "direction": "damage",
-              "formula": "base_effectiveness",
-              "cap": 40,
-              "target_scope": [
-                "Enemy",
-                "Self"
-              ]
+              "amount": 10,
+              "target": "self"
+            },
+            {
+              "type": "ModifyMeter",
+              "meter": "Vitality",
+              "direction": "damage",
+              "formula": "min(1.5*base_effectiveness,36)",
+              "target": "selected_enemy"
+            },
+            {
+              "type": "EvaluateOutcome",
+              "respect_encounter_contract": true,
+              "no_implicit_defeat": true
             }
           ]
         }

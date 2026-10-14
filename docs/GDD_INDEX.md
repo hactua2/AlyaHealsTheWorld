@@ -13,7 +13,7 @@ The GDD is considered complete when every required domain points to a current so
 5. `data/` — structured concrete content.
 6. `docs/characters/` and other dedicated content documents — canonical content definitions where a structured table alone is insufficient.
 7. `assets/` — visual/reference assets.
-8. `docs/archive/` — historical material only; never overrides current sources.
+8. `docs/archive/` — historical material only; never overrides current sources of truth.
 
 ## GDD structure
 
@@ -66,7 +66,7 @@ Implementation-facing contracts established. **COMPLETE.**
 Cross-system ordering, state composition, transactions, time advancement, determinism, AI fallback and source-of-truth boundaries audited. **COMPLETE.**
 
 ### Checkpoint C — Content Complete
-Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC model and concrete Named roster are locked; the Character Bible is the consolidated character-identity source.
+Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC model and concrete Named roster are locked; the Character Bible is the consolidated character-identity source. The vertical slice is the immediate content-integration target, not a claim that the full game catalog is complete.
 
 ### Checkpoint D — Production Complete
 Implementation, UI, art, audio, localization, persistence, and QA requirements closed for every planned content item. **PENDING.**
@@ -79,8 +79,9 @@ Core gameplay rules and implementation contracts are closed. Remaining work is p
 
 The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_ROSTER.md`. NPC structure and the relevance/H-tier model are conceptually closed in `docs/characters/NPCS_DESIGN.md`. `docs/characters/CHARACTER_BIBLE.md` consolidates the locked character identity rules and concrete Named NPC roster. Numerical stats, exact skills, AI parameters, operational recruitment scripting, detailed H-content implementation and final asset IDs remain downstream specifications.
 
-## Current project orientation and adult-content production references
+## Current project orientation and production references
 - `docs/PROJECT_STATE_AND_ROADMAP.md` — current project summary, canon, locked decisions, remaining work and recommended next sequence.
+- `docs/VERTICAL_SLICE_SCOPE.md` — approved scope baseline, content budget, narrative requirements, exclusions, dependencies and acceptance criteria for the first Act I vertical slice.
 - `docs/art/CHARACTER_IMAGE_PROMPTS.md` — full-body character reference prompts and generation guidance.
 - `docs/art/CHARACTER_EROTIC_CG_MATRIX.md` — first-pass situations and CG beats for 31 adult characters; non-graphic direction, not a final asset/unlock specification.
 
@@ -95,7 +96,7 @@ The skill architecture remains closed; the concrete catalog remains unlocked. Th
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_2.md` — applied decisions and proposed mechanical disposition for 54 legacy rows plus fourteen additions.
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_3.md` — thematic/function review of the highest-impact clusters: control, reactive defense, Strain/DoT/finishers, capabilities, passives, and economy.
 - `docs/systems/combat/SKILL_CATALOG_SCALING_AUDIT.md` — per-skill proposed attributes, body-part scaling inputs, canonical effects, synergies, and distinct-identity rationale for 54 legacy skills plus 14 proposed additions.
-- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_4.md` — focused single-target actions; updated with the project owner's decisions on basic-attack identity, Spank/Bite channels, Flirt's hybrid role, explicit self-risk, AS Chain behavior, and H-job's Mind Aspect.
+- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_4.md` — focused single-target actions; updated with the owner's decisions on basic-attack identity, Spank/Bite channels, Flirt's hybrid role, explicit self-risk, AS Chain behavior, and H-job's Mind Aspect.
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_5.md` — updated with the owner's decisions on distinct area actions, Summon c-s target-count scaling, Summon Tentacles friendly fire, Bkakke's all-target victory condition, merging Enslave/Absolute Control, and the three Overflow roles.
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_6.md` — updated with seven owner decisions covering Bkakke failure risk, area-skill identities, Summon Tentacles affected sides, Overflow event frequency, Alya-only P-growth, attribute/Aspect composition, and H-job DoT identity.
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_7.md` — eight semantic recommendations accepted by default, closing remaining skill-level decisions.

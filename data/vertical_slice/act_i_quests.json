@@ -14,26 +14,70 @@
     {
       "id": "VS1_Q01",
       "title": "Arrival and the Empty Cistern",
-      "type": ["Main", "Social", "Tutorial"],
+      "type": [
+        "Main",
+        "Social",
+        "Tutorial"
+      ],
       "location_id": "LOC_VS1_BRACKENFORD",
       "prerequisites": [],
-      "objectives": ["Meet Mara Venn", "Inspect the cistern", "Ask one local for context"],
-      "set_flags": ["VS1_MARA_MET", "VS1_CISTERN_INSPECTED"],
+      "objectives": [
+        "Meet Mara Venn",
+        "Inspect the cistern",
+        "Ask one local for context"
+      ],
+      "set_flags": [
+        "VS1_MARA_MET",
+        "VS1_CISTERN_INSPECTED"
+      ],
       "next_quest_id": "VS1_Q02",
-      "optional_content_ids": ["VS1_DISCOVERY_CHANNEL_SAMPLE"],
+      "optional_content_ids": [],
       "failure_policy": "No hard failure; allow revisiting conversations."
     },
     {
       "id": "VS1_Q02",
       "title": "A Ration Is Not a History",
-      "type": ["Main", "Investigation", "Social"],
+      "type": [
+        "Main",
+        "Investigation",
+        "Social"
+      ],
       "location_id": "LOC_VS1_BRACKENFORD",
-      "prerequisites": ["VS1_Q01_COMPLETE"],
-      "objectives": ["Hear the rationing history", "Learn why Mara diverted water", "Choose a provisional response"],
+      "prerequisites": [
+        "VS1_Q01_COMPLETE"
+      ],
+      "objectives": [
+        "Hear the rationing history",
+        "Learn why Mara diverted water",
+        "Choose a provisional response"
+      ],
       "choices": [
-        {"id": "VS1_CHOICE_RATION_ENFORCE", "flag": "VS1_RATION_ENFORCED", "effects": ["MARA_TRUST_DOWN", "REPAIR_COST_UP"], "benefit": "Small immediate supply benefit"},
-        {"id": "VS1_CHOICE_RATION_SHARE", "flag": "VS1_RATION_SHARED", "effects": ["COMMUNITY_TRUST_UP", "SUPPLY_BUFFER_DOWN"], "benefit": "Improves local trust"},
-        {"id": "VS1_CHOICE_RATION_INVESTIGATE", "flag": "VS1_RATION_INVESTIGATE", "effects": ["CLUE_RELIABILITY_UP"], "benefit": "Preserves relationship options"}
+        {
+          "id": "VS1_CHOICE_RATION_ENFORCE",
+          "flag": "VS1_RATION_ENFORCED",
+          "effects": [
+            "MARA_TRUST_DOWN",
+            "REPAIR_COST_UP"
+          ],
+          "benefit": "Small immediate supply benefit"
+        },
+        {
+          "id": "VS1_CHOICE_RATION_SHARE",
+          "flag": "VS1_RATION_SHARED",
+          "effects": [
+            "COMMUNITY_TRUST_UP",
+            "SUPPLY_BUFFER_DOWN"
+          ],
+          "benefit": "Improves local trust"
+        },
+        {
+          "id": "VS1_CHOICE_RATION_INVESTIGATE",
+          "flag": "VS1_RATION_INVESTIGATE",
+          "effects": [
+            "CLUE_RELIABILITY_UP"
+          ],
+          "benefit": "Preserves relationship options"
+        }
       ],
       "next_quest_id": "VS1_Q03",
       "failure_policy": "All choices continue the main quest."
@@ -41,58 +85,159 @@
     {
       "id": "VS1_Q03",
       "title": "The Red Thread",
-      "type": ["Main", "Exploration", "Combat"],
+      "type": [
+        "Main",
+        "Exploration",
+        "Combat"
+      ],
       "location_id": "LOC_VS1_ASHFEN_VERGE",
       "poi_id": "POI_VS1_SILT_PATH",
-      "prerequisites": ["VS1_Q02_COMPLETE"],
-      "objectives": ["Reach the old irrigation route", "Resolve the Frayed Husk encounter", "Inspect or bypass the blocked channel"],
-      "set_flags": ["VS1_RED_THREAD_CONFIRMED"],
-      "optional_objectives": [
-        {"id": "VS1_OBJ_CHANNEL_CLUE", "flag": "VS1_CHANNEL_CLUE_FOUND", "reward_id": "ITEM_VS1_FILTER_FIBER"}
+      "prerequisites": [
+        "VS1_Q02_COMPLETE"
       ],
-      "encounter_ids": ["ENC_VS1_01_HUSKS", "ENC_VS1_02_THREADLINGS"],
+      "objectives": [
+        "Reach the old irrigation route",
+        "Resolve the Frayed Husk encounter",
+        "Inspect or bypass the blocked channel"
+      ],
+      "set_flags": [
+        "VS1_RED_THREAD_CONFIRMED"
+      ],
+      "optional_objectives": [
+        {
+          "id": "VS1_OBJ_CHANNEL_CLUE",
+          "flag": "VS1_CHANNEL_CLUE_FOUND",
+          "reward_id": "ITEM_VS1_FILTER_FIBER",
+          "discovery_id": "VS1_DISCOVERY_CHANNEL_SAMPLE"
+        }
+      ],
+      "encounter_ids": [
+        "ENC_VS1_01_HUSKS",
+        "ENC_VS1_02_THREADLINGS"
+      ],
       "next_quest_id": "VS1_Q04",
       "failure_policy": "Retreat costs time or a modest reward opportunity; main path remains available."
     },
     {
       "id": "VS1_Q04",
       "title": "The Cost of a Quick Fix",
-      "type": ["Main", "Encounter", "Consequence"],
+      "type": [
+        "Main",
+        "Encounter",
+        "Consequence"
+      ],
       "location_id": "LOC_VS1_ASHFEN_VERGE",
       "poi_id": "POI_VS1_OLD_WEIR",
-      "prerequisites": ["VS1_Q03_COMPLETE"],
-      "choices": [
-        {"id": "VS1_CHOICE_GATE_CLOSE", "flag": "VS1_GATE_CLOSED", "effects": ["UPPER_CHANNEL_TEMP_SAFE", "LOWER_RESERVE_DRYING", "TIMBER_REPAIR_COST_PLUS_1"]},
-        {"id": "VS1_CHOICE_GATE_DIVERT", "flag": "VS1_TEMP_DIVERSION", "costs": [{"resource_id": "RESOURCE_FIBER", "quantity": 1}], "effects": ["LOWER_CHANNEL_ACCESS_PRESERVED", "TIME_COST_SMALL"]},
-        {"id": "VS1_CHOICE_GATE_WITHDRAW", "flag": "VS1_WITHDREW", "effects": ["THREAT_PRESSURE_UP", "NO_IMMEDIATE_RESOURCE_COST"]}
+      "prerequisites": [
+        "VS1_Q03_COMPLETE"
       ],
-      "set_flags": ["VS1_QUICK_FIX_COST_REVEALED"],
+      "choices": [
+        {
+          "id": "VS1_CHOICE_GATE_CLOSE",
+          "flag": "VS1_GATE_CLOSED",
+          "effects": [
+            "UPPER_CHANNEL_TEMP_SAFE",
+            "LOWER_RESERVE_DRYING",
+            "TIMBER_REPAIR_COST_PLUS_1"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_GATE_DIVERT",
+          "flag": "VS1_TEMP_DIVERSION",
+          "costs": [
+            {
+              "resource_id": "RESOURCE_FIBER",
+              "quantity": 1
+            }
+          ],
+          "effects": [
+            "LOWER_CHANNEL_ACCESS_PRESERVED",
+            "TIME_COST_SMALL"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_GATE_WITHDRAW",
+          "flag": "VS1_WITHDREW",
+          "effects": [
+            "THREAT_PRESSURE_UP",
+            "NO_IMMEDIATE_RESOURCE_COST"
+          ]
+        }
+      ],
+      "set_flags": [
+        "VS1_QUICK_FIX_COST_REVEALED"
+      ],
       "next_quest_id": "VS1_Q05",
       "failure_policy": "Choice affects later cost and pressure, never creates a softlock."
     },
     {
       "id": "VS1_Q05",
       "title": "The Road Is Still Open",
-      "type": ["Main", "Character", "Commitment"],
+      "type": [
+        "Main",
+        "Character",
+        "Commitment"
+      ],
       "location_id": "LOC_VS1_BRACKENFORD",
-      "prerequisites": ["VS1_Q04_COMPLETE"],
-      "objectives": ["Hear that Alya can still continue her journey", "Choose to stay"],
-      "set_flags": ["VS1_ALYA_STAYS", "VS1_RESPONSIBILITY_ACCEPTED"],
+      "prerequisites": [
+        "VS1_Q04_COMPLETE"
+      ],
+      "objectives": [
+        "Hear that Alya can still continue her journey",
+        "Choose to stay"
+      ],
+      "set_flags": [
+        "VS1_ALYA_STAYS",
+        "VS1_RESPONSIBILITY_ACCEPTED"
+      ],
       "next_quest_id": "VS1_Q06",
       "failure_policy": "Departure is acknowledged as an emotional possibility; the slice's canonical path continues with Alya staying."
     },
     {
       "id": "VS1_Q06",
       "title": "The Organization Arrives",
-      "type": ["Main", "Social", "Faction"],
+      "type": [
+        "Main",
+        "Social",
+        "Faction"
+      ],
       "location_id": "LOC_VS1_BRACKENFORD",
-      "prerequisites": ["VS1_Q05_COMPLETE"],
-      "objectives": ["Hear the risk assessment", "Understand the containment proposal", "Choose an initial stance"],
-      "set_flags": ["VS1_ORG_PLAN_PRESENTED"],
+      "prerequisites": [
+        "VS1_Q05_COMPLETE"
+      ],
+      "objectives": [
+        "Hear the risk assessment",
+        "Understand the containment proposal",
+        "Choose an initial stance"
+      ],
+      "set_flags": [
+        "VS1_ORG_PLAN_PRESENTED"
+      ],
       "choices": [
-        {"id": "VS1_CHOICE_ORG_ACCEPT", "flag": "VS1_ORG_STANCE_ACCEPTED", "effects": ["INSTITUTIONAL_TRUST_UP", "PREPARATION_ITEM_GRANTED", "LOWER_RESIDENT_SUPPORT_COST_UP"]},
-        {"id": "VS1_CHOICE_ORG_CHALLENGE", "flag": "VS1_ORG_STANCE_CHALLENGED", "effects": ["INSTITUTIONAL_TRUST_DOWN", "EVIDENCE_REQUESTED"]},
-        {"id": "VS1_CHOICE_ORG_ALTERNATIVE", "flag": "VS1_ORG_STANCE_ALTERNATIVE_REQUESTED", "effects": ["THIRD_SOLUTION_ROUTE_OPEN"]}
+        {
+          "id": "VS1_CHOICE_ORG_ACCEPT",
+          "flag": "VS1_ORG_STANCE_ACCEPTED",
+          "effects": [
+            "INSTITUTIONAL_TRUST_UP",
+            "PREPARATION_ITEM_GRANTED",
+            "LOWER_RESIDENT_SUPPORT_COST_UP"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_ORG_CHALLENGE",
+          "flag": "VS1_ORG_STANCE_CHALLENGED",
+          "effects": [
+            "INSTITUTIONAL_TRUST_DOWN",
+            "EVIDENCE_REQUESTED"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_ORG_ALTERNATIVE",
+          "flag": "VS1_ORG_STANCE_ALTERNATIVE_REQUESTED",
+          "effects": [
+            "THIRD_SOLUTION_ROUTE_OPEN"
+          ]
+        }
       ],
       "next_quest_id": "VS1_Q07",
       "failure_policy": "The Organization remains useful and internally plural under every stance."
@@ -100,89 +245,256 @@
     {
       "id": "VS1_Q07",
       "title": "Three Parts of a Third Option",
-      "type": ["Main", "Preparation", "Community"],
+      "type": [
+        "Main",
+        "Preparation",
+        "Community"
+      ],
       "location_id": "LOC_VS1_ASHFEN_VERGE",
-      "prerequisites": ["VS1_Q06_COMPLETE"],
-      "objectives": ["Secure repair materials", "Secure local participation", "Resolve the Hollow Warden encounter", "Choose a preparation priority"],
+      "prerequisites": [
+        "VS1_Q06_COMPLETE"
+      ],
+      "objectives": [
+        "Secure repair materials",
+        "Secure local participation",
+        "Resolve the Hollow Warden encounter",
+        "Choose a preparation priority"
+      ],
       "required_resources": [
-        {"resource_id": "RESOURCE_TIMBER", "quantity": 2},
-        {"resource_id": "RESOURCE_FIBER", "quantity": 2}
+        {
+          "resource_id": "RESOURCE_TIMBER",
+          "quantity": 2
+        },
+        {
+          "resource_id": "RESOURCE_FIBER",
+          "quantity": 2
+        }
       ],
       "optional_requirements": [
-        {"id": "VS1_REQ_CHANNEL_CLUE", "all_of": ["VS1_CHANNEL_CLUE_FOUND"], "unlocks_choice": "VS1_CHOICE_STAGED_DIVERSION"}
+        {
+          "id": "VS1_REQ_CHANNEL_CLUE",
+          "all_of": [
+            "VS1_CHANNEL_CLUE_FOUND"
+          ],
+          "unlocks_choice": "VS1_CHOICE_STAGED_DIVERSION"
+        }
       ],
       "choices": [
-        {"id": "VS1_CHOICE_PREP_WORKERS", "value": "WORKERS", "effects": ["CLIMAX_PRESSURE_DOWN", "OBJECTIVE_DEFENSE_STEPS_PLUS_1"]},
-        {"id": "VS1_CHOICE_PREP_CHANNEL", "value": "CHANNEL", "effects": ["CLIMAX_SPREAD_PRESSURE_DOWN", "RECOVERY_DURATION_UP"]},
-        {"id": "VS1_CHOICE_STAGED_DIVERSION", "value": "STAGED_DIVERSION", "effects": ["CLIMAX_PRESSURE_DOWN", "RECOVERY_DURATION_DOWN"], "requirements": ["VS1_CHANNEL_CLUE_FOUND"]}
+        {
+          "id": "VS1_CHOICE_PREP_WORKERS",
+          "value": "WORKERS",
+          "effects": [
+            "CLIMAX_PRESSURE_DOWN",
+            "OBJECTIVE_DEFENSE_STEPS_PLUS_1"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_PREP_CHANNEL",
+          "value": "CHANNEL",
+          "effects": [
+            "CLIMAX_SPREAD_PRESSURE_DOWN",
+            "RECOVERY_DURATION_UP"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_STAGED_DIVERSION",
+          "value": "STAGED_DIVERSION",
+          "effects": [
+            "CLIMAX_PRESSURE_DOWN",
+            "RECOVERY_DURATION_DOWN"
+          ],
+          "requirements": [
+            "VS1_CHANNEL_CLUE_FOUND"
+          ]
+        }
       ],
-      "set_flags": ["VS1_THIRD_OPTION_READY", "VS1_COMMUNITY_CONTRIBUTION"],
-      "encounter_ids": ["ENC_VS1_03_HOLLOW_WARDEN"],
+      "set_flags": [
+        "VS1_THIRD_OPTION_READY",
+        "VS1_COMMUNITY_CONTRIBUTION"
+      ],
+      "encounter_ids": [
+        "ENC_VS1_03_HOLLOW_WARDEN"
+      ],
       "next_quest_id": "VS1_Q08",
       "failure_policy": "Required materials have fallback sources and cannot be permanently lost to optional interactions."
     },
     {
       "id": "VS1_Q08",
       "title": "Hold the Sluice",
-      "type": ["Main", "Climax", "Combat", "Objective"],
+      "type": [
+        "Main",
+        "Climax",
+        "Combat",
+        "Objective"
+      ],
       "location_id": "LOC_VS1_ASHFEN_VERGE",
       "poi_id": "POI_VS1_ROOT_VAULT",
-      "prerequisites": ["VS1_Q07_COMPLETE", "VS1_THIRD_OPTION_READY"],
-      "encounter_ids": ["ENC_VS1_04_ROOT_VAULT"],
-      "objectives": [
-        {"id": "VS1_OBJ_STABILIZE_DIVERSION", "kind": "EncounterObjective"},
-        {"id": "VS1_OBJ_SEVER_FILAMENT", "kind": "EncounterObjective"},
-        {"id": "VS1_OBJ_SECURE_GATE", "kind": "EncounterObjective"}
+      "prerequisites": [
+        "VS1_Q07_COMPLETE",
+        "VS1_THIRD_OPTION_READY"
       ],
-      "mandatory_consequences": ["VS1_SEED_RESERVE_LOST", "VS1_DOWNSTREAM_CHANNEL_SECURED"],
-      "set_flags": ["VS1_SLICE_CRISIS_RESOLVED"],
+      "encounter_ids": [
+        "ENC_VS1_04_ROOT_VAULT"
+      ],
+      "objectives": [
+        {
+          "id": "VS1_OBJ_STABILIZE_DIVERSION",
+          "kind": "EncounterObjective"
+        },
+        {
+          "id": "VS1_OBJ_SEVER_FILAMENT",
+          "kind": "EncounterObjective"
+        },
+        {
+          "id": "VS1_OBJ_SECURE_GATE",
+          "kind": "EncounterObjective"
+        }
+      ],
+      "mandatory_consequences": [
+        "VS1_SEED_RESERVE_LOST",
+        "VS1_DOWNSTREAM_CHANNEL_SECURED"
+      ],
+      "set_flags": [
+        "VS1_SLICE_CRISIS_RESOLVED"
+      ],
       "next_quest_id": "VS1_Q09",
       "failure_policy": "Retreat is allowed; retry is allowed. Once resolution commits the seed loss, retries do not reverse it."
     },
     {
       "id": "VS1_Q09",
       "title": "What Remains",
-      "type": ["Main", "Consequence", "Character"],
-      "location_id": "LOC_VS1_BRACKENFORD",
-      "prerequisites": ["VS1_Q08_COMPLETE"],
-      "objectives": ["Witness the loss of the seed reserve", "Resolve the community's immediate priorities", "Choose the first recovery priority"],
-      "choices": [
-        {"id": "VS1_CHOICE_RECOVERY_CARE", "value": "CARE", "effects": ["RECOVERY_FACILITY_STATE_UNLOCKED", "COMMUNITY_TRUST_UP"]},
-        {"id": "VS1_CHOICE_RECOVERY_REPAIR", "value": "REPAIR", "effects": ["WORKSHOP_IMPROVEMENT_UNLOCKED", "MATERIAL_THROUGHPUT_UP"]},
-        {"id": "VS1_CHOICE_RECOVERY_COORDINATION", "value": "COORDINATION", "effects": ["EXPEDITION_BOARD_UNLOCKED", "RECOVERY_FACILITY_BASIC"]}
+      "type": [
+        "Main",
+        "Consequence",
+        "Character"
       ],
-      "set_flags": ["VS1_COMMUNITY_LEADERSHIP_OFFERED"],
+      "location_id": "LOC_VS1_BRACKENFORD",
+      "prerequisites": [
+        "VS1_Q08_COMPLETE"
+      ],
+      "objectives": [
+        "Witness the loss of the seed reserve",
+        "Resolve the community's immediate priorities",
+        "Choose the first recovery priority"
+      ],
+      "choices": [
+        {
+          "id": "VS1_CHOICE_RECOVERY_CARE",
+          "value": "CARE",
+          "effects": [
+            "RECOVERY_FACILITY_STATE_UNLOCKED",
+            "COMMUNITY_TRUST_UP"
+          ],
+          "set_flags": [
+            "VS1_RECOVERY_PRIORITY_CARE"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_RECOVERY_REPAIR",
+          "value": "REPAIR",
+          "effects": [
+            "WORKSHOP_IMPROVEMENT_UNLOCKED",
+            "MATERIAL_THROUGHPUT_UP"
+          ],
+          "set_flags": [
+            "VS1_RECOVERY_PRIORITY_REPAIR"
+          ]
+        },
+        {
+          "id": "VS1_CHOICE_RECOVERY_COORDINATION",
+          "value": "COORDINATION",
+          "effects": [
+            "EXPEDITION_BOARD_UNLOCKED",
+            "RECOVERY_FACILITY_BASIC"
+          ],
+          "set_flags": [
+            "VS1_RECOVERY_PRIORITY_COORDINATION"
+          ]
+        }
+      ],
+      "set_flags": [
+        "VS1_COMMUNITY_LEADERSHIP_OFFERED"
+      ],
       "next_quest_id": "VS1_Q10"
     },
     {
       "id": "VS1_Q10",
       "title": "A Place That Must Continue",
-      "type": ["Main", "Leadership", "Management"],
-      "location_id": "LOC_VS1_BRACKENFORD",
-      "prerequisites": ["VS1_Q09_COMPLETE"],
-      "objectives": ["Accept accountable community leadership", "Choose one initial facility", "Assign First Ally to a starter task"],
-      "choices": [
-        {"id": "VS1_CHOICE_FACILITY_RECOVERY", "facility_id": "FAC_VS1_RECOVERY_ROOM"},
-        {"id": "VS1_CHOICE_FACILITY_WORKSHOP", "facility_id": "FAC_VS1_COMMON_WORKSHOP"},
-        {"id": "VS1_CHOICE_FACILITY_COORDINATION", "facility_id": "FAC_VS1_COORDINATION_BOARD"}
+      "type": [
+        "Main",
+        "Leadership",
+        "Management"
       ],
-      "set_flags": ["ACT_I_COMPLETE", "VS1_ALYA_RECOGNIZED_LEADER"],
+      "location_id": "LOC_VS1_BRACKENFORD",
+      "prerequisites": [
+        "VS1_Q09_COMPLETE"
+      ],
+      "objectives": [
+        "Accept accountable community leadership",
+        "Choose one initial facility",
+        "Assign First Ally to a starter task"
+      ],
+      "choices": [
+        {
+          "id": "VS1_CHOICE_FACILITY_RECOVERY",
+          "facility_id": "FAC_VS1_RECOVERY_ROOM"
+        },
+        {
+          "id": "VS1_CHOICE_FACILITY_WORKSHOP",
+          "facility_id": "FAC_VS1_COMMON_WORKSHOP"
+        },
+        {
+          "id": "VS1_CHOICE_FACILITY_COORDINATION",
+          "facility_id": "FAC_VS1_COORDINATION_BOARD"
+        }
+      ],
+      "set_flags": [
+        "ACT_I_COMPLETE",
+        "VS1_ALYA_RECOGNIZED_LEADER"
+      ],
       "conditional_flags": [
-        {"if_all": ["VS1_RECOVERY_PRIORITY_CARE"], "set": ["VS1_CUIDADORA_RECRUITED"]},
-        {"if_all": ["FAC_VS1_RECOVERY_ROOM_BUILT"], "set": ["VS1_CUIDADORA_RECRUITED"]}
+        {
+          "if_all": [
+            "VS1_RECOVERY_PRIORITY_CARE"
+          ],
+          "set": [
+            "VS1_CUIDADORA_RECRUITED"
+          ]
+        },
+        {
+          "if_all": [
+            "FAC_VS1_RECOVERY_ROOM_BUILT"
+          ],
+          "set": [
+            "VS1_CUIDADORA_RECRUITED"
+          ]
+        }
       ],
       "next_quest_id": "VS1_Q11"
     },
     {
       "id": "VS1_Q11",
       "title": "First Delegation",
-      "type": ["Management", "ExpeditionTutorial"],
+      "type": [
+        "Management",
+        "ExpeditionTutorial"
+      ],
       "location_id": "LOC_VS1_BRACKENFORD",
-      "prerequisites": ["ACT_I_COMPLETE"],
-      "objectives": ["Assign an eligible community member", "Launch the upper route survey", "Receive and review the autonomous result"],
+      "prerequisites": [
+        "ACT_I_COMPLETE"
+      ],
+      "objectives": [
+        "Assign an eligible community member",
+        "Launch the upper route survey",
+        "Receive and review the autonomous result"
+      ],
       "expedition_id": "EXP_VS1_UPPER_ROUTE_SURVEY",
-      "set_flags_on_launch": ["VS1_FIRST_EXPEDITION_LAUNCHED"],
-      "set_flags_on_resolution": ["VS1_FIRST_EXPEDITION_RESOLVED"],
+      "set_flags_on_launch": [
+        "VS1_FIRST_EXPEDITION_LAUNCHED"
+      ],
+      "set_flags_on_resolution": [
+        "VS1_FIRST_EXPEDITION_RESOLVED"
+      ],
       "completion_condition": "Player has seen the result and its community impact."
     }
   ]

@@ -93,7 +93,10 @@ The skill architecture remains closed; the concrete catalog remains unlocked. Th
 - `docs/systems/combat/SKILLS_AUDIT.md` — approved meter migration, P-growth capability, and cluster consolidation decisions.
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_1.md` — initial row-by-row audit.
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_2.md` — applied decisions and proposed mechanical disposition for 54 legacy rows plus fourteen additions.
+- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_3.md` — thematic/function review of the highest-impact clusters: control, reactive defense, Strain/DoT/finishers, capabilities, passives, and economy.
 - `implementation_spec/SKILL_CATALOG.md` — schema, meter migration, capability contract, and validation rules.
 - `data/skills/skills.csv` — primary concrete catalog; migration remains pending review.
+
+Pass 3 recommends preserving action fantasy while separating it from mechanical identity; presentation variants should share mechanics unless they create a distinct tactical decision. Control/outcome, reactive defense, AoE, and Overflow clusters remain under review.
 
 Approved decisions: neutral implementation vocabulary is canonical; tiers represent both progression/unlock expectation and expected power; unlocks combine Skill Points, prerequisites, and progression gates; CSV is the primary catalog with companion definitions for complex mechanics; preserve themes but merge only genuine mechanical redundancy; H-gauge maps to Strain and Health Damage to Vitality damage subject to per-effect semantic validation; P-growth is a Capability/Transformation that enables dependent skills.

@@ -286,6 +286,9 @@
           "effects": [
             "CLIMAX_PRESSURE_DOWN",
             "OBJECTIVE_DEFENSE_STEPS_PLUS_1"
+          ],
+          "set_flags": [
+            "VS1_PREPARATION_PRIORITY_WORKERS"
           ]
         },
         {
@@ -294,6 +297,9 @@
           "effects": [
             "CLIMAX_SPREAD_PRESSURE_DOWN",
             "RECOVERY_DURATION_UP"
+          ],
+          "set_flags": [
+            "VS1_PREPARATION_PRIORITY_CHANNEL"
           ]
         },
         {
@@ -311,6 +317,9 @@
               "item_id": "ITEM_VS1_FILTER_FIBER",
               "quantity": 1
             }
+          ],
+          "set_flags": [
+            "VS1_PREPARATION_PRIORITY_STAGED_DIVERSION"
           ]
         }
       ],
@@ -322,7 +331,11 @@
         "ENC_VS1_03_HOLLOW_WARDEN"
       ],
       "next_quest_id": "VS1_Q08",
-      "failure_policy": "Required materials have fallback sources and cannot be permanently lost to optional interactions."
+      "failure_policy": "Required materials have fallback sources and cannot be permanently lost to optional interactions.",
+      "conditional_cost_refs": [
+        "COST_VS1_GATE_REPAIR_SURCHARGE",
+        "COST_VS1_ORG_SUPPORT"
+      ]
     },
     {
       "id": "VS1_Q08",
@@ -534,5 +547,6 @@
       }
     ],
     "mandatory_material_policy": "Optional crafting cannot consume materials reserved for VS1_Q07. If the player chose to close the gate, an additional guaranteed Timber reward from ENC_VS1_01_HUSKS covers the extra repair cost. Fiber from ENC_VS1_02_THREADLINGS has a guaranteed minimum of one."
-  }
+  },
+  "effect_catalog_ref": "data/vertical_slice/act_i_effects.json"
 }

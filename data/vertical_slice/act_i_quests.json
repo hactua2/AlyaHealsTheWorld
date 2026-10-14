@@ -512,7 +512,7 @@
     "resources": [
       {
         "resource_id": "RESOURCE_TIMBER",
-        "quantity": 3
+        "quantity": 2
       },
       {
         "resource_id": "RESOURCE_FIBER",

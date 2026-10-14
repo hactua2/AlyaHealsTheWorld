@@ -1,7 +1,7 @@
 # AHTW — Skill Catalog Reconciliation Pass 6
 ## Cross-cutting semantics: target resolution, scaling, capabilities, and event atomicity
 
-> **Status:** Proposal for project-owner review. Pass 4 and Pass 5 decisions are binding constraints. This pass does not modify `data/skills/skills.csv`, lock numeric coefficients, or finalize the catalog.
+> **Status:** Updated with the project owner's seven decisions. Pass 4 and Pass 5 decisions remain binding constraints. This pass does not modify `data/skills/skills.csv`, lock numeric coefficients, or finalize the catalog.
 
 ## 1. Decisions carried forward
 
@@ -16,8 +16,8 @@
 ### Pass 5
 - Flaunt, G-bang, and Strip remain mechanically distinct. They need real differentiators beyond labels/animations.
 - Summon c-s concentrates output against fewer valid enemies, with a defined curve and cap.
-- Summon Tentacles uses declared target sides and deterministic friendly-fire consequences.
-- Bkakke allows encounter victory only if every enemy is eligible and every outcome request succeeds.
+- Summon Tentacles may affect enemies, allies, and the user; each side/effect is declared and resolved deterministically.
+- Bkakke allows encounter victory only if every enemy is eligible and every outcome request succeeds; each failed/ineligible target also triggers a defined self-risk consequence, while successful target outcomes persist.
 - Enslave and Absolute Control merge into one top-tier finisher identity; no duplicate mechanical records.
 - Overflow retains three distinct roles: S Symbol = passive recovery; Ecstasy Aftershocks = automatic area retaliation; Overflow Engine = active/configurable conversion.
 - CSV remains unchanged.
@@ -46,19 +46,20 @@ Recommended common rules:
 
 This preserves deterministic results and prevents target-count exploits from multiplying self-buffs or action costs.
 
-### 2.3 Bkakke: strict victory condition vs partial target outcomes
+### 2.3 Bkakke: strict victory condition with per-failure self-risk
 
-The owner chose an all-target victory condition: all enemies must be eligible and all outcome requests must succeed before the encounter can count as won. The remaining question is whether successful individual target outcomes persist if another target is ineligible or resists.
+**Owner decision: C.** Resolve each target independently and persist successful per-target outcomes. The encounter counts as won only if every enemy was eligible and every request succeeded. Each failed or ineligible target also triggers a predefined self-risk consequence.
 
-**Recommendation:** resolve each target independently and persist successful per-target outcomes; if any target fails/is ineligible, the encounter does not count as won and continues with the resulting encounter state. Do not roll back successful target results, and do not add a self-penalty unless explicitly specified by the skill.
-
-Rationale: rollback would violate the normal action-event model and require compensating mutations; persistent per-target outcomes preserve deterministic, auditable event history. The group-level victory check remains all-or-nothing.
+Recommended guardrails:
+- Apply the self-risk consequence once per failed/ineligible target, in deterministic target order.
+- Declare the consequence's channel, magnitude/scaling, and whether it can itself cause defeat before catalog lock.
+- The consequence cannot retroactively invalidate already-resolved successful target outcomes.
+- If no targets fail, no self-risk consequence occurs.
+- Encounter victory is evaluated only after the atomic action and all target-specific consequences finish.
 
 ### 2.4 Overflow event semantics
 
-The existing turn contract requires triggered reactions, chains, thresholds, resource generation, and immediate outcome checks to resolve deterministically. Proposed rule:
-- Emit at most one Overflow event per affected actor per resolved action, when that actor crosses the canonical Overflow boundary.
-- Additional Strain changes to the same actor during that same action do not emit duplicate Overflow events unless the meter contract explicitly supports leaving and recrossing the boundary as separate crossings.
+**Owner decision: A.** Emit at most one Overflow event per affected actor per resolved action when the canonical boundary is crossed. Additional Strain changes to that actor during the same action do not emit duplicate events.
 - S Symbol, Ecstasy Aftershocks, and Overflow Engine each listen to that resolved event under their own eligibility conditions.
 - Apply listeners in deterministic priority/application order.
 - Each listener declares its output cap and cannot recursively trigger itself. Any cross-skill chain depth cap must be explicit in the combat rules.
@@ -66,14 +67,12 @@ The existing turn contract requires triggered reactions, chains, thresholds, res
 
 ### 2.5 Body-part affinity and attribute scaling
 
-The eight primary attributes and body-part affinities are distinct inputs. Avoid silently treating a body part as a ninth primary attribute or multiplying every affinity on the character sheet.
-
-Recommended per-skill calculation profile:
+**Owner decision: A.** Use a per-skill calculation profile: compute the weighted contribution of declared primary attributes, then apply only the matching body-part affinity as a separate modifier.
 1. `scaling_ref` selects a weighted subset of primary attributes for the action.
 2. The skill's declared body-part Aspect selects only the matching affinity/multiplier input(s).
-3. The profile combines attribute contribution and affinity through a declared operation and coefficient set.
+3. Apply the affinity as a separate modifier after the weighted attribute contribution, using a shared documented default operation.
 4. Apply skill base power, target resistance/mitigation, vulnerability, and conditional riders in a documented order.
-5. If an action has multiple declared Aspects, the profile must specify whether they combine by sum, average, strongest-only, or another explicit rule. No implicit multiplication of all Aspects.
+5. For multi-Aspect actions, each skill must explicitly define its combination rule. No implicit multiplication of all Aspects.
 
 No coefficients should be locked in this pass. The goal is to make each skill's calculation auditable and prevent accidental stacking.
 
@@ -88,7 +87,7 @@ P-growth is a Capability/Transformation that enables dependent skills, but recip
 
 ### 2.7 H-job and Mind Aspect
 
-Keep Mind as the Aspect. Rewrite the effect as a mental/sensory interaction, not a physical hand-based action. Recommended mechanical identity: a focused Strain action that gains accuracy/effectiveness against a target whose intent is exposed or whose mental/sensory resistance has been reduced. It should not also grant a generic stun, DoT, and intent control bundle without a separate declared sequence.
+**Owner decision: C.** Keep Mind as the Aspect and define H-job as a focused Strain damage-over-time effect against a declared mental/sensory vulnerability. Specify tick timing, duration, refresh/stack behavior, and resistance interaction; do not bundle direct intent manipulation or generic stun unless a separate effect is explicitly authored.
 
 ## 3. Proposed distinct identities for area actions
 
@@ -104,54 +103,54 @@ These may share an implementation template. “Mechanically distinct” means th
 
 ## 4. Remaining decisions requested
 
-### Decision 1 — Bkakke partial target outcomes
-**Recommended: A.** Successful target outcomes persist; the encounter is not won unless all enemies were eligible and all requests succeeded.
+### Decision 1 — Bkakke partial target outcomes — DECIDED: C
+Successful target outcomes persist; any failed/ineligible target prevents encounter victory and triggers a predefined self-risk consequence once for that target.
 
-- **A. Per-target success persists; any failure prevents encounter victory but does not roll back other results.**
-- B. Treat the entire multi-target finisher atomically: if any target fails, roll back every target outcome.
-- C. Successful target outcomes persist, but every failed/ineligible target also triggers a predefined self-risk consequence.
+- A. Per-target success persists; failure prevents victory without rollback.
+- B. Roll back every target outcome if any target fails.
+- **C. Successful target outcomes persist, but each failed/ineligible target also triggers a predefined self-risk consequence.**
 
-### Decision 2 — Flaunt/G-bang/Strip differentiators
-**Recommended: A.** Approve the distinct roles proposed in section 3.
+### Decision 2 — Flaunt/G-bang/Strip differentiators — DECIDED: A
+Approve the distinct roles proposed in section 3.
 
 - **A. Flaunt = reliable flat area pressure; G-bang = capped bonus for larger enemy groups; Strip = area pressure + temporary self-evasion.**
 - B. Flaunt = bonus against vulnerable targets; G-bang = flat area pressure; Strip = area pressure + temporary self-evasion.
 - C. Keep all three distinct, but leave their differentiators unresolved until encounter playtests.
 
-### Decision 3 — Summon Tentacles affected sides
-**Recommended: A.** Preserve the high-risk identity by declaring all affected sides explicitly, including friendly fire where applicable.
+### Decision 3 — Summon Tentacles affected sides — DECIDED: A
+Preserve the high-risk identity by declaring all affected sides explicitly, including friendly fire where applicable.
 
 - **A. May affect enemies, allies, and the user; each side/effect is declared in the skill data and resolved deterministically.**
 - B. Affects enemies and the user, but never allies.
 - C. Affects enemies only; the risk is represented by a drawback other than friendly fire.
 
-### Decision 4 — Overflow event frequency
-**Recommended: A.** At most one event per affected actor per action when crossing the canonical boundary.
+### Decision 4 — Overflow event frequency — DECIDED: A
+At most one event per affected actor per action when crossing the canonical boundary.
 
 - **A. One Overflow event per affected actor per action; no duplicate triggers from the same action.**
 - B. One event for every threshold crossing, even within one action.
 - C. One event per turn, even if multiple separate actions trigger Overflow in that turn.
 
-### Decision 5 — P-growth capability scope
-**Recommended: B.** The capability belongs to the actor who receives the transformation; the skill may target Alya or a specific eligible ally if the content explicitly allows it.
+### Decision 5 — P-growth capability scope — DECIDED: A
+P-growth is exclusive to Alya; dependent skills are unavailable to allies.
 
-- A. Alya only; dependent skills can never be used by allies.
-- **B. Actor-specific; acquisition can target Alya or an eligible ally when explicitly declared.**
+- **A. Alya only; dependent skills can never be used by allies.**
+- B. Actor-specific; acquisition can target Alya or an eligible ally when explicitly declared.
 - C. Community-wide unlock that automatically enables the skill for every ally.
 
-### Decision 6 — Attribute + body-part affinity composition
-**Recommended: A.** Use a per-skill scaling profile that computes a declared weighted attribute contribution and then applies only the matching body-part affinity as a separate modifier. Multi-Aspect skills must explicitly define their combination rule.
+### Decision 6 — Attribute + body-part affinity composition — DECIDED: A
+Use a per-skill scaling profile that computes a declared weighted attribute contribution and then applies only the matching body-part affinity as a separate modifier. Multi-Aspect skills must explicitly define their combination rule.
 
 - **A. Weighted attribute contribution, then matching Aspect modifier; multi-Aspect combination declared per skill.**
 - B. Add attribute contribution and affinity as independent additive terms.
 - C. Let every skill author a fully custom formula without a shared default.
 
-### Decision 7 — H-job effect identity
-**Recommended: A.** Focused Strain action that exploits exposed intent or reduced mental/sensory resistance.
+### Decision 7 — H-job effect identity — DECIDED: C
+Focused Strain damage-over-time against a declared mental/sensory vulnerability.
 
-- **A. Focused Strain; improved effectiveness against exposed intent or reduced mental/sensory resistance.**
+- A. Focused Strain; improved effectiveness against exposed intent or reduced mental/sensory resistance.
 - B. Focused Strain plus direct intent manipulation.
-- C. Focused Strain DoT against mental/sensory vulnerability.
+- **C. Focused Strain DoT against mental/sensory vulnerability.**
 
 ## 5. Catalog-wide ambiguities still open after Pass 6
 
@@ -161,12 +160,12 @@ These may share an implementation template. “Mechanically distinct” means th
 - AS Chain advancement, qualifying use, and reset conditions.
 - The unique rule and target-count cap for G-bang; exact cost/output budgets for Flaunt and Strip.
 - Summon c-s scaling curve and behavior when valid target count is zero or changes during resolution.
-- Summon Tentacles' precise affected-side matrix and per-side consequences.
-- Bkakke's partial target outcome atomicity.
+- Summon Tentacles' exact target/effect matrix, including whether the user and allies receive identical or side-specific effects.
+- Bkakke's exact self-risk channel/magnitude and whether it can cause defeat.
 - Shared Enslave/Absolute Control finisher requirements, resistance, duration, permitted outcomes, and failure behavior.
 - Overflow boundary semantics and cross-listener priority/caps.
-- P-growth recipients, lifecycle, and dependent-skill prerequisites.
-- Exact effect semantics for H-job, plus legacy Aspect/target-field validation for H-job, Encourage, Extra Tips, and C-drinker.
+- P-growth lifecycle/revocation and dependent-skill prerequisites; recipient scope is now locked to Alya only.
+- H-job's DoT tick/duration/refresh/stack/resistance details, plus legacy Aspect/target-field validation for H-job, Encourage, Extra Tips, and C-drinker.
 - Skill tiers, Skill Point costs, prerequisite graph, progression gates, cooldowns, and resource costs.
 - Final migration from the 54 named legacy rows and 14 proposed additions into the canonical catalog.
 

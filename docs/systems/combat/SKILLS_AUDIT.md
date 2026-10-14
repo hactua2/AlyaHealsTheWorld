@@ -1,6 +1,6 @@
 # AHTW — Skills Audit & Reconciliation
 
-> Status: **STRUCTURE CLOSED; CATALOG RECONCILIATION IN PROGRESS**. This document records approved design decisions and reconciliation recommendations. It does not claim the concrete catalog, balance, implementation, or QA are complete.
+> Status: **SKILL DESIGN/SEMANTIC RECONCILIATION CLOSED; PRODUCTION CATALOG PENDING**. The semantic baseline is recorded in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`. Numeric balance, normalized CSV migration, companion data, implementation, and QA remain production tasks.
 
 ## 1. Purpose and audit method
 
@@ -102,17 +102,15 @@ Every retained skill needs:
 
 Tier is reviewed against impact, reliability, flexibility, setup, cost, and availability—not just damage.
 
-## 7. Immediate blockers
+## 7. Production tasks after semantic lock
 
-1. Approve cluster-level distinctions and conditional/merge candidates from Pass 2.
-2. Validate each legacy meter/effect mapping; do not rename terms without reconstructing semantics.
-3. Resolve actor/target ambiguity, especially Self/Ally/Enemy combinations.
-4. Reconcile the fourteen additions against legacy candidates before inserting records.
-5. Replace free-text-only runtime definitions with structured effects or companion references.
-6. Resolve P-growth target scope, persistence, removal, and dependency rules.
-7. Remove malformed unnamed placeholder rows during CSV migration.
-8. Add catalog validation for IDs, tiers/kinds, requirement/effect/target references, tags, resource expressions, and encounter-outcome consistency.
+1. Migrate legacy rows to stable IDs and the normalized schema; remove the nine unnamed placeholder rows.
+2. Consolidate Enslave and Absolute Control into one canonical record while preserving presentation aliasing.
+3. Add structured companion definitions for effects, targets, scaling, requirements, costs, Chain/Threshold/Overflow, capability dependencies, and presentation.
+4. Assign numeric coefficients, costs, durations, cooldowns, caps, and Skill Point costs during balance work.
+5. Validate IDs, tiers/kinds, requirement/effect/target references, tags, resource expressions, and encounter-outcome consistency.
+6. Run deterministic encounter tests for DoTs, partial multi-target outcomes, Overflow, Chain, high-risk friendly fire, and P-growth gating.
 
 ## 8. Current verdict
 
-**Skill architecture and migration policy: CLOSED. Concrete catalog: NOT YET LOCKED.** The next task is to review the cluster-level distinctions and proposed dispositions, then migrate the CSV and validate the catalog. No additional generic skills are justified at this stage.
+**Skill architecture and semantic design: CLOSED. Production catalog: NOT YET READY.** The accepted semantic dispositions for all 54 named legacy rows and fourteen proposed additions are recorded in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; Passes 1–7 provide the audit trail. The remaining work is production work: normalized schema migration, companion definitions, numeric balance, automated validation, and encounter-level QA. No additional generic skills are justified at this stage. The legacy CSV has not been modified by the design-lock work.

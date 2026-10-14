@@ -77,7 +77,7 @@
     {"id":"ENC_VS1_04_ROOT_VAULT","category":["Combat","Boss","Objective"],"location_id":"POI_VS1_ROOT_VAULT","composition":[{"enemy_id":"ENEMY_VS1_HOLLOW_WARDEN","count":1},{"enemy_id":"ENEMY_VS1_ROOT_KNOT","count":1},{"enemy_id":"ENEMY_VS1_THREADLING","count":1}],"objective_steps":["VS1_OBJ_STABILIZE_DIVERSION","VS1_OBJ_SEVER_FILAMENT","VS1_OBJ_SECURE_GATE"],"objective_progress_rule":"Progress uses explicit action/objective checks; no grid or range. Community contribution reduces one requirement or one pressure source.","retreat_allowed":true,"mandatory_outcomes":["VS1_DOWNSTREAM_CHANNEL_SECURED","VS1_SEED_RESERVE_LOST"],"reward":{"RESOURCE_GOLD":{"min":8,"max":12},"RESOURCE_BOTANICAL_EXTRACT":{"min":1,"max":1}}}
   ],
   "items": [
-    {"id":"ITEM_VS1_FILTER_FIBER","name":"Filtered Root-Fiber","kind":"QuestMaterial","stack_limit":10,"consumable":false,"sources":["VS1_DISCOVERY_CISTERN_RESIDUE","ENC_VS1_02_THREADLINGS","EXP_VS1_UPPER_ROUTE_SURVEY"],"sinks":["VS1_Q07"],"description":"A cleaned filament sample used to prepare the staged diversion."},
+    {"id":"ITEM_VS1_FILTER_FIBER","name":"Filtered Root-Fiber","kind":"QuestMaterial","stack_limit":10,"consumable":false,"sources":["VS1_DISCOVERY_CHANNEL_SAMPLE","ENC_VS1_02_THREADLINGS","EXP_VS1_UPPER_ROUTE_SURVEY"],"sinks":["VS1_Q07"],"description":"A cleaned filament sample used to prepare the staged diversion."},
     {"id":"ITEM_VS1_SOOTHING_TONIC","name":"Soothing Tonic","kind":"Consumable","stack_limit":5,"consumable":true,"effects":[{"type":"ModifyMeter","meter":"Vitality","operation":"Restore","amount":12}],"craft_inputs":[{"resource_id":"RESOURCE_BOTANICAL_EXTRACT","quantity":1},{"resource_id":"RESOURCE_FIBER","quantity":1}],"description":"A modest recovery item; provisional effect value pending runtime balance."},
     {"id":"ITEM_VS1_REPAIR_BUNDLE","name":"Sluice Repair Bundle","kind":"QuestMaterial","stack_limit":5,"consumable":true,"effects":[{"type":"QuestProgress","target":"VS1_OBJ_STABILIZE_DIVERSION","amount":1}],"craft_inputs":[{"resource_id":"RESOURCE_TIMBER","quantity":1},{"resource_id":"RESOURCE_FIBER","quantity":1}],"description":"A bundle of timber braces and fiber bindings for the waterworks."},
     {"id":"ITEM_VS1_SEED_RESERVE","name":"Lower Terrace Seed Reserve","kind":"UniqueResource","stack_limit":1,"consumable":false,"initial_state":"Present","final_state":"Lost","description":"Narrative resource representing the next planting cycle; its loss is mandatory at the climax."}
@@ -106,7 +106,7 @@
     }
   ],
   "discoveries": [
-    {"id":"VS1_DISCOVERY_CISTERN_RESIDUE","location_id":"LOC_VS1_BRACKENFORD","requirements":["VS1_CISTERN_INSPECTED"],"rewards":[{"item_id":"ITEM_VS1_FILTER_FIBER","quantity":1}],"flags":["VS1_CHANNEL_CLUE_FOUND"],"purpose":"Provides local evidence and unlocks the staged-diversion preparation option."}
+    {"id":"VS1_DISCOVERY_CHANNEL_SAMPLE","location_id":"POI_VS1_SILT_PATH","requirements":["VS1_RED_THREAD_CONFIRMED"],"rewards":[{"item_id":"ITEM_VS1_FILTER_FIBER","quantity":1}],"flags":["VS1_CHANNEL_CLUE_FOUND"],"purpose":"Provides local evidence and unlocks the staged-diversion preparation option."}
   ],
   "asset_requirements": [
     {"id":"ASSET_VS1_BRACKENFORD_HUB_BG","kind":"Background","priority":"P0","reuse_candidate":"Existing village/town background","fallback":"Static placeholder"},

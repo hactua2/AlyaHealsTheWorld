@@ -306,7 +306,7 @@
           "id": "VS1_CHOICE_STAGED_DIVERSION",
           "value": "STAGED_DIVERSION",
           "effects": [
-            "CLIMAX_PRESSURE_DOWN",
+            "CLIMAX_SPREAD_PRESSURE_DOWN",
             "RECOVERY_DURATION_DOWN"
           ],
           "requirements": [
@@ -456,15 +456,24 @@
       "choices": [
         {
           "id": "VS1_CHOICE_FACILITY_RECOVERY",
-          "facility_id": "FAC_VS1_RECOVERY_ROOM"
+          "facility_id": "FAC_VS1_RECOVERY_ROOM",
+          "set_flags": [
+            "FAC_VS1_RECOVERY_ROOM_BUILT"
+          ]
         },
         {
           "id": "VS1_CHOICE_FACILITY_WORKSHOP",
-          "facility_id": "FAC_VS1_COMMON_WORKSHOP"
+          "facility_id": "FAC_VS1_COMMON_WORKSHOP",
+          "set_flags": [
+            "FAC_VS1_COMMON_WORKSHOP_BUILT"
+          ]
         },
         {
           "id": "VS1_CHOICE_FACILITY_COORDINATION",
-          "facility_id": "FAC_VS1_COORDINATION_BOARD"
+          "facility_id": "FAC_VS1_COORDINATION_BOARD",
+          "set_flags": [
+            "FAC_VS1_COORDINATION_BOARD_BUILT"
+          ]
         }
       ],
       "set_flags": [

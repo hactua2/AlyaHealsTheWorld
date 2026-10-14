@@ -92,3 +92,13 @@ The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_RO
 ## Maintenance rule
 
 Whenever a planning decision is finalized, update the relevant domain source first and then update this index/audit status. Historical batch logs are secondary context only and must not become competing sources of truth.
+
+
+## Skills audit update — decisions locked, content reconciliation active
+
+The skill design architecture remains closed, but the concrete catalog is **not yet locked**. The current audit and schema contract are:
+- `docs/systems/combat/SKILLS_AUDIT.md` — canonical vocabulary decision, tier/unlock rules, inventory findings, and first-pass redundancy hypotheses.
+- `implementation_spec/SKILL_CATALOG.md` — logical schema, source-of-truth hierarchy, and validation rules.
+- `data/skills/skills.csv` — primary concrete catalog; structured migration is pending review of the row-by-row reconciliation.
+
+Approved working decisions: neutral implementation vocabulary is canonical; tiers represent both unlock/progression and expected power; unlocking combines Skill Points, prerequisites, and progression gates; CSV remains the primary catalog with companion definitions for complex mechanics; preserve legacy fantasy/intention while reformulating, merging, or removing redundant mechanics.

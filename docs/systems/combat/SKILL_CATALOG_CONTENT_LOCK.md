@@ -25,7 +25,7 @@ All 54 named legacy rows have been reviewed. The nine unnamed placeholder rows a
 | Legacy entry | Final semantic disposition |
 |---|---|
 | Sensory Enhancement | Retain as a tagged vulnerability amplifier for explicitly named channels/effects. |
-| Mstrbate | Retain as a self-recovery/risk action only if recovery and intent influence are represented as one explicit trade-off; otherwise split into separate records. The production record must not keep an unstructured effect bundle. |
+| Mstrbate | Retain as one coherent risk/reward action: reduce Alya's Strain and increase the target's likelihood of choosing a Strain-oriented attack for a declared duration. The risk is explicit and bounded; do not split it into duplicate records. |
 | Dancing moves | Retain as an active, time-bounded evasion stance. |
 | Flirt | Retain as a hybrid low-to-moderate Strain action and modest Command generator; combined efficiency is below specialized actions. |
 | Hypnotize | Retain as intent manipulation or a defined resisted mental-control state; no implicit stun/DoT bundle. |
@@ -49,10 +49,10 @@ All 54 named legacy rows have been reviewed. The nine unnamed placeholder rows a
 | Encourage | Retain as an active, time-bounded buff to an ally's next qualifying attack. |
 | Flaunt | Retain as reliable area Strain pressure without Strip's evasion rider or G-bang's group-size bonus. |
 | Autof | Retain as a P-growth-gated self-recovery/cleanse action; declare each removable effect category. |
-| Aphrodisiac | Retain as a single-target Strain DoT plus an explicitly bounded intent-bias rider only if both are one coherent action. |
+| Aphrodisiac | Retain as a single-target Strain DoT plus a bounded increase in the target's likelihood of choosing Strain-oriented attacks; both effects share one duration and are resisted/removed under their declared effect rules. |
 | P-growth | Retain as Alya-only Capability/Transformation; declare persistence, revocation, and dependent skills. |
-| Facesit | Retain as a focused action; self-risk only when explicit, with defined payoff and target-side semantics. |
-| Bondage | Retain as a self-applied restraint/high-risk state with a declared payoff and deterministic expiry. |
+| Facesit | Retain as a focused Strain action against one enemy. The baseline has no self-damage; any future variant that introduces self-risk must declare its payoff and target-side semantics separately. |
+| Bondage | Retain as a self-applied restraint state that reduces the user's evasion while increasing the next qualifying Strain action's effectiveness; duration and payoff are explicit, with deterministic expiry. |
 | Bully | Retain as a named-stat debuff; do not use generic “weaken” semantics. |
 | Bite | Retain as a focused Vitality attack; any Strain effect is conditional only. |
 | Bind | Retain as a restraint/control state with explicit blocked actions, resistance, duration, and removal rules. |
@@ -70,10 +70,10 @@ All 54 named legacy rows have been reviewed. The nine unnamed placeholder rows a
 | Penetrate | Retain as a P-growth-gated focused Strain action; no implied stun. |
 | A-penetration | Retain as a P-growth-gated focused Strain action with a defined control rider, subject to resistance and duration. |
 | Stomp | Retain as a threshold conversion: Strain state increases Vitality damage under an explicit cap. |
-| Summon Tentacles | Retain as a HighRisk area action that may affect enemies, allies, and the user. Declare each side's target/effect entry; use a validation-time target snapshot and deterministic ordering. |
+| Summon Tentacles | Retain as a HighRisk area action that may affect enemies, allies, and the user. The default primary effect is Strain damage to every side included in the validation-time target snapshot; any side-specific reduction/rider must be explicitly declared. Resolve targets in deterministic order. |
 | Enslave | Merge into the canonical `SKILL_ABSOLUTE_CONTROL` identity. Keep Enslave only as a presentation alias/legacy label, not a duplicate mechanical record. |
 | G-bang | Retain as area Strain pressure with a capped bonus that increases with the number of valid enemies; distinct from Flaunt and Summon c-s. |
-| Bkakke | Retain as an all-target finisher request. Resolve each target independently; successful outcomes persist. Each failed/ineligible target triggers a declared self-risk consequence. Victory requires every target request to succeed. |
+| Bkakke | Retain as an all-target finisher request. Resolve each target independently; successful outcomes persist. Each failed/ineligible target deals a fixed, separately balanced Strain penalty to Alya; this penalty may trigger Overflow but cannot directly declare encounter defeat. Victory requires every target request to succeed. |
 | Deepth | Retain as a basic focused Strain action with its own Aspect/scaling profile. |
 | Worship C | Retain as an area intent-bias action; do not also apply an unrelated vulnerability bundle. |
 | Ecstasy Aftershocks | Retain as a passive area retaliation listener on the canonical Overflow event. |

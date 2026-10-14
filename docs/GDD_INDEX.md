@@ -26,7 +26,7 @@ The GDD is considered complete when every required domain points to a current so
 | 04 Narrative | `docs/NARRATIVE_CANON.md` + narrative implementation docs | CANON CLOSED / CONTENT NEEDED |
 | 05 Characters | `docs/characters/CHARACTER_BIBLE.md` + `docs/characters/ALLIES_ROSTER.md` + `docs/characters/NPCS_DESIGN.md` | CHARACTER BIBLE LOCKED / DOWNSTREAM DATA & PRODUCTION NEEDED |
 | 06 Combat | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
-| 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | STRUCTURE CLOSED / CONTENT LOCK PENDING |
+| 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | NORMALIZED CATALOG BASELINE CREATED / RUNTIME & BALANCE QA PENDING |
 | 08 Status Effects | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
 | 09 Enemies | `docs/systems/combat/` + `data/enemies/` | ARCHITECTURE CLOSED / CONTENT LOCK PENDING |
 | 10 Items | `docs/systems/items/` + `data/items/` | RULES CLOSED / CONTENT LOCK PENDING |
@@ -101,10 +101,12 @@ The skill architecture remains closed; the concrete catalog remains unlocked. Th
 - `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_7.md` — eight semantic recommendations accepted by default, closing remaining skill-level decisions.
 - `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md` — final semantic dispositions for all 54 named legacy entries and fourteen proposed additions; defines the production handoff and exit criteria.
 - `implementation_spec/SKILL_CATALOG.md` — schema, meter migration, capability contract, and validation rules.
-- `data/skills/skills.csv` — primary concrete catalog; migration remains pending review.
+- `data/skills/skills.csv` — normalized primary catalog (67 canonical records); companion mechanics are in `data/skills/skill_definitions.json`.
+- `docs/systems/combat/SKILL_CATALOG_PRODUCTION_HANDOFF.md` — migration summary, validation commands, and remaining release gate.
+- `docs/systems/combat/SKILL_CATALOG_BALANCE_BASELINE.md` — provisional coefficients, costs, caps, progression, and required encounter scenarios.
 
 Pass 3 recommends preserving action fantasy while separating it from mechanical identity; skills may share mechanical templates without being merged when their per-skill attribute scaling, body-part association, requirements, costs, synergies, or tactical hooks differ. The project owner confirmed that body-part affinity modifies skill effectiveness after the weighted primary-attribute contribution; multi-Aspect rules must be declared per skill. Control/outcome, reactive defense, AoE, and Overflow clusters continue through skill-level reconciliation.
 
-The Scaling Audit proposes attributes, effects, synergies, and distinct-identity rationale for every named legacy skill and all fourteen proposed additions. Passes 4–6 reflect the owner's explicit decisions; Pass 7 recommendations are accepted by default. `SKILL_CATALOG_CONTENT_LOCK.md` closes semantic design for the legacy inventory and fourteen additions. The CSV remains the legacy source pending a separate normalized schema migration, numeric balancing, and validation; design lock does not imply implementation readiness.
+The Scaling Audit proposes attributes, effects, synergies, and distinct-identity rationale for every named legacy skill and all fourteen proposed additions. Passes 4–6 reflect the owner's explicit decisions; Pass 7 recommendations are accepted by default. `SKILL_CATALOG_CONTENT_LOCK.md` closes semantic design for the legacy inventory and fourteen additions. The normalized CSV and companion definitions are now authored on the production branch; numeric values remain provisional and runtime integration plus encounter-level balance QA are still required.
 
 Approved decisions: neutral implementation vocabulary is canonical; tiers represent both progression/unlock expectation and expected power; unlocks combine Skill Points, prerequisites, and progression gates; CSV is the primary catalog with companion definitions for complex mechanics; preserve themes but merge only genuine mechanical redundancy; H-gauge maps to Strain and Health Damage to Vitality damage subject to per-effect semantic validation; P-growth is a Capability/Transformation that enables dependent skills.

@@ -47,7 +47,7 @@ Two skills can share an effect template while remaining separate unlockable skil
 - `SKILL_OVERFLOW_ENGINE`
 - `SKILL_MUTUAL_RUIN`
 
-These IDs are the approved canonical identifiers for the proposed additions. Their semantic dispositions are locked in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; display names may differ. Numeric balance and normalized production records remain separate implementation work.
+These IDs are the canonical identifiers for the approved additions. Their semantic dispositions are locked in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; the normalized records are in `data/skills/skills.csv` and companion definitions in `data/skills/skill_definitions.json`. Numeric balance remains provisional pending encounter playtests.
 
 ## Required schema
 
@@ -101,7 +101,7 @@ Every capability definition must declare:
 - dependent skill/content references;
 - interactions with cleansing, dispelling, transformation, equipment, and character configuration.
 
-P-growth is the current example. The stable capability is `CAPABILITY_P_GROWTH`, granted to Alya only by owner decision; Autof, F-fk, Penetrate, and A-penetration are the approved dependency candidates. Persistence/revocation and exact dependent-skill prerequisites must be authored in companion data during production.
+P-growth is the current example. The stable capability is `CAPABILITY_P_GROWTH`, granted to Alya only; Autof, F-fk, Penetrate, and A-penetration require it in companion data. It persists until explicit revocation, and the capability must be validated before costs are committed.
 
 ## Requirements and progression
 
@@ -139,4 +139,4 @@ A skill should reuse shared primitives before introducing a custom mechanic.
 
 ## Content-lock status
 
-The semantic design for the skill catalog is closed by `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md` and reconciliation Passes 1–7. The current legacy CSV is not yet a normalized production catalog. Migration must add stable IDs and logical schema fields, remove placeholder rows, represent merges explicitly, author companion definitions, and pass schema plus encounter-level validation before implementation readiness can be claimed.
+The semantic design is closed by `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md` and reconciliation Passes 1–7. The normalized candidate catalog now has 67 canonical records, stable IDs, no placeholder rows, one `ABSOLUTE_CONTROL` mechanical record with `Enslave` as a presentation alias, and companion definitions for targeting, costs, effects, scaling, progression, Chain, DoT, Overflow, outcomes, and capability gates. Run `python tools/validate_skill_catalog.py` and `python -m unittest discover -s tests -p 'test_*.py' -v`. These reference tests do not replace runtime integration or encounter-level balance QA.

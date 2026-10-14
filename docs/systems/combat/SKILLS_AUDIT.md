@@ -1,6 +1,6 @@
 # AHTW — Skills Audit & Reconciliation
 
-> Status: **SKILL DESIGN/SEMANTIC RECONCILIATION CLOSED; PRODUCTION CATALOG PENDING**. The semantic baseline is recorded in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`. Numeric balance, normalized CSV migration, companion data, implementation, and QA remain production tasks.
+> Status: **SEMANTIC DESIGN CLOSED; NORMALIZED CATALOG BASELINE CREATED; RUNTIME INTEGRATION AND BALANCE QA PENDING**. The semantic baseline is recorded in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; the production candidate and handoff are documented in `docs/systems/combat/SKILL_CATALOG_PRODUCTION_HANDOFF.md`.
 
 ## 1. Purpose and audit method
 
@@ -56,7 +56,7 @@ Unlock evaluation combines Skill Points, declarative prerequisites, and progress
 - Companion files may define complex effect sequences, formulas, requirement graphs, presentation references, or reusable definitions.
 - Natural-language descriptions are not runtime source-of-truth.
 - Stable IDs are immutable identity; presentation names can change.
-- No bulk rewrite of the legacy CSV is approved until the reconciliation decisions are reviewed.
+- The semantic reconciliation has been approved. The normalized catalog is authored on `production/normalized-skill-catalog`; the default branch is not changed by this work.
 
 ### 2.4 Legacy content and consolidation policy
 
@@ -68,12 +68,11 @@ Preserve the fantasy and player-facing intention where useful, but reformulate, 
 
 ## 3. Current inventory and confidence
 
-- Legacy CSV: **54 named skill rows**.
-- Previously approved additions: **14 proposed skills** (5 Tier 1, 5 Tier 2, 4 Tier 3).
-- Arithmetic planning total: **68 entries before deduplication, ID normalization, passive review, or replacement**.
-- The CSV currently has legacy field names, free-text effects, no stable skill IDs, inconsistent naming, and nine unnamed placeholder rows. Those rows are not skills and should be removed during migration.
-- The 14 approved additions are not yet fully reconciled into the CSV.
-- The inventory total is not a claim that 68 distinct skills should ship.
+- Legacy inventory: **54 named skill rows** plus **14 approved additions**.
+- Normalized candidate: **67 canonical mechanical records** after merging Enslave into Absolute Control.
+- The nine unnamed placeholder rows have been removed.
+- Stable IDs and normalized references are present in the CSV; nested mechanics live in `data/skills/skill_definitions.json`.
+- Numeric values are explicitly provisional; the catalog is not yet playtest-balanced.
 
 ## 4. Approved additions
 
@@ -113,4 +112,4 @@ Tier is reviewed against impact, reliability, flexibility, setup, cost, and avai
 
 ## 8. Current verdict
 
-**Skill architecture and semantic design: CLOSED. Production catalog: NOT YET READY.** The accepted semantic dispositions for all 54 named legacy rows and fourteen proposed additions are recorded in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; Passes 1–7 provide the audit trail. The remaining work is production work: normalized schema migration, companion definitions, numeric balance, automated validation, and encounter-level QA. No additional generic skills are justified at this stage. The legacy CSV has not been modified by the design-lock work.
+**Skill architecture and semantic design: CLOSED. Production catalog: NOT YET READY.** The accepted semantic dispositions for all 54 named legacy rows and fourteen proposed additions are recorded in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; Passes 1–7 provide the audit trail. The remaining work is runtime integration, CI enforcement, encounter simulation, numerical tuning, and persistence/UI/localization verification. No additional generic skills are justified at this stage. The normalized catalog is available on the `production/normalized-skill-catalog` branch.

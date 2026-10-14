@@ -47,7 +47,7 @@ Two skills can share an effect template while remaining separate unlockable skil
 - `SKILL_OVERFLOW_ENGINE`
 - `SKILL_MUTUAL_RUIN`
 
-These IDs are proposed canonical identifiers; use them in production data only when the corresponding reconciled skill record is approved. Display names may differ.
+These IDs are the approved canonical identifiers for the proposed additions. Their semantic dispositions are locked in `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md`; display names may differ. Numeric balance and normalized production records remain separate implementation work.
 
 ## Required schema
 
@@ -101,7 +101,7 @@ Every capability definition must declare:
 - dependent skill/content references;
 - interactions with cleansing, dispelling, transformation, equipment, and character configuration.
 
-P-growth is the current example. The stable capability is `CAPABILITY_P_GROWTH`, granted to Alya only by owner decision; Autof, F-fk, Penetrate, and A-penetration are dependency candidates. Persistence/revocation and exact dependent-skill prerequisites still require content definition.
+P-growth is the current example. The stable capability is `CAPABILITY_P_GROWTH`, granted to Alya only by owner decision; Autof, F-fk, Penetrate, and A-penetration are the approved dependency candidates. Persistence/revocation and exact dependent-skill prerequisites must be authored in companion data during production.
 
 ## Requirements and progression
 
@@ -135,3 +135,8 @@ A catalog validator should reject:
 - migrated legacy skills whose Strain/Vitality mapping has not been semantically reviewed.
 
 A skill should reuse shared primitives before introducing a custom mechanic.
+
+
+## Content-lock status
+
+The semantic design for the skill catalog is closed by `docs/systems/combat/SKILL_CATALOG_CONTENT_LOCK.md` and reconciliation Passes 1–7. The current legacy CSV is not yet a normalized production catalog. Migration must add stable IDs and logical schema fields, remove placeholder rows, represent merges explicitly, author companion definitions, and pass schema plus encounter-level validation before implementation readiness can be claimed.

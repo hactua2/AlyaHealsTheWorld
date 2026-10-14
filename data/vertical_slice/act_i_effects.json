@@ -34,12 +34,12 @@
   ],
   "conditional_costs": [
     {"id":"COST_VS1_GATE_REPAIR_SURCHARGE","quest_id":"VS1_Q07","when":{"flag":"VS1_REPAIR_SURCHARGE","equals":true},"costs":[{"resource_id":"RESOURCE_TIMBER","quantity":1}]},
-    {"id":"COST_VS1_ORG_SUPPORT","quest_id":"VS1_Q07","when":{"flag":"VS1_ORG_STANCE_ACCEPTED","equals":true},"costs":[{"resource_id":"RESOURCE_GOLD","quantity":2}]}
+    {"id":"COST_VS1_ORG_SUPPORT","quest_id":"VS1_Q07","when":{"flag":"VS1_RESIDENT_SUPPORT_COST_UP","equals":true},"costs":[{"resource_id":"RESOURCE_GOLD","quantity":2}]}
   ],
   "conditional_encounter_modifiers": [
     {"id":"MOD_VS1_WITHDRAWN_PRESSURE","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_EXTRA_THREADLING_CLIMAX","equals":true},"operation":"AddEnemy","enemy_id":"ENEMY_VS1_THREADLING","quantity":1},
-    {"id":"MOD_VS1_WORKERS_FIRST","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_PREPARATION_PRIORITY","equals":"WORKERS"},"operation":"RemoveEnemy","enemy_id":"ENEMY_VS1_THREADLING","quantity":1},
-    {"id":"MOD_VS1_STAGED_DIVERSION","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_PREPARATION_PRIORITY","equals":"STAGED_DIVERSION"},"operation":"ReduceRootKnotPressureFrequency","value":"ONE_STEP"}
+    {"id":"MOD_VS1_WORKERS_FIRST","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_PREPARATION_PRIORITY_WORKERS","equals":true},"operation":"RemoveEnemy","enemy_id":"ENEMY_VS1_THREADLING","quantity":1},
+    {"id":"MOD_VS1_STAGED_DIVERSION","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_PREPARATION_PRIORITY_STAGED_DIVERSION","equals":true},"operation":"ReduceRootKnotPressureFrequency","value":"ONE_STEP"}
   ],
   "implementation_notes": [
     "These are slice-level effect IDs, not new global effect primitives. Each type must map to the existing deterministic content/effect contracts or a registered handler.",

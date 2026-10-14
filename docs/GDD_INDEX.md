@@ -98,6 +98,7 @@ Whenever a planning decision is finalized, update the relevant domain source fir
 
 The skill design architecture remains closed, but the concrete catalog is **not yet locked**. The current audit and schema contract are:
 - `docs/systems/combat/SKILLS_AUDIT.md` — canonical vocabulary decision, tier/unlock rules, inventory findings, and first-pass redundancy hypotheses.
+- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_1.md` — row-by-row first-pass recommendations for the 54 named legacy skill rows and review of the 14 approved additions.
 - `implementation_spec/SKILL_CATALOG.md` — logical schema, source-of-truth hierarchy, and validation rules.
 - `data/skills/skills.csv` — primary concrete catalog; structured migration is pending review of the row-by-row reconciliation.
 

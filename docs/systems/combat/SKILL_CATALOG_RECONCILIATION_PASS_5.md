@@ -1,7 +1,7 @@
 # AHTW — Skill Catalog Reconciliation Pass 5
 ## Area actions, finishers, Overflow, and encounter-outcome boundaries
 
-> **Status:** Proposed next-stage audit. Pass 4 decisions are constraints. This document does not modify data/skills/skills.csv, approve numeric coefficients, or finalize the skill catalog.
+> **Status:** Updated with the project owner's six decisions. This document does not modify data/skills/skills.csv, approve numeric coefficients, or finalize the skill catalog.
 
 ## 1. Constraints carried forward from Pass 4
 
@@ -18,9 +18,9 @@
 
 | Skill | Proposed identity | Required semantics | Distinctness recommendation |
 |---|---|---|---|
-| Flaunt | Area Strain pressure | Explicit target query, hit/accuracy policy, per-target scaling, resistance, and one declared rider at most | Keep as a broad, reliable area action. Share its effect template with other area attacks unless a unique rule changes decisions. |
-| G-bang | Area Strain pressure | Same base requirements as Flaunt; declare target count/scaling and any special target filter | Conditional separate skill. Its own record is justified by distinct affinity/progression or a real targeting/cost/risk difference, not by name alone. |
-| Strip | Area Strain plus temporary evasion | Resolve the area effect and evasion effect in a fixed order; define evasion duration and eligible incoming attacks | Keep distinct only if the defensive window changes turn planning and is balanced against the area output/action cost. Otherwise use the area template without the evasion rider. |
+| Flaunt | Area Strain pressure | Explicit target query, hit/accuracy policy, per-target scaling, resistance, and one declared rider at most | **Owner decision: A — retain as a mechanically distinct action.** Define the unique target rule, scaling profile, cost, or tactical rider that justifies the distinction; do not rely on label/animation alone. |
+| G-bang | Area Strain pressure | Explicit target query, per-target scaling, and any unique target filter/risk | **Owner decision: A — retain as a mechanically distinct action.** Give it a concrete difference from Flaunt (target eligibility, scaling, cost/risk, or effect rider) before catalog lock. |
+| Strip | Area Strain plus temporary evasion | Resolve the area effect and evasion effect in a fixed order; define evasion duration and eligible incoming attacks | **Owner decision: A — retain as a mechanically distinct action.** The temporary evasion window must be a real tactical distinction with defined duration and eligible incoming attacks. |
 | Summon c-s | Area Strain summon that concentrates as fewer enemies remain | Target set; formula/curve for target-count scaling; minimum/maximum output; behavior when targets die or enter/leave the set; friendly-fire policy | Keep distinct for target-count scaling. Do not let damage rise without a floor/cap or a defined number of eligible enemies. |
 | Summon Tentacles | HighRisk area action with explicit side exposure | Explicit affected sides and targets; per-target resolution; self/ally consequences; target-count scaling; interrupt/resistance/counterplay; recursion guard if it triggers other effects | Keep distinct from Summon c-s because the risk to allies/self is central. “Aggro everyone” is not a complete target or effect rule. |
 | Pink Mist | Area Strain DoT plus named defense debuff | Explicit DoT tick/duration/refresh/stack rules and separately named debuff with its own duration/stacking/cleanse rules | Keep distinct from direct area attacks because persistent pressure and debuff maintenance create different decisions. |
@@ -52,9 +52,9 @@ These are logical templates, not automatic requests to add custom runtime handle
 | Skill | Proposed identity | Required semantics | Recommendation |
 |---|---|---|---|
 | Swallow | Single-target finisher request at a Strain/state threshold | Eligibility predicate, resistance/contest, outcome request, fallback if target is ineligible, and resource/cost behavior on failure | Keep as a focused threshold finisher. Request only an encounter-permitted outcome such as Disable, Capture, Yield, or another explicitly authored result. |
-| Bkakke | Multi-target finisher request | Resolve independently per target; define whether all targets must meet the threshold; define survivor consequence, self-risk, and partial success behavior | Do not use “wins combat” as a direct effect. Replace it with a batch of per-target outcome requests and a defined risk consequence if one or more targets survive. |
-| Enslave | High-investment control/outcome request | Eligibility, resistance, duration, allowed outcomes, Command/Break costs, failure behavior, and target immunity/exception tags | Keep as a control route only if its setup/resource loop differs from Absolute Control or its outcome semantics are distinct. |
-| Absolute Control | High-investment Command/Break conversion | Same shared outcome contract as Enslave; explicit resource spend and prerequisite state; deterministic failure result | Keep separately only if it represents a materially different investment path or allowed outcome. Otherwise combine under a shared finisher effect definition with different requirements/scaling profiles. |
+| Bkakke | Multi-target finisher request with strict all-target victory condition | Every enemy must be eligible and every outcome request must succeed for the encounter to count as a victory; resolve each target deterministically and define failed/ineligible-target behavior | **Owner decision: A — all-or-nothing encounter victory.** The skill cannot directly force victory; if any target is ineligible or any request fails, the encounter continues under the encounter outcome contract. Whether successful per-target outcomes persist when another target fails remains an explicit Pass 6 decision. |
+| Enslave | Shared top-tier control/finisher family | Use the same canonical eligibility, resistance, duration, permitted-outcome, and failure contract as Absolute Control | **Owner decision: A — merge with Absolute Control** into one top-tier finisher family. Distinct names/presentation may remain as variants only if they do not create duplicate mechanical entries; requirements and scaling should be data-driven. |
+| Absolute Control | Shared top-tier control/finisher family | Use the same canonical eligibility, resistance, duration, permitted-outcome, and failure contract as Enslave; retain Command/Break as the shared setup route if confirmed | **Owner decision: A — merge with Enslave** into one top-tier finisher family. Keep one mechanical identity and allow named variants only when requirements/scaling differ meaningfully. |
 | Stomp | Convert target Strain threshold into Vitality damage | Threshold, conversion cap, mitigation order, target validity, and whether the threshold is consumed | Keep distinct: it converts progress between damage channels rather than requesting an encounter outcome. |
 | F-fk | Capped bonus against low-Vitality target | State whose Vitality is checked, threshold, scaling cap, order relative to mitigation, and interaction with Strain threshold | Keep distinct from a generic attack only if the threshold window changes target priority and timing. |
 
@@ -105,43 +105,43 @@ This sequence is a proposal for content definition and must be reconciled with t
 
 ## 7. Decisions requested before numerical balancing
 
-### Decision 1 — Flaunt, G-bang, and Strip
-**Recommended: B.** Share the AreaStrainAttack template; keep Strip distinct only if its evasion window is a meaningful tactical trade-off.
+### Decision 1 — Flaunt, G-bang, and Strip — DECIDED: A
+Keep all three as mechanically distinct skills. They may reuse the same implementation template, but each must have a documented mechanical differentiator beyond name/animation.
 
-- A. Keep all three as mechanically unique actions.
-- **B. Shared area template; Strip keeps its defensive rider if balanced.**
+- **A. Keep all three as mechanically unique actions.**
+- B. Shared area template; Strip keeps its defensive rider if balanced.
 - C. Merge all three into one skill with presentation variants.
 
-### Decision 2 — Summon c-s scaling
-**Recommended: A.** Preserve the “fewer enemies = stronger summon” identity, with explicit floor/cap and a per-target rule.
+### Decision 2 — Summon c-s scaling — DECIDED: A
+Preserve the “fewer enemies = stronger summon” identity, with an explicit curve, floor/cap, and a per-target rule.
 
 - **A. Concentrates output against fewer valid enemies; define curve and cap.**
 - B. Fixed total output distributed across current targets.
 - C. Remove target-count scaling and differentiate it through another tactical hook.
 
-### Decision 3 — Summon Tentacles friendly fire
-**Recommended: B.** Explicitly expose allies/self only if they are named in the action's target query and consequence rules.
+### Decision 3 — Summon Tentacles friendly fire — DECIDED: B
+Declare affected sides/targets and resolve any friendly-fire consequences deterministically.
 
 - A. Always affects all combatants equally.
 - **B. Declared target sides and deterministic friendly-fire consequences.**
 - C. Enemies only; “aggro everyone” becomes visual flavor, not mechanical targeting.
 
-### Decision 4 — Bkakke partial success
-**Recommended: B.** Resolve the finisher request per target and apply the survivor consequence if any eligible target survives.
+### Decision 4 — Bkakke — DECIDED: A
+Encounter victory is permitted only when every enemy is eligible and every per-target outcome request succeeds. If any enemy is ineligible or any request fails, the encounter continues; successful per-target outcomes and consequences on failure still need an explicit atomicity rule in Pass 6.
 
-- A. Combat victory only if every enemy is eligible and the request succeeds on every target.
-- **B. Per-target outcomes; survivor consequence when one or more targets remain.**
+- **A. Combat victory only if every enemy is eligible and the request succeeds on every target.**
+- B. Per-target outcomes; survivor consequence when one or more targets remain.
 - C. Single group-level contest with all-or-nothing outcome.
 
-### Decision 5 — Enslave vs Absolute Control
-**Recommended: B.** Keep both only if the investment path differs: Enslave is a target/state eligibility control route; Absolute Control is the expensive Command + Break conversion route.
+### Decision 5 — Enslave vs Absolute Control — DECIDED: A
+Merge them into one top-tier finisher identity. Any legacy names may remain as presentation variants only; do not retain duplicate mechanical records without a real difference in requirements or scaling.
 
-- A. Merge into one top-tier finisher.
-- **B. Keep distinct through different setup/resource loops and declared outcome requests.**
+- **A. Merge into one top-tier finisher.**
+- B. Keep distinct through different setup/resource loops and declared outcome requests.
 - C. Keep both only if they request different permitted outcomes; otherwise merge.
 
-### Decision 6 — Overflow architecture
-**Recommended: A.** Preserve three roles: recovery (S Symbol), automatic area retaliation (Ecstasy Aftershocks), and player-configured conversion (Overflow Engine), all with caps and recursion guards.
+### Decision 6 — Overflow architecture — DECIDED: A
+Preserve three distinct roles: S Symbol = passive recovery, Ecstasy Aftershocks = automatic area retaliation, Overflow Engine = active/configurable conversion. All require output caps and recursion guards.
 
 - **A. Keep all three roles distinct.**
 - B. Reduce to two roles by merging recovery and active conversion.
@@ -150,6 +150,7 @@ This sequence is a proposal for content definition and must be reconciled with t
 ## 8. Still open after this pass
 
 - Numerical scaling curves, target-count formulas, caps, costs, thresholds, and duration.
+- Unique mechanical differentiators for Flaunt and G-bang, given the decision to keep them distinct.
 - Exact allowed outcome per encounter and per finisher.
 - Overflow boundary and event order as reconciled with turn-resolution.
 - Exact Strain/Vitality channel and conditional rider for Spank/Bite/Facesit.

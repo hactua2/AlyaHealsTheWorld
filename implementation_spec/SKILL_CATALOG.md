@@ -101,7 +101,7 @@ Every capability definition must declare:
 - dependent skill/content references;
 - interactions with cleansing, dispelling, transformation, equipment, and character configuration.
 
-P-growth is the current example. The proposed stable capability is `CAPABILITY_P_GROWTH`; Autof, F-fk, Penetrate, and A-penetration are dependency candidates. Target scope and persistence still require content confirmation.
+P-growth is the current example. The stable capability is `CAPABILITY_P_GROWTH`, granted to Alya only by owner decision; Autof, F-fk, Penetrate, and A-penetration are dependency candidates. Persistence/revocation and exact dependent-skill prerequisites still require content definition.
 
 ## Requirements and progression
 

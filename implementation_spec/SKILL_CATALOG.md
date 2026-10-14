@@ -10,6 +10,16 @@ The skill catalog is the concrete data source for skills. It uses shared tags, d
 
 Descriptions and display labels are not runtime source-of-truth. Presentation names may be localized or themed independently from stable IDs.
 
+## Per-skill attribute scaling
+
+A skill may scale from attributes associated with the body part or technique it uses. This association is defined **per skill or through an explicit reusable scaling profile**, not by a universal anatomy-to-stat rule. Keep these concerns separate:
+- `aspect_tags` / requirements: what body part, capability, target domain, or condition is involved/required;
+- `scaling_ref`: which attributes contribute to effectiveness and how they are combined;
+- `effects_ref`: what the skill does once its effectiveness has been calculated;
+- `presentation_ref`: how the action is shown and described.
+
+Two skills can share an effect template while remaining separate unlockable skills because their scaling profiles, requirements, costs, tactical hooks, or synergies differ. Conversely, if all mechanical fields are identical, different names/animations alone make them presentation variants rather than mechanically distinct skills. Exact coefficients and balance remain content work.
+
 ## Approved functional families
 - Control: generate/spend Command, alter intent or resistance, and prepare Break.
 - Reactive: convert a declared recent event or exposure into a response.
@@ -64,6 +74,7 @@ Every CSV record must support these logical fields. Fields with complex nested d
 | `overflow_rule_ref` | Optional Overflow definition. |
 | `outcome_interactions` | Declared interaction with Defeat, Disable, Capture, Yield, Retreat, or ObjectiveComplete. |
 | `aspect_tags` | Optional target-domain tags such as Body Part, Mind, or other supported Aspect. |
+| `scaling_ref` | Required reference to a per-skill scaling definition. It declares contributing attributes, coefficients/curves, and any body-part/Aspect-linked scaling rules. Do not infer a universal body-part-to-stat mapping; requirements/Aspect tags alone do not define effectiveness. |
 | `presentation_ref` | Optional icon, cut-in, animation, VFX, SFX, localization, and descriptive text reference. |
 
 The physical CSV header may use compact names, but it must map unambiguously to this logical schema. Avoid storing arbitrary nested JSON in a single cell when a stable companion ID will be clearer.

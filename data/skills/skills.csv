@@ -1,64 +1,68 @@
-Skill,Cut-in,Type,Element,H-act,Body Parts,Target,Skill Tier,Special effect,Description
-Sensory Enhancement,,Active,Magical,Tease,Mind,Enemy,Tier 1,Debuff,Increases target h-damage and health damage taken
-Mstrbate,,Active,Physical,Intercourse,Crotch,"Enemy, Self",Tier 1,"Buff, Debuff",Heals self and increase enemy chance of h-attacks
-Dancing moves,,Active,Physical,Tease,All,Self,Tier 1,Buff,Increases dodge chance
-Flirt,,"Active, Dominant",Magical,Tease,Mouth,Enemy,Tier 1,H-Damage,"Speaks soft words to enemy, enticing them"
-Hypnotize,,"Active, Dominant",Magical,Tease,Mind,Enemy,Tier 1,"H-Damage, Debuff","Stuns target for a few turns, dealing h-damage over time"
-Get Spanked,,"Active, Masochist, Submissive",Physical,Tease,Ass,"Enemy, Self",Tier 1,H-Damage,"Entices enemy to spank Ayla, dealing h-damage"
-Sensory Deprivation,,"Active, Sadist, Dominant",Magical,Tease,Mind,Enemy,Tier 1,"H-Damage, Debuff","Lowers enemy accuracy, defense and dodge chance"
-Spank,,"Active, Sadist, Dominant",Physical,Tease,Ass,Enemy,Tier 1,"H-Damage, Health Damage",Spanks enemy
-Instill protectiveness,,"Active, Submissive",Magical,Tease,All,Ally,Tier 1,Buff,Increases chance that allies will be targeted by enemy attacks
-Bl-job,,"Active, Submissive",Physical,Intercourse,Mouth,Enemy,Tier 1,H-Damage,-
-Lay,,"Active, Submissive",Physical,Intercourse,Crotch,Enemy,Tier 1,H-Damage,Gets fked by enemy
-Grope,,"Active, Submissive",Physical,Tease,"Ass, Breast",Enemy,Tier 1,H-Damage,Gets groped by enemy
-Service,,"Active, Submissive",Physical,Intercourse,Mouth,Ally,Tier 1,Buff,Heals ally
-H-job,,"Active, Submissive",Physical,Intercourse,Mind,Enemy,Tier 1,H-Damage,Uses hands on sensitive spots
-Bend,,"Active, Submissive, Masochist",Physical,Intercourse,Ass,Enemy,Tier 1,Debuff,H-damage over time to 1 enemy
-AS,,"Active, Submissive, Masochist",Physical,Intercourse,Ass,Enemy,Tier 1,"H-Damage, Debuff",Increases enemy H-damage taken every turn this is used in a row
-S Symbol,,Passive,Magical,Intercourse,All,"Ally, Self",Tier 1,Buff,Heals when H-gauge overfills
-Otherworldy Charm,,Passive,Magical,Tease,All,Enemy,Tier 1,Debuff,"Increases chance of H-attacks, lowers chance of health attacks"
-Piercing Stares,,Passive,Physical,Tease,Breast,Enemy,Tier 1,Debuff,Deals H-damage every turn if wearing piercings
-Sadism,,Passive,Physical,Intercourse,"Crotch, Mouth",Enemy,Tier 1,Buff,Increases health damage given
-Masochism,,Passive,Physical,Intercourse,"Ass, Breast",Enemy,Tier 1,Buff,Lowers health damage taken
-Moans,,Passive,Physical,Tease,Mouth,"Ally, Enemy",Tier 1,"Buff, Debuff",Reflects some H-damage received
-Encourage,,Active,Magical,Tease,Ass,Ally,Tier 2,Buff,Buffs allies' attacks
-Flaunt,,Active,Physical,Tease,All,Enemy,Tier 2,AoE H-Damage,"Flaunts ""assets"" to deal h-damage to all enemies"
-Autof,,Active,Physical,Intercourse,"Breast, Crotch, Mouth",Self,Tier 2,Buff,"Requires P-growth, heals self, removes negative status effects"
-Aphrodisiac,,"Active, Dominant",Magical,Tease,Mind,Enemy,Tier 2,"H-Damage, Buff","Deals h-damage over time to enemy, increasing their chance of h-attacks"
-P-growth,,"Active, Dominant",Magical,Tease,"Crotch, Mind",Ally,Tier 2,Buff,"Turns into a fta, enabling certain skills"
-Facesit,,"Active, Dominant",Physical,Intercourse,Crotch,"Enemy, Self",Tier 2,"H-Damage, Health Damage",Smothers enemy with own crotch
-Bondage,,"Active, Masochist",Magical,Tease,All,"Enemy, Self",Tier 2,AoE H-Damage,Binds self with magical ropes for a brief moment
-Bully,,"Active, Sadist",Magical,Tease,Mouth,Enemy,Tier 2,Debuff,"Insults enemy, lowering their attack and defense"
-Bite,,"Active, Sadist",Physical,Tease,Mouth,Enemy,Tier 2,"H-Damage, Health Damage",Bites enemy
-Bind,,"Active, Sadist, Dominant",Magical,Tease,Mind,Enemy,Tier 2,"H-Damage, Debuff",Paralyzes enemy
-Prolonged Pl-,,"Active, Sadist, Dominant",Magical,Tease,Crotch,Enemy,Tier 2,"H-Damage, Debuff","Unable to overfill h-gauge, takes health damage on every h-attack while gauge is filled"
-F-fk,,"Active, Sadist, Dominant",Physical,Intercourse,Crotch,Enemy,Tier 2,"H-Damage, Health Damage","Requires P-growth, makes target choke on it, deals more H-damage the lower the enmy health is"
-Paizuri,,"Active, Submissive",Physical,Intercourse,Breast,Enemy,Tier 2,H-Damage,-
-Summon c-s,,"Active, Submissive, Dominant",Magical,Intercourse,Mind,Enemy,Tier 2,"H-Damage, AoE H-Damage","Summons magical c-s to h-attack all enemies, damage increases the less enemies are present"
-Swallow,,"Active, Submissive, Masochist",Physical,Finisher,Mouth,Enemy,Tier 2,H-Damage,"If enemy is within a h-gauge threshold, finishes them"
-Extra tips,,Passive,Magical,Tease,Mind,Enemy,Tier 2,Buff,Finds more rewards upon victory
-Cuteness,,Passive,Magical,Tease,"Breast, Mouth",Ally,Tier 2,Buff,Increases allies' attack
-Naughty Thoughts,,Passive,Magical,Tease,Mind,Self,Tier 2,Buff,Increases H-accuracy and damage
-C-drinker,,Passive,Physical,Tease,Mind,Ally,Tier 2,Buff,Heals whenever enemy is defeated with H-moves
-Strip,,Active,Physical,Tease,All,Enemy,Tier 3,"AoE H-Damage, Buff","Removes clothing, dealing h-damage to enemies and increases player's chance to dodge"
-Pink mist,,"Active, Dominant",Magical,Tease,Mind,Enemy,Tier 3,"AoE H-Damage, Debuff","Deals h-damage over time to all enemies, lowering their defences"
-Penetrate,,"Active, Dominant",Physical,Intercourse,Crotch,Enemy,Tier 3,H-Damage,"Requires P-growth, fks target crotch"
-A-penetration,,"Active, Sadist, Dominant",Physical,Intercourse,Crotch,Enemy,Tier 3,"H-Damage, Debuff","Requires P-growth, stuns target"
-Stomp,,"Active, Sadist, Dominant",Physical,Tease,Crotch,Enemy,Tier 3,"H-Damage, Health Damage","stomps on target crotch, deals more health damage the higher the H-gauge is"
-Summon Tentacles,,"Active, Sadist, Masochist, Submissive, Dominant",Magical,Intercourse,All,"Ally, Enemy, Self",Tier 3,"AoE H-Damage, AoE Health Damage",Summons otherwordly tentacles that aggros everyone. Damage increases the less enemies are present
-Enslave,,"Active, Sadist, Dominant",Magical,Finisher,Mind,Enemy,Tier 3,"H-Damage, Health Damage, Debuff",Forces target into submission
-G-bang,,"Active, Submissive",Physical,Intercourse,All,Enemy,Tier 3,AoE H-Damage,-
-Bkakke,,"Active, Submissive",Physical,Finisher,"Mouth, Breast","Enemy, Self",Tier 3,AoE H-Damage,"If all enemies are within a certain h-gauge threshold, wins combat, takes heavy H-damage if at least 1 enemy survives"
-Deepth,,"Active, Submissive, Masochist",Physical,Intercourse,Mouth,Enemy,Tier 3,H-Damage,-
-Worship C,,"Active, Submissive, Masochist",Physical,Tease,"Breast, Mouth",Enemy,Tier 3,"AoE H-Damage, Debuff",Increases chance of H-attacks
-Ecstasy Aftershocks,,Passive,Magical,Intercourse,All,Enemy,Tier 3,AoE H-Damage,Deals H-damage to all enemies when Ayla's h-gauge overfills
-Divine Health,,Passive,Magical,Tease,Mind,Ally,Tier 3,Buff,"Immune to debuffs, healing allies removes debuffs"
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
-,,,,,,,,Buff,
+id,display_name,legacy_aliases,kind,tier,skill_point_cost,requirements_ref,milestone_gate,family_tags,targeting_ref,resource_costs_ref,generated_resources_ref,conditions_ref,effects_ref,cooldown,chain_rule_ref,threshold_rule_ref,overflow_rule_ref,outcome_interactions_ref,aspect_tags,scaling_ref,presentation_ref
+SENSORY_ENHANCEMENT,Sensory Enhancement,,Active,Tier 1,1,REQ_SENSORY_ENHANCEMENT,none,Damage;Debuff,TARGET_SENSORY_ENHANCEMENT,COST_SENSORY_ENHANCEMENT,GEN_SENSORY_ENHANCEMENT,COND_SENSORY_ENHANCEMENT,FX_SENSORY_ENHANCEMENT,0,none,none,none,none,Mind,SCALE_STRAIN_CONTROL,PRES_SENSORY_ENHANCEMENT
+MSTRBATE,Mstrbate,,Active,Tier 1,1,REQ_MSTRBATE,none,Recovery;Control,TARGET_MSTRBATE,COST_MSTRBATE,GEN_MSTRBATE,COND_MSTRBATE,FX_MSTRBATE,0,none,none,none,none,Crotch,SCALE_STRAIN_CONTROL,PRES_MSTRBATE
+DANCING_MOVES,Dancing Moves,,Active,Tier 1,1,REQ_DANCING_MOVES,none,Mobility;Fortification,TARGET_DANCING_MOVES,COST_DANCING_MOVES,GEN_DANCING_MOVES,COND_DANCING_MOVES,FX_DANCING_MOVES,0,none,none,none,none,All,SCALE_AGILITY_DEFENSE,PRES_DANCING_MOVES
+FLIRT,Flirt,,Active,Tier 1,1,REQ_FLIRT,none,Damage;Control,TARGET_FLIRT,COST_FLIRT,GEN_FLIRT,COND_FLIRT,FX_FLIRT,0,none,none,none,none,Mouth,SCALE_CHARM_SKILL_COMMAND,PRES_FLIRT
+HYPNOTIZE,Hypnotize,,Active,Tier 1,1,REQ_HYPNOTIZE,none,Control,TARGET_HYPNOTIZE,COST_HYPNOTIZE,GEN_HYPNOTIZE,COND_HYPNOTIZE,FX_HYPNOTIZE,0,none,none,none,none,Mind,SCALE_SOUL_CONTROL,PRES_HYPNOTIZE
+GET_SPANKED,Get Spanked,,Active,Tier 1,1,REQ_GET_SPANKED,none,Reactive;Resource,TARGET_GET_SPANKED,COST_GET_SPANKED,GEN_GET_SPANKED,COND_GET_SPANKED,FX_GET_SPANKED,0,none,none,none,none,Ass,SCALE_RESOLVE_RISK,PRES_GET_SPANKED
+SENSORY_DEPRIVATION,Sensory Deprivation,,Active,Tier 1,1,REQ_SENSORY_DEPRIVATION,none,Debuff;Control,TARGET_SENSORY_DEPRIVATION,COST_SENSORY_DEPRIVATION,GEN_SENSORY_DEPRIVATION,COND_SENSORY_DEPRIVATION,FX_SENSORY_DEPRIVATION,0,none,none,none,none,Mind,SCALE_SOUL_CONTROL,PRES_SENSORY_DEPRIVATION
+SPANK,Spank,,Active,Tier 1,1,REQ_SPANK,none,Damage,TARGET_SPANK,COST_SPANK,GEN_SPANK,COND_SPANK,FX_SPANK,0,none,none,none,none,Ass,SCALE_STRAIN_ATTACK,PRES_SPANK
+INSTILL_PROTECTIVENESS,Instill Protectiveness,,Active,Tier 1,1,REQ_INSTILL_PROTECTIVENESS,none,Support;Control,TARGET_INSTILL_PROTECTIVENESS,COST_INSTILL_PROTECTIVENESS,GEN_INSTILL_PROTECTIVENESS,COND_INSTILL_PROTECTIVENESS,FX_INSTILL_PROTECTIVENESS,0,none,none,none,none,All,SCALE_CHARM_SKILL_COMMAND,PRES_INSTILL_PROTECTIVENESS
+BLOWJOB,Bl-job,,Active,Tier 1,1,REQ_BLOWJOB,none,Damage,TARGET_BLOWJOB,COST_BLOWJOB,GEN_BLOWJOB,COND_BLOWJOB,FX_BLOWJOB,0,none,none,none,none,Mouth,SCALE_STRAIN_ATTACK,PRES_BLOWJOB
+LAY,Lay,,Active,Tier 1,1,REQ_LAY,none,Damage,TARGET_LAY,COST_LAY,GEN_LAY,COND_LAY,FX_LAY,0,none,none,none,none,Crotch,SCALE_STRAIN_ATTACK,PRES_LAY
+GROPE,Grope,,Active,Tier 1,1,REQ_GROPE,none,Damage,TARGET_GROPE,COST_GROPE,GEN_GROPE,COND_GROPE,FX_GROPE,0,none,none,none,none,Ass;Breasts,SCALE_STRAIN_ATTACK,PRES_GROPE
+SERVICE,Service,,Active,Tier 1,1,REQ_SERVICE,none,Recovery;Support,TARGET_SERVICE,COST_SERVICE,GEN_SERVICE,COND_SERVICE,FX_SERVICE,0,none,none,none,none,Mouth,SCALE_SUPPORT_RECOVERY,PRES_SERVICE
+H_JOB,H-job,,Active,Tier 1,1,REQ_H_JOB,none,Damage;DoT,TARGET_H_JOB,COST_H_JOB,GEN_H_JOB,COND_H_JOB,FX_H_JOB,0,none,none,none,none,Mind,SCALE_SOUL_DOT,PRES_H_JOB
+BEND,Bend,,Active,Tier 1,1,REQ_BEND,none,Damage;DoT,TARGET_BEND,COST_BEND,GEN_BEND,COND_BEND,FX_BEND,0,none,none,none,none,Ass,SCALE_STRAIN_ATTACK,PRES_BEND
+AS_CHAIN,AS,,Active,Tier 1,1,REQ_AS_CHAIN,none,Damage;DoT;Chain,TARGET_AS_CHAIN,COST_AS_CHAIN,GEN_AS_CHAIN,COND_AS_CHAIN,FX_AS_CHAIN,0,CHAIN_AS_CHAIN,none,none,none,Ass,SCALE_STRAIN_ATTACK,PRES_AS_CHAIN
+S_SYMBOL,S Symbol,,Passive,Tier 1,1,REQ_S_SYMBOL,none,Overflow;Recovery,TARGET_S_SYMBOL,COST_S_SYMBOL,GEN_S_SYMBOL,COND_S_SYMBOL,FX_S_SYMBOL,0,none,none,OVERFLOW_S_SYMBOL,none,All,SCALE_SOUL_OVERFLOW,PRES_S_SYMBOL
+OTHERWORLDLY_CHARM,Otherworldly Charm,,Passive,Tier 1,1,REQ_OTHERWORLDLY_CHARM,none,Control,TARGET_OTHERWORLDLY_CHARM,COST_OTHERWORLDLY_CHARM,GEN_OTHERWORLDLY_CHARM,COND_OTHERWORLDLY_CHARM,FX_OTHERWORLDLY_CHARM,0,none,none,none,none,All,SCALE_CHARM_SKILL_COMMAND,PRES_OTHERWORLDLY_CHARM
+PIERCING_STARES,Piercing Stares,,Passive,Tier 1,1,REQ_PIERCING_STARES,none,Damage;Conditional,TARGET_PIERCING_STARES,COST_PIERCING_STARES,GEN_PIERCING_STARES,COND_PIERCING_STARES,FX_PIERCING_STARES,0,none,none,none,none,Breasts,SCALE_STRAIN_ATTACK,PRES_PIERCING_STARES
+SADISM,Sadism,,Passive,Tier 1,1,REQ_SADISM,none,Damage;BuildPassive,TARGET_SADISM,COST_SADISM,GEN_SADISM,COND_SADISM,FX_SADISM,0,none,none,none,none,Crotch;Mouth,SCALE_VITALITY_ATTACK,PRES_SADISM
+MASOCHISM,Masochism,,Passive,Tier 1,1,REQ_MASOCHISM,none,Fortification;BuildPassive,TARGET_MASOCHISM,COST_MASOCHISM,GEN_MASOCHISM,COND_MASOCHISM,FX_MASOCHISM,0,none,none,none,none,Ass;Breasts,SCALE_AGILITY_DEFENSE,PRES_MASOCHISM
+MOANS,Moans,,Passive,Tier 1,1,REQ_MOANS,none,Reactive,TARGET_MOANS,COST_MOANS,GEN_MOANS,COND_MOANS,FX_MOANS,0,none,none,none,none,Mouth,SCALE_STRAIN_CONTROL,PRES_MOANS
+ENCOURAGE,Encourage,,Active,Tier 2,2,REQ_ENCOURAGE,ACT_I_COMPLETE,Support;Buff,TARGET_ENCOURAGE,COST_ENCOURAGE,GEN_ENCOURAGE,COND_ENCOURAGE,FX_ENCOURAGE,0,none,none,none,none,Ass,SCALE_SUPPORT_RECOVERY,PRES_ENCOURAGE
+FLAUNT,Flaunt,,Active,Tier 2,2,REQ_FLAUNT,ACT_I_COMPLETE,Damage;AoE,TARGET_FLAUNT,COST_FLAUNT,GEN_FLAUNT,COND_FLAUNT,FX_FLAUNT,1,none,none,none,none,All,SCALE_AREA_STRAIN,PRES_FLAUNT
+AUTOF,Autof,,Active,Tier 2,2,REQ_AUTOF,ACT_I_COMPLETE,Recovery;Capability,TARGET_AUTOF,COST_AUTOF,GEN_AUTOF,COND_AUTOF,FX_AUTOF,0,none,none,none,none,Breasts;Crotch;Mouth,SCALE_SUPPORT_RECOVERY,PRES_AUTOF
+APHRODISIAC,Aphrodisiac,,Active,Tier 2,2,REQ_APHRODISIAC,ACT_I_COMPLETE,Damage;DoT;Control,TARGET_APHRODISIAC,COST_APHRODISIAC,GEN_APHRODISIAC,COND_APHRODISIAC,FX_APHRODISIAC,0,none,none,none,none,Mind,SCALE_SOUL_DOT,PRES_APHRODISIAC
+P_GROWTH,P-growth,,Capability/Transformation,Tier 2,2,REQ_P_GROWTH,ACT_I_COMPLETE,Capability,TARGET_P_GROWTH,COST_P_GROWTH,GEN_P_GROWTH,COND_P_GROWTH,FX_P_GROWTH,0,none,none,none,none,Crotch;Mind,SCALE_CAPABILITY,PRES_P_GROWTH
+FACESIT,Facesit,,Active,Tier 2,2,REQ_FACESIT,ACT_I_COMPLETE,Damage,TARGET_FACESIT,COST_FACESIT,GEN_FACESIT,COND_FACESIT,FX_FACESIT,0,none,none,none,none,Crotch,SCALE_STRAIN_ATTACK,PRES_FACESIT
+BONDAGE,Bondage,,Active,Tier 2,2,REQ_BONDAGE,ACT_I_COMPLETE,HighRisk;Buff,TARGET_BONDAGE,COST_BONDAGE,GEN_BONDAGE,COND_BONDAGE,FX_BONDAGE,0,none,none,none,none,All,SCALE_RESOLVE_RISK,PRES_BONDAGE
+BULLY,Bully,,Active,Tier 2,2,REQ_BULLY,ACT_I_COMPLETE,Debuff,TARGET_BULLY,COST_BULLY,GEN_BULLY,COND_BULLY,FX_BULLY,0,none,none,none,none,Mouth,SCALE_CHARM_SKILL_COMMAND,PRES_BULLY
+BITE,Bite,,Active,Tier 2,2,REQ_BITE,ACT_I_COMPLETE,Damage,TARGET_BITE,COST_BITE,GEN_BITE,COND_BITE,FX_BITE,0,none,none,none,none,Mouth,SCALE_VITALITY_ATTACK,PRES_BITE
+BIND,Bind,,Active,Tier 2,2,REQ_BIND,ACT_I_COMPLETE,Control;Debuff,TARGET_BIND,COST_BIND,GEN_BIND,COND_BIND,FX_BIND,0,none,none,none,none,Mind,SCALE_SOUL_CONTROL,PRES_BIND
+PROLONGED_PL,Prolonged Pl-,,Active,Tier 2,2,REQ_PROLONGED_PL,ACT_I_COMPLETE,Threshold;Control,TARGET_PROLONGED_PL,COST_PROLONGED_PL,GEN_PROLONGED_PL,COND_PROLONGED_PL,FX_PROLONGED_PL,0,none,none,OVERFLOW_LOCK_PROLONGED_PL,none,Crotch,SCALE_SOUL_CONTROL,PRES_PROLONGED_PL
+F_FK,F-fk,,Active,Tier 2,2,REQ_F_FK,ACT_I_COMPLETE,Damage;Capability,TARGET_F_FK,COST_F_FK,GEN_F_FK,COND_F_FK,FX_F_FK,0,none,none,none,none,Crotch,SCALE_STRAIN_ATTACK,PRES_F_FK
+PAIZURI,Paizuri,,Active,Tier 2,2,REQ_PAIZURI,ACT_I_COMPLETE,Damage,TARGET_PAIZURI,COST_PAIZURI,GEN_PAIZURI,COND_PAIZURI,FX_PAIZURI,0,none,none,none,none,Breasts,SCALE_STRAIN_ATTACK,PRES_PAIZURI
+SUMMON_CS,Summon c-s,,Active,Tier 2,2,REQ_SUMMON_CS,ACT_I_COMPLETE,Damage;AoE;HighRisk,TARGET_SUMMON_CS,COST_SUMMON_CS,GEN_SUMMON_CS,COND_SUMMON_CS,FX_SUMMON_CS,2,none,none,none,none,Mind,SCALE_AREA_STRAIN,PRES_SUMMON_CS
+SWALLOW,Swallow,,Active,Tier 2,2,REQ_SWALLOW,ACT_I_COMPLETE,Finisher;Outcome,TARGET_SWALLOW,COST_SWALLOW,GEN_SWALLOW,COND_SWALLOW,FX_SWALLOW,3,none,THRESHOLD_SWALLOW,none,OUTCOME_SWALLOW,Mouth,SCALE_FINISHER,PRES_SWALLOW
+EXTRA_TIPS,Extra tips,,Passive,Tier 2,2,REQ_EXTRA_TIPS,ACT_I_COMPLETE,Economy;Conditional,TARGET_EXTRA_TIPS,COST_EXTRA_TIPS,GEN_EXTRA_TIPS,COND_EXTRA_TIPS,FX_EXTRA_TIPS,0,none,none,none,none,Mind,SCALE_CHARM_SKILL_COMMAND,PRES_EXTRA_TIPS
+CUTENESS,Cuteness,,Passive,Tier 2,2,REQ_CUTENESS,ACT_I_COMPLETE,Support;BuildPassive,TARGET_CUTENESS,COST_CUTENESS,GEN_CUTENESS,COND_CUTENESS,FX_CUTENESS,0,none,none,none,none,Breasts;Mouth,SCALE_SUPPORT_RECOVERY,PRES_CUTENESS
+NAUGHTY_THOUGHTS,Naughty Thoughts,,Passive,Tier 2,2,REQ_NAUGHTY_THOUGHTS,ACT_I_COMPLETE,Damage;BuildPassive,TARGET_NAUGHTY_THOUGHTS,COST_NAUGHTY_THOUGHTS,GEN_NAUGHTY_THOUGHTS,COND_NAUGHTY_THOUGHTS,FX_NAUGHTY_THOUGHTS,0,none,none,none,none,Mind,SCALE_SOUL_DOT,PRES_NAUGHTY_THOUGHTS
+C_DRINKER,C-drinker,,Passive,Tier 2,2,REQ_C_DRINKER,ACT_I_COMPLETE,Recovery;Conditional,TARGET_C_DRINKER,COST_C_DRINKER,GEN_C_DRINKER,COND_C_DRINKER,FX_C_DRINKER,0,none,none,none,none,Mind,SCALE_SUPPORT_RECOVERY,PRES_C_DRINKER
+STRIP,Strip,,Active,Tier 3,3,REQ_STRIP,ACT_II_COMPLETE,Damage;AoE;Mobility,TARGET_STRIP,COST_STRIP,GEN_STRIP,COND_STRIP,FX_STRIP,2,none,none,none,none,All,SCALE_AREA_STRAIN,PRES_STRIP
+PINK_MIST,Pink Mist,,Active,Tier 3,3,REQ_PINK_MIST,ACT_II_COMPLETE,Damage;DoT;AoE;Debuff,TARGET_PINK_MIST,COST_PINK_MIST,GEN_PINK_MIST,COND_PINK_MIST,FX_PINK_MIST,3,none,none,none,none,Mind,SCALE_SOUL_DOT,PRES_PINK_MIST
+PENETRATE,Penetrate,,Active,Tier 3,3,REQ_PENETRATE,ACT_II_COMPLETE,Damage;Capability,TARGET_PENETRATE,COST_PENETRATE,GEN_PENETRATE,COND_PENETRATE,FX_PENETRATE,2,none,none,none,none,Crotch,SCALE_STRAIN_ATTACK,PRES_PENETRATE
+A_PENETRATION,A-penetration,,Active,Tier 3,3,REQ_A_PENETRATION,ACT_II_COMPLETE,Damage;Control;Capability,TARGET_A_PENETRATION,COST_A_PENETRATION,GEN_A_PENETRATION,COND_A_PENETRATION,FX_A_PENETRATION,2,none,none,none,none,Crotch,SCALE_STRAIN_CONTROL,PRES_A_PENETRATION
+STOMP,Stomp,,Active,Tier 3,3,REQ_STOMP,ACT_II_COMPLETE,Damage;Threshold,TARGET_STOMP,COST_STOMP,GEN_STOMP,COND_STOMP,FX_STOMP,2,none,THRESHOLD_STOMP,none,none,Crotch,SCALE_VITALITY_ATTACK,PRES_STOMP
+SUMMON_TENTACLES,Summon Tentacles,,Active,Tier 3,3,REQ_SUMMON_TENTACLES,ACT_II_COMPLETE,Damage;AoE;HighRisk,TARGET_SUMMON_TENTACLES,COST_SUMMON_TENTACLES,GEN_SUMMON_TENTACLES,COND_SUMMON_TENTACLES,FX_SUMMON_TENTACLES,3,none,none,none,none,All,SCALE_AREA_STRAIN,PRES_SUMMON_TENTACLES
+SKILL_ABSOLUTE_CONTROL,Absolute Control,Enslave,Active,Tier 3,3,REQ_SKILL_ABSOLUTE_CONTROL,ACT_II_COMPLETE,Finisher;Control;Outcome,TARGET_SKILL_ABSOLUTE_CONTROL,COST_SKILL_ABSOLUTE_CONTROL,GEN_SKILL_ABSOLUTE_CONTROL,COND_SKILL_ABSOLUTE_CONTROL,FX_SKILL_ABSOLUTE_CONTROL,4,none,none,none,OUTCOME_SKILL_ABSOLUTE_CONTROL,Mind,SCALE_FINISHER,PRES_SKILL_ABSOLUTE_CONTROL
+G_BANG,G-bang,,Active,Tier 3,3,REQ_G_BANG,ACT_II_COMPLETE,Damage;AoE,TARGET_G_BANG,COST_G_BANG,GEN_G_BANG,COND_G_BANG,FX_G_BANG,2,none,none,none,none,All,SCALE_AREA_STRAIN,PRES_G_BANG
+BKKAKE,Bkakke,,Active,Tier 3,3,REQ_BKKAKE,ACT_II_COMPLETE,Finisher;AoE;HighRisk;Outcome,TARGET_BKKAKE,COST_BKKAKE,GEN_BKKAKE,COND_BKKAKE,FX_BKKAKE,4,none,THRESHOLD_BKKAKE,none,OUTCOME_BKKAKE,Mouth;Breasts,SCALE_FINISHER,PRES_BKKAKE
+DEEPTH,Deepth,,Active,Tier 3,3,REQ_DEEPTH,ACT_II_COMPLETE,Damage,TARGET_DEEPTH,COST_DEEPTH,GEN_DEEPTH,COND_DEEPTH,FX_DEEPTH,2,none,none,none,none,Mouth,SCALE_STRAIN_ATTACK,PRES_DEEPTH
+WORSHIP_C,Worship C,,Active,Tier 3,3,REQ_WORSHIP_C,ACT_II_COMPLETE,Control;AoE,TARGET_WORSHIP_C,COST_WORSHIP_C,GEN_WORSHIP_C,COND_WORSHIP_C,FX_WORSHIP_C,2,none,none,none,none,Breasts;Mouth,SCALE_CHARM_SKILL_COMMAND,PRES_WORSHIP_C
+ECSTASY_AFTERSHOCKS,Ecstasy Aftershocks,,Passive,Tier 3,3,REQ_ECSTASY_AFTERSHOCKS,ACT_II_COMPLETE,Overflow;Damage;AoE,TARGET_ECSTASY_AFTERSHOCKS,COST_ECSTASY_AFTERSHOCKS,GEN_ECSTASY_AFTERSHOCKS,COND_ECSTASY_AFTERSHOCKS,FX_ECSTASY_AFTERSHOCKS,0,none,none,OVERFLOW_ECSTASY_AFTERSHOCKS,none,All,SCALE_SOUL_OVERFLOW,PRES_ECSTASY_AFTERSHOCKS
+DIVINE_HEALTH,Divine Health,,Passive,Tier 3,3,REQ_DIVINE_HEALTH,ACT_II_COMPLETE,Fortification;Support;Conditional,TARGET_DIVINE_HEALTH,COST_DIVINE_HEALTH,GEN_DIVINE_HEALTH,COND_DIVINE_HEALTH,FX_DIVINE_HEALTH,0,none,none,none,none,Mind,SCALE_SUPPORT_RECOVERY,PRES_DIVINE_HEALTH
+SKILL_PROVOKE,Provoke,,Active,Tier 1,1,REQ_SKILL_PROVOKE,none,Control,TARGET_SKILL_PROVOKE,COST_SKILL_PROVOKE,GEN_SKILL_PROVOKE,COND_SKILL_PROVOKE,FX_SKILL_PROVOKE,0,none,none,none,none,Mind,SCALE_CHARM_SKILL_COMMAND,PRES_SKILL_PROVOKE
+SKILL_ENDURE,Endure,,Active,Tier 1,1,REQ_SKILL_ENDURE,none,Fortification;Reactive,TARGET_SKILL_ENDURE,COST_SKILL_ENDURE,GEN_SKILL_ENDURE,COND_SKILL_ENDURE,FX_SKILL_ENDURE,0,none,none,none,none,All,SCALE_AGILITY_DEFENSE,PRES_SKILL_ENDURE
+SKILL_COUNTER,Counter,,Active,Tier 2,2,REQ_SKILL_COUNTER,ACT_I_COMPLETE,Reactive;Damage,TARGET_SKILL_COUNTER,COST_SKILL_COUNTER,GEN_SKILL_COUNTER,COND_SKILL_COUNTER,FX_SKILL_COUNTER,0,none,none,none,none,All,SCALE_AGILITY_DEFENSE,PRES_SKILL_COUNTER
+SKILL_COMMAND,Command,,Active,Tier 1,1,REQ_SKILL_COMMAND,none,Control;Resource,TARGET_SKILL_COMMAND,COST_SKILL_COMMAND,GEN_SKILL_COMMAND,COND_SKILL_COMMAND,FX_SKILL_COMMAND,0,none,none,none,none,Mind,SCALE_CHARM_SKILL_COMMAND,PRES_SKILL_COMMAND
+SKILL_RECOVER_COMPOSURE,Recover Composure,,Active,Tier 1,1,REQ_SKILL_RECOVER_COMPOSURE,none,Recovery,TARGET_SKILL_RECOVER_COMPOSURE,COST_SKILL_RECOVER_COMPOSURE,GEN_SKILL_RECOVER_COMPOSURE,COND_SKILL_RECOVER_COMPOSURE,FX_SKILL_RECOVER_COMPOSURE,0,none,none,none,none,Mind,SCALE_SUPPORT_RECOVERY,PRES_SKILL_RECOVER_COMPOSURE
+SKILL_EXPLOIT_WEAKNESS,Exploit Weakness,,Active,Tier 2,2,REQ_SKILL_EXPLOIT_WEAKNESS,ACT_I_COMPLETE,Exploitation;Resource,TARGET_SKILL_EXPLOIT_WEAKNESS,COST_SKILL_EXPLOIT_WEAKNESS,GEN_SKILL_EXPLOIT_WEAKNESS,COND_SKILL_EXPLOIT_WEAKNESS,FX_SKILL_EXPLOIT_WEAKNESS,0,none,none,none,none,Mind,SCALE_STRAIN_CONTROL,PRES_SKILL_EXPLOIT_WEAKNESS
+SKILL_BREAK_RESISTANCE,Break Resistance,,Active,Tier 2,2,REQ_SKILL_BREAK_RESISTANCE,ACT_I_COMPLETE,Control;Debuff,TARGET_SKILL_BREAK_RESISTANCE,COST_SKILL_BREAK_RESISTANCE,GEN_SKILL_BREAK_RESISTANCE,COND_SKILL_BREAK_RESISTANCE,FX_SKILL_BREAK_RESISTANCE,0,none,none,none,none,Mind,SCALE_SOUL_CONTROL,PRES_SKILL_BREAK_RESISTANCE
+SKILL_TURN_THE_TABLES,Turn the Tables,,Active,Tier 2,2,REQ_SKILL_TURN_THE_TABLES,ACT_I_COMPLETE,Reactive;Recovery,TARGET_SKILL_TURN_THE_TABLES,COST_SKILL_TURN_THE_TABLES,GEN_SKILL_TURN_THE_TABLES,COND_SKILL_TURN_THE_TABLES,FX_SKILL_TURN_THE_TABLES,0,none,none,none,none,All,SCALE_AGILITY_DEFENSE,PRES_SKILL_TURN_THE_TABLES
+SKILL_FOCUS_SURGE,Focus Surge,,Active,Tier 2,2,REQ_SKILL_FOCUS_SURGE,ACT_I_COMPLETE,Buff;Setup,TARGET_SKILL_FOCUS_SURGE,COST_SKILL_FOCUS_SURGE,GEN_SKILL_FOCUS_SURGE,COND_SKILL_FOCUS_SURGE,FX_SKILL_FOCUS_SURGE,0,none,none,none,none,Mind,SCALE_SOUL_DOT,PRES_SKILL_FOCUS_SURGE
+SKILL_DIRECT_ALLY,Direct Ally,,Active,Tier 2,2,REQ_SKILL_DIRECT_ALLY,ACT_I_COMPLETE,Support;Buff,TARGET_SKILL_DIRECT_ALLY,COST_SKILL_DIRECT_ALLY,GEN_SKILL_DIRECT_ALLY,COND_SKILL_DIRECT_ALLY,FX_SKILL_DIRECT_ALLY,0,none,none,none,none,Mind,SCALE_CHARM_SKILL_COMMAND,PRES_SKILL_DIRECT_ALLY
+SKILL_UNBROKEN,Unbroken,,Passive,Tier 3,3,REQ_SKILL_UNBROKEN,ACT_II_COMPLETE,Fortification;Reactive,TARGET_SKILL_UNBROKEN,COST_SKILL_UNBROKEN,GEN_SKILL_UNBROKEN,COND_SKILL_UNBROKEN,FX_SKILL_UNBROKEN,0,none,none,none,none,All,SCALE_AGILITY_DEFENSE,PRES_SKILL_UNBROKEN
+SKILL_OVERFLOW_ENGINE,Overflow Engine,,Active,Tier 3,3,REQ_SKILL_OVERFLOW_ENGINE,ACT_II_COMPLETE,Overflow;Utility,TARGET_SKILL_OVERFLOW_ENGINE,COST_SKILL_OVERFLOW_ENGINE,GEN_SKILL_OVERFLOW_ENGINE,COND_SKILL_OVERFLOW_ENGINE,FX_SKILL_OVERFLOW_ENGINE,3,none,none,OVERFLOW_SKILL_OVERFLOW_ENGINE,none,Mind,SCALE_SOUL_OVERFLOW,PRES_SKILL_OVERFLOW_ENGINE
+SKILL_MUTUAL_RUIN,Mutual Ruin,,Active,Tier 3,3,REQ_SKILL_MUTUAL_RUIN,ACT_II_COMPLETE,HighRisk;Damage;Outcome,TARGET_SKILL_MUTUAL_RUIN,COST_SKILL_MUTUAL_RUIN,GEN_SKILL_MUTUAL_RUIN,COND_SKILL_MUTUAL_RUIN,FX_SKILL_MUTUAL_RUIN,4,none,none,none,none,All,SCALE_VITALITY_ATTACK,PRES_SKILL_MUTUAL_RUIN

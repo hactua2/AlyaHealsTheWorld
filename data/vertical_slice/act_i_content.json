@@ -741,5 +741,55 @@
       "optional": true,
       "fallback": "Omit from first playable build"
     }
+  ],
+  "capabilities": [
+    {
+      "id": "CAPABILITY_COMMUNITY_ASSIGNMENTS",
+      "scope": "Community",
+      "persistence": "Permanent after Act I transition",
+      "granted_by": "FAC_VS1_COORDINATION_BOARD"
+    },
+    {
+      "id": "CAPABILITY_EXPEDITIONS",
+      "scope": "Community",
+      "persistence": "Permanent after Act I transition",
+      "granted_by": "FAC_VS1_COORDINATION_BOARD"
+    }
+  ],
+  "ai_profiles": [
+    {
+      "id": "AI_VS1_HUSK",
+      "priority": [
+        "Attack highest-priority active target",
+        "Use pressure action when available"
+      ],
+      "intent": "Telegraphed after the first encounter"
+    },
+    {
+      "id": "AI_VS1_THREADLING",
+      "priority": [
+        "Apply Strain/pressure to vulnerable target",
+        "Otherwise attack"
+      ],
+      "intent": "Telegraphed after the first encounter"
+    },
+    {
+      "id": "AI_VS1_WARDEN",
+      "priority": [
+        "Protect Root-Knot or objective",
+        "Use defensive intent when pressure is high",
+        "Attack"
+      ],
+      "intent": "Always telegraphed"
+    },
+    {
+      "id": "AI_VS1_ROOT_KNOT",
+      "priority": [
+        "Increase objective pressure",
+        "Trigger an eligible spawn/empower effect if its cap allows",
+        "Defend"
+      ],
+      "intent": "Telegraphed; objective pressure has a deterministic cap"
+    }
   ]
 }

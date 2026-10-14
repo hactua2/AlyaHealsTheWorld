@@ -305,6 +305,12 @@
           ],
           "requirements": [
             "VS1_CHANNEL_CLUE_FOUND"
+          ],
+          "costs": [
+            {
+              "item_id": "ITEM_VS1_FILTER_FIBER",
+              "quantity": 1
+            }
           ]
         }
       ],

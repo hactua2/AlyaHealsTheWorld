@@ -82,6 +82,10 @@ The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_RO
 ## Current project orientation and production references
 - `docs/PROJECT_STATE_AND_ROADMAP.md` — current project summary, canon, locked decisions, remaining work and recommended next sequence.
 - `docs/VERTICAL_SLICE_SCOPE.md` — approved scope baseline, content budget, narrative requirements, exclusions, dependencies and acceptance criteria for the first Act I vertical slice.
+- `docs/vertical_slice/ACT_I_QUEST_GRAPH.md` and `docs/vertical_slice/ACT_I_QUEST_GRAPH_CONTINUATION.md` — authored Act I quest graph, choice/state consequences, climax objective, leadership transition and first Expedition.
+- `docs/vertical_slice/ACT_I_DIALOGUE_PACK.md` — first-pass dialogue anchors and choice labels for the vertical slice.
+- `docs/vertical_slice/ACT_I_CONTENT_CATALOG.md` — human-readable content decisions, enemy/encounter roles, resource/facility economy and implementation gate.
+- `data/vertical_slice/act_i_quests.json` and `data/vertical_slice/act_i_content.json` — structured stable-ID quest and content data; numeric values are provisional pending runtime integration and balance QA.
 - `docs/art/CHARACTER_IMAGE_PROMPTS.md` — full-body character reference prompts and generation guidance.
 - `docs/art/CHARACTER_EROTIC_CG_MATRIX.md` — first-pass situations and CG beats for 31 adult characters; non-graphic direction, not a final asset/unlock specification.
 

@@ -4,6 +4,18 @@
 
 ## 1. Review principle: preserve fantasy, not accidental implementation
 
+## 1A. Approved design decision — per-skill attribute scaling by body part
+
+**Decision confirmed by the project owner:** the body part used by a skill can influence its effectiveness through the attributes associated with that specific skill. Skills that look mechanically similar may therefore remain distinct because they scale from different attributes, body-part associations, requirements, equipment/passive synergies, or progression choices.
+
+- Keep separately unlockable skill records when their action identity and scaling profile support meaningful build choices.
+- Reuse shared mechanical templates and effect primitives; shared implementation does not mean merging skill identities.
+- Define the relevant scaling attributes and their weights/curves per skill (or via a referenced scaling profile). Do **not** assume a universal one-body-part-to-one-stat mapping.
+- Treat body-part/Aspect requirements and attribute scaling as separate data: an Aspect tag alone does not specify the formula.
+- If two skills differ only in label/animation and have the same requirements, scaling, effects, costs, and tactical use, they may still be cosmetic variants; this needs to be explicit rather than assumed.
+- Numerical coefficients and the exact attribute-to-body-part map remain open content/balance work and are not approved by this decision.
+
+
 The legacy catalog mixes three layers:
 1. **Action fantasy:** what the player imagines Alya doing (tempt, distract, expose herself to danger, protect an ally, endure, retaliate, overwhelm, transform, finish).
 2. **Tactical decision:** why the player chooses the skill now (manipulate intent, build a resource, mitigate, apply a state, exploit a threshold, request an outcome).

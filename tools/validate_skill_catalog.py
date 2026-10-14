@@ -28,7 +28,7 @@ def validate():
  if "ENSLAVE" in ids: errors.append("duplicate Enslave mechanical record")
  for sid in ("AUTOF","F_FK","PENETRATE","A_PENETRATION"):
   if not skills.get(sid,{}).get("requirements",{}).get("all_of"): errors.append(sid+": missing P-growth requirement")
- for sid in ("S_SYMBOL","ECSTASY_AFTERSHOCKS","OVERFLOW_ENGINE"):
+ for sid in ("S_SYMBOL","ECSTASY_AFTERSHOCKS","SKILL_OVERFLOW_ENGINE"):
   ov=skills.get(sid,{}).get("rules",{}).get("overflow")
   if not ov or not ov.get("recursion_guard") or ov.get("frequency")!="once_per_affected_actor_per_resolved_action": errors.append(sid+": bad Overflow rule")
  for sid in ("H_JOB","BEND","AS_CHAIN","PINK_MIST"):

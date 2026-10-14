@@ -97,8 +97,8 @@
         "meter_mutation"
       ]
     },
-    "SCALE_CHARM_COMMAND": {
-      "profile_id": "SCALE_CHARM_COMMAND",
+    "SCALE_CHARM_SKILL_COMMAND": {
+      "profile_id": "SCALE_CHARM_SKILL_COMMAND",
       "primary_attributes": [
         {
           "attribute": "Charm",
@@ -879,7 +879,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -1438,7 +1438,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -2428,7 +2428,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -3752,7 +3752,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -4637,7 +4637,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -5713,8 +5713,8 @@
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Strain to validation snapshot of enabled sides; deterministic order"
     },
-    "ABSOLUTE_CONTROL": {
-      "id": "ABSOLUTE_CONTROL",
+    "SKILL_ABSOLUTE_CONTROL": {
+      "id": "SKILL_ABSOLUTE_CONTROL",
       "display_name": "Absolute Control",
       "legacy_aliases": [
         "Enslave"
@@ -5729,7 +5729,7 @@
       },
       "milestone_gate": "ACT_II_COMPLETE",
       "targeting": {
-        "ref": "TARGET_ABSOLUTE_CONTROL",
+        "ref": "TARGET_SKILL_ABSOLUTE_CONTROL",
         "scope": [
           "Enemy"
         ],
@@ -5748,7 +5748,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_ABSOLUTE_CONTROL",
+          "effect_id": "FX_SKILL_ABSOLUTE_CONTROL",
           "template": "absolute_control",
           "ordered_steps": [
             {
@@ -5824,7 +5824,7 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_ABSOLUTE_CONTROL",
+        "ref": "PRES_SKILL_ABSOLUTE_CONTROL",
         "display_name": "Absolute Control",
         "legacy_aliases": [
           "Enslave"
@@ -6229,7 +6229,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -6508,8 +6508,8 @@
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "After successful recovery, ally gains 15% debuff resistance for 1 turn"
     },
-    "PROVOKE": {
-      "id": "PROVOKE",
+    "SKILL_PROVOKE": {
+      "id": "SKILL_PROVOKE",
       "display_name": "Provoke",
       "legacy_aliases": [],
       "kind": "Active",
@@ -6522,7 +6522,7 @@
       },
       "milestone_gate": "none",
       "targeting": {
-        "ref": "TARGET_PROVOKE",
+        "ref": "TARGET_SKILL_PROVOKE",
         "scope": [
           "Enemy"
         ],
@@ -6538,7 +6538,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_PROVOKE",
+          "effect_id": "FX_SKILL_PROVOKE",
           "template": "provoke",
           "ordered_steps": [
             {
@@ -6553,7 +6553,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -6605,15 +6605,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_PROVOKE",
+        "ref": "PRES_SKILL_PROVOKE",
         "display_name": "Provoke",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Change enemy target preference toward selected actor for 1 turn"
     },
-    "ENDURE": {
-      "id": "ENDURE",
+    "SKILL_ENDURE": {
+      "id": "SKILL_ENDURE",
       "display_name": "Endure",
       "legacy_aliases": [],
       "kind": "Active",
@@ -6626,7 +6626,7 @@
       },
       "milestone_gate": "none",
       "targeting": {
-        "ref": "TARGET_ENDURE",
+        "ref": "TARGET_SKILL_ENDURE",
         "scope": [
           "Self"
         ],
@@ -6649,7 +6649,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_ENDURE",
+          "effect_id": "FX_SKILL_ENDURE",
           "template": "endure",
           "ordered_steps": [
             {
@@ -6721,15 +6721,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_ENDURE",
+        "ref": "PRES_SKILL_ENDURE",
         "display_name": "Endure",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Reduce next incoming Vitality damage 30%; generate 1 Fortitude, cap 2"
     },
-    "COUNTER": {
-      "id": "COUNTER",
+    "SKILL_COUNTER": {
+      "id": "SKILL_COUNTER",
       "display_name": "Counter",
       "legacy_aliases": [],
       "kind": "Active",
@@ -6742,7 +6742,7 @@
       },
       "milestone_gate": "ACT_I_COMPLETE",
       "targeting": {
-        "ref": "TARGET_COUNTER",
+        "ref": "TARGET_SKILL_COUNTER",
         "scope": [
           "Enemy"
         ],
@@ -6760,7 +6760,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_COUNTER",
+          "effect_id": "FX_SKILL_COUNTER",
           "template": "counter",
           "ordered_steps": [
             {
@@ -6836,15 +6836,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_COUNTER",
+        "ref": "PRES_SKILL_COUNTER",
         "display_name": "Counter",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "After declared enemy action, retaliate once for bounded Vitality damage"
     },
-    "COMMAND": {
-      "id": "COMMAND",
+    "SKILL_COMMAND": {
+      "id": "SKILL_COMMAND",
       "display_name": "Command",
       "legacy_aliases": [],
       "kind": "Active",
@@ -6857,7 +6857,7 @@
       },
       "milestone_gate": "none",
       "targeting": {
-        "ref": "TARGET_COMMAND",
+        "ref": "TARGET_SKILL_COMMAND",
         "scope": [
           "Self"
         ],
@@ -6878,7 +6878,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_COMMAND",
+          "effect_id": "FX_SKILL_COMMAND",
           "template": "command_generator",
           "ordered_steps": [
             {
@@ -6892,7 +6892,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -6944,15 +6944,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_COMMAND",
+        "ref": "PRES_SKILL_COMMAND",
         "display_name": "Command",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Generate 4 Command; does not spend Command"
     },
-    "RECOVER_COMPOSURE": {
-      "id": "RECOVER_COMPOSURE",
+    "SKILL_RECOVER_COMPOSURE": {
+      "id": "SKILL_RECOVER_COMPOSURE",
       "display_name": "Recover Composure",
       "legacy_aliases": [],
       "kind": "Active",
@@ -6965,7 +6965,7 @@
       },
       "milestone_gate": "none",
       "targeting": {
-        "ref": "TARGET_RECOVER_COMPOSURE",
+        "ref": "TARGET_SKILL_RECOVER_COMPOSURE",
         "scope": [
           "Self"
         ],
@@ -6981,7 +6981,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_RECOVER_COMPOSURE",
+          "effect_id": "FX_SKILL_RECOVER_COMPOSURE",
           "template": "recover_strain",
           "ordered_steps": [
             {
@@ -7047,15 +7047,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_RECOVER_COMPOSURE",
+        "ref": "PRES_SKILL_RECOVER_COMPOSURE",
         "display_name": "Recover Composure",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Reduce own Strain by 20; no cleanse by default"
     },
-    "EXPLOIT_WEAKNESS": {
-      "id": "EXPLOIT_WEAKNESS",
+    "SKILL_EXPLOIT_WEAKNESS": {
+      "id": "SKILL_EXPLOIT_WEAKNESS",
       "display_name": "Exploit Weakness",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7068,7 +7068,7 @@
       },
       "milestone_gate": "ACT_I_COMPLETE",
       "targeting": {
-        "ref": "TARGET_EXPLOIT_WEAKNESS",
+        "ref": "TARGET_SKILL_EXPLOIT_WEAKNESS",
         "scope": [
           "Enemy"
         ],
@@ -7091,7 +7091,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_EXPLOIT_WEAKNESS",
+          "effect_id": "FX_SKILL_EXPLOIT_WEAKNESS",
           "template": "exploit_weakness",
           "ordered_steps": [
             {
@@ -7171,15 +7171,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_EXPLOIT_WEAKNESS",
+        "ref": "PRES_SKILL_EXPLOIT_WEAKNESS",
         "display_name": "Exploit Weakness",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Consume tagged vulnerability; generate 2 Pressure and boost next qualifying effect 25%"
     },
-    "BREAK_RESISTANCE": {
-      "id": "BREAK_RESISTANCE",
+    "SKILL_BREAK_RESISTANCE": {
+      "id": "SKILL_BREAK_RESISTANCE",
       "display_name": "Break Resistance",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7192,7 +7192,7 @@
       },
       "milestone_gate": "ACT_I_COMPLETE",
       "targeting": {
-        "ref": "TARGET_BREAK_RESISTANCE",
+        "ref": "TARGET_SKILL_BREAK_RESISTANCE",
         "scope": [
           "Enemy"
         ],
@@ -7210,7 +7210,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_BREAK_RESISTANCE",
+          "effect_id": "FX_SKILL_BREAK_RESISTANCE",
           "template": "break_resistance",
           "ordered_steps": [
             {
@@ -7284,15 +7284,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_BREAK_RESISTANCE",
+        "ref": "PRES_SKILL_BREAK_RESISTANCE",
         "display_name": "Break Resistance",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Reduce relevant resistance 20% and add 1 Break progress for 2 turns; not disable"
     },
-    "TURN_THE_TABLES": {
-      "id": "TURN_THE_TABLES",
+    "SKILL_TURN_THE_TABLES": {
+      "id": "SKILL_TURN_THE_TABLES",
       "display_name": "Turn the Tables",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7305,7 +7305,7 @@
       },
       "milestone_gate": "ACT_I_COMPLETE",
       "targeting": {
-        "ref": "TARGET_TURN_THE_TABLES",
+        "ref": "TARGET_SKILL_TURN_THE_TABLES",
         "scope": [
           "Self"
         ],
@@ -7323,7 +7323,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_TURN_THE_TABLES",
+          "effect_id": "FX_SKILL_TURN_THE_TABLES",
           "template": "turn_tables",
           "ordered_steps": [
             {
@@ -7400,15 +7400,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_TURN_THE_TABLES",
+        "ref": "PRES_SKILL_TURN_THE_TABLES",
         "display_name": "Turn the Tables",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Once after qualifying recent enemy hit, recover 10 Strain and retaliate at 0.5x"
     },
-    "FOCUS_SURGE": {
-      "id": "FOCUS_SURGE",
+    "SKILL_FOCUS_SURGE": {
+      "id": "SKILL_FOCUS_SURGE",
       "display_name": "Focus Surge",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7421,7 +7421,7 @@
       },
       "milestone_gate": "ACT_I_COMPLETE",
       "targeting": {
-        "ref": "TARGET_FOCUS_SURGE",
+        "ref": "TARGET_SKILL_FOCUS_SURGE",
         "scope": [
           "Self"
         ],
@@ -7439,7 +7439,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_FOCUS_SURGE",
+          "effect_id": "FX_SKILL_FOCUS_SURGE",
           "template": "focus_surge",
           "ordered_steps": [
             {
@@ -7507,15 +7507,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_FOCUS_SURGE",
+        "ref": "PRES_SKILL_FOCUS_SURGE",
         "display_name": "Focus Surge",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Next qualifying action +25%; expires after action or 2 turns; no stacking"
     },
-    "DIRECT_ALLY": {
-      "id": "DIRECT_ALLY",
+    "SKILL_DIRECT_ALLY": {
+      "id": "SKILL_DIRECT_ALLY",
       "display_name": "Direct Ally",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7528,7 +7528,7 @@
       },
       "milestone_gate": "ACT_I_COMPLETE",
       "targeting": {
-        "ref": "TARGET_DIRECT_ALLY",
+        "ref": "TARGET_SKILL_DIRECT_ALLY",
         "scope": [
           "Ally"
         ],
@@ -7544,7 +7544,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_DIRECT_ALLY",
+          "effect_id": "FX_SKILL_DIRECT_ALLY",
           "template": "direct_ally",
           "ordered_steps": [
             {
@@ -7560,7 +7560,7 @@
         }
       ],
       "scaling": {
-        "profile_id": "SCALE_CHARM_COMMAND",
+        "profile_id": "SCALE_CHARM_SKILL_COMMAND",
         "primary_attributes": [
           {
             "attribute": "Charm",
@@ -7612,15 +7612,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_DIRECT_ALLY",
+        "ref": "PRES_SKILL_DIRECT_ALLY",
         "display_name": "Direct Ally",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Next ally action +15%; never grants extra action; 2 turns"
     },
-    "UNBROKEN": {
-      "id": "UNBROKEN",
+    "SKILL_UNBROKEN": {
+      "id": "SKILL_UNBROKEN",
       "display_name": "Unbroken",
       "legacy_aliases": [],
       "kind": "Passive",
@@ -7633,7 +7633,7 @@
       },
       "milestone_gate": "ACT_II_COMPLETE",
       "targeting": {
-        "ref": "TARGET_UNBROKEN",
+        "ref": "TARGET_SKILL_UNBROKEN",
         "scope": [
           "Self"
         ],
@@ -7649,7 +7649,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_UNBROKEN",
+          "effect_id": "FX_SKILL_UNBROKEN",
           "template": "unbroken",
           "ordered_steps": [
             {
@@ -7717,15 +7717,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_UNBROKEN",
+        "ref": "PRES_SKILL_UNBROKEN",
         "display_name": "Unbroken",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Prevent one eligible defeat/disable per encounter; no general immunity"
     },
-    "OVERFLOW_ENGINE": {
-      "id": "OVERFLOW_ENGINE",
+    "SKILL_OVERFLOW_ENGINE": {
+      "id": "SKILL_OVERFLOW_ENGINE",
       "display_name": "Overflow Engine",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7738,7 +7738,7 @@
       },
       "milestone_gate": "ACT_II_COMPLETE",
       "targeting": {
-        "ref": "TARGET_OVERFLOW_ENGINE",
+        "ref": "TARGET_SKILL_OVERFLOW_ENGINE",
         "scope": [
           "Self"
         ],
@@ -7756,7 +7756,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_OVERFLOW_ENGINE",
+          "effect_id": "FX_SKILL_OVERFLOW_ENGINE",
           "template": "overflow_engine",
           "ordered_steps": [
             {
@@ -7839,15 +7839,15 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_OVERFLOW_ENGINE",
+        "ref": "PRES_SKILL_OVERFLOW_ENGINE",
         "display_name": "Overflow Engine",
         "legacy_aliases": []
       },
       "balance_status": "provisional_numeric_baseline_not_playtest_balanced",
       "semantic_note": "Configured conversion of next Overflow event; cap 16"
     },
-    "MUTUAL_RUIN": {
-      "id": "MUTUAL_RUIN",
+    "SKILL_MUTUAL_RUIN": {
+      "id": "SKILL_MUTUAL_RUIN",
       "display_name": "Mutual Ruin",
       "legacy_aliases": [],
       "kind": "Active",
@@ -7860,7 +7860,7 @@
       },
       "milestone_gate": "ACT_II_COMPLETE",
       "targeting": {
-        "ref": "TARGET_MUTUAL_RUIN",
+        "ref": "TARGET_SKILL_MUTUAL_RUIN",
         "scope": [
           "Enemy",
           "Self"
@@ -7879,7 +7879,7 @@
       "conditions": {},
       "effects": [
         {
-          "effect_id": "FX_MUTUAL_RUIN",
+          "effect_id": "FX_SKILL_MUTUAL_RUIN",
           "template": "mutual_ruin",
           "ordered_steps": [
             {
@@ -7962,7 +7962,7 @@
         "p_growth": null
       },
       "presentation": {
-        "ref": "PRES_MUTUAL_RUIN",
+        "ref": "PRES_SKILL_MUTUAL_RUIN",
         "display_name": "Mutual Ruin",
         "legacy_aliases": []
       },

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "content_pack_id": "CONTENT_PACK_VS1_ACT_I",
+  "status": "content_design_baseline",
+  "source_quest_data": "data/vertical_slice/act_i_quests.json",
+  "effects": [
+    {"id":"MARA_TRUST_DOWN","type":"SetState","target":"VS1_MARA_TRUST","value":"LOW"},
+    {"id":"REPAIR_COST_UP","type":"SetFlag","flag":"VS1_REPAIR_SURCHARGE","value":true},
+    {"id":"COMMUNITY_TRUST_UP","type":"SetState","target":"VS1_COMMUNITY_TRUST","value":"HIGH"},
+    {"id":"SUPPLY_BUFFER_DOWN","type":"ModifyResource","resource_id":"RESOURCE_GOLD","operation":"Subtract","quantity":1},
+    {"id":"CLUE_RELIABILITY_UP","type":"SetFlag","flag":"VS1_INVESTIGATION_CONTEXT","value":"FULL"},
+    {"id":"UPPER_CHANNEL_TEMP_SAFE","type":"SetFlag","flag":"VS1_UPPER_CHANNEL_TEMP_SAFE","value":true},
+    {"id":"LOWER_RESERVE_DRYING","type":"SetFlag","flag":"VS1_LOWER_RESERVE_AT_RISK","value":true},
+    {"id":"TIMBER_REPAIR_COST_PLUS_1","type":"SetFlag","flag":"VS1_REPAIR_SURCHARGE","value":true},
+    {"id":"LOWER_CHANNEL_ACCESS_PRESERVED","type":"SetFlag","flag":"VS1_LOWER_CHANNEL_ACCESS_PRESERVED","value":true},
+    {"id":"TIME_COST_SMALL","type":"AdvanceGameTime","hours":1},
+    {"id":"THREAT_PRESSURE_UP","type":"SetFlag","flag":"VS1_EXTRA_THREADLING_CLIMAX","value":true},
+    {"id":"INSTITUTIONAL_TRUST_UP","type":"SetState","target":"VS1_ORG_TRUST","value":"HIGH"},
+    {"id":"PREPARATION_ITEM_GRANTED","type":"GrantItem","item_id":"ITEM_VS1_SOOTHING_TONIC","quantity":1},
+    {"id":"LOWER_RESIDENT_SUPPORT_COST_UP","type":"SetFlag","flag":"VS1_RESIDENT_SUPPORT_COST_UP","value":true},
+    {"id":"INSTITUTIONAL_TRUST_DOWN","type":"SetState","target":"VS1_ORG_TRUST","value":"LOW"},
+    {"id":"EVIDENCE_REQUESTED","type":"SetFlag","flag":"VS1_ORG_REQUIRES_EVIDENCE","value":true},
+    {"id":"THIRD_SOLUTION_ROUTE_OPEN","type":"SetFlag","flag":"VS1_THIRD_SOLUTION_ROUTE_OPEN","value":true},
+    {"id":"CLIMAX_PRESSURE_DOWN","type":"EncounterModifier","target":"ENC_VS1_04_ROOT_VAULT","modifier":"RemoveOneThreadling","condition":"VS1_PREPARATION_PRIORITY=WORKERS"},
+    {"id":"OBJECTIVE_DEFENSE_STEPS_PLUS_1","type":"ModifyObjectiveRequirement","target":"VS1_OBJ_STABILIZE_DIVERSION","operation":"Add","quantity":1},
+    {"id":"CLIMAX_SPREAD_PRESSURE_DOWN","type":"EncounterModifier","target":"ENC_VS1_04_ROOT_VAULT","modifier":"ReduceRootKnotPressureFrequency","value":"ONE_STEP"},
+    {"id":"RECOVERY_DURATION_UP","type":"SetFlag","flag":"VS1_RECOVERY_DURATION","value":"EXTENDED"},
+    {"id":"RECOVERY_DURATION_DOWN","type":"SetFlag","flag":"VS1_RECOVERY_DURATION","value":"STANDARD"},
+    {"id":"RECOVERY_FACILITY_STATE_UNLOCKED","type":"UnlockFacilityState","facility_id":"FAC_VS1_RECOVERY_ROOM"},
+    {"id":"WORKSHOP_IMPROVEMENT_UNLOCKED","type":"UnlockFacilityState","facility_id":"FAC_VS1_COMMON_WORKSHOP"},
+    {"id":"MATERIAL_THROUGHPUT_UP","type":"SetFlag","flag":"VS1_WORKSHOP_THROUGHPUT","value":"IMPROVED"},
+    {"id":"EXPEDITION_BOARD_UNLOCKED","type":"UnlockFacilityState","facility_id":"FAC_VS1_COORDINATION_BOARD"},
+    {"id":"RECOVERY_FACILITY_BASIC","type":"SetFlag","flag":"VS1_RECOVERY_ACCESS","value":"BASIC"}
+  ],
+  "conditional_costs": [
+    {"id":"COST_VS1_GATE_REPAIR_SURCHARGE","quest_id":"VS1_Q07","when":{"flag":"VS1_REPAIR_SURCHARGE","equals":true},"costs":[{"resource_id":"RESOURCE_TIMBER","quantity":1}]},
+    {"id":"COST_VS1_ORG_SUPPORT","quest_id":"VS1_Q07","when":{"flag":"VS1_ORG_STANCE_ACCEPTED","equals":true},"costs":[{"resource_id":"RESOURCE_GOLD","quantity":2}]}
+  ],
+  "conditional_encounter_modifiers": [
+    {"id":"MOD_VS1_WITHDRAWN_PRESSURE","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_EXTRA_THREADLING_CLIMAX","equals":true},"operation":"AddEnemy","enemy_id":"ENEMY_VS1_THREADLING","quantity":1},
+    {"id":"MOD_VS1_WORKERS_FIRST","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_PREPARATION_PRIORITY","equals":"WORKERS"},"operation":"RemoveEnemy","enemy_id":"ENEMY_VS1_THREADLING","quantity":1},
+    {"id":"MOD_VS1_STAGED_DIVERSION","encounter_id":"ENC_VS1_04_ROOT_VAULT","when":{"flag":"VS1_PREPARATION_PRIORITY","equals":"STAGED_DIVERSION"},"operation":"ReduceRootKnotPressureFrequency","value":"ONE_STEP"}
+  ],
+  "implementation_notes": [
+    "These are slice-level effect IDs, not new global effect primitives. Each type must map to the existing deterministic content/effect contracts or a registered handler.",
+    "Conditional costs are evaluated before committing the required quest preparation. Required materials cannot be consumed by optional crafting while reserved.",
+    "If two encounter modifiers conflict, resolve in declared order: base composition, withdrawal pressure, then preparation mitigation.",
+    "The mandatory seed-reserve loss is not affected by these modifiers."
+  ]
+}

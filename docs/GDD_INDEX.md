@@ -1,13 +1,11 @@
 # Alya Heals the World — GDD Index
 
 ## Purpose
-
 This file is the reference map for the eventual complete Game Design Document. It deliberately keeps the GDD modular: high-level decisions live in architecture, system behavior lives in `docs/systems/`, implementation contracts live in `docs/implementation/`, canonical narrative lives in `docs/NARRATIVE_CANON.md`, and concrete content lives in `data/` or dedicated content documents.
 
 The GDD is considered complete when every required domain points to a current source-of-truth document and that document is closed at the relevant planning checkpoint.
 
 ## Authority hierarchy
-
 1. `docs/architecture/GAME_ARCHITECTURE.md` — high-level architecture.
 2. `docs/NARRATIVE_CANON.md` — canonical narrative.
 3. `docs/systems/` — current system behavior and cross-system rules.
@@ -26,7 +24,7 @@ The GDD is considered complete when every required domain points to a current so
 | 02 Game Loop | Architecture | CLOSED |
 | 03 World | `docs/systems/world/` + data | CONTENT/SPEC DETAIL NEEDED |
 | 04 Narrative | `docs/NARRATIVE_CANON.md` + narrative implementation docs | CANON CLOSED / CONTENT NEEDED |
-| 05 Characters | `docs/characters/CHARACTER_BIBLE.md` + `docs/characters/ALLIES_ROSTER.md` + `docs/characters/NPCS_DESIGN.md` | **CHARACTER BIBLE LOCKED / DOWNSTREAM DATA & PRODUCTION NEEDED** |
+| 05 Characters | `docs/characters/CHARACTER_BIBLE.md` + `docs/characters/ALLIES_ROSTER.md` + `docs/characters/NPCS_DESIGN.md` | CHARACTER BIBLE LOCKED / DOWNSTREAM DATA & PRODUCTION NEEDED |
 | 06 Combat | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
 | 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | STRUCTURE CLOSED / CONTENT LOCK PENDING |
 | 08 Status Effects | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
@@ -68,38 +66,34 @@ Implementation-facing contracts established. **COMPLETE.**
 Cross-system ordering, state composition, transactions, time advancement, determinism, AI fallback and source-of-truth boundaries audited. **COMPLETE.**
 
 ### Checkpoint C — Content Complete
-Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC model and concrete Named roster are locked; the Character Bible is now the consolidated character-identity source.
+Complete game content catalog and dependency graph closed. **PENDING — CURRENT PHASE.** C3 recruitable ally roster is conceptually locked; C4 NPC model and concrete Named roster are locked; the Character Bible is the consolidated character-identity source.
 
 ### Checkpoint D — Production Complete
 Implementation, UI, art, audio, localization, persistence, and QA requirements closed for every planned content item. **PENDING.**
 
 ## Content/data principle
-
 The GDD should explain what the game means and how it behaves. Large concrete catalogs should remain in structured data where practical. Stable IDs must connect narrative, systems, data, UI, assets, and QA.
 
 ## Current planning-to-production boundary
-
 Core gameplay rules and implementation contracts are closed. Remaining work is primarily content lock and production specification: concrete content definitions, asset requirements/dependencies, narrative content, UI presentation, audio, localization, accessibility and QA requirements.
 
 The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_ROSTER.md`. NPC structure and the relevance/H-tier model are conceptually closed in `docs/characters/NPCS_DESIGN.md`. `docs/characters/CHARACTER_BIBLE.md` consolidates the locked character identity rules and concrete Named NPC roster. Numerical stats, exact skills, AI parameters, operational recruitment scripting, detailed H-content implementation and final asset IDs remain downstream specifications.
 
 ## Current project orientation and adult-content production references
-
 - `docs/PROJECT_STATE_AND_ROADMAP.md` — current project summary, canon, locked decisions, remaining work and recommended next sequence.
 - `docs/art/CHARACTER_IMAGE_PROMPTS.md` — full-body character reference prompts and generation guidance.
 - `docs/art/CHARACTER_EROTIC_CG_MATRIX.md` — first-pass situations and CG beats for 31 adult characters; non-graphic direction, not a final asset/unlock specification.
 
 ## Maintenance rule
-
 Whenever a planning decision is finalized, update the relevant domain source first and then update this index/audit status. Historical batch logs are secondary context only and must not become competing sources of truth.
 
+## Skills audit update — Pass 2
 
-## Skills audit update — decisions locked, content reconciliation active
+The skill architecture remains closed; the concrete catalog remains unlocked. The current skill sources are:
+- `docs/systems/combat/SKILLS_AUDIT.md` — approved meter migration, P-growth capability, and cluster consolidation decisions.
+- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_1.md` — initial row-by-row audit.
+- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_2.md` — applied decisions and proposed mechanical disposition for 54 legacy rows plus fourteen additions.
+- `implementation_spec/SKILL_CATALOG.md` — schema, meter migration, capability contract, and validation rules.
+- `data/skills/skills.csv` — primary concrete catalog; migration remains pending review.
 
-The skill design architecture remains closed, but the concrete catalog is **not yet locked**. The current audit and schema contract are:
-- `docs/systems/combat/SKILLS_AUDIT.md` — canonical vocabulary decision, tier/unlock rules, inventory findings, and first-pass redundancy hypotheses.
-- `docs/systems/combat/SKILL_CATALOG_RECONCILIATION_PASS_1.md` — row-by-row first-pass recommendations for the 54 named legacy skill rows and review of the 14 approved additions.
-- `implementation_spec/SKILL_CATALOG.md` — logical schema, source-of-truth hierarchy, and validation rules.
-- `data/skills/skills.csv` — primary concrete catalog; structured migration is pending review of the row-by-row reconciliation.
-
-Approved working decisions: neutral implementation vocabulary is canonical; tiers represent both unlock/progression and expected power; unlocking combines Skill Points, prerequisites, and progression gates; CSV remains the primary catalog with companion definitions for complex mechanics; preserve legacy fantasy/intention while reformulating, merging, or removing redundant mechanics.
+Approved decisions: neutral implementation vocabulary is canonical; tiers represent both progression/unlock expectation and expected power; unlocks combine Skill Points, prerequisites, and progression gates; CSV is the primary catalog with companion definitions for complex mechanics; preserve themes but merge only genuine mechanical redundancy; H-gauge maps to Strain and Health Damage to Vitality damage subject to per-effect semantic validation; P-growth is a Capability/Transformation that enables dependent skills.

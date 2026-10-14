@@ -1,9 +1,20 @@
 # AHTW — Skill Catalog Reconciliation Pass 4
 ## Focused single-target actions: scaling profiles, effect identity, and redundancy
 
-> **Status:** Review proposal. This pass narrows the audit to focused single-target actions. It does not change data/skills/skills.csv, approve numerical coefficients, or lock the final catalog.
+> **Status:** Decision-updated proposal. The project owner's six Pass 4 decisions are recorded below. This pass does not change data/skills/skills.csv, approve numerical coefficients, or lock the final catalog.
 
 ## 1. Decisions already treated as constraints
+
+### 1A. Project-owner decisions — Pass 4
+
+1. **Basic attacks: B.** Keep separate skill records when body-part affinity/scaling supports meaningful build choices; reuse shared effect templates.
+2. **Spank/Bite: B.** Each has one primary damage channel; a second channel is permitted only as an explicit conditional rider with ordered effects.
+3. **Flirt: C.** Flirt generates Command and deals Strain damage. This combined role needs explicit tuning/cost and should not outperform dedicated damage or resource actions without trade-offs.
+4. **Lay/Facesit risk: B.** Self-risk is applied only when it is an intentional, explicit trade-off with a defined payoff.
+5. **AS/Bend: A.** AS remains a Chain/sequence skill with explicit reset conditions; if no meaningful Chain behavior can be defined, consolidate it with Bend.
+6. **H-job: B.** Keep the Mind Aspect and revise the intended effect to a genuine mental/sensory interaction; do not silently change it to a physical body part.
+
+These choices resolve the design direction, but exact numerical balance and detailed effect conditions remain open.
 
 - The eight primary attributes remain BODY, AGI, SOUL, CHARM, DOM, SUB, SAD, and MAS.
 - The body-part affinity used by a skill is a separate scaling input. It can change the effectiveness of otherwise similar actions.
@@ -32,12 +43,12 @@ The words “primary” and “secondary” indicate a proposed profile structur
 | Skill | Proposed profile | Core effect | Why it may remain distinct | Main unresolved point |
 |---|---|---|---|---|
 | Bl-job | CHARM + SUB; Mouth | Focused Strain attack | Mouth affinity and a CHARM/SUB profile may support a different build from other actions | Does it have any unique cost, requirement, state interaction, or only a unique profile/animation? |
-| Lay | SUB + MAS; Crotch | Focused Strain attack | Could reward exposure/Resolve or a different body-part specialization | Should it carry self-exposure risk, or is it a reliable basic action? |
+| Lay | SUB + MAS; Crotch | Focused Strain attack; self-risk only if explicitly authored as a trade-off | SUB/MAS and Crotch affinity can support a distinct build choice | If self-risk is included, define its exact trigger, consequence and payoff; otherwise resolve only against the target. |
 | Grope | CHARM + AGI; Ass + Breasts composite | Focused Strain attack | A defined multi-part composite can support a distinct affinity build | Should the composite use a fixed declared formula, a chosen part, or be reduced to one part? |
-| H-job | AGI + CHARM; **body-part tag unresolved** | Focused Strain attack | Could emphasize accuracy/precision instead of raw Strain output | The CSV says Mind, but the description describes hands/sensitive spots. Confirm Mind as a genuine mental Aspect or change the part to a defined physical part. |
+| H-job | AGI + CHARM; Mind Aspect | Focused Strain action that targets or exploits a defined mental/sensory state | Accuracy/precision plus Mind interaction distinguishes it from ordinary focused attacks | Rewrite the legacy description/effect to define the mental/sensory interaction; do not treat Mind as a physical body part. |
 | Paizuri | CHARM + SUB; Breasts | Focused Strain attack | Breast affinity gives a distinct scaling route from Mouth/Crotch/Ass actions | Is affinity alone enough to justify its own unlock, given the action uses the shared basic-attack template? |
 | Deepth | SUB + MAS; Mouth | Focused Strain attack | Could reward high SUB/MAS and Mouth affinity | Needs a concrete tactical distinction from Bl-job; otherwise one can be a presentation variant. |
-| Flirt | CHARM + DOM; Mouth | Generate Command **or** deal modest Strain | Resource generation has a different role from direct damage and sets up control | Recommendation: make Flirt the early, low-cost Command generator; do not also give it full damage value. |
+| Flirt | CHARM + DOM; Mouth | Generate Command **and** deal Strain damage | Hybrid pressure/resource action; supports the Command → Break → Control loop while still contributing direct pressure | Explicitly budget its action cost, Command yield and Strain output so it does not dominate dedicated generators or attacks. |
 
 **Recommendation:** Use one shared FocusedStrainAttack effect template, with a per-skill scaling profile. Retain separate unlockable actions when the body-part affinity, attribute profile, prerequisite, cost, risk, or tactical hook creates a meaningful choice. Do not create a bespoke effect handler per animation.
 
@@ -45,9 +56,9 @@ The words “primary” and “secondary” indicate a proposed profile structur
 
 | Skill | Proposed profile | Core effect | Why it may remain distinct | Main unresolved point |
 |---|---|---|---|---|
-| Spank | BODY + SAD; Ass | Focused physical action; legacy record lists Strain and Vitality damage | Ass affinity and SAD/BODY scaling can specialize toward physical/Vitality impact | Should it deal both channels, or choose one primary channel with a conditional rider? |
-| Bite | BODY + SAD; Mouth | Focused physical action; legacy record lists Strain and Vitality damage | Mouth affinity can create a different scaling path from Spank | If effect/cost/risk are identical, keep separate only if the affinity is a deliberate build choice. |
-| Facesit | BODY + SUB; Crotch | Focused mixed-channel action; self-risk only if explicit | Can trade actor exposure for pressure on a vulnerable target | CSV targets both Enemy and Self. Is self-targeting an actual cost/effect, or just a legacy targeting mistake? |
+| Spank | BODY + SAD; Ass | One primary channel; any second channel is an explicit conditional rider | Ass affinity and BODY/SAD scaling support a physical specialization | Choose the primary channel during final effect definition; specify the rider trigger and ordering if a second channel remains. |
+| Bite | BODY + SAD; Mouth | One primary channel; any second channel is an explicit conditional rider | Mouth affinity can create a different scaling path from Spank | Choose the primary channel during final effect definition; specify the rider trigger and ordering if a second channel remains. |
+| Facesit | BODY + SUB; Crotch | Focused action with one primary channel; self-risk only if explicitly authored as a trade-off | Can trade actor exposure for pressure on a vulnerable target | The legacy Enemy + Self target field is not itself a self-effect; declare any self-cost separately, or remove Self from the target query. |
 | Penetrate | BODY + DOM; Crotch; requires P-growth | Focused Strain attack | Capability gate and Crotch affinity create a progression specialization | Is it a reliable Strain attack, or should it have a specific interaction with an existing state? |
 | A-penetration | BODY + DOM; Crotch; requires P-growth | Focused attack plus a defined control/Break rider | Different from Penetrate if the rider changes turn planning or enables a setup chain | Recommendation: use a named control/Break effect with resistance and duration; avoid an undefined “stun”. |
 | F-fk | BODY + DOM; Crotch; requires P-growth | Strain attack that scales against a target below a Vitality threshold | Rewards timing and target selection rather than being a flat upgrade | Define threshold, whose Vitality is checked, scaling cap, and whether it also deals Vitality damage. |
@@ -61,7 +72,7 @@ The words “primary” and “secondary” indicate a proposed profile structur
 | Skill | Proposed profile | Core effect | Why it may remain distinct | Main unresolved point |
 |---|---|---|---|---|
 | Bend | SUB + MAS; Ass | Baseline single-target Strain-over-time | Establishes the basic DoT loop | Define tick timing, duration, refresh, stacking, and expiry in the companion effect definition. |
-| AS | SUB + MAS; Ass | Chain/sequence effect tied to consecutive use | Sequence commitment can create a different tactical decision from Bend | Recommendation: keep separate only if consecutive use changes state/output with explicit reset conditions; otherwise merge into Bend as a variant. |
+| AS | SUB + MAS; Ass | Chain/sequence effect tied to consecutive use, with explicit reset conditions | Sequence commitment creates a distinct tactical decision from baseline Bend | Define what counts as consecutive use, which events reset the chain, how the effect changes, and how duration/stacking interact. If no meaningful rule survives, merge into Bend. |
 | Sensory Enhancement | SOUL + CHARM; Mind | Apply a tagged vulnerability to a named channel | Sets up Exploit/Pressure and follow-up skills rather than dealing direct damage | Name the vulnerability target: Strain, Vitality, a specific action tag, or a registered damage family. |
 | Hypnotize | SOUL + DOM; Mind | Change intent or apply a defined control state | Alters enemy options; not just damage-over-time | Recommendation: remove the ambiguous “stun + DoT” bundle. Choose intent change or a registered control state as primary. |
 | Bind | SOUL + DOM; Mind | Restraint/control state limiting declared actions | Can set up Break Resistance, Hypnotize, or outcome requests | Define exactly which action categories are restricted and how the target resists/escapes. The current scaling audit accidentally omitted Bind; it belongs in the control review. |
@@ -93,46 +104,46 @@ These are proposed templates, not necessarily new runtime effect types. Reuse th
 
 ## 6. Decisions requested before numerical balancing
 
-### Decision 1 — Similar basic attacks
-**Recommended: B.** Keep separate skill records where per-skill body-part affinity/scaling and progression are intended build choices, but share the same effect template.
+### Decision 1 — Similar basic attacks — DECIDED: B
+Keep separate skill records where per-skill body-part affinity/scaling and progression are intended build choices, but share the same effect template.
 
 - A. Merge mechanically identical basic attacks into one skill with presentation variants; affinity does not justify separate unlocks.
 - **B. Shared effect template, separate unlockable skills when scaling/affinity creates a meaningful build choice.**
 - C. Separate only if each has an additional unique status, resource hook, risk, or tactical rule; scaling alone is not enough.
 
-### Decision 2 — Spank and Bite
-**Recommended: B.** Give each one clear primary channel and only add a second channel as an explicit conditional rider.
+### Decision 2 — Spank and Bite — DECIDED: B
+Give each one clear primary channel and only add a second channel as an explicit conditional rider.
 
 - A. Both always deal Strain and Vitality damage.
 - **B. Each has one primary damage channel; any second channel is conditional and explicitly ordered.**
 - C. One is Strain-focused and the other Vitality-focused.
 
-### Decision 3 — Flirt
-**Recommended: A.** Make it the basic Command generator; keep Hypnotize as direct control.
+### Decision 3 — Flirt — DECIDED: C
+Flirt generates Command and deals Strain damage. Its resource yield and damage output must be balanced together, with explicit costs and limits.
 
-- **A. Generate Command, with negligible/no direct damage.**
+- A. Generate Command, with negligible/no direct damage.
 - B. Deal Strain damage; another skill generates Command.
-- C. Generate Command and deal full Strain damage, accepting that it may be overtuned unless costs/setup constrain it.
+- **C. Generate Command and deal Strain damage, with explicit tuning to prevent it dominating either role.**
 
-### Decision 4 — Lay and Facesit risk
-**Recommended: B.** Only apply self-risk when it is an explicit mechanical trade-off.
+### Decision 4 — Lay and Facesit risk — DECIDED: B
+Only apply self-risk when it is an explicit mechanical trade-off.
 
 - A. Both are reliable focused attacks without self-risk.
 - **B. Self-risk only on the action whose fantasy/identity requires it, with a declared payoff.**
 - C. Both are exposure actions that generate Resolve or another resource.
 
-### Decision 5 — AS versus Bend
-**Recommended: A.** AS stays separate only as a Chain/sequence skill with reset conditions.
+### Decision 5 — AS versus Bend — DECIDED: A
+AS stays separate as a Chain/sequence skill with explicit reset conditions.
 
 - **A. Keep AS as a Chain mechanic; otherwise merge it into Bend.**
 - B. Merge both into one DoT skill.
 - C. Keep both as independent DoTs with different duration/stacking profiles.
 
-### Decision 6 — H-job body-part field
-**Recommended: A, pending your intent.** Change the legacy Mind tag to a physical body-part affinity; reserve Mind for an actual mental/psychic interaction.
+### Decision 6 — H-job body-part field — DECIDED: B
+Keep Mind because the intended mechanic targets a mental/sensory Aspect, and revise the description/effect accordingly.
 
-- **A. Correct the body-part field to a physical part (please specify if you have a preference).**
-- B. Keep Mind because the intended mechanic targets a mental/sensory Aspect, and revise the description/effect accordingly.
+- A. Correct the body-part field to a physical part.
+- **B. Keep Mind and revise the description/effect to define the mental/sensory interaction.**
 - C. Leave it unresolved until visual/animation design.
 
 ## 7. Not yet approved
@@ -140,10 +151,12 @@ These are proposed templates, not necessarily new runtime effect types. Reuse th
 - Attribute coefficients/curves, affinity multipliers, hit formulas, costs, and caps.
 - Exact unlock tiers/prerequisites.
 - Whether affinity alone warrants separate Skill Point costs.
-- Final choice of damage channels for Spank/Bite/Facesit and related attacks.
-- H-job's intended body-part/Aspect.
+- Exact primary channels and any conditional second-channel riders for Spank/Bite/Facesit.
+- H-job's precise mental/sensory effect and target eligibility (Mind is now retained as the intended Aspect).
+- Flirt's numerical balance between Command generation and Strain damage.
+- AS's exact Chain progression and reset conditions.
 - P-growth target scope, persistence, and revocation.
-- Final merges between Flirt/Command, Bend/AS, and similar basic-action variants.
+- Final merges between similar basic-action variants beyond the decisions above.
 
 ## 8. Acceptance criteria for the next pass
 

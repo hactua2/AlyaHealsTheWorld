@@ -86,6 +86,7 @@ The recruitable ally roster is conceptually closed in `docs/characters/ALLIES_RO
 - `docs/vertical_slice/ACT_I_DIALOGUE_PACK.md` — first-pass dialogue anchors and choice labels for the vertical slice.
 - `docs/vertical_slice/ACT_I_CONTENT_CATALOG.md` — human-readable content decisions, enemy/encounter roles, resource/facility economy and implementation gate.
 - `data/vertical_slice/act_i_quests.json` and `data/vertical_slice/act_i_content.json` — structured stable-ID quest and content data; numeric values are provisional pending runtime integration and balance QA.
+- `data/vertical_slice/act_i_effects.json` — slice-specific choice effects, conditional costs, and encounter modifiers mapped to deterministic handlers.
 - `docs/art/CHARACTER_IMAGE_PROMPTS.md` — full-body character reference prompts and generation guidance.
 - `docs/art/CHARACTER_EROTIC_CG_MATRIX.md` — first-pass situations and CG beats for 31 adult characters; non-graphic direction, not a final asset/unlock specification.
 

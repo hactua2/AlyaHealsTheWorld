@@ -503,5 +503,36 @@
       ],
       "completion_condition": "Player has seen the result and its community impact."
     }
-  ]
+  ],
+  "starting_state": {
+    "party": [
+      "ALYA",
+      "ALLY-001"
+    ],
+    "resources": [
+      {
+        "resource_id": "RESOURCE_TIMBER",
+        "quantity": 3
+      },
+      {
+        "resource_id": "RESOURCE_FIBER",
+        "quantity": 2
+      },
+      {
+        "resource_id": "RESOURCE_BOTANICAL_EXTRACT",
+        "quantity": 0
+      },
+      {
+        "resource_id": "RESOURCE_GOLD",
+        "quantity": 5
+      }
+    ],
+    "unique_resources": [
+      {
+        "item_id": "ITEM_VS1_SEED_RESERVE",
+        "state": "Present"
+      }
+    ],
+    "mandatory_material_policy": "Optional crafting cannot consume materials reserved for VS1_Q07. If the player chose to close the gate, an additional guaranteed Timber reward from ENC_VS1_01_HUSKS covers the extra repair cost. Fiber from ENC_VS1_02_THREADLINGS has a guaranteed minimum of one."
+  }
 }

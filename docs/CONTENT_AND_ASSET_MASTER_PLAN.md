@@ -97,4 +97,8 @@ The broad audit phase is complete. The project should now resolve the concrete r
 **Protagonist/Outfits → Recruitable Allies → NPCs → Enemies/Bosses → Skills → Items → Facilities → World → Narrative/CG → Asset Registry → Final Missing-Art Checklist.**
 
 The final deliverable of this phase is a production checklist in which every required visual asset is classified as **KEEP / REFINE / REPLACE / MISSING / NOT REQUIRED**, linked to a stable content ID and production priority.
-\n\n## Full-game content lock update — 2026-10-15\n\nThe base-game content baseline is now authored in `docs/FULL_GAME_CONTENT_LOCK.md`, with stable-ID catalogs for world/narrative, gameplay, and character arcs under `data/content/`. This closes the major roster-definition gap for acts, regions, quests, factions, allies, NPCs, enemies, bosses, facilities, resources, items, Expeditions, and ending families. It does not close Checkpoint D. The file-level asset registry still needs each canonical content ID mapped to existing assets or KEEP / REFINE / REPLACE / MISSING / NOT REQUIRED; visual/audio/localization/UX/QA work remains production work.\n
+
+
+## Full-game content lock update — 2026-10-15
+
+The base-game content baseline is now authored in `docs/FULL_GAME_CONTENT_LOCK.md`, with stable-ID catalogs for world/narrative, gameplay, and character arcs under `data/content/`. This closes the major roster-definition gap for acts, regions, quests, factions, allies, NPCs, enemies, bosses, facilities, resources, items, Expeditions, and ending families. It does not close Checkpoint D. The file-level asset registry still needs each canonical content ID mapped to existing assets or KEEP / REFINE / REPLACE / MISSING / NOT REQUIRED; visual/audio/localization/UX/QA work remains production work.

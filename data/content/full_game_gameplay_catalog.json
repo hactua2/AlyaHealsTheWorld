@@ -1,0 +1,1134 @@
+{
+  "schemaVersion": 1,
+  "status": "CONTENT_LOCKED_DESIGN_NOT_RUNTIME_VALIDATED",
+  "sourceOfTruth": "docs/FULL_GAME_CONTENT_LOCK.md",
+  "counts": {
+    "enemyArchetypes": 35,
+    "majorBosses": 9,
+    "specialEncounters": 8,
+    "facilities": 12,
+    "resources": 8,
+    "canonicalItems": 36,
+    "alyaOutfits": 8,
+    "skillRecords": 67
+  },
+  "combatGuardrails": [
+    "Authored encounter power bands; no universal level scaling.",
+    "Bosses require phase/intent contracts and explicit objective checks.",
+    "NPC and enemy/boss representations are separate records.",
+    "Retreat and non-defeat outcomes are encounter-defined.",
+    "Cursed/blessed evolution, removal and persistence are explicit per item."
+  ],
+  "enemies": [
+    {
+      "id": "ENM-001",
+      "name": "Guard",
+      "family": "Civilized",
+      "tier": "Tier 1",
+      "role": "Defender",
+      "signatureHook": "Formation and guard interception",
+      "combatant": true,
+      "aiProfile": "AI_ENM-001",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-002",
+      "name": "Slime",
+      "family": "Savage",
+      "tier": "Tier 1",
+      "role": "Adaptive mob",
+      "signatureHook": "Multi-hit and elemental coverage",
+      "combatant": true,
+      "aiProfile": "AI_ENM-002",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-003",
+      "name": "Cockatrice",
+      "family": "Savage",
+      "tier": "Tier 1",
+      "role": "Status pressure",
+      "signatureHook": "Vulnerability and accuracy pressure",
+      "combatant": true,
+      "aiProfile": "AI_ENM-003",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-004",
+      "name": "Warrior",
+      "family": "Tribal",
+      "tier": "Tier 1",
+      "role": "Melee baseline",
+      "signatureHook": "Direct damage and basic intent",
+      "combatant": true,
+      "aiProfile": "AI_ENM-004",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-005",
+      "name": "Goblin",
+      "family": "Tribal",
+      "tier": "Tier 1",
+      "role": "Evasive utility",
+      "signatureHook": "Scavenging and target switching",
+      "combatant": true,
+      "aiProfile": "AI_ENM-005",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-006",
+      "name": "Mycelian Sentinel",
+      "family": "Tribal",
+      "tier": "Tier 1",
+      "role": "Territorial defender",
+      "signatureHook": "Protects a location; not a generic evil tribe",
+      "combatant": true,
+      "aiProfile": "AI_ENM-006",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-007",
+      "name": "Zombie",
+      "family": "Undead",
+      "tier": "Tier 1",
+      "role": "Attrition",
+      "signatureHook": "Slow pressure and undead effects",
+      "combatant": true,
+      "aiProfile": "AI_ENM-007",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-008",
+      "name": "Augmented Agent",
+      "family": "Civilized",
+      "tier": "Tier 2",
+      "role": "Elite counter",
+      "signatureHook": "Adapts against repeated tactics",
+      "combatant": true,
+      "aiProfile": "AI_ENM-008",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-009",
+      "name": "Kunoichi",
+      "family": "Civilized",
+      "tier": "Tier 2",
+      "role": "Evasion specialist",
+      "signatureHook": "Marks and target switching",
+      "combatant": true,
+      "aiProfile": "AI_ENM-009",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-010",
+      "name": "Krakenblood",
+      "family": "Loner",
+      "tier": "Tier 2",
+      "role": "Resilient pressure",
+      "signatureHook": "Sustained pressure with punishable recovery",
+      "combatant": true,
+      "aiProfile": "AI_ENM-010",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-011",
+      "name": "Kitsune Trickster",
+      "family": "Loner",
+      "tier": "Tier 2",
+      "role": "Decoy controller",
+      "signatureHook": "Decoys and intent manipulation",
+      "combatant": true,
+      "aiProfile": "AI_ENM-011",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-012",
+      "name": "Barbarian",
+      "family": "Tribal",
+      "tier": "Tier 2",
+      "role": "Heavy attacker",
+      "signatureHook": "High damage, low flexibility",
+      "combatant": true,
+      "aiProfile": "AI_ENM-012",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-013",
+      "name": "Royal Guard",
+      "family": "Civilized",
+      "tier": "Tier 2",
+      "role": "Formation defender",
+      "signatureHook": "Protects allies and intercepts",
+      "combatant": true,
+      "aiProfile": "AI_ENM-013",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-014",
+      "name": "Minotaur",
+      "family": "Savage",
+      "tier": "Tier 2",
+      "role": "Guard breaker",
+      "signatureHook": "Charge and fortitude pressure",
+      "combatant": true,
+      "aiProfile": "AI_ENM-014",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-015",
+      "name": "Wolfkin Stalker",
+      "family": "Savage",
+      "tier": "Tier 2",
+      "role": "Pack hunter",
+      "signatureHook": "Coordinated attacks and pursuit",
+      "combatant": true,
+      "aiProfile": "AI_ENM-015",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-016",
+      "name": "Orc Challenger",
+      "family": "Tribal",
+      "tier": "Tier 2",
+      "role": "Duelist",
+      "signatureHook": "Resolve pressure; can be neutral in story",
+      "combatant": true,
+      "aiProfile": "AI_ENM-016",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-017",
+      "name": "Haunt",
+      "family": "Loner",
+      "tier": "Tier 2",
+      "role": "Reactive spirit",
+      "signatureHook": "Preparation and knowledge expose weakness",
+      "combatant": true,
+      "aiProfile": "AI_ENM-017",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-018",
+      "name": "Witch",
+      "family": "Loner",
+      "tier": "Tier 2",
+      "role": "Curse controller",
+      "signatureHook": "Control and curse effects; NPC contexts use separate records",
+      "combatant": true,
+      "aiProfile": "AI_ENM-018",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-019",
+      "name": "Mummy",
+      "family": "Undead",
+      "tier": "Tier 2",
+      "role": "Endurance",
+      "signatureHook": "Attrition and seal mechanics",
+      "combatant": true,
+      "aiProfile": "AI_ENM-019",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-020",
+      "name": "Dullahan",
+      "family": "Undead",
+      "tier": "Tier 3",
+      "role": "Execution elite",
+      "signatureHook": "High-threat intent; distinct from Reaper NPC unless explicitly linked",
+      "combatant": true,
+      "aiProfile": "AI_ENM-020",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-021",
+      "name": "Angelic Arbiter",
+      "family": "Civilized",
+      "tier": "Tier 3",
+      "role": "Protective judge",
+      "signatureHook": "Protection and judgment; not automatically evil",
+      "combatant": true,
+      "aiProfile": "AI_ENM-021",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-022",
+      "name": "Dragonkin",
+      "family": "Loner",
+      "tier": "Tier 3",
+      "role": "Elemental elite",
+      "signatureHook": "Strong telegraphed elemental attacks",
+      "combatant": true,
+      "aiProfile": "AI_ENM-022",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-023",
+      "name": "Fallen Angel",
+      "family": "Loner",
+      "tier": "Tier 3",
+      "role": "Multi-phase controller",
+      "signatureHook": "Control and vulnerability cycles",
+      "combatant": true,
+      "aiProfile": "AI_ENM-023",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-024",
+      "name": "Lamia Duelist",
+      "family": "Loner",
+      "tier": "Tier 3",
+      "role": "Control specialist",
+      "signatureHook": "Constriction/control represented without spatial grid assumptions",
+      "combatant": true,
+      "aiProfile": "AI_ENM-024",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-025",
+      "name": "Demon",
+      "family": "Savage",
+      "tier": "Tier 3",
+      "role": "Hybrid pressure",
+      "signatureHook": "Alignment varies by narrative context",
+      "combatant": true,
+      "aiProfile": "AI_ENM-025",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-026",
+      "name": "Threadling",
+      "family": "Ferida",
+      "tier": "Tier 1",
+      "role": "Swarm unit",
+      "signatureHook": "Multiplies if ignored",
+      "combatant": true,
+      "aiProfile": "AI_ENM-026",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-027",
+      "name": "Hollow Warden",
+      "family": "Ferida",
+      "tier": "Tier 2",
+      "role": "Objective defender",
+      "signatureHook": "Linked resistance protects a quest objective",
+      "combatant": true,
+      "aiProfile": "AI_ENM-027",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-028",
+      "name": "Root-Knot Anchor",
+      "family": "Ferida",
+      "tier": "Objective",
+      "role": "Objective entity",
+      "signatureHook": "Defeating it alone does not necessarily complete the encounter",
+      "combatant": true,
+      "aiProfile": "AI_ENM-028",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-029",
+      "name": "Red-Tide Leech",
+      "family": "Ferida",
+      "tier": "Tier 2",
+      "role": "Resource drainer",
+      "signatureHook": "Drains pressure/resources; vulnerable after feeding",
+      "combatant": true,
+      "aiProfile": "AI_ENM-029",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-030",
+      "name": "Echo Husk",
+      "family": "Ferida",
+      "tier": "Tier 2",
+      "role": "Pattern repeater",
+      "signatureHook": "Repeats common action patterns; varied tactics counter it",
+      "combatant": true,
+      "aiProfile": "AI_ENM-030",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-031",
+      "name": "Guilt Mirror",
+      "family": "Ferida",
+      "tier": "Tier 3",
+      "role": "Relationship pressure",
+      "signatureHook": "Uses authored relationship flags only",
+      "combatant": true,
+      "aiProfile": "AI_ENM-031",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-032",
+      "name": "Ashbound",
+      "family": "Ferida",
+      "tier": "Tier 2",
+      "role": "Hazard fighter",
+      "signatureHook": "Alternates armor and exposure",
+      "combatant": true,
+      "aiProfile": "AI_ENM-032",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-033",
+      "name": "Archive Custodian",
+      "family": "Construct",
+      "tier": "Tier 3",
+      "role": "Research construct",
+      "signatureHook": "Tests interrupts and source discovery",
+      "combatant": true,
+      "aiProfile": "AI_ENM-033",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-034",
+      "name": "Network Eater",
+      "family": "Ferida",
+      "tier": "Tier 3",
+      "role": "Objective attacker",
+      "signatureHook": "Targets links and encounter objectives, not only Vitality",
+      "combatant": true,
+      "aiProfile": "AI_ENM-034",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    },
+    {
+      "id": "ENM-035",
+      "name": "Confluence Herald",
+      "family": "Ferida",
+      "tier": "Tier 4",
+      "role": "Late-game manifestation",
+      "signatureHook": "Multi-target threat with explicit phase conditions",
+      "combatant": true,
+      "aiProfile": "AI_ENM-035",
+      "scaling": "authored_power_band",
+      "drops": "encounter_specific"
+    }
+  ],
+  "bosses": [
+    {
+      "id": "BOS-001",
+      "name": "Root-Knot at the Sluice",
+      "act": "ACT-01",
+      "composition": "ENM-027 + ENM-028",
+      "objective": "Stabilize diversion, sever filament, secure gate; seed loss is mandatory.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-002",
+      "name": "The Pilgrim Engine",
+      "act": "ACT-02",
+      "composition": "ENM-008 + ENM-030",
+      "objective": "Protect shelter routes and disable three supply anchors.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-003",
+      "name": "The Contract Eater",
+      "act": "ACT-03",
+      "composition": "ENM-011 + ENM-029",
+      "objective": "Break exploitative contract seals while keeping caravan escorts safe.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-004",
+      "name": "The Memory That Bites",
+      "act": "ACT-03",
+      "composition": "ENM-006 + ENM-031",
+      "objective": "Resolve a living-memory crisis without destroying the network.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-005",
+      "name": "The Ashen Measure",
+      "act": "ACT-04",
+      "composition": "ENM-032 + ENM-034",
+      "objective": "Counter a triage engine that converts people into risk categories.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-006",
+      "name": "EnemyCommander: Siege of the Broken Route",
+      "act": "ACT-04",
+      "composition": "NPC-015 combat representation",
+      "objective": "EnemyCommander may retreat, yield, or be defeated; NPC state follows authored result.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-007",
+      "name": "The Archive's False Witness",
+      "act": "ACT-04",
+      "composition": "ENM-033 + ENM-030",
+      "objective": "Verify evidence and counter repeated actions.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-008",
+      "name": "The Ferida Manipulator",
+      "act": "ACT-05",
+      "composition": "NPC-017 combat representation",
+      "objective": "Dialogue and combat are separate representations.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    },
+    {
+      "id": "BOS-009",
+      "name": "The Confluence Pattern",
+      "act": "ACT-05",
+      "composition": "ENM-035 + objective anchors",
+      "objective": "Disrupt anchors, maintain coalition links, complete world-state objective.",
+      "phaseContractRequired": true,
+      "retreatPolicy": "encounter_defined",
+      "postEncounterWorldMutation": true
+    }
+  ],
+  "specialEncounters": [
+    {
+      "id": "SPC-001",
+      "name": "The First Threadling Nest",
+      "act": "ACT-01",
+      "purpose": "Teach reinforcement and target prioritization.",
+      "optional": true
+    },
+    {
+      "id": "SPC-002",
+      "name": "The Sealed Clinic",
+      "act": "ACT-01/02",
+      "purpose": "Optional care/containment dilemma.",
+      "optional": true
+    },
+    {
+      "id": "SPC-003",
+      "name": "The Caravan in the Salt Storm",
+      "act": "ACT-03",
+      "purpose": "Protect supplies or rescue stragglers.",
+      "optional": true
+    },
+    {
+      "id": "SPC-004",
+      "name": "The Silent Grove",
+      "act": "ACT-03",
+      "purpose": "Exploration and knowledge check.",
+      "optional": true
+    },
+    {
+      "id": "SPC-005",
+      "name": "The Broken Lift",
+      "act": "ACT-04",
+      "purpose": "Objective encounter with environmental hazards.",
+      "optional": true
+    },
+    {
+      "id": "SPC-006",
+      "name": "The Evacuation Clock",
+      "act": "ACT-04",
+      "purpose": "Timed objective, not a pure damage race.",
+      "optional": true
+    },
+    {
+      "id": "SPC-007",
+      "name": "The Unreliable Signal",
+      "act": "ACT-04",
+      "purpose": "Modifiers change after evidence gathering.",
+      "optional": true
+    },
+    {
+      "id": "SPC-008",
+      "name": "The Empty Throne",
+      "act": "ACT-05",
+      "purpose": "Optional encounter testing delegation and ally synergy.",
+      "optional": true
+    }
+  ],
+  "facilities": [
+    {
+      "id": "FAC-001",
+      "name": "Recovery Room",
+      "unlock": "Act I choice",
+      "effect": "Health/status recovery and care route.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-002",
+      "name": "Common Workshop",
+      "unlock": "Act I choice",
+      "effect": "Basic crafting, repairs and equipment modification.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-003",
+      "name": "Coordination Board",
+      "unlock": "Act I choice",
+      "effect": "Assignment visibility and Expedition overview; never gates Expeditions.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-004",
+      "name": "Storehouse",
+      "unlock": "Act II",
+      "effect": "Production buffer and resource reporting; no inventory capacity limit.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-005",
+      "name": "Training Yard",
+      "unlock": "Act II",
+      "effect": "Training assignments and combat aptitude development.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-006",
+      "name": "Research Annex",
+      "unlock": "Act II",
+      "effect": "Ferida research, enemy knowledge and recipe discovery.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-007",
+      "name": "Alchemy Bench",
+      "unlock": "Act II",
+      "effect": "Consumables, botanical processing and controlled transmutation.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-008",
+      "name": "Trade Stall",
+      "unlock": "Act II",
+      "effect": "Local trade and market opportunities.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-009",
+      "name": "Community Hall",
+      "unlock": "Act II",
+      "effect": "Council, representation, grievance review and morale.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-010",
+      "name": "Refuge Wing",
+      "unlock": "Act II",
+      "effect": "Housing, rehabilitation and integration capacity.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-011",
+      "name": "Expedition Lodge",
+      "unlock": "Act III",
+      "effect": "Specialist preparation, route intel and Expedition risk modifiers.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    },
+    {
+      "id": "FAC-012",
+      "name": "Signal Tower",
+      "unlock": "Act IV",
+      "effect": "Regional warning network and late-game coalition coordination.",
+      "upgradeTiers": 3,
+      "buildCost": "defined by progression tier; guaranteed main-path feasibility"
+    }
+  ],
+  "resources": [
+    {
+      "id": "RES-001",
+      "name": "Timber",
+      "use": "Construction and repairs",
+      "rarity": "Common",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-002",
+      "name": "Fiber",
+      "use": "Bindings, reinforcement and field kits",
+      "rarity": "Common",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-003",
+      "name": "Botanical Extract",
+      "use": "Care, alchemy and stabilization",
+      "rarity": "Common",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-004",
+      "name": "Gold",
+      "use": "Trade, wages, contracts and services",
+      "rarity": "Currency",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-005",
+      "name": "Provisions",
+      "use": "Community upkeep, travel and evacuation",
+      "rarity": "Common",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-006",
+      "name": "Salvage",
+      "use": "Mechanical parts and advanced repairs",
+      "rarity": "Uncommon",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-007",
+      "name": "Research Notes",
+      "use": "Knowledge unlocks and controlled research",
+      "rarity": "Uncommon",
+      "capacityLimit": null
+    },
+    {
+      "id": "RES-008",
+      "name": "Trust Tokens",
+      "use": "Specific reciprocal commitments and coalition actions; never a universal currency",
+      "rarity": "Agreement-bound",
+      "capacityLimit": null
+    }
+  ],
+  "items": [
+    {
+      "id": "ITM-001",
+      "name": "Crux of Enlightenment",
+      "slot": "Accessory",
+      "identity": "Balanced Soul/Body and H-damage specialization.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-002",
+      "name": "Oath of Obedience",
+      "slot": "Bottom1",
+      "identity": "Blessed defensive sustain; unlock through a protection vow.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-003",
+      "name": "Underwear of Restoration",
+      "slot": "Bottom1",
+      "identity": "Recovery and status-cleansing synergy.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-004",
+      "name": "Forever Cage",
+      "slot": "Bottom2",
+      "identity": "Cursed evolution from True-Size Cage; Strain interaction.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-005",
+      "name": "Chastity Belt",
+      "slot": "Bottom2",
+      "identity": "Defensive anti-penetration/anti-control build.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-006",
+      "name": "Ofuda Chastity",
+      "slot": "Bottom2",
+      "identity": "Blessed defensive counterpart with Soul/Masochism profile.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-007",
+      "name": "Hypnosis → Reprogram → Slave",
+      "slot": "Tattoo",
+      "identity": "Single cursed evolution chain; not three inventory records.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-008",
+      "name": "Sensitivity → Receptacle → Fulfilled",
+      "slot": "Tattoo",
+      "identity": "Cursed incoming-pressure and recent-hit stages.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-009",
+      "name": "Restraint → Suffer → Canvas",
+      "slot": "Tattoo",
+      "identity": "Cursed resistance/effect-conversion chain.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-010",
+      "name": "Messaging → Sway → Pheromone",
+      "slot": "Tattoo",
+      "identity": "Blessed area-support chain with consent-aware presentation.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-011",
+      "name": "Body Amulet",
+      "slot": "Accessory",
+      "identity": "Body-oriented stat profile.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-012",
+      "name": "Agility Ring",
+      "slot": "Accessory",
+      "identity": "Agility-oriented stat profile.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-013",
+      "name": "Soul Amulet",
+      "slot": "Accessory",
+      "identity": "Soul-oriented stat profile.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-014",
+      "name": "Charm Ring",
+      "slot": "Accessory",
+      "identity": "Charm-oriented stat profile.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-015",
+      "name": "Field Harness",
+      "slot": "Body",
+      "identity": "Expedition and repair preparation.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-016",
+      "name": "Reinforced Boots",
+      "slot": "Feet",
+      "identity": "Travel hazard reduction.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-017",
+      "name": "Sluiceworker Gloves",
+      "slot": "Hands",
+      "identity": "Construction and repair bonus.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-018",
+      "name": "Herbal Satchel",
+      "slot": "Accessory",
+      "identity": "Care and alchemy output.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-019",
+      "name": "Surveyor Lens",
+      "slot": "Accessory",
+      "identity": "Discovery and enemy intent information.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-020",
+      "name": "Archive Seal",
+      "slot": "Accessory",
+      "identity": "Research protection and controlled access.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-021",
+      "name": "Caravan Ledger",
+      "slot": "Accessory",
+      "identity": "Contract and trade insight.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-022",
+      "name": "Guard's Buckler",
+      "slot": "Hands",
+      "identity": "Defensive reaction synergy.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-023",
+      "name": "Thread-Cut Knife",
+      "slot": "Weapon",
+      "identity": "Ferida-filament utility; never automatic boss victory.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-024",
+      "name": "Resonance Charm",
+      "slot": "Accessory",
+      "identity": "Research and Strain interaction.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-025",
+      "name": "Expedition Rations",
+      "slot": "Consumable",
+      "identity": "Expedition preparation.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-026",
+      "name": "Emergency Filter Kit",
+      "slot": "Consumable",
+      "identity": "One-use spread-risk mitigation.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-027",
+      "name": "Healing Draught",
+      "slot": "Consumable",
+      "identity": "Restores Vitality within authored limits.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-028",
+      "name": "Clear-Mind Tonic",
+      "slot": "Consumable",
+      "identity": "Reduces a defined control/Strain condition.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-029",
+      "name": "Field Dressing",
+      "slot": "Consumable",
+      "identity": "Treats a defined injury state.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-030",
+      "name": "Botanical Stabilizer",
+      "slot": "Consumable",
+      "identity": "Stabilizes an affected resident or encounter target.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-031",
+      "name": "Smoke Pellet",
+      "slot": "Consumable",
+      "identity": "Supports retreat or encounter reposition abstraction.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-032",
+      "name": "Thread-Salt",
+      "slot": "Consumable",
+      "identity": "Exposes or weakens a Ferida filament.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-033",
+      "name": "Repair Kit",
+      "slot": "Consumable",
+      "identity": "Reduces a repair cost in eligible contexts.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-034",
+      "name": "Research Sample Case",
+      "slot": "Quest/Utility",
+      "identity": "Preserves research samples.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-035",
+      "name": "Seed-Reserve Ledger",
+      "slot": "Quest Item",
+      "identity": "Evidence record; distinct from the seed reserve itself.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    },
+    {
+      "id": "ITM-036",
+      "name": "Coalition Signal Key",
+      "slot": "Quest Item",
+      "identity": "Coordination item; cannot bypass all world-state gates.",
+      "stableId": true,
+      "requiresEffectContract": true,
+      "requiresAssetMapping": true
+    }
+  ],
+  "outfits": [
+    {
+      "id": "OUT-001",
+      "name": "Traveler's Lace",
+      "role": "Default balanced baseline",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-002",
+      "name": "Field Armor",
+      "role": "Defensive combat identity",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-003",
+      "name": "Witch's Mantle",
+      "role": "Magic/research specialization",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-004",
+      "name": "Dancer's Regalia",
+      "role": "Social/Charm and event presentation",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-005",
+      "name": "Nun's Habit",
+      "role": "Restraint/protection identity, not a morality marker",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-006",
+      "name": "Formal Dress",
+      "role": "Diplomacy and civic scenes",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-007",
+      "name": "Demon Armor",
+      "role": "Late-game Ferida-facing gear with explicit trade-offs",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    },
+    {
+      "id": "OUT-008",
+      "name": "Shibari Harness",
+      "role": "Specialized risk/reaction build with consent-framed presentation",
+      "slot": "Outfit",
+      "battleRepresentationRequired": true
+    }
+  ]
+}

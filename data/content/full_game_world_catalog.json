@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "status": "CONTENT_LOCKED_DESIGN_NOT_RUNTIME_VALIDATED",
+  "sourceOfTruth": "docs/FULL_GAME_CONTENT_LOCK.md",
+  "rules": {
+    "mainQuestCount": 47,
+    "sidequestCount": 25,
+    "regions": 7,
+    "acts": 5,
+    "expeditions": 8,
+    "inventoryCapacity": "unlimited",
+    "sidequestRequiresAlya": true,
+    "expeditionUsesNPCsOnly": true,
+    "optionalAdultContentGatesMainStory": false,
+    "mandatoryActOneSeedLoss": true
+  },
+  "acts": [
+    {
+      "id": "ACT-01",
+      "name": "Foundation",
+      "title": "The Water We Share",
+      "region": "REG-001",
+      "theme": "Scarcity, blame, local knowledge, unavoidable loss",
+      "climax": "BOS-001",
+      "endState": "Alya becomes Brackenford's recognized leader; first facility and Expedition unlock."
+    },
+    {
+      "id": "ACT-02",
+      "name": "Construction",
+      "title": "A Place for the Uncounted",
+      "region": "REG-002",
+      "theme": "Growth, integration, delegated responsibility, institutional rupture",
+      "climax": "BOS-002",
+      "endState": "Brackenford shelters people under a documented risk plan and establishes council governance."
+    },
+    {
+      "id": "ACT-03",
+      "name": "Consequences",
+      "title": "The Cost of Being Free",
+      "region": "REG-003",
+      "theme": "Autonomy, scarcity, trade leverage, plural regional agreements",
+      "climax": "BOS-003",
+      "endState": "Three regions ratify a voluntary mutual-aid compact."
+    },
+    {
+      "id": "ACT-04",
+      "name": "Escalation",
+      "title": "What the Wound Learns",
+      "region": "REG-005",
+      "theme": "Systemic exploitation, verification, delegation under pressure",
+      "climax": "BOS-005",
+      "endState": "The network survives in a changed form; evidence points toward the Wound's Confluence."
+    },
+    {
+      "id": "ACT-05",
+      "name": "Revelation and Resolution",
+      "title": "A Future Without a Center",
+      "region": "REG-007",
+      "theme": "Truth, distributed responsibility, uncertain but durable recovery",
+      "climax": "BOS-009",
+      "endState": "The Ferida's sustaining conditions are transformed or constrained; epilogues follow world state."
+    }
+  ],
+  "regions": [
+    {
+      "id": "REG-001",
+      "name": "Ashfen Verge",
+      "hub": "Brackenford",
+      "unlock": "Start",
+      "signature": "Waterworks, farms, damp lowlands",
+      "gathering": [
+        "Timber",
+        "Fiber",
+        "Botanical Extract"
+      ],
+      "pois": [
+        "Brackenford Cistern",
+        "Lower Terraces",
+        "Root-Vault Sluice",
+        "Old Channel Walk"
+      ],
+      "questline": "ACT-01",
+      "encounterPool": [
+        "ENM-002",
+        "ENM-026",
+        "ENM-027",
+        "ENM-028"
+      ]
+    },
+    {
+      "id": "REG-002",
+      "name": "Greenwake Basin",
+      "hub": "Newfield Crossing",
+      "unlock": "ACT-01 complete",
+      "signature": "Refuge corridors, reclaimed fields, workshops",
+      "gathering": [
+        "Provisions",
+        "Timber",
+        "Botanical Extract"
+      ],
+      "pois": [
+        "Refuge Camp",
+        "Old Mill",
+        "Greenwake Crossing",
+        "Surveyor's Rise"
+      ],
+      "questline": "ACT-02",
+      "encounterPool": [
+        "ENM-001",
+        "ENM-005",
+        "ENM-008",
+        "ENM-030"
+      ]
+    },
+    {
+      "id": "REG-003",
+      "name": "Glassstep March",
+      "hub": "Saltmarket",
+      "unlock": "ACT-02 mid-act",
+      "signature": "Salt-glass flats, caravan roads, market forts",
+      "gathering": [
+        "Gold",
+        "Salvage",
+        "Provisions"
+      ],
+      "pois": [
+        "Saltmarket",
+        "Glass Road",
+        "Abandoned Tollhouse",
+        "Storm Shelter"
+      ],
+      "questline": "ACT-03",
+      "encounterPool": [
+        "ENM-009",
+        "ENM-010",
+        "ENM-011",
+        "ENM-024"
+      ]
+    },
+    {
+      "id": "REG-004",
+      "name": "Mycelian Reach",
+      "hub": "Root-Circle",
+      "unlock": "ACT-03 early",
+      "signature": "Living forest and fungal memory network",
+      "gathering": [
+        "Botanical Extract",
+        "Research Notes",
+        "Fiber"
+      ],
+      "pois": [
+        "Root-Circle",
+        "Memory Grove",
+        "Moss Bridge",
+        "Quiet Hollow"
+      ],
+      "questline": "ACT-03",
+      "encounterPool": [
+        "ENM-006",
+        "ENM-017",
+        "ENM-018",
+        "ENM-031"
+      ]
+    },
+    {
+      "id": "REG-005",
+      "name": "Cinderfall Reach",
+      "hub": "Emberline",
+      "unlock": "ACT-03 complete",
+      "signature": "Volcanic ashlands and industrial settlements",
+      "gathering": [
+        "Salvage",
+        "Timber",
+        "Gold"
+      ],
+      "pois": [
+        "Emberline Works",
+        "Ash Clinic",
+        "Broken Lift",
+        "Cinder Road"
+      ],
+      "questline": "ACT-04",
+      "encounterPool": [
+        "ENM-012",
+        "ENM-014",
+        "ENM-032",
+        "ENM-034"
+      ]
+    },
+    {
+      "id": "REG-006",
+      "name": "The Shattered Archive",
+      "hub": "Archive Perimeter",
+      "unlock": "ACT-04 Q36",
+      "signature": "Broken research/ritual complex and conflicting records",
+      "gathering": [
+        "Research Notes",
+        "Salvage"
+      ],
+      "pois": [
+        "Outer Stacks",
+        "Witness Chamber",
+        "Sealed Laboratory",
+        "False Index"
+      ],
+      "questline": "ACT-04/05",
+      "encounterPool": [
+        "ENM-018",
+        "ENM-033",
+        "ENM-035"
+      ]
+    },
+    {
+      "id": "REG-007",
+      "name": "The Wound's Confluence",
+      "hub": "Coalition Staging Ground",
+      "unlock": "ACT-05 Q41 plus coalition readiness",
+      "signature": "Ecological and relational systems converge",
+      "gathering": [
+        "Research Notes",
+        "Botanical Extract"
+      ],
+      "pois": [
+        "Outer Anchor",
+        "Memory Span",
+        "Broken Causeway",
+        "Confluence Heart"
+      ],
+      "questline": "ACT-05",
+      "encounterPool": [
+        "ENM-030",
+        "ENM-031",
+        "ENM-034",
+        "ENM-035"
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "FACN-001",
+      "name": "Brackenford Council",
+      "tracks": [
+        "cohesion",
+        "representation_quality",
+        "unresolved_grievances"
+      ],
+      "purpose": "Local governance and shared services"
+    },
+    {
+      "id": "FACN-002",
+      "name": "The Organization",
+      "tracks": [
+        "cooperation",
+        "oversight_pressure",
+        "credibility"
+      ],
+      "blocs": [
+        "Pragmatists",
+        "Reformers",
+        "Hardliners"
+      ],
+      "purpose": "Regional infrastructure, protection, research and crisis response"
+    },
+    {
+      "id": "FACN-003",
+      "name": "Glassstep Caravans",
+      "tracks": [
+        "contract_reliability",
+        "route_access"
+      ],
+      "purpose": "Trade and transportation; internal interests vary"
+    },
+    {
+      "id": "FACN-004",
+      "name": "Mycelian Circles",
+      "tracks": [
+        "knowledge_consent",
+        "stewardship",
+        "grievance"
+      ],
+      "purpose": "Distinct communities linked by living memory traditions"
+    },
+    {
+      "id": "FACN-005",
+      "name": "Cinderfall Works",
+      "tracks": [
+        "safety",
+        "labor_obligations",
+        "legitimacy"
+      ],
+      "purpose": "Industrial settlements and evacuation infrastructure"
+    },
+    {
+      "id": "FACN-006",
+      "name": "The Unbound",
+      "tracks": [
+        "safe_passage",
+        "representation",
+        "internal_fragmentation"
+      ],
+      "purpose": "Displaced people, deserters, stigmatized groups and mutual-aid cells"
+    }
+  ],
+  "mainQuests": [
+    {
+      "id": "Q01",
+      "act": "ACT-01",
+      "title": "The Empty Cistern",
+      "objective": "Meet Mara and the First Ally; establish the water dispute.",
+      "exitFlag": "VS1_WATER_DISPUTE_KNOWN",
+      "sequence": 1,
+      "optional": false
+    },
+    {
+      "id": "Q02",
+      "act": "ACT-01",
+      "title": "A Ration Is Not a History",
+      "objective": "Learn that unequal allocation predates the Red Thread.",
+      "exitFlag": "VS1_ALLOCATION_HISTORY_KNOWN",
+      "sequence": 2,
+      "optional": false
+    },
+    {
+      "id": "Q03",
+      "act": "ACT-01",
+      "title": "Signs Beneath the Water",
+      "objective": "Investigate the moving filaments without overclaiming their origin.",
+      "exitFlag": "VS1_RED_THREAD_CONFIRMED",
+      "sequence": 3,
+      "optional": false
+    },
+    {
+      "id": "Q04",
+      "act": "ACT-01",
+      "title": "A Door Left Open",
+      "objective": "Stabilize an affected resident and choose a water-sharing priority.",
+      "exitFlag": "VS1_CARE_ROUTE_RESOLVED",
+      "sequence": 4,
+      "optional": false
+    },
+    {
+      "id": "Q05",
+      "act": "ACT-01",
+      "title": "The Cost of a Quick Fix",
+      "objective": "Discover that the sluice can be repaired but the seed reserve cannot be saved.",
+      "exitFlag": "VS1_ROOT_VAULT_ROUTE_KNOWN",
+      "sequence": 5,
+      "optional": false
+    },
+    {
+      "id": "Q06",
+      "act": "ACT-01",
+      "title": "The Organization Arrives",
+      "objective": "Receive and assess the containment proposal.",
+      "exitFlag": "VS1_ORG_PLAN_PRESENTED",
+      "sequence": 6,
+      "optional": false
+    },
+    {
+      "id": "Q07",
+      "act": "ACT-01",
+      "title": "Three Parts of a Third Option",
+      "objective": "Gather repair materials, local knowledge and coordinated care.",
+      "exitFlag": "VS1_THIRD_OPTION_READY",
+      "sequence": 7,
+      "optional": false
+    },
+    {
+      "id": "Q08",
+      "act": "ACT-01",
+      "title": "Hold the Sluice",
+      "objective": "Complete diversion, filament and gate objectives.",
+      "exitFlag": "VS1_SLICE_CRISIS_RESOLVED",
+      "sequence": 8,
+      "optional": false
+    },
+    {
+      "id": "Q09",
+      "act": "ACT-01",
+      "title": "What Remains",
+      "objective": "Record seed loss, downstream protection and community costs.",
+      "exitFlag": "VS1_LOSS_ACKNOWLEDGED",
+      "sequence": 9,
+      "optional": false
+    },
+    {
+      "id": "Q10",
+      "act": "ACT-01",
+      "title": "A Place That Must Continue",
+      "objective": "Recognize Alya as leader and choose an initial facility.",
+      "exitFlag": "VS1_LEADERSHIP_RECOGNIZED",
+      "sequence": 10,
+      "optional": false
+    },
+    {
+      "id": "Q11",
+      "act": "ACT-01",
+      "title": "First Delegation",
+      "objective": "Launch and resolve the first autonomous Expedition.",
+      "exitFlag": "VS1_FIRST_EXPEDITION_RESOLVED",
+      "sequence": 11,
+      "optional": false
+    },
+    {
+      "id": "Q12",
+      "act": "ACT-02",
+      "title": "A Roof for Strangers",
+      "objective": "Convert temporary shelter into a permanent refuge.",
+      "exitFlag": "ACT2_REFUGE_ESTABLISHED",
+      "sequence": 12,
+      "optional": false
+    },
+    {
+      "id": "Q13",
+      "act": "ACT-02",
+      "title": "The Work Nobody Sees",
+      "objective": "Assign residents to care, gathering, training and maintenance.",
+      "exitFlag": "ACT2_ASSIGNMENTS_INTRODUCED",
+      "sequence": 13,
+      "optional": false
+    },
+    {
+      "id": "Q14",
+      "act": "ACT-02",
+      "title": "The Ledger of Needs",
+      "objective": "Create a transparent resource ledger and prioritize a shortage.",
+      "exitFlag": "ACT2_RESOURCE_LEDGER_ACTIVE",
+      "sequence": 14,
+      "optional": false
+    },
+    {
+      "id": "Q15",
+      "act": "ACT-02",
+      "title": "A Place at the Table",
+      "objective": "Resolve a mediation arc and establish a resident voice.",
+      "exitFlag": "ACT2_REPRESENTATION_STARTED",
+      "sequence": 15,
+      "optional": false
+    },
+    {
+      "id": "Q16",
+      "act": "ACT-02",
+      "title": "The Shape of a Promise",
+      "objective": "Define the scope and review conditions of Alya's public promise.",
+      "exitFlag": "ACT2_PROMISE_RECORDED",
+      "sequence": 16,
+      "optional": false
+    },
+    {
+      "id": "Q17",
+      "act": "ACT-02",
+      "title": "A Road with Two Names",
+      "objective": "Open Greenwake Basin and negotiate local access.",
+      "exitFlag": "REG002_ACCESS_GRANTED",
+      "sequence": 17,
+      "optional": false
+    },
+    {
+      "id": "Q18",
+      "act": "ACT-02",
+      "title": "The Pilot Community",
+      "objective": "Negotiate Organization reporting and supervision terms.",
+      "exitFlag": "ACT2_PILOT_TERMS_PRESENTED",
+      "sequence": 18,
+      "optional": false
+    },
+    {
+      "id": "Q19",
+      "act": "ACT-02",
+      "title": "The People Marked for Moving",
+      "objective": "Investigate the relocation order and hear affected residents.",
+      "exitFlag": "ACT2_RELOCATION_ORDER_KNOWN",
+      "sequence": 19,
+      "optional": false
+    },
+    {
+      "id": "Q20",
+      "act": "ACT-02",
+      "title": "The Order We Refuse",
+      "objective": "Shelter the group with a documented risk plan; formalize council governance.",
+      "exitFlag": "ACT2_INSTITUTIONAL_RUPTURE",
+      "sequence": 20,
+      "optional": false
+    },
+    {
+      "id": "Q21",
+      "act": "ACT-03",
+      "title": "Freedom Has a Price",
+      "objective": "Choose an economic stabilization policy after support guarantees end.",
+      "exitFlag": "ACT3_AUTONOMY_COST_ACCEPTED",
+      "sequence": 21,
+      "optional": false
+    },
+    {
+      "id": "Q22",
+      "act": "ACT-03",
+      "title": "The Glassstep Contract",
+      "objective": "Negotiate a trade compact with quotas, exceptions and dispute clauses.",
+      "exitFlag": "ACT3_GLASSSTEP_COMPACT",
+      "sequence": 22,
+      "optional": false
+    },
+    {
+      "id": "Q23",
+      "act": "ACT-03",
+      "title": "The Empty Caravan",
+      "objective": "Investigate a missing shipment and identify the incentive failure.",
+      "exitFlag": "ACT3_SHIPMENT_CASE_RESOLVED",
+      "sequence": 23,
+      "optional": false
+    },
+    {
+      "id": "Q24",
+      "act": "ACT-03",
+      "title": "Two Fires, One River",
+      "objective": "Mediate a resource dispute with no cost-free outcome.",
+      "exitFlag": "ACT3_RIVER_AGREEMENT",
+      "sequence": 24,
+      "optional": false
+    },
+    {
+      "id": "Q25",
+      "act": "ACT-03",
+      "title": "A Different Kind of Kinship",
+      "objective": "Enter Mycelian Reach and negotiate with its leaders.",
+      "exitFlag": "ACT3_MYCELIAN_ACCESS",
+      "sequence": 25,
+      "optional": false
+    },
+    {
+      "id": "Q26",
+      "act": "ACT-03",
+      "title": "What the Roots Remember",
+      "objective": "Choose consent and reciprocity terms for shared memory.",
+      "exitFlag": "ACT3_MEMORY_PROTOCOL",
+      "sequence": 26,
+      "optional": false
+    },
+    {
+      "id": "Q27",
+      "act": "ACT-03",
+      "title": "The Price of a Cure",
+      "objective": "Allocate scarce treatment and research access.",
+      "exitFlag": "ACT3_TREATMENT_POLICY",
+      "sequence": 27,
+      "optional": false
+    },
+    {
+      "id": "Q28",
+      "act": "ACT-03",
+      "title": "A Voice from the Organization",
+      "objective": "Cooperate with an internal reformer while protecting local authority.",
+      "exitFlag": "ACT3_REFORMER_PACT",
+      "sequence": 28,
+      "optional": false
+    },
+    {
+      "id": "Q29",
+      "act": "ACT-03",
+      "title": "The Compact of Three Regions",
+      "objective": "Ratify the mutual-aid compact with explicit local exceptions.",
+      "exitFlag": "ACT3_REGIONAL_COMPACT",
+      "sequence": 29,
+      "optional": false
+    },
+    {
+      "id": "Q30",
+      "act": "ACT-04",
+      "title": "When the Signals Lie",
+      "objective": "Verify a manipulated warning and establish redundancy.",
+      "exitFlag": "ACT4_SIGNAL_VERIFICATION",
+      "sequence": 30,
+      "optional": false
+    },
+    {
+      "id": "Q31",
+      "act": "ACT-04",
+      "title": "The Cinderfall Evacuation",
+      "objective": "Evacuate civilians with limited transport and time.",
+      "exitFlag": "ACT4_EVACUATION_RESOLVED",
+      "sequence": 31,
+      "optional": false
+    },
+    {
+      "id": "Q32",
+      "act": "ACT-04",
+      "title": "The Measure of a Life",
+      "objective": "Challenge a triage protocol that hides value judgments.",
+      "exitFlag": "ACT4_TRIAGE_REVIEWED",
+      "sequence": 32,
+      "optional": false
+    },
+    {
+      "id": "Q33",
+      "act": "ACT-04",
+      "title": "The Delegates Disagree",
+      "objective": "Resolve a council crisis without Alya simply overruling delegates.",
+      "exitFlag": "ACT4_DELEGATE_DISPUTE_RESOLVED",
+      "sequence": 33,
+      "optional": false
+    },
+    {
+      "id": "Q34",
+      "act": "ACT-04",
+      "title": "The Broken Route",
+      "objective": "Restore a regional corridor through direct action and an Expedition.",
+      "exitFlag": "ACT4_ROUTE_RESTORED",
+      "sequence": 34,
+      "optional": false
+    },
+    {
+      "id": "Q35",
+      "act": "ACT-04",
+      "title": "A Familiar Mistake",
+      "objective": "Alya over-centralizes; allies and delegates must take responsibility.",
+      "exitFlag": "ACT4_CENTRALIZATION_CONSEQUENCE",
+      "sequence": 35,
+      "optional": false
+    },
+    {
+      "id": "Q36",
+      "act": "ACT-04",
+      "title": "The Shattered Archive",
+      "objective": "Enter the archive and gather records from multiple sources.",
+      "exitFlag": "ACT4_ARCHIVE_OPENED",
+      "sequence": 36,
+      "optional": false
+    },
+    {
+      "id": "Q37",
+      "act": "ACT-04",
+      "title": "The Wound Learns",
+      "objective": "Discover how the Ferida exploits systems and feedback loops.",
+      "exitFlag": "ACT4_FERIDA_SYSTEMIC_MODEL",
+      "sequence": 37,
+      "optional": false
+    },
+    {
+      "id": "Q38",
+      "act": "ACT-04",
+      "title": "The Network Under Fire",
+      "objective": "Defend multiple objectives; prior regional preparation changes support.",
+      "exitFlag": "ACT4_NETWORK_SURVIVED",
+      "sequence": 38,
+      "optional": false
+    },
+    {
+      "id": "Q39",
+      "act": "ACT-05",
+      "title": "The Promise Alya Buried",
+      "objective": "Reconstruct Alya's prior failure from evidence and testimony.",
+      "exitFlag": "ACT5_ALYA_PAST_REVEALED",
+      "sequence": 39,
+      "optional": false
+    },
+    {
+      "id": "Q40",
+      "act": "ACT-05",
+      "title": "The Personification",
+      "objective": "Confront the Ferida Manipulator's interpretation of the wound.",
+      "exitFlag": "ACT5_ANTAGONIST_REVEALED",
+      "sequence": 40,
+      "optional": false
+    },
+    {
+      "id": "Q41",
+      "act": "ACT-05",
+      "title": "The Coalition's Terms",
+      "objective": "Negotiate a final coalition with explicit costs and local authority.",
+      "exitFlag": "ACT5_COALITION_READY",
+      "sequence": 41,
+      "optional": false
+    },
+    {
+      "id": "Q42",
+      "act": "ACT-05",
+      "title": "A Road Without a Hero",
+      "objective": "Assign final responsibilities to allies, delegates and regions.",
+      "exitFlag": "ACT5_RESPONSIBILITIES_DISTRIBUTED",
+      "sequence": 42,
+      "optional": false
+    },
+    {
+      "id": "Q43",
+      "act": "ACT-05",
+      "title": "Into the Confluence",
+      "objective": "Reach the final region; optional paths affect support, not access.",
+      "exitFlag": "ACT5_CONFLUENCE_ENTERED",
+      "sequence": 43,
+      "optional": false
+    },
+    {
+      "id": "Q44",
+      "act": "ACT-05",
+      "title": "The Wound's Heart",
+      "objective": "Disrupt the manifestation's anchors in the first final phase.",
+      "exitFlag": "ACT5_FINAL_ANCHORS_DISRUPTED",
+      "sequence": 44,
+      "optional": false
+    },
+    {
+      "id": "Q45",
+      "act": "ACT-05",
+      "title": "The Last Pattern",
+      "objective": "Maintain coalition links and stop the feedback loop.",
+      "exitFlag": "ACT5_FINAL_OBJECTIVE_RESOLVED",
+      "sequence": 45,
+      "optional": false
+    },
+    {
+      "id": "Q46",
+      "act": "ACT-05",
+      "title": "What We Leave Running",
+      "objective": "Choose which structures are preserved, reformed, decentralized or retired.",
+      "exitFlag": "ACT5_WORLD_STATE_CHOSEN",
+      "sequence": 46,
+      "optional": false
+    },
+    {
+      "id": "Q47",
+      "act": "ACT-05",
+      "title": "A Future Without a Center",
+      "objective": "Resolve ending family and character epilogues.",
+      "exitFlag": "GAME_COMPLETED",
+      "sequence": 47,
+      "optional": false
+    }
+  ],
+  "sidequests": [
+    {
+      "id": "SQ-001",
+      "act": "ACT-01",
+      "title": "A Bowl Kept Warm",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-002",
+      "act": "ACT-01",
+      "title": "The Missing Filter",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-003",
+      "act": "ACT-01",
+      "title": "The Quiet Room",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-004",
+      "act": "ACT-01",
+      "title": "A Map in the Rafters",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-005",
+      "act": "ACT-01",
+      "title": "Mara's Ledger",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-006",
+      "act": "ACT-02",
+      "title": "The Unclaimed Bed",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-007",
+      "act": "ACT-02",
+      "title": "A Tool for Every Hand",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-008",
+      "act": "ACT-02",
+      "title": "The Unfinished Lesson",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-009",
+      "act": "ACT-02",
+      "title": "A Contract in Ink",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-010",
+      "act": "ACT-02",
+      "title": "The Names We Keep",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-011",
+      "act": "ACT-03",
+      "title": "Salt on the Road",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-012",
+      "act": "ACT-03",
+      "title": "The Root That Remembers",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-013",
+      "act": "ACT-03",
+      "title": "A Debt with No Owner",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-014",
+      "act": "ACT-03",
+      "title": "The Broken Bell",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-015",
+      "act": "ACT-03",
+      "title": "The Price of Quiet",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-016",
+      "act": "ACT-04",
+      "title": "Ashes in the Clinic",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-017",
+      "act": "ACT-04",
+      "title": "The Route Nobody Owns",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-018",
+      "act": "ACT-04",
+      "title": "The False Witness",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-019",
+      "act": "ACT-04",
+      "title": "A Seat Left Empty",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-020",
+      "act": "ACT-04",
+      "title": "The Last Workshop Shift",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-021",
+      "act": "ACT-05",
+      "title": "The Witnesses' Circle",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-022",
+      "act": "ACT-05",
+      "title": "What the Reaper Carries",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-023",
+      "act": "ACT-05",
+      "title": "A Garden Outside the Wall",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-024",
+      "act": "ACT-05",
+      "title": "The Unbound's Terms",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    },
+    {
+      "id": "SQ-025",
+      "act": "ACT-05",
+      "title": "A Signal Sent Twice",
+      "optional": true,
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+    }
+  ],
+  "expeditions": [
+    {
+      "id": "EXP-001",
+      "title": "Foraging Run",
+      "rewards": "Provisions and Botanical Extract",
+      "rule": "Weather and aptitude affect yield.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-002",
+      "title": "Timber Survey",
+      "rewards": "Timber and Salvage",
+      "rule": "Route risk and tool quality affect yield.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-003",
+      "title": "Safe-Road Survey",
+      "rewards": "POIs and route knowledge",
+      "rule": "Reduces travel uncertainty; does not guarantee safety.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-004",
+      "title": "Resident Escort",
+      "rewards": "Trust and safe-passage state",
+      "rule": "Can return partial success or delay.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-005",
+      "title": "Research Retrieval",
+      "rewards": "Research Notes and samples",
+      "rule": "Contamination risk depends on preparation.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-006",
+      "title": "Trade Negotiation",
+      "rewards": "Gold and market access",
+      "rule": "Requires a negotiator or relevant preparation.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-007",
+      "title": "Emergency Relief",
+      "rewards": "Regional stability",
+      "rule": "Consumes supplies; can preserve network readiness.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    },
+    {
+      "id": "EXP-008",
+      "title": "Signal Relay",
+      "rewards": "Coalition communication",
+      "rule": "Late-game redundancy and warning coverage.",
+      "npcOnly": true,
+      "assignedAlliesUnavailable": true
+    }
+  ],
+  "endings": [
+    {
+      "id": "END-001",
+      "title": "The Shared Table",
+      "summary": "Strong accountable network; Organization reformed by negotiated oversight.",
+      "inputs": [
+        "regional_readiness",
+        "delegated_responsibility",
+        "faction_agreements",
+        "evidence_integrity",
+        "ally_arcs",
+        "care_and_integration_policy",
+        "final_choice"
+      ],
+      "showPercentage": false
+    },
+    {
+      "id": "END-002",
+      "title": "The Many Lanterns",
+      "summary": "Decentralized resilient regions with weaker central coordination.",
+      "inputs": [
+        "regional_readiness",
+        "delegated_responsibility",
+        "faction_agreements",
+        "evidence_integrity",
+        "ally_arcs",
+        "care_and_integration_policy",
+        "final_choice"
+      ],
+      "showPercentage": false
+    },
+    {
+      "id": "END-003",
+      "title": "The Necessary Compact",
+      "summary": "Centralized coalition with safeguards, appeals and sunset clauses.",
+      "inputs": [
+        "regional_readiness",
+        "delegated_responsibility",
+        "faction_agreements",
+        "evidence_integrity",
+        "ally_arcs",
+        "care_and_integration_policy",
+        "final_choice"
+      ],
+      "showPercentage": false
+    },
+    {
+      "id": "END-004",
+      "title": "The Quiet Refuge",
+      "summary": "Brackenford and several partners endure; world-scale wound remains constrained.",
+      "inputs": [
+        "regional_readiness",
+        "delegated_responsibility",
+        "faction_agreements",
+        "evidence_integrity",
+        "ally_arcs",
+        "care_and_integration_policy",
+        "final_choice"
+      ],
+      "showPercentage": false
+    },
+    {
+      "id": "END-005",
+      "title": "The Unfinished Road",
+      "summary": "Network fractures but avoids total annihilation; recovery remains possible.",
+      "inputs": [
+        "regional_readiness",
+        "delegated_responsibility",
+        "faction_agreements",
+        "evidence_integrity",
+        "ally_arcs",
+        "care_and_integration_policy",
+        "final_choice"
+      ],
+      "showPercentage": false
+    }
+  ]
+}

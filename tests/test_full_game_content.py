@@ -1,4 +1,8 @@
+import pathlib
+import sys
 import unittest
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "tools"))
 
 from validate_full_game_content import (
     load,
@@ -30,7 +34,7 @@ class FullGameContentTests(unittest.TestCase):
 
     def test_mandatory_seed_loss_is_explicit(self):
         climax = next(q for q in self.world["mainQuests"] if q["id"] == "Q08")
-        self.assertIn("seed-reserve loss", climax["consequence"])
+        self.assertIn("seed reserve is lost", climax["consequence"])
 
     def test_npc_020_is_not_reused(self):
         self.assertNotIn("NPC-020", {npc["id"] for npc in self.characters["namedNpcs"]})

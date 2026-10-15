@@ -139,7 +139,7 @@ Main quests are mandatory in sequence within each act unless a stage explicitly 
 44. **Q46 What We Leave Running** — choose which institutions and network structures are preserved, reformed, decentralized, or retired.
 45. **Q47 A Future Without a Center** — epilogue resolves the world-state ending family and ally/NPC epilogues.
 
-**ID correction rule:** The act list above is the complete 47-stage authored story graph including all three Act I epilogue stages. The initial planning target of 45 is superseded by this explicit graph; do not renumber Q46–Q47 or compress stages to preserve the old estimate. The content catalog uses Q01–Q47.
+**ID correction rule:** The act list above is the complete 47-stage authored story graph including all three Act I epilogue stages. The initial planning target of 45 is superseded by this explicit graph; do not renumber Q46–Q47 or compress stages to preserve the old estimate. The content catalog uses Q01–Q47. For the first eleven stages, `data/content/full_game_world_catalog.json` includes `verticalSliceId` cross-references to the existing `VS1_Q01`–`VS1_Q11` records. During implementation, preserve both IDs as aliases until save/data migration is explicitly approved.
 
 ## 4. Regions and world progression
 

@@ -76,9 +76,9 @@ Existing files with generated/hash-like names must be mapped to canonical conten
 - **C5 — Enemy Roster:** **AUDITED.** 25 concrete enemies provide a strong base; role coverage and boss structure must determine expansion.
 - **C6 — Skill Lock:** **AUDITED.** Quantity is healthy; presentation classes and asset mapping remain.
 - **C7 — Item Lock:** **AUDITED.** Quantity and identity are healthy; remaining work is role coverage and final additions only where justified.
-- **C8 — Facility Lock:** **AUDITED.** Concrete facility roster is still missing.
-- **C9 — World Lock:** **AUDITED.** Region/location roster is still missing.
-- **C10 — Narrative/CG Lock:** **AUDITED.** Scene-to-art mapping is still missing.
+- **C8 — Facility Lock:** **BASE ROSTER AUTHORED.** 12 facilities are defined; exact costs, upgrade effects and asset mapping remain.
+- **C9 — World Lock:** **BASE ROSTER AUTHORED.** 7 regions and regional encounter pools are defined; exact POI data and scene/asset mapping remain.
+- **C10 — Narrative/CG Lock:** **FIVE-ACT SPINE AND QUEST INVENTORY AUTHORED.** Full dialogue, adult-scene unlock flags and scene-to-art mapping remain.
 - **C11 — Asset Dependency Audit:** **AUDITED.** Registry/classification of existing source assets remains required.
 - **C12 — Content Lock Audit:** **AUDIT COMPLETE; FULL-GAME CONTENT LOCK BASELINE AUTHORED.** The canonical base-game scope and stable-ID catalogs are now in `docs/FULL_GAME_CONTENT_LOCK.md` and `data/content/`; the file-level asset checklist still awaits existing-asset registry reconciliation and per-ID mapping.
 
@@ -92,11 +92,11 @@ Once a category meets its functional target and has no uncovered gameplay/narrat
 
 ## Next phase
 
-The broad audit phase is complete. The project should now resolve the concrete roster decisions in this order:
+The broad audit and base-game content-lock pass are complete. Do not repeat the roster-definition sequence unless validation reveals a real gap. The next sequence is:
 
-**Protagonist/Outfits → Recruitable Allies → NPCs → Enemies/Bosses → Skills → Items → Facilities → World → Narrative/CG → Asset Registry → Final Missing-Art Checklist.**
+**Run content validator/tests → reconcile legacy IDs → complete Act I dialogue/reward details → implement and playtest the vertical slice → create file-level asset registry → map final audio/localization/accessibility requirements → production QA.**
 
-The final deliverable of this phase is a production checklist in which every required visual asset is classified as **KEEP / REFINE / REPLACE / MISSING / NOT REQUIRED**, linked to a stable content ID and production priority.
+The next art deliverable is a checklist in which every required visual asset is classified as **KEEP / REFINE / REPLACE / MISSING / NOT REQUIRED**, linked to a stable content ID and production priority.
 
 
 ## Full-game content lock update — 2026-10-15

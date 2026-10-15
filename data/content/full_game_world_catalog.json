@@ -310,7 +310,16 @@
       "exitFlag": "VS1_WATER_DISPUTE_KNOWN",
       "sequence": 1,
       "optional": false,
-      "verticalSliceId": "VS1_Q01"
+      "verticalSliceId": "VS1_Q01",
+      "objectiveSteps": "Inspect cistern; speak to Mara and First Ally; record the initial water state.",
+      "keyChoice": "Keep the ration schedule / share remaining clean water / delay judgment for evidence.",
+      "consequence": "Sets initial community trust and water-sharing flags; no choice identifies a single villain.",
+      "rewardIntent": "RES-007: local testimony; basic provisions.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q01"
     },
     {
       "id": "Q02",
@@ -320,7 +329,16 @@
       "exitFlag": "VS1_ALLOCATION_HISTORY_KNOWN",
       "sequence": 2,
       "optional": false,
-      "verticalSliceId": "VS1_Q02"
+      "verticalSliceId": "VS1_Q02",
+      "objectiveSteps": "Interview Elder, residents and Mara; compare ration records with current conditions.",
+      "keyChoice": "Prioritize testimony / prioritize records / combine both.",
+      "consequence": "Evidence-first path improves later negotiation; dismissing residents creates a repairable grievance.",
+      "rewardIntent": "RES-007: allocation ledger clue.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q02"
     },
     {
       "id": "Q03",
@@ -330,7 +348,16 @@
       "exitFlag": "VS1_RED_THREAD_CONFIRMED",
       "sequence": 3,
       "optional": false,
-      "verticalSliceId": "VS1_Q03"
+      "verticalSliceId": "VS1_Q03",
+      "objectiveSteps": "Inspect red filaments at two points and return with a sample or observation.",
+      "keyChoice": "Collect a sample / mark and avoid the growth.",
+      "consequence": "Sample improves research evidence but adds a handling requirement; observation is safer but less precise.",
+      "rewardIntent": "ITM-034: protected sample or RES-007: field notes.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q03"
     },
     {
       "id": "Q04",
@@ -340,7 +367,16 @@
       "exitFlag": "VS1_CARE_ROUTE_RESOLVED",
       "sequence": 4,
       "optional": false,
-      "verticalSliceId": "VS1_Q04"
+      "verticalSliceId": "VS1_Q04",
+      "objectiveSteps": "Stabilize an affected worker and choose how clean water is distributed for the next interval.",
+      "keyChoice": "Workers first / household distribution / ask residents to choose a temporary rota.",
+      "consequence": "Sets care priority and local cohesion; no option cures the manifestation.",
+      "rewardIntent": "RES-003: botanical materials or care support flag.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q04"
     },
     {
       "id": "Q05",
@@ -350,7 +386,16 @@
       "exitFlag": "VS1_ROOT_VAULT_ROUTE_KNOWN",
       "sequence": 5,
       "optional": false,
-      "verticalSliceId": "VS1_Q05"
+      "verticalSliceId": "VS1_Q05",
+      "objectiveSteps": "Survey the root-vault and identify a feasible repair route.",
+      "keyChoice": "Trust Mara's maintenance notes / verify with a second survey.",
+      "consequence": "Verified route unlocks staged diversion; single-source route remains feasible at a higher cost.",
+      "rewardIntent": "RES-007: route plan.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q05"
     },
     {
       "id": "Q06",
@@ -360,7 +405,16 @@
       "exitFlag": "VS1_ORG_PLAN_PRESENTED",
       "sequence": 6,
       "optional": false,
-      "verticalSliceId": "VS1_Q06"
+      "verticalSliceId": "VS1_Q06",
+      "objectiveSteps": "Hear the Organization's risk case and question assumptions.",
+      "keyChoice": "Accept in principle / challenge without a plan / request time for an alternative.",
+      "consequence": "Sets institutional stance; third option remains available in every branch.",
+      "rewardIntent": "ITM-026: filter kit only on cooperation route; otherwise field notes.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q06"
     },
     {
       "id": "Q07",
@@ -370,7 +424,16 @@
       "exitFlag": "VS1_THIRD_OPTION_READY",
       "sequence": 7,
       "optional": false,
-      "verticalSliceId": "VS1_Q07"
+      "verticalSliceId": "VS1_Q07",
+      "objectiveSteps": "Secure materials, recruit local participation, complete the Hollow Warden encounter, choose preparation priority.",
+      "keyChoice": "Workers first / channel first / staged diversion if clue found.",
+      "consequence": "Preparation changes climax pressure but cannot prevent seed-reserve loss.",
+      "rewardIntent": "RES-001 + RES-002 mandatory repair materials; RES-003 filter support.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q07"
     },
     {
       "id": "Q08",
@@ -380,7 +443,16 @@
       "exitFlag": "VS1_SLICE_CRISIS_RESOLVED",
       "sequence": 8,
       "optional": false,
-      "verticalSliceId": "VS1_Q08"
+      "verticalSliceId": "VS1_Q08",
+      "objectiveSteps": "Complete diversion, sever the active filament, secure the gate; check all objective flags.",
+      "keyChoice": "Spend community contribution on gate security / filament suppression / spread control.",
+      "consequence": "Downstream channel is secured; seed reserve is lost regardless of combat result; retreat produces a costly partial resolution and recovery stage.",
+      "rewardIntent": "RES-001 x2 and RES-002 x1 guaranteed after resolution; quest state seed loss.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Retreat or partial resolution leads to recovery/repair state; mandatory story loss persists and the main path remains completable.",
+      "dialogueKeyPrefix": "DLG_Q08"
     },
     {
       "id": "Q09",
@@ -390,7 +462,16 @@
       "exitFlag": "VS1_LOSS_ACKNOWLEDGED",
       "sequence": 9,
       "optional": false,
-      "verticalSliceId": "VS1_Q09"
+      "verticalSliceId": "VS1_Q09",
+      "objectiveSteps": "Record losses, hear affected residents and decide what is publicly acknowledged.",
+      "keyChoice": "Publish the ledger / hold a community meeting / delay public report until verified.",
+      "consequence": "Changes credibility and grievance flags; mandatory loss is never reversed.",
+      "rewardIntent": "RES-007: documented loss record.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q09"
     },
     {
       "id": "Q10",
@@ -400,7 +481,16 @@
       "exitFlag": "VS1_LEADERSHIP_RECOGNIZED",
       "sequence": 10,
       "optional": false,
-      "verticalSliceId": "VS1_Q10"
+      "verticalSliceId": "VS1_Q10",
+      "objectiveSteps": "Hold a public meeting, accept leadership with boundaries, select one initial facility.",
+      "keyChoice": "Recovery Room / Common Workshop / Coordination Board.",
+      "consequence": "Facility choice persists; all other facilities remain unlockable; assignments and Expeditions unlock regardless.",
+      "rewardIntent": "One selected facility; RES-004 small civic contribution.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q10"
     },
     {
       "id": "Q11",
@@ -410,7 +500,16 @@
       "exitFlag": "VS1_FIRST_EXPEDITION_RESOLVED",
       "sequence": 11,
       "optional": false,
-      "verticalSliceId": "VS1_Q11"
+      "verticalSliceId": "VS1_Q11",
+      "objectiveSteps": "Select a team, preparation and destination; resolve the first autonomous Expedition.",
+      "keyChoice": "Send for supplies / survey a route / escort a resident group.",
+      "consequence": "Demonstrates NPC-only delegation and unavailable assigned allies; all outcomes return to main progression.",
+      "rewardIntent": "EXP-001/003/004 outcome reward; no mandatory unique character loss.",
+      "regionIntent": "REG-001",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q11"
     },
     {
       "id": "Q12",
@@ -419,7 +518,16 @@
       "objective": "Convert temporary shelter into a permanent refuge.",
       "exitFlag": "ACT2_REFUGE_ESTABLISHED",
       "sequence": 12,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Survey shelter capacity, select construction location and move residents safely.",
+      "keyChoice": "Build shelter first / prioritize common services / phase construction.",
+      "consequence": "Sets refuge layout and upkeep modifiers; each option leaves a viable baseline.",
+      "rewardIntent": "RES-001, RES-002; FAC-010 unlock path.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q12"
     },
     {
       "id": "Q13",
@@ -428,7 +536,16 @@
       "objective": "Assign residents to care, gathering, training and maintenance.",
       "exitFlag": "ACT2_ASSIGNMENTS_INTRODUCED",
       "sequence": 13,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Assign residents and allies to at least two functions; inspect aptitude and availability.",
+      "keyChoice": "Optimize immediate output / preserve rest and training / rotate assignments.",
+      "consequence": "Creates an early production vs recovery trade-off; no assignment permanently locks a character.",
+      "rewardIntent": "RES-005 production and aptitude progress.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q13"
     },
     {
       "id": "Q14",
@@ -437,7 +554,16 @@
       "objective": "Create a transparent resource ledger and prioritize a shortage.",
       "exitFlag": "ACT2_RESOURCE_LEDGER_ACTIVE",
       "sequence": 14,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Compare resource stores, projected upkeep and promised deliveries; choose a priority.",
+      "keyChoice": "Housing / care / infrastructure first.",
+      "consequence": "Creates a transparent ledger flag that improves later council options.",
+      "rewardIntent": "RES-007: ledger method; RES-004 contract rebate if trade-ready.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q14"
     },
     {
       "id": "Q15",
@@ -446,7 +572,16 @@
       "objective": "Resolve a mediation arc and establish a resident voice.",
       "exitFlag": "ACT2_REPRESENTATION_STARTED",
       "sequence": 15,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Mediate a resident dispute and provide a seat for the Devoto's proposal.",
+      "keyChoice": "Temporary compromise / written agreement with review / defer pending evidence.",
+      "consequence": "Written review improves representation quality; forced compromise creates a reversible grievance.",
+      "rewardIntent": "ALLY-010 recruitment progress; morale flag.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q15"
     },
     {
       "id": "Q16",
@@ -455,7 +590,16 @@
       "objective": "Define the scope and review conditions of Alya's public promise.",
       "exitFlag": "ACT2_PROMISE_RECORDED",
       "sequence": 16,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Make a public promise with scope, limits, owner and review date.",
+      "keyChoice": "Promise rapid expansion / promise minimum safety / promise a review process.",
+      "consequence": "The review-process option is most resilient but costs time/resources; no promise is consequence-free.",
+      "rewardIntent": "RES-007: public commitment record.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q16"
     },
     {
       "id": "Q17",
@@ -464,7 +608,16 @@
       "objective": "Open Greenwake Basin and negotiate local access.",
       "exitFlag": "REG002_ACCESS_GRANTED",
       "sequence": 17,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Open a route to Greenwake by negotiating with local stewards and clearing a route hazard.",
+      "keyChoice": "Share maintenance / pay a toll / request a trial period.",
+      "consequence": "Route access opens; terms affect future trade costs and local legitimacy.",
+      "rewardIntent": "REG-002 access; ITM-016 opportunity.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q17"
     },
     {
       "id": "Q18",
@@ -473,7 +626,16 @@
       "objective": "Negotiate Organization reporting and supervision terms.",
       "exitFlag": "ACT2_PILOT_TERMS_PRESENTED",
       "sequence": 18,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Negotiate the Organization's proposed pilot terms and data access.",
+      "keyChoice": "Accept standard reporting / negotiate local veto and review / reject external oversight.",
+      "consequence": "Sets oversight pressure and cooperation independently; rejecting terms does not make every Organization NPC hostile.",
+      "rewardIntent": "RES-007: pilot agreement or local governance flag.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q18"
     },
     {
       "id": "Q19",
@@ -482,7 +644,16 @@
       "objective": "Investigate the relocation order and hear affected residents.",
       "exitFlag": "ACT2_RELOCATION_ORDER_KNOWN",
       "sequence": 19,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Meet the displaced group and verify the relocation order, risks and available safeguards.",
+      "keyChoice": "Prioritize testimony / prioritize risk records / conduct a joint review.",
+      "consequence": "Creates evidence and safe-passage flags; the group is not treated as a monolith.",
+      "rewardIntent": "FAC-010 capacity progress; RES-005 cost estimate.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q19"
     },
     {
       "id": "Q20",
@@ -491,7 +662,16 @@
       "objective": "Shelter the group with a documented risk plan; formalize council governance.",
       "exitFlag": "ACT2_INSTITUTIONAL_RUPTURE",
       "sequence": 20,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Decide whether to shelter the group and formalize council authority.",
+      "keyChoice": "Shelter under documented controls / negotiate a time-limited pause / comply with relocation but preserve appeal.",
+      "consequence": "All routes advance the act, but only shelter route triggers the canonical institutional rupture; the main arc must still show consequences of exclusion if chosen.",
+      "rewardIntent": "FAC-009 council unlock; FACN-002 bloc state mutation.",
+      "regionIntent": "REG-002",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q20"
     },
     {
       "id": "Q21",
@@ -500,7 +680,16 @@
       "objective": "Choose an economic stabilization policy after support guarantees end.",
       "exitFlag": "ACT3_AUTONOMY_COST_ACCEPTED",
       "sequence": 21,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Review lost support, forecast shortages and choose a stabilization policy.",
+      "keyChoice": "Reduce nonessential spending / request reciprocal aid / expand trade exposure.",
+      "consequence": "Each route solves one near-term problem while creating a different risk.",
+      "rewardIntent": "RES-004 or RES-005 according to route; no free bailout.",
+      "regionIntent": "REG-003",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q21"
     },
     {
       "id": "Q22",
@@ -509,7 +698,16 @@
       "objective": "Negotiate a trade compact with quotas, exceptions and dispute clauses.",
       "exitFlag": "ACT3_GLASSSTEP_COMPACT",
       "sequence": 22,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Negotiate a trade compact with quotas, exceptions, delivery windows and dispute resolution.",
+      "keyChoice": "Fixed quota / flexible quota with audit / short trial contract.",
+      "consequence": "Contract reliability and route access become independent flags.",
+      "rewardIntent": "ITM-021 opportunity; RES-004 trade return.",
+      "regionIntent": "REG-003",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q22"
     },
     {
       "id": "Q23",
@@ -518,7 +716,16 @@
       "objective": "Investigate a missing shipment and identify the incentive failure.",
       "exitFlag": "ACT3_SHIPMENT_CASE_RESOLVED",
       "sequence": 23,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Track the missing caravan through witnesses, records and route conditions.",
+      "keyChoice": "Accuse sabotage / audit incentives and dispatch / negotiate compensation first.",
+      "consequence": "Evidence-led path identifies the structural failure; premature accusation causes a repairable faction penalty.",
+      "rewardIntent": "RES-006 salvage or RES-004 compensation depending route.",
+      "regionIntent": "REG-003",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q23"
     },
     {
       "id": "Q24",
@@ -527,7 +734,16 @@
       "objective": "Mediate a resource dispute with no cost-free outcome.",
       "exitFlag": "ACT3_RIVER_AGREEMENT",
       "sequence": 24,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Resolve competing water and fuel needs between two settlements.",
+      "keyChoice": "Equal split / priority by immediate risk / negotiated rotating access.",
+      "consequence": "No branch satisfies all parties; clear review rules preserve future cooperation.",
+      "rewardIntent": "RES-005 supplies and a regional agreement flag.",
+      "regionIntent": "REG-003",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q24"
     },
     {
       "id": "Q25",
@@ -536,7 +752,16 @@
       "objective": "Enter Mycelian Reach and negotiate with its leaders.",
       "exitFlag": "ACT3_MYCELIAN_ACCESS",
       "sequence": 25,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Enter Mycelian Reach and negotiate access with the Matriarch and Guide.",
+      "keyChoice": "Request shared research / request passage only / offer reciprocal stewardship.",
+      "consequence": "Knowledge-sharing requires explicit consent and reciprocity; passage can be granted without sharing memory.",
+      "rewardIntent": "REG-004 access; RES-007 research opportunity.",
+      "regionIntent": "REG-004",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q25"
     },
     {
       "id": "Q26",
@@ -545,7 +770,16 @@
       "objective": "Choose consent and reciprocity terms for shared memory.",
       "exitFlag": "ACT3_MEMORY_PROTOCOL",
       "sequence": 26,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Inspect the memory network and establish what may be recorded, shared and withdrawn.",
+      "keyChoice": "Open archive / restricted archive / community-controlled summary.",
+      "consequence": "Sets knowledge consent and grievance; no choice erases historical harm.",
+      "rewardIntent": "RES-007 research notes; ENM-006 encounter modifier.",
+      "regionIntent": "REG-004",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q26"
     },
     {
       "id": "Q27",
@@ -554,7 +788,16 @@
       "objective": "Allocate scarce treatment and research access.",
       "exitFlag": "ACT3_TREATMENT_POLICY",
       "sequence": 27,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Allocate a scarce treatment and research supply under transparent criteria.",
+      "keyChoice": "Treat highest immediate risk / distribute minimum treatment / reserve some for research under oversight.",
+      "consequence": "Creates a persistent policy flag; research never overrides urgent care without explicit choice.",
+      "rewardIntent": "RES-003 stabilizer or RES-007 research progress.",
+      "regionIntent": "REG-004",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q27"
     },
     {
       "id": "Q28",
@@ -563,7 +806,16 @@
       "objective": "Cooperate with an internal reformer while protecting local authority.",
       "exitFlag": "ACT3_REFORMER_PACT",
       "sequence": 28,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Meet an Organization reformer and define safe cooperation terms.",
+      "keyChoice": "Share evidence openly / share verified excerpts / decline but preserve a channel.",
+      "consequence": "Changes reformer relationship and hardliner suspicion separately.",
+      "rewardIntent": "FAC-006 research path; institutional cooperation flag.",
+      "regionIntent": "REG-002/004",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q28"
     },
     {
       "id": "Q29",
@@ -572,7 +824,16 @@
       "objective": "Ratify the mutual-aid compact with explicit local exceptions.",
       "exitFlag": "ACT3_REGIONAL_COMPACT",
       "sequence": 29,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Ratify mutual aid with three regions, contributions, opt-outs and dispute resolution.",
+      "keyChoice": "Strong central dispatch / regional opt-in coordination / minimal compact.",
+      "consequence": "Builds network readiness; local exceptions remain enforceable.",
+      "rewardIntent": "RES-008 agreement-bound Trust Tokens; coalition flag.",
+      "regionIntent": "REG-003/004",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q29"
     },
     {
       "id": "Q30",
@@ -581,7 +842,16 @@
       "objective": "Verify a manipulated warning and establish redundancy.",
       "exitFlag": "ACT4_SIGNAL_VERIFICATION",
       "sequence": 30,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Audit a false warning and build independent verification channels.",
+      "keyChoice": "Centralize verification / two-source verification / local confirmation protocol.",
+      "consequence": "Two-source redundancy is robust but slower; centralization is faster and vulnerable.",
+      "rewardIntent": "FAC-012 signal tower progress; RES-006.",
+      "regionIntent": "REG-005",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q30"
     },
     {
       "id": "Q31",
@@ -590,7 +860,16 @@
       "objective": "Evacuate civilians with limited transport and time.",
       "exitFlag": "ACT4_EVACUATION_RESOLVED",
       "sequence": 31,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Move civilians and critical supplies under limited transport and time.",
+      "keyChoice": "Prioritize vulnerable residents / preserve critical infrastructure / split the convoy.",
+      "consequence": "Outcome depends on preparation and prior resource decisions; no route saves everything.",
+      "rewardIntent": "RES-005; evacuation state.",
+      "regionIntent": "REG-005",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q31"
     },
     {
       "id": "Q32",
@@ -599,7 +878,16 @@
       "objective": "Challenge a triage protocol that hides value judgments.",
       "exitFlag": "ACT4_TRIAGE_REVIEWED",
       "sequence": 32,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Audit a triage system and make its hidden values explicit.",
+      "keyChoice": "Keep speed-first protocol / add appeal and review / delegate to local clinics.",
+      "consequence": "Appeal and review cost time but reduce systemic harm and Ferida leverage.",
+      "rewardIntent": "RES-003; evidence integrity flag.",
+      "regionIntent": "REG-005",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q32"
     },
     {
       "id": "Q33",
@@ -608,7 +896,16 @@
       "objective": "Resolve a council crisis without Alya simply overruling delegates.",
       "exitFlag": "ACT4_DELEGATE_DISPUTE_RESOLVED",
       "sequence": 33,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Resolve a council split without Alya issuing a unilateral command.",
+      "keyChoice": "Delegate a binding vote / mediate a time-limited compromise / allow a region to dissent and leave temporarily.",
+      "consequence": "Tests whether prior governance systems can tolerate disagreement; dissent is not automatically betrayal.",
+      "rewardIntent": "Council cohesion or autonomy flags.",
+      "regionIntent": "REG-005",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q33"
     },
     {
       "id": "Q34",
@@ -617,7 +914,16 @@
       "objective": "Restore a regional corridor through direct action and an Expedition.",
       "exitFlag": "ACT4_ROUTE_RESTORED",
       "sequence": 34,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Restore the broken route using direct work and a delegated survey/escort.",
+      "keyChoice": "Repair the shortest route / secure a safer detour / split teams with higher coordination cost.",
+      "consequence": "Reopens a corridor; route risk and expedition readiness affect future travel.",
+      "rewardIntent": "RES-001, RES-006; EXP-003 result.",
+      "regionIntent": "REG-005",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q34"
     },
     {
       "id": "Q35",
@@ -626,7 +932,16 @@
       "objective": "Alya over-centralizes; allies and delegates must take responsibility.",
       "exitFlag": "ACT4_CENTRALIZATION_CONSEQUENCE",
       "sequence": 35,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Confront the cost of Alya centralizing all decisions and let allies take ownership.",
+      "keyChoice": "Retain emergency control / delegate specific authorities / call a review and distribute powers.",
+      "consequence": "The act's setback occurs regardless; supported delegation reduces recovery cost.",
+      "rewardIntent": "Ally arc flags; RES-007 governance review.",
+      "regionIntent": "REG-005",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q35"
     },
     {
       "id": "Q36",
@@ -635,7 +950,16 @@
       "objective": "Enter the archive and gather records from multiple sources.",
       "exitFlag": "ACT4_ARCHIVE_OPENED",
       "sequence": 36,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Enter the Archive and recover three independent records.",
+      "keyChoice": "Prioritize official records / witness accounts / ecological traces; all three can be recovered in any order.",
+      "consequence": "Cross-checked evidence opens the next quest; one source alone remains insufficient.",
+      "rewardIntent": "RES-007 research notes; REG-006 access.",
+      "regionIntent": "REG-006",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q36"
     },
     {
       "id": "Q37",
@@ -644,7 +968,16 @@
       "objective": "Discover how the Ferida exploits systems and feedback loops.",
       "exitFlag": "ACT4_FERIDA_SYSTEMIC_MODEL",
       "sequence": 37,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Compare evidence and identify how the Ferida exploits feedback systems.",
+      "keyChoice": "Publish a provisional model / keep the model restricted / share with regional reviewers.",
+      "consequence": "Truth becomes actionable but remains incomplete; prevents a premature claim that one villain explains all harm.",
+      "rewardIntent": "ENM-033 knowledge advantage; evidence integrity flag.",
+      "regionIntent": "REG-006",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q37"
     },
     {
       "id": "Q38",
@@ -653,7 +986,16 @@
       "objective": "Defend multiple objectives; prior regional preparation changes support.",
       "exitFlag": "ACT4_NETWORK_SURVIVED",
       "sequence": 38,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Defend network objectives across multiple fronts.",
+      "keyChoice": "Protect the hub / protect partner routes / split forces based on delegate readiness.",
+      "consequence": "At least one cost is incurred; prior regional preparation changes casualties, resource loss and coalition readiness.",
+      "rewardIntent": "RES-005 or RES-006 based on outcome; network survives in changed form.",
+      "regionIntent": "REG-005/006",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q38"
     },
     {
       "id": "Q39",
@@ -662,7 +1004,16 @@
       "objective": "Reconstruct Alya's prior failure from evidence and testimony.",
       "exitFlag": "ACT5_ALYA_PAST_REVEALED",
       "sequence": 39,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Reconstruct Alya's prior failure through evidence and survivor testimony.",
+      "keyChoice": "Accept institutional account / accept survivor account / publish conflicting evidence and uncertainty.",
+      "consequence": "Reveals Alya's responsibility without reducing the past to one scapegoat.",
+      "rewardIntent": "ALLY arc support flags; evidence integrity.",
+      "regionIntent": "REG-006",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q39"
     },
     {
       "id": "Q40",
@@ -671,7 +1022,16 @@
       "objective": "Confront the Ferida Manipulator's interpretation of the wound.",
       "exitFlag": "ACT5_ANTAGONIST_REVEALED",
       "sequence": 40,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Hear the Ferida Manipulator's case and test its claims against evidence.",
+      "keyChoice": "Reject the framing / challenge specific claims / offer a conditional alternative before combat.",
+      "consequence": "Dialogue changes initial phase modifiers, not the existence of the boss encounter.",
+      "rewardIntent": "BOS-008 encounter modifier; RES-007.",
+      "regionIntent": "REG-006/007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q40"
     },
     {
       "id": "Q41",
@@ -680,7 +1040,16 @@
       "objective": "Negotiate a final coalition with explicit costs and local authority.",
       "exitFlag": "ACT5_COALITION_READY",
       "sequence": 41,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Negotiate final coalition obligations, limits and local decision rights.",
+      "keyChoice": "Central command / distributed command with shared signals / loose emergency pact.",
+      "consequence": "Coalition readiness is derived from explicit commitments and preparation, not one reputation score.",
+      "rewardIntent": "RES-008 agreements; coalition state.",
+      "regionIntent": "REG-007 access gate",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q41"
     },
     {
       "id": "Q42",
@@ -689,7 +1058,16 @@
       "objective": "Assign final responsibilities to allies, delegates and regions.",
       "exitFlag": "ACT5_RESPONSIBILITIES_DISTRIBUTED",
       "sequence": 42,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Assign final responsibilities to allies, delegates and regional leaders.",
+      "keyChoice": "Optimize for strength / balance aptitude and relationships / prioritize local ownership.",
+      "consequence": "Creates final encounter support packages; no single ally is mandatory.",
+      "rewardIntent": "Ally epilogue flags; encounter support.",
+      "regionIntent": "REG-007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q42"
     },
     {
       "id": "Q43",
@@ -698,7 +1076,16 @@
       "objective": "Reach the final region; optional paths affect support, not access.",
       "exitFlag": "ACT5_CONFLUENCE_ENTERED",
       "sequence": 43,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Reach the Confluence and choose optional approach preparations.",
+      "keyChoice": "Research route / stewardship route / direct route.",
+      "consequence": "Optional route changes starting resources and phase pressure; does not gate access once Q41 is complete.",
+      "rewardIntent": "ITM-032 or RES-007 depending route.",
+      "regionIntent": "REG-007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q43"
     },
     {
       "id": "Q44",
@@ -707,7 +1094,16 @@
       "objective": "Disrupt the manifestation's anchors in the first final phase.",
       "exitFlag": "ACT5_FINAL_ANCHORS_DISRUPTED",
       "sequence": 44,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Disrupt the first set of Ferida anchors while keeping the party stable.",
+      "keyChoice": "Assign anchors to prepared allies / use research advantage / use community support.",
+      "consequence": "First phase requires objective progress; Vitality defeat alone cannot resolve it.",
+      "rewardIntent": "BOS-009 phase transition; coalition link state.",
+      "regionIntent": "REG-007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q44"
     },
     {
       "id": "Q45",
@@ -716,7 +1112,16 @@
       "objective": "Maintain coalition links and stop the feedback loop.",
       "exitFlag": "ACT5_FINAL_OBJECTIVE_RESOLVED",
       "sequence": 45,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Complete the final objective while maintaining coalition links and interrupting the feedback loop.",
+      "keyChoice": "Preserve all links at higher resource cost / sacrifice one link to protect another / distribute risk across prepared regions.",
+      "consequence": "Sets final world-state resolution; no route guarantees permanent eradication.",
+      "rewardIntent": "ACT5_FINAL_OBJECTIVE_RESOLVED; ending inputs committed.",
+      "regionIntent": "REG-007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q45"
     },
     {
       "id": "Q46",
@@ -725,7 +1130,16 @@
       "objective": "Choose which structures are preserved, reformed, decentralized or retired.",
       "exitFlag": "ACT5_WORLD_STATE_CHOSEN",
       "sequence": 46,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Choose which structures to preserve, reform, decentralize or retire.",
+      "keyChoice": "Preserve Organization / reform Organization / retire selected centralized structures.",
+      "consequence": "Locks ending family inputs; no exact ending percentage is shown.",
+      "rewardIntent": "ACT5_WORLD_STATE_CHOSEN.",
+      "regionIntent": "REG-007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q46"
     },
     {
       "id": "Q47",
@@ -734,7 +1148,16 @@
       "objective": "Resolve ending family and character epilogues.",
       "exitFlag": "GAME_COMPLETED",
       "sequence": 47,
-      "optional": false
+      "optional": false,
+      "objectiveSteps": "Resolve ally, faction and regional epilogues from accumulated states.",
+      "keyChoice": "No final binary moral choice; player confirms the future direction already built.",
+      "consequence": "Writes the ending family and epilogue flags; save becomes completed-game state.",
+      "rewardIntent": "GAME_COMPLETED; replay/continue policy handled by persistence spec.",
+      "regionIntent": "REG-007",
+      "choiceIsExplicit": true,
+      "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
+      "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
+      "dialogueKeyPrefix": "DLG_Q47"
     }
   ],
   "sidequests": [
@@ -743,175 +1166,400 @@
       "act": "ACT-01",
       "title": "A Bowl Kept Warm",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Resolve a food-sharing dispute and record the residents' temporary agreement.",
+      "rewardIntent": "Morale flag and resident support.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-001",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-002",
       "act": "ACT-01",
       "title": "The Missing Filter",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Find the missing filter and establish whether it was lost, stolen or misallocated.",
+      "rewardIntent": "Reduce one Q07 preparation cost.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-002",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-003",
       "act": "ACT-01",
       "title": "The Quiet Room",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Create a voluntary recovery space with clear access and privacy rules.",
+      "rewardIntent": "Care-route support and recovery modifier.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-003",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-004",
       "act": "ACT-01",
       "title": "A Map in the Rafters",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Recover a map hidden in the rafters and compare it to the current route.",
+      "rewardIntent": "Safe route knowledge for an Expedition.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-004",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-005",
       "act": "ACT-01",
       "title": "Mara's Ledger",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Reconstruct water allocation records without treating Mara as the sole cause.",
+      "rewardIntent": "Local trust and evidence-integrity flag.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-005",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-006",
       "act": "ACT-02",
       "title": "The Unclaimed Bed",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Decide how beds are assigned when refuge capacity is insufficient.",
+      "rewardIntent": "Representation and housing policy flag.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-006",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-007",
       "act": "ACT-02",
       "title": "A Tool for Every Hand",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Test a repair design and choose between speed and maintainability.",
+      "rewardIntent": "Workshop recipe or repair discount.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-007",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-008",
       "act": "ACT-02",
       "title": "The Unfinished Lesson",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Help Guardiã and Rival agree on training and accountability rules.",
+      "rewardIntent": "Relationship scene and Training Yard modifier.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-008",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-009",
       "act": "ACT-02",
       "title": "A Contract in Ink",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Identify an unfair clause and negotiate an enforceable revision.",
+      "rewardIntent": "Trade contract reliability.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-009",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-010",
       "act": "ACT-02",
       "title": "The Names We Keep",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Create a resident record with consent, access limits and correction rights.",
+      "rewardIntent": "Community Hall governance modifier.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-010",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-011",
       "act": "ACT-03",
       "title": "Salt on the Road",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "During a salt storm, choose cargo protection, rescue or split resources.",
+      "rewardIntent": "Trade reputation or safe-passage support.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-011",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-012",
       "act": "ACT-03",
       "title": "The Root That Remembers",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Negotiate what the Mycelian memory network may share and retain.",
+      "rewardIntent": "Research Notes and knowledge-consent state.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-012",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-013",
       "act": "ACT-03",
       "title": "A Debt with No Owner",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Resolve an inherited debt without punishing people who did not incur it.",
+      "rewardIntent": "Faction agreement and a modest trade reward.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-013",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-014",
       "act": "ACT-03",
       "title": "The Broken Bell",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Restore a warning bell and create a second independent signal.",
+      "rewardIntent": "Regional warning redundancy.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-014",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-015",
       "act": "ACT-03",
       "title": "The Price of Quiet",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Counter a rumor campaign without suppressing legitimate dissent.",
+      "rewardIntent": "Evidence integrity and faction credibility.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-015",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-016",
       "act": "ACT-04",
       "title": "Ashes in the Clinic",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Allocate scarce treatment and establish a reviewable clinic policy.",
+      "rewardIntent": "Care support and a future encounter modifier.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-016",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-017",
       "act": "ACT-04",
       "title": "The Route Nobody Owns",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Restore a route with a shared maintenance plan instead of one owner.",
+      "rewardIntent": "Travel risk reduction.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-017",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-018",
       "act": "ACT-04",
       "title": "The False Witness",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Collect independent evidence before accusing an ally or faction.",
+      "rewardIntent": "Evidence integrity; prevent an avoidable relationship penalty.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-018",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-019",
       "act": "ACT-04",
       "title": "A Seat Left Empty",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Respond to a delegate's resignation without coercing their return.",
+      "rewardIntent": "Representation quality and a new delegate candidate.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-019",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-020",
       "act": "ACT-04",
       "title": "The Last Workshop Shift",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Choose between saving a workshop and evacuating its workers under time pressure.",
+      "rewardIntent": "Salvage or resident-safety state; one cost is unavoidable.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-020",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-021",
       "act": "ACT-05",
       "title": "The Witnesses' Circle",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Reconcile conflicting accounts of Alya's past and document uncertainty.",
+      "rewardIntent": "Evidence integrity and final dialogue option.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-021",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-022",
       "act": "ACT-05",
       "title": "What the Reaper Carries",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Help a community memorialize loss with a rite chosen by those affected.",
+      "rewardIntent": "Morale and Reaper relationship flag.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-022",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-023",
       "act": "ACT-05",
       "title": "A Garden Outside the Wall",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Establish a recovery garden outside the hub and share stewardship.",
+      "rewardIntent": "Botanical Extract over time and local cohesion.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-023",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-024",
       "act": "ACT-05",
       "title": "The Unbound's Terms",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Negotiate representation terms for the Unbound, including opt-outs and appeal.",
+      "rewardIntent": "Safe-passage and coalition readiness.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-024",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     },
     {
       "id": "SQ-025",
       "act": "ACT-05",
       "title": "A Signal Sent Twice",
       "optional": true,
-      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending."
+      "designRule": "Reward knowledge, resources, relationship, faction state, or encounter preparation; never gate the main ending.",
+      "objective": "Create redundant coalition communication and test a false-signal drill.",
+      "rewardIntent": "Signal Relay readiness and final encounter support.",
+      "choice": {
+        "prompt": "Choose a response that makes the trade-off explicit; exact labels belong to the authored dialogue pack.",
+        "outcomeRule": "Choices update only the named quest, relationship, resource, faction or preparation flags."
+      },
+      "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
+      "dialogueKeyPrefix": "DLG_SQ-025",
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
     }
   ],
   "expeditions": [

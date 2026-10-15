@@ -80,7 +80,7 @@ Existing files with generated/hash-like names must be mapped to canonical conten
 - **C9 — World Lock:** **AUDITED.** Region/location roster is still missing.
 - **C10 — Narrative/CG Lock:** **AUDITED.** Scene-to-art mapping is still missing.
 - **C11 — Asset Dependency Audit:** **AUDITED.** Registry/classification of existing source assets remains required.
-- **C12 — Content Lock Audit:** **COMPLETE AS AUDIT.** Requirement matrix and asset gap baseline are established; file-level checklist awaits upstream locks + registry.
+- **C12 — Content Lock Audit:** **AUDIT COMPLETE; FULL-GAME CONTENT LOCK BASELINE AUTHORED.** The canonical base-game scope and stable-ID catalogs are now in `docs/FULL_GAME_CONTENT_LOCK.md` and `data/content/`; the file-level asset checklist still awaits existing-asset registry reconciliation and per-ID mapping.
 
 ## Production dependency graph
 

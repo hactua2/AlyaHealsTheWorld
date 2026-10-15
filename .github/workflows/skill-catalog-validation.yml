@@ -3,7 +3,7 @@ name: Skill Catalog Validation
 on:
   push:
     paths:
-      - "data/skills/**"
+      - "data/skills/**"\n      - "data/content/**"\n      - "tools/validate_full_game_content.py"\n      - "tests/test_full_game_content.py"
       - "tools/validate_skill_catalog.py"
       - "tests/test_skill_catalog.py"
       - ".github/workflows/skill-catalog-validation.yml"

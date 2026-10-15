@@ -309,7 +309,8 @@
       "objective": "Meet Mara and the First Ally; establish the water dispute.",
       "exitFlag": "VS1_WATER_DISPUTE_KNOWN",
       "sequence": 1,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q01"
     },
     {
       "id": "Q02",
@@ -318,7 +319,8 @@
       "objective": "Learn that unequal allocation predates the Red Thread.",
       "exitFlag": "VS1_ALLOCATION_HISTORY_KNOWN",
       "sequence": 2,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q02"
     },
     {
       "id": "Q03",
@@ -327,7 +329,8 @@
       "objective": "Investigate the moving filaments without overclaiming their origin.",
       "exitFlag": "VS1_RED_THREAD_CONFIRMED",
       "sequence": 3,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q03"
     },
     {
       "id": "Q04",
@@ -336,7 +339,8 @@
       "objective": "Stabilize an affected resident and choose a water-sharing priority.",
       "exitFlag": "VS1_CARE_ROUTE_RESOLVED",
       "sequence": 4,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q04"
     },
     {
       "id": "Q05",
@@ -345,7 +349,8 @@
       "objective": "Discover that the sluice can be repaired but the seed reserve cannot be saved.",
       "exitFlag": "VS1_ROOT_VAULT_ROUTE_KNOWN",
       "sequence": 5,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q05"
     },
     {
       "id": "Q06",
@@ -354,7 +359,8 @@
       "objective": "Receive and assess the containment proposal.",
       "exitFlag": "VS1_ORG_PLAN_PRESENTED",
       "sequence": 6,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q06"
     },
     {
       "id": "Q07",
@@ -363,7 +369,8 @@
       "objective": "Gather repair materials, local knowledge and coordinated care.",
       "exitFlag": "VS1_THIRD_OPTION_READY",
       "sequence": 7,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q07"
     },
     {
       "id": "Q08",
@@ -372,7 +379,8 @@
       "objective": "Complete diversion, filament and gate objectives.",
       "exitFlag": "VS1_SLICE_CRISIS_RESOLVED",
       "sequence": 8,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q08"
     },
     {
       "id": "Q09",
@@ -381,7 +389,8 @@
       "objective": "Record seed loss, downstream protection and community costs.",
       "exitFlag": "VS1_LOSS_ACKNOWLEDGED",
       "sequence": 9,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q09"
     },
     {
       "id": "Q10",
@@ -390,7 +399,8 @@
       "objective": "Recognize Alya as leader and choose an initial facility.",
       "exitFlag": "VS1_LEADERSHIP_RECOGNIZED",
       "sequence": 10,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q10"
     },
     {
       "id": "Q11",
@@ -399,7 +409,8 @@
       "objective": "Launch and resolve the first autonomous Expedition.",
       "exitFlag": "VS1_FIRST_EXPEDITION_RESOLVED",
       "sequence": 11,
-      "optional": false
+      "optional": false,
+      "verticalSliceId": "VS1_Q11"
     },
     {
       "id": "Q12",

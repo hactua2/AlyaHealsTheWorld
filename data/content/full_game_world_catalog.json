@@ -319,7 +319,18 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q01"
+      "dialogueKeyPrefix": "DLG_Q01",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q01.intro",
+        "DLG_Q01.choice",
+        "DLG_Q01.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q02",
@@ -338,7 +349,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q02"
+      "dialogueKeyPrefix": "DLG_Q02",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q01"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q02.intro",
+        "DLG_Q02.choice",
+        "DLG_Q02.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q03",
@@ -357,7 +381,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q03"
+      "dialogueKeyPrefix": "DLG_Q03",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q02"
+      ],
+      "encounterIds": [
+        "SPC-001"
+      ],
+      "dialogueKeys": [
+        "DLG_Q03.intro",
+        "DLG_Q03.choice",
+        "DLG_Q03.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q04",
@@ -376,7 +415,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q04"
+      "dialogueKeyPrefix": "DLG_Q04",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q03"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q04.intro",
+        "DLG_Q04.choice",
+        "DLG_Q04.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q05",
@@ -395,7 +447,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q05"
+      "dialogueKeyPrefix": "DLG_Q05",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q04"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q05.intro",
+        "DLG_Q05.choice",
+        "DLG_Q05.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q06",
@@ -414,7 +479,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q06"
+      "dialogueKeyPrefix": "DLG_Q06",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q05"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q06.intro",
+        "DLG_Q06.choice",
+        "DLG_Q06.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q07",
@@ -433,7 +511,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q07"
+      "dialogueKeyPrefix": "DLG_Q07",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q06"
+      ],
+      "encounterIds": [
+        "ENM-027"
+      ],
+      "dialogueKeys": [
+        "DLG_Q07.intro",
+        "DLG_Q07.choice",
+        "DLG_Q07.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q08",
@@ -452,7 +545,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Retreat or partial resolution leads to recovery/repair state; mandatory story loss persists and the main path remains completable.",
-      "dialogueKeyPrefix": "DLG_Q08"
+      "dialogueKeyPrefix": "DLG_Q08",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q07"
+      ],
+      "encounterIds": [
+        "BOS-001"
+      ],
+      "dialogueKeys": [
+        "DLG_Q08.intro",
+        "DLG_Q08.choice",
+        "DLG_Q08.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q09",
@@ -471,7 +579,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q09"
+      "dialogueKeyPrefix": "DLG_Q09",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q08"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q09.intro",
+        "DLG_Q09.choice",
+        "DLG_Q09.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q10",
@@ -490,7 +611,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q10"
+      "dialogueKeyPrefix": "DLG_Q10",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q09"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q10.intro",
+        "DLG_Q10.choice",
+        "DLG_Q10.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q11",
@@ -509,7 +643,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q11"
+      "dialogueKeyPrefix": "DLG_Q11",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q10"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q11.intro",
+        "DLG_Q11.choice",
+        "DLG_Q11.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q12",
@@ -527,7 +674,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q12"
+      "dialogueKeyPrefix": "DLG_Q12",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q11"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q12.intro",
+        "DLG_Q12.choice",
+        "DLG_Q12.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q13",
@@ -545,7 +705,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q13"
+      "dialogueKeyPrefix": "DLG_Q13",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q12"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q13.intro",
+        "DLG_Q13.choice",
+        "DLG_Q13.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q14",
@@ -563,7 +736,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q14"
+      "dialogueKeyPrefix": "DLG_Q14",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q13"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q14.intro",
+        "DLG_Q14.choice",
+        "DLG_Q14.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q15",
@@ -581,7 +767,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q15"
+      "dialogueKeyPrefix": "DLG_Q15",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q14"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q15.intro",
+        "DLG_Q15.choice",
+        "DLG_Q15.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q16",
@@ -599,7 +798,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q16"
+      "dialogueKeyPrefix": "DLG_Q16",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q15"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q16.intro",
+        "DLG_Q16.choice",
+        "DLG_Q16.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q17",
@@ -617,7 +829,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q17"
+      "dialogueKeyPrefix": "DLG_Q17",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q16"
+      ],
+      "encounterIds": [
+        "SPC-003"
+      ],
+      "dialogueKeys": [
+        "DLG_Q17.intro",
+        "DLG_Q17.choice",
+        "DLG_Q17.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q18",
@@ -635,7 +862,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q18"
+      "dialogueKeyPrefix": "DLG_Q18",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q17"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q18.intro",
+        "DLG_Q18.choice",
+        "DLG_Q18.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q19",
@@ -653,7 +893,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q19"
+      "dialogueKeyPrefix": "DLG_Q19",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q18"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q19.intro",
+        "DLG_Q19.choice",
+        "DLG_Q19.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q20",
@@ -671,7 +924,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q20"
+      "dialogueKeyPrefix": "DLG_Q20",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q19"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q20.intro",
+        "DLG_Q20.choice",
+        "DLG_Q20.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q21",
@@ -689,7 +955,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q21"
+      "dialogueKeyPrefix": "DLG_Q21",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q20"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q21.intro",
+        "DLG_Q21.choice",
+        "DLG_Q21.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q22",
@@ -707,7 +987,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q22"
+      "dialogueKeyPrefix": "DLG_Q22",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q21"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q22.intro",
+        "DLG_Q22.choice",
+        "DLG_Q22.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q23",
@@ -725,7 +1019,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q23"
+      "dialogueKeyPrefix": "DLG_Q23",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q22"
+      ],
+      "encounterIds": [
+        "SPC-003"
+      ],
+      "dialogueKeys": [
+        "DLG_Q23.intro",
+        "DLG_Q23.choice",
+        "DLG_Q23.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q24",
@@ -743,7 +1053,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q24"
+      "dialogueKeyPrefix": "DLG_Q24",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q23"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q24.intro",
+        "DLG_Q24.choice",
+        "DLG_Q24.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q25",
@@ -761,7 +1085,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q25"
+      "dialogueKeyPrefix": "DLG_Q25",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q24"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q25.intro",
+        "DLG_Q25.choice",
+        "DLG_Q25.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q26",
@@ -779,7 +1117,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q26"
+      "dialogueKeyPrefix": "DLG_Q26",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q25"
+      ],
+      "encounterIds": [
+        "BOS-004"
+      ],
+      "dialogueKeys": [
+        "DLG_Q26.intro",
+        "DLG_Q26.choice",
+        "DLG_Q26.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q27",
@@ -797,7 +1151,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q27"
+      "dialogueKeyPrefix": "DLG_Q27",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q26"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q27.intro",
+        "DLG_Q27.choice",
+        "DLG_Q27.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q28",
@@ -815,7 +1183,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q28"
+      "dialogueKeyPrefix": "DLG_Q28",
+      "regionIds": [
+        "REG-002",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q27"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q28.intro",
+        "DLG_Q28.choice",
+        "DLG_Q28.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q29",
@@ -833,7 +1215,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q29"
+      "dialogueKeyPrefix": "DLG_Q29",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q28"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q29.intro",
+        "DLG_Q29.choice",
+        "DLG_Q29.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q30",
@@ -851,7 +1247,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q30"
+      "dialogueKeyPrefix": "DLG_Q30",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q29"
+      ],
+      "encounterIds": [
+        "SPC-007"
+      ],
+      "dialogueKeys": [
+        "DLG_Q30.intro",
+        "DLG_Q30.choice",
+        "DLG_Q30.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q31",
@@ -869,7 +1281,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q31"
+      "dialogueKeyPrefix": "DLG_Q31",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q30"
+      ],
+      "encounterIds": [
+        "SPC-006"
+      ],
+      "dialogueKeys": [
+        "DLG_Q31.intro",
+        "DLG_Q31.choice",
+        "DLG_Q31.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q32",
@@ -887,7 +1315,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q32"
+      "dialogueKeyPrefix": "DLG_Q32",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q31"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q32.intro",
+        "DLG_Q32.choice",
+        "DLG_Q32.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q33",
@@ -905,7 +1347,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q33"
+      "dialogueKeyPrefix": "DLG_Q33",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q32"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q33.intro",
+        "DLG_Q33.choice",
+        "DLG_Q33.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q34",
@@ -923,7 +1379,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q34"
+      "dialogueKeyPrefix": "DLG_Q34",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q33"
+      ],
+      "encounterIds": [
+        "SPC-005"
+      ],
+      "dialogueKeys": [
+        "DLG_Q34.intro",
+        "DLG_Q34.choice",
+        "DLG_Q34.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q35",
@@ -941,7 +1413,21 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q35"
+      "dialogueKeyPrefix": "DLG_Q35",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q34"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q35.intro",
+        "DLG_Q35.choice",
+        "DLG_Q35.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q36",
@@ -959,7 +1445,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q36"
+      "dialogueKeyPrefix": "DLG_Q36",
+      "regionIds": [
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q35"
+      ],
+      "encounterIds": [
+        "BOS-007"
+      ],
+      "dialogueKeys": [
+        "DLG_Q36.intro",
+        "DLG_Q36.choice",
+        "DLG_Q36.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q37",
@@ -977,7 +1478,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q37"
+      "dialogueKeyPrefix": "DLG_Q37",
+      "regionIds": [
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q36"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q37.intro",
+        "DLG_Q37.choice",
+        "DLG_Q37.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q38",
@@ -995,7 +1509,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q38"
+      "dialogueKeyPrefix": "DLG_Q38",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q37"
+      ],
+      "encounterIds": [
+        "BOS-006"
+      ],
+      "dialogueKeys": [
+        "DLG_Q38.intro",
+        "DLG_Q38.choice",
+        "DLG_Q38.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q39",
@@ -1013,7 +1543,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q39"
+      "dialogueKeyPrefix": "DLG_Q39",
+      "regionIds": [
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q38"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q39.intro",
+        "DLG_Q39.choice",
+        "DLG_Q39.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q40",
@@ -1031,7 +1574,23 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q40"
+      "dialogueKeyPrefix": "DLG_Q40",
+      "regionIds": [
+        "REG-006",
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q39"
+      ],
+      "encounterIds": [
+        "BOS-008"
+      ],
+      "dialogueKeys": [
+        "DLG_Q40.intro",
+        "DLG_Q40.choice",
+        "DLG_Q40.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q41",
@@ -1049,7 +1608,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q41"
+      "dialogueKeyPrefix": "DLG_Q41",
+      "regionIds": [
+        "REG-003",
+        "REG-004",
+        "REG-005"
+      ],
+      "prerequisiteQuestIds": [
+        "Q40"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q41.intro",
+        "DLG_Q41.choice",
+        "DLG_Q41.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q42",
@@ -1067,7 +1641,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q42"
+      "dialogueKeyPrefix": "DLG_Q42",
+      "regionIds": [
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q41"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q42.intro",
+        "DLG_Q42.choice",
+        "DLG_Q42.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q43",
@@ -1085,7 +1672,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q43"
+      "dialogueKeyPrefix": "DLG_Q43",
+      "regionIds": [
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q42"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q43.intro",
+        "DLG_Q43.choice",
+        "DLG_Q43.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q44",
@@ -1103,7 +1703,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q44"
+      "dialogueKeyPrefix": "DLG_Q44",
+      "regionIds": [
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q43"
+      ],
+      "encounterIds": [
+        "BOS-009"
+      ],
+      "dialogueKeys": [
+        "DLG_Q44.intro",
+        "DLG_Q44.choice",
+        "DLG_Q44.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q45",
@@ -1121,7 +1736,22 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q45"
+      "dialogueKeyPrefix": "DLG_Q45",
+      "regionIds": [
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q44"
+      ],
+      "encounterIds": [
+        "BOS-009"
+      ],
+      "dialogueKeys": [
+        "DLG_Q45.intro",
+        "DLG_Q45.choice",
+        "DLG_Q45.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q46",
@@ -1139,7 +1769,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q46"
+      "dialogueKeyPrefix": "DLG_Q46",
+      "regionIds": [
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q45"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q46.intro",
+        "DLG_Q46.choice",
+        "DLG_Q46.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     },
     {
       "id": "Q47",
@@ -1157,7 +1800,20 @@
       "choiceIsExplicit": true,
       "rewardValues": "Exact numeric amounts and item grant IDs must be reconciled against progression/economy balance before implementation; do not infer free rewards.",
       "failurePolicy": "Quest-specific partial failure changes cost, time, faction/relationship flags or encounter state; no optional quest can hard-lock the main story.",
-      "dialogueKeyPrefix": "DLG_Q47"
+      "dialogueKeyPrefix": "DLG_Q47",
+      "regionIds": [
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q46"
+      ],
+      "encounterIds": [],
+      "dialogueKeys": [
+        "DLG_Q47.intro",
+        "DLG_Q47.choice",
+        "DLG_Q47.resolution"
+      ],
+      "implementationNote": "Choice flags and reward IDs must be persisted idempotently; use the documented exitFlag as the canonical completion signal."
     }
   ],
   "sidequests": [
@@ -1175,7 +1831,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-001",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q01"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-001.intro",
+        "DLG_SQ-001.choice",
+        "DLG_SQ-001.resolution"
+      ]
     },
     {
       "id": "SQ-002",
@@ -1191,7 +1858,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-002",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q01"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-002.intro",
+        "DLG_SQ-002.choice",
+        "DLG_SQ-002.resolution"
+      ]
     },
     {
       "id": "SQ-003",
@@ -1207,7 +1885,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-003",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q01"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-003.intro",
+        "DLG_SQ-003.choice",
+        "DLG_SQ-003.resolution"
+      ]
     },
     {
       "id": "SQ-004",
@@ -1223,7 +1912,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-004",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q01"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-004.intro",
+        "DLG_SQ-004.choice",
+        "DLG_SQ-004.resolution"
+      ]
     },
     {
       "id": "SQ-005",
@@ -1239,7 +1939,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-005",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-001"
+      ],
+      "prerequisiteQuestIds": [
+        "Q01"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-005.intro",
+        "DLG_SQ-005.choice",
+        "DLG_SQ-005.resolution"
+      ]
     },
     {
       "id": "SQ-006",
@@ -1255,7 +1966,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-006",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q12"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-006.intro",
+        "DLG_SQ-006.choice",
+        "DLG_SQ-006.resolution"
+      ]
     },
     {
       "id": "SQ-007",
@@ -1271,7 +1993,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-007",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q12"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-007.intro",
+        "DLG_SQ-007.choice",
+        "DLG_SQ-007.resolution"
+      ]
     },
     {
       "id": "SQ-008",
@@ -1287,7 +2020,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-008",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q12"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-008.intro",
+        "DLG_SQ-008.choice",
+        "DLG_SQ-008.resolution"
+      ]
     },
     {
       "id": "SQ-009",
@@ -1303,7 +2047,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-009",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q12"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-009.intro",
+        "DLG_SQ-009.choice",
+        "DLG_SQ-009.resolution"
+      ]
     },
     {
       "id": "SQ-010",
@@ -1319,7 +2074,18 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-010",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-002"
+      ],
+      "prerequisiteQuestIds": [
+        "Q12"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-010.intro",
+        "DLG_SQ-010.choice",
+        "DLG_SQ-010.resolution"
+      ]
     },
     {
       "id": "SQ-011",
@@ -1335,7 +2101,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-011",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q21"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-011.intro",
+        "DLG_SQ-011.choice",
+        "DLG_SQ-011.resolution"
+      ]
     },
     {
       "id": "SQ-012",
@@ -1351,7 +2129,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-012",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q21"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-012.intro",
+        "DLG_SQ-012.choice",
+        "DLG_SQ-012.resolution"
+      ]
     },
     {
       "id": "SQ-013",
@@ -1367,7 +2157,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-013",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q21"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-013.intro",
+        "DLG_SQ-013.choice",
+        "DLG_SQ-013.resolution"
+      ]
     },
     {
       "id": "SQ-014",
@@ -1383,7 +2185,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-014",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q21"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-014.intro",
+        "DLG_SQ-014.choice",
+        "DLG_SQ-014.resolution"
+      ]
     },
     {
       "id": "SQ-015",
@@ -1399,7 +2213,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-015",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-003",
+        "REG-004"
+      ],
+      "prerequisiteQuestIds": [
+        "Q21"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-015.intro",
+        "DLG_SQ-015.choice",
+        "DLG_SQ-015.resolution"
+      ]
     },
     {
       "id": "SQ-016",
@@ -1415,7 +2241,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-016",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q30"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-016.intro",
+        "DLG_SQ-016.choice",
+        "DLG_SQ-016.resolution"
+      ]
     },
     {
       "id": "SQ-017",
@@ -1431,7 +2269,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-017",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q30"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-017.intro",
+        "DLG_SQ-017.choice",
+        "DLG_SQ-017.resolution"
+      ]
     },
     {
       "id": "SQ-018",
@@ -1447,7 +2297,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-018",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q30"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-018.intro",
+        "DLG_SQ-018.choice",
+        "DLG_SQ-018.resolution"
+      ]
     },
     {
       "id": "SQ-019",
@@ -1463,7 +2325,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-019",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q30"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-019.intro",
+        "DLG_SQ-019.choice",
+        "DLG_SQ-019.resolution"
+      ]
     },
     {
       "id": "SQ-020",
@@ -1479,7 +2353,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-020",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-005",
+        "REG-006"
+      ],
+      "prerequisiteQuestIds": [
+        "Q30"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-020.intro",
+        "DLG_SQ-020.choice",
+        "DLG_SQ-020.resolution"
+      ]
     },
     {
       "id": "SQ-021",
@@ -1495,7 +2381,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-021",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-006",
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q39"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-021.intro",
+        "DLG_SQ-021.choice",
+        "DLG_SQ-021.resolution"
+      ]
     },
     {
       "id": "SQ-022",
@@ -1511,7 +2409,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-022",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-006",
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q39"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-022.intro",
+        "DLG_SQ-022.choice",
+        "DLG_SQ-022.resolution"
+      ]
     },
     {
       "id": "SQ-023",
@@ -1527,7 +2437,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-023",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-006",
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q39"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-023.intro",
+        "DLG_SQ-023.choice",
+        "DLG_SQ-023.resolution"
+      ]
     },
     {
       "id": "SQ-024",
@@ -1543,7 +2465,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-024",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-006",
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q39"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-024.intro",
+        "DLG_SQ-024.choice",
+        "DLG_SQ-024.resolution"
+      ]
     },
     {
       "id": "SQ-025",
@@ -1559,7 +2493,19 @@
       },
       "failurePolicy": "Can be declined or left incomplete; no main quest or ending is blocked.",
       "dialogueKeyPrefix": "DLG_SQ-025",
-      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required."
+      "assetNeed": "Reusable location/NPC presentation unless the asset registry proves a dedicated visual is required.",
+      "regionIds": [
+        "REG-006",
+        "REG-007"
+      ],
+      "prerequisiteQuestIds": [
+        "Q39"
+      ],
+      "dialogueKeys": [
+        "DLG_SQ-025.intro",
+        "DLG_SQ-025.choice",
+        "DLG_SQ-025.resolution"
+      ]
     }
   ],
   "expeditions": [

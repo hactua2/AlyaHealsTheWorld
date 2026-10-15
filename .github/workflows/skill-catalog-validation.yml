@@ -13,6 +13,9 @@ on:
   pull_request:
     paths:
       - "data/skills/**"
+      - "data/content/**"
+      - "tools/validate_full_game_content.py"
+      - "tests/test_full_game_content.py"
       - "tools/validate_skill_catalog.py"
       - "tests/test_skill_catalog.py"
       - ".github/workflows/skill-catalog-validation.yml"
@@ -27,5 +30,7 @@ jobs:
           python-version: "3.12"
       - name: Validate normalized catalog
         run: python tools/validate_skill_catalog.py
+      - name: Validate full-game content catalogs
+        run: python tools/validate_full_game_content.py
       - name: Run deterministic reference tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v

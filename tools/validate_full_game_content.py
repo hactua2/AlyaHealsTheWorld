@@ -115,7 +115,7 @@ def validate_data(world, gameplay, characters):
     for boss in gameplay.get("bosses", []):
         bid = boss.get("id", "<missing-id>")
         import re
-        for enemy_id in re.findall(r"ENM-\\d{3}", boss.get("composition", "")):
+        for enemy_id in re.findall(r"ENM-\d{3}", boss.get("composition", "")):
             if enemy_id not in enemies:
                 errors.append(f"{bid}: unresolved enemy composition reference {enemy_id}")
 
@@ -150,7 +150,7 @@ def validate():
     errors = validate_data(world, gameplay, characters)
     if errors:
         print("FAIL: full-game content catalogs")
-        print("\\n".join(f"- {error}" for error in errors))
+        print("\n".join(f"- {error}" for error in errors))
         return 1
 
     print(

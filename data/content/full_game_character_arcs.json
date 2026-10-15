@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "status": "CONTENT_LOCKED_DESIGN_NOT_RUNTIME_VALIDATED",
+  "sourceOfTruth": "docs/FULL_GAME_CONTENT_LOCK.md",
+  "rules": {
+    "allCharactersAdults": true,
+    "npcCombatTurns": false,
+    "sidequestRequiresAlya": true,
+    "expeditionNpcOnly": true,
+    "relationshipGraphSelective": true,
+    "adultContentOptional": true,
+    "adultContentGatesMainStory": false,
+    "npcIdNPC020": "retired; never reuse"
+  },
+  "allies": [
+    {
+      "id": "ALLY-001",
+      "name": "First Ally / Generalist",
+      "species": "Human",
+      "presentation": "Femboy",
+      "adult": true,
+      "recruitment": "Starts with Alya; survivor who lost their group.",
+      "personalArc": "Locate the former group's trail and choose a voluntary future with Brackenford.",
+      "signatureMechanic": "Versatile loadout and development redistribution.",
+      "arcTheme": "Adaptability is not the same as having no boundaries.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-001_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-002",
+      "name": "Guardiã",
+      "species": "Minotauroid",
+      "presentation": "Futanari",
+      "adult": true,
+      "recruitment": "Recruit after protecting a vulnerable settlement and accepting help.",
+      "personalArc": "Separate care from control; learn to share defensive responsibility.",
+      "signatureMechanic": "Guard and Interception; ally protection.",
+      "arcTheme": "Protection must not become ownership of every burden.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-002_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-003",
+      "name": "Rival",
+      "species": "Predatory beastfolk",
+      "presentation": "Feminine",
+      "adult": true,
+      "recruitment": "Recruit after a competing leader's plan fails and Alya offers partnership without demanding ideological surrender.",
+      "personalArc": "Turn competitive leadership into accountable challenge; can oppose Alya's centralization.",
+      "signatureMechanic": "Pressure, momentum and disadvantage exploitation.",
+      "arcTheme": "A useful rival can challenge the leader without becoming an enemy.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-003_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-004",
+      "name": "Erudita",
+      "species": "Original arcane species",
+      "presentation": "Feminine",
+      "adult": true,
+      "recruitment": "Recruit after a research expedition exposes the cost of treating people as data.",
+      "personalArc": "Preserve research through consent, review and transparent risk.",
+      "signatureMechanic": "Creature study, alchemy and encounter knowledge.",
+      "arcTheme": "Knowledge without accountability reproduces the harm it studies.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-004_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-005",
+      "name": "Cuidadora",
+      "species": "Human",
+      "presentation": "Futanari",
+      "adult": true,
+      "recruitment": "Conditional Act I care route or Recovery Room investment.",
+      "personalArc": "Move from emergency response to prevention and community health.",
+      "signatureMechanic": "Diagnosis, recovery and health resilience.",
+      "arcTheme": "Treatment cannot justify preventable harm.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-005_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-006",
+      "name": "Artesã",
+      "species": "Goblin",
+      "presentation": "Feminine",
+      "adult": true,
+      "recruitment": "Recruit through workshop and repair chain.",
+      "personalArc": "Accept maintenance and safety standards without losing inventive freedom.",
+      "signatureMechanic": "Construction, modification and controlled transmutation.",
+      "arcTheme": "Reliability is part of invention, not its enemy.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-006_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-007",
+      "name": "Caçadora",
+      "species": "Fox beastfolk",
+      "presentation": "Futanari",
+      "adult": true,
+      "recruitment": "Recruit through exploration route-rescue chain.",
+      "personalArc": "Choose reciprocal responsibility over solitary competence.",
+      "signatureMechanic": "Ranged combat, traps, discovery and route-risk reduction.",
+      "arcTheme": "Self-reliance can be a skill, not a permanent exile.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-007_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-008",
+      "name": "Mercador",
+      "species": "Feline beastfolk",
+      "presentation": "Femboy",
+      "adult": true,
+      "recruitment": "Recruit after a trade dispute and return of a profitable but harmful contract.",
+      "personalArc": "Build resilient trade rather than dependency and extraction.",
+      "signatureMechanic": "Trade access, negotiation and commercial opportunities; low combat emphasis is intentional.",
+      "arcTheme": "Prosperity needs reciprocal obligations.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-008_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-009",
+      "name": "Inadaptada",
+      "species": "Rare/exotic species",
+      "presentation": "Futanari",
+      "adult": true,
+      "recruitment": "Optional recruitment through misunderstood-incident sidequest chain.",
+      "personalArc": "Build confidence without requiring assimilation; learning speed requires time and support.",
+      "signatureMechanic": "Exceptional Learning and flexible long-term development.",
+      "arcTheme": "Belonging does not require becoming ordinary.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-009_ARC_RESOLVED",
+      "adultContentOptional": true
+    },
+    {
+      "id": "ALLY-010",
+      "name": "Devoto",
+      "species": "Faerie-like humanoid",
+      "presentation": "Feminine",
+      "adult": true,
+      "recruitment": "Recruit through mediation and morale chain.",
+      "personalArc": "Retain idealism while learning boundaries and accountable processes.",
+      "signatureMechanic": "Protection/buffs tied to morale, integration and cohesion.",
+      "arcTheme": "Compassion needs boundaries to endure.",
+      "act3Contribution": "Offers a distinctive system or political perspective; never required as the only solution.",
+      "act4Contribution": "May challenge Alya or lead an independent response if supported.",
+      "act5EpilogueFlag": "ALLY-010_ARC_RESOLVED",
+      "adultContentOptional": true
+    }
+  ],
+  "namedNpcs": [
+    {
+      "id": "NPC-001",
+      "name": "Tavernkeeper",
+      "group": "Community",
+      "species": "Human",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Rumor hub; tracks how local stories change and distinguishes facts from repeated accounts.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-002",
+      "name": "Dancer",
+      "group": "Community",
+      "species": "Desert Elf",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H2/H3",
+      "arc": "Public performance and cultural events; supports morale but refuses to be treated as a universal solution.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-003",
+      "name": "Community Elder",
+      "group": "Community",
+      "species": "Human",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Preserves local history and eventually admits the old allocation rules caused harm.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-004",
+      "name": "Mediator",
+      "group": "Community",
+      "species": "Human",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H2/H3",
+      "arc": "Turns disputes into explicit agreements; can lead council process and review.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-005",
+      "name": "Pragmatic Mentor",
+      "group": "Organization",
+      "species": "Human",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Provides training and institutional context; cooperates after rupture if local safeguards are credible.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-006",
+      "name": "Institutional Representative",
+      "group": "Organization",
+      "species": "Human",
+      "presentation": "Femboy",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Negotiates reporting and supervision; may become an intermediary across the institutional rupture.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-007",
+      "name": "Ferida Researcher",
+      "group": "Organization",
+      "species": "Augmented",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Creates safer evidence protocols; chooses between publication, restricted containment and shared research.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-008",
+      "name": "Hardliner",
+      "group": "Organization",
+      "species": "Human",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H3/H4",
+      "arc": "Recurring institutional opponent; can be constrained or persuaded by evidence, never by one speech.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-009",
+      "name": "Regional Authority",
+      "group": "Regional Center",
+      "species": "Angel",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Grants legitimacy when governance is accountable and demands transparent cost-sharing.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-010",
+      "name": "Trade Representative",
+      "group": "Regional Center",
+      "species": "Lamia",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H2/H3",
+      "arc": "Negotiates route access, contract clauses and supply shocks.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-011",
+      "name": "Priestess",
+      "group": "Regional Center",
+      "species": "Human",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Supports grief, recovery and community memory without replacing care or accountability.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-012",
+      "name": "Tribal Matriarch",
+      "group": "Tribe A",
+      "species": "Mycelia",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Protects Mycelian sovereignty; shares memory only with consent and reciprocity.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-013",
+      "name": "Tribal Guide",
+      "group": "Tribe A",
+      "species": "Mycelia",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H2/H3",
+      "arc": "Mediates travel and cultural interpretation; challenges Alya's assumptions.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-014",
+      "name": "War-Chief",
+      "group": "Tribe B",
+      "species": "Orc",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Tests agreements through ritualized contest and resource obligations; values explicit terms.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-015",
+      "name": "EnemyCommander",
+      "group": "Adversarial",
+      "species": "Human",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H3/H4",
+      "arc": "Recurring faction commander with separate combat representation; exploits instability but is not the Ferida.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-016",
+      "name": "Faction Dissident",
+      "group": "Adversarial",
+      "species": "Human",
+      "presentation": "Femboy",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Reveals internal dissent and supports safe defections without demanding unconditional allegiance.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-017",
+      "name": "Ferida Manipulator",
+      "group": "Adversarial",
+      "species": "Fallen Angel",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H4",
+      "arc": "Major antagonist who weaponizes real grievances to justify destructive absolutes; separate dialogue and boss records.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-018",
+      "name": "Reaper",
+      "group": "World",
+      "species": "Dullahan",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3/H4",
+      "arc": "Neutral threshold figure who reveals consequences and mortality without becoming a quest vending machine.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-019",
+      "name": "Dryad",
+      "group": "World",
+      "species": "Dryad",
+      "presentation": "Feminine",
+      "adult": true,
+      "tier": "H3",
+      "arc": "Supports ecological restoration when extraction and stewardship obligations are honored.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-021",
+      "name": "Survivor",
+      "group": "World",
+      "species": "Orc",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H2/H3",
+      "arc": "Living consequence of earlier containment; can become witness/advocate or leave if instrumentalized.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    },
+    {
+      "id": "NPC-022",
+      "name": "Demonkin",
+      "group": "Demon/World",
+      "species": "Demon",
+      "presentation": "Futanari",
+      "adult": true,
+      "tier": "H3/H4",
+      "arc": "Rescue and rehabilitation arc demonstrating that origin does not determine consent, allegiance or moral character.",
+      "relationships": "Only authored relationship edges; no full cast matrix.",
+      "combatRule": "No combat turns while functioning as NPC; any boss uses a separate combat record.",
+      "adultContentRule": "Tier-gated, optional, adult, consent-aware; never main-quest required."
+    }
+  ],
+  "genericNpcTemplates": [
+    {
+      "id": "TPL-001",
+      "name": "Farm and field worker",
+      "role": "Community labor, gathering, seasonal upkeep",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-002",
+      "name": "Craftsperson",
+      "role": "Workshop, repairs, production",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-003",
+      "name": "Caravan guard",
+      "role": "Trade route security, escort",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-004",
+      "name": "Caravan merchant",
+      "role": "Vendor, contracts, market variation",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-005",
+      "name": "Refugee household member",
+      "role": "Integration, housing, representation",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-006",
+      "name": "Local healer",
+      "role": "Basic care service; does not replace Cuidadora identity",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-007",
+      "name": "Research assistant",
+      "role": "Research Annex, sample handling",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-008",
+      "name": "Organization field agent",
+      "role": "Reporting, logistics, crisis response",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-009",
+      "name": "Organization reformer",
+      "role": "Internal plurality, procedural challenge",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-010",
+      "name": "Tribal steward",
+      "role": "Local custom and resource stewardship",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-011",
+      "name": "Cinderfall worker",
+      "role": "Industrial upkeep, safety and evacuation",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    },
+    {
+      "id": "TPL-012",
+      "name": "Traveling storyteller",
+      "role": "Rumors, regional lore, optional encounters",
+      "individualHContent": false,
+      "variationAxes": [
+        "species",
+        "clothing",
+        "age within adult range",
+        "voice",
+        "local allegiance"
+      ],
+      "visualRule": "Adult humanoid fantasy first; avoid child-coded proportions; species, culture and role are independent axes."
+    }
+  ],
+  "relationshipClusters": [
+    {
+      "id": "REL-001",
+      "members": [
+        "ALLY-001",
+        "ALLY-007",
+        "ALLY-009"
+      ],
+      "theme": "Adaptation, exploration, belonging"
+    },
+    {
+      "id": "REL-002",
+      "members": [
+        "ALLY-002",
+        "ALLY-003",
+        "ALLY-005"
+      ],
+      "theme": "Protection, competition, care"
+    },
+    {
+      "id": "REL-003",
+      "members": [
+        "ALLY-004",
+        "ALLY-006"
+      ],
+      "theme": "Research, invention, accountability"
+    },
+    {
+      "id": "REL-004",
+      "members": [
+        "ALLY-008",
+        "ALLY-010",
+        "ALLY-009"
+      ],
+      "theme": "Trade, idealism, integration"
+    }
+  ],
+  "productionNotes": [
+    "Named NPCs may have multiple functional tags; do not add duplicate named roles to satisfy service coverage.",
+    "Ally combat/community identity must remain distinct even where NPC services overlap.",
+    "NPC-015 and NPC-017 require separate NPC and Enemy/Boss records.",
+    "Adult content must be authored against arc/state and consent; no quota-driven scenes."
+  ]
+}

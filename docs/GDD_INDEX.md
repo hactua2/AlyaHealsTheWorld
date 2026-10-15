@@ -22,20 +22,20 @@ The GDD is considered complete when every required domain points to a current so
 | 00 Game Overview | `docs/architecture/GAME_ARCHITECTURE.md` | CLOSED |
 | 01 Design Pillars | Architecture / narrative | CLOSED |
 | 02 Game Loop | Architecture | CLOSED |
-| 03 World | `docs/systems/world/` + data | CONTENT/SPEC DETAIL NEEDED |
-| 04 Narrative | `docs/NARRATIVE_CANON.md` + narrative implementation docs | CANON CLOSED / CONTENT NEEDED |
-| 05 Characters | `docs/characters/CHARACTER_BIBLE.md` + `docs/characters/ALLIES_ROSTER.md` + `docs/characters/NPCS_DESIGN.md` | CHARACTER BIBLE LOCKED / DOWNSTREAM DATA & PRODUCTION NEEDED |
+| 03 World | `docs/systems/world/` + `data/content/full_game_world_catalog.json` | CONTENT LOCK BASELINE AUTHORED / MIGRATION & QA PENDING |
+| 04 Narrative | `docs/NARRATIVE_CANON.md` + `docs/FULL_GAME_CONTENT_LOCK.md` | FIVE-ACT CONTENT LOCK AUTHORED / FULL DIALOGUE & QA PENDING |
+| 05 Characters | `docs/characters/CHARACTER_BIBLE.md` + `data/content/full_game_character_arcs.json` | 10 ALLIES / 21 NPCS / 12 TEMPLATES LOCKED / FINAL SCRIPT & ASSETS PENDING |
 | 06 Combat | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
 | 07 Skills | `docs/systems/combat/SKILLS_AUDIT.md` + skill data | NORMALIZED CATALOG BASELINE CREATED / RUNTIME & BALANCE QA PENDING |
 | 08 Status Effects | `docs/systems/combat/` + implementation contracts | RULES CLOSED / CONTENT NEEDED |
-| 09 Enemies | `docs/systems/combat/` + `data/enemies/` | ARCHITECTURE CLOSED / CONTENT LOCK PENDING |
-| 10 Items | `docs/systems/items/` + `data/items/` | RULES CLOSED / CONTENT LOCK PENDING |
+| 09 Enemies | `docs/systems/combat/` + `data/content/full_game_gameplay_catalog.json` | 35-ARCHETYPE / 9-BOSS LOCK AUTHORED / LEGACY RECONCILIATION PENDING |
+| 10 Items | `docs/systems/items/` + `data/content/full_game_gameplay_catalog.json` | 36-ITEM BASE SET AUTHORED / EFFECT & LEGACY RECONCILIATION PENDING |
 | 11 Economy | `docs/systems/economy/` | RULES CLOSED / CONTENT/SPEC DETAIL NEEDED |
-| 12 Resources | `docs/systems/resources/` | RULES CLOSED / CONTENT NEEDED |
-| 13 Buildings | `docs/systems/community/` | RULES CLOSED / CONTENT NEEDED |
+| 12 Resources | `data/content/full_game_gameplay_catalog.json` + `docs/systems/resources/` | 8-RESOURCE BASE SET AUTHORED / NUMERICAL ECONOMY PENDING |
+| 13 Buildings | `data/content/full_game_gameplay_catalog.json` + `docs/systems/community/` | 12-FACILITY BASE SET AUTHORED / COSTS & UPGRADES PENDING |
 | 14 Community | `docs/systems/community/` | RULES CLOSED / CONTENT NEEDED |
-| 15 Exploration | `docs/systems/exploration/` | RULES CLOSED / CONTENT NEEDED |
-| 16 Quests | `docs/systems/quests/` | RULES CLOSED / CONTENT NEEDED |
+| 15 Exploration | `data/content/full_game_world_catalog.json` + `docs/systems/exploration/` | 7-REGION / EXPEDITION BASELINE AUTHORED / MAP & ENCOUNTER DATA PENDING |
+| 16 Quests | `data/content/full_game_world_catalog.json` + `docs/systems/quests/` | 47 MAIN + 25 SIDEQUEST RECORDS AUTHORED / DIALOGUE & REWARD TUNING PENDING |
 | 17 Progression | `docs/systems/progression/` | RULES CLOSED / CONTENT NEEDED |
 | 18 Time | `docs/systems/time/` | RULES CLOSED / CONTENT NEEDED |
 | 19 Recruitment | `docs/systems/recruitment/` | RULES CLOSED / CONTENT NEEDED |

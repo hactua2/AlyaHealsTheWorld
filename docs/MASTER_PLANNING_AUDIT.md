@@ -221,4 +221,14 @@ The project can now leave the planning/specification phase for the core game sys
 **Current conclusion: CORE GAME DESIGN + IMPLEMENTATION SPECIFICATION CLOSED. PROCEED TO PRODUCTION.**
 
 This does **not** mean the game is content-complete or release-ready. Checkpoints C and D remain production gates.
-\n\n# 5. Full-Game Content Lock Update — 2026-10-15\n\n## Current status\n\nThe full-game base content baseline has been authored in `docs/FULL_GAME_CONTENT_LOCK.md` and structured into three catalogs under `data/content/`. Scope: 5 acts, 47 main quest stages, 25 authored sidequests, 7 regions, 6 factions, 10 allies, 21 named NPCs, 12 generic NPC templates, 35 enemy archetypes, 9 major bosses, 8 special encounters, 12 facilities, 8 resources, 36 canonical items, 8 outfits, 8 Expedition templates, and 5 ending families; the skill catalog remains 67 canonical records.\n\nStatic validation performed in this pass: all three JSON catalogs parse successfully; no duplicate IDs were found within each catalog. This is not yet a full schema/reference validation and does not validate runtime behavior, legacy CSV compatibility, exact rewards, numerical balance, dialogue coverage, assets, localization, or QA.\n\n**Checkpoint C verdict:** the design/content-lock baseline is authored; formal gate closure requires schema/reference validation, reconciliation with legacy data, completion of objective/reward/dialogue details, and asset-ID mapping. **Checkpoint D remains pending** and requires implementation, production assets, localization, accessibility, integration testing, balance, and playtesting.\n
+
+
+# 5. Full-Game Content Lock Update — 2026-10-15
+
+## Current status
+
+The full-game base content baseline has been authored in `docs/FULL_GAME_CONTENT_LOCK.md` and structured into three catalogs under `data/content/`. Scope: 5 acts, 47 main quest stages, 25 authored sidequests, 7 regions, 6 factions, 10 allies, 21 named NPCs, 12 generic NPC templates, 35 enemy archetypes, 9 major bosses, 8 special encounters, 12 facilities, 8 resources, 36 canonical items, 8 outfits, 8 Expedition templates, and 5 ending families; the skill catalog remains 67 canonical records.
+
+Static validation performed in this pass: all three JSON catalogs parse successfully; no duplicate IDs were found within each catalog. This is not yet a full schema/reference validation and does not validate runtime behavior, legacy CSV compatibility, exact rewards, numerical balance, dialogue coverage, assets, localization, or QA.
+
+**Checkpoint C verdict:** the design/content-lock baseline is authored; formal gate closure requires schema/reference validation, reconciliation with legacy data, completion of objective/reward/dialogue details, and asset-ID mapping. **Checkpoint D remains pending** and requires implementation, production assets, localization, accessibility, integration testing, balance, and playtesting.

@@ -80,7 +80,7 @@ The final confrontation is a multi-stage encounter with combat and world-state o
 
 **Act-end state:** the wound's sustaining conditions are transformed or constrained; the future remains uncertain but no longer depends on one exceptional individual.
 
-## 3. Main quest graph — 45 stages
+## 3. Main quest graph — 47 stages
 
 Main quests are mandatory in sequence within each act unless a stage explicitly allows a state-dependent variant. Optional discoveries and adult content never gate the main ending. Each quest has a stable ID, a visible objective, a state mutation, and an authored exit condition.
 

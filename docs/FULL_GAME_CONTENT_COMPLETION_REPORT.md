@@ -92,13 +92,13 @@ The three JSON catalogs were fetched back from the repository and parsed. A cros
 
 **Result: all checks passed** in this one-off audit.
 
-This was a content-structure validation performed during this work. It was **not** a committed reusable schema validator, CI execution, Unity runtime test, numerical balance test, or manual playtest.
+This was a content-structure validation performed during this work. A reusable structural validator (`tools/validate_full_game_content.py`), regression tests (`tests/test_full_game_content.py`), and a CI workflow step have now been added. The new Python validator/tests and the updated workflow have **not yet been executed in this session**. No Unity runtime test, numerical balance test, or manual playtest was performed.
 
 ## 7. Remaining work before formally closing Checkpoint C
 
 These are production-detail tasks, not reasons to reopen the five-act premise or the locked roster unless a concrete contradiction is found.
 
-1. Add a committed JSON Schema/reference validator and CI check for the three full-game catalogs.
+1. Run the newly committed `tools/validate_full_game_content.py` and `python -m unittest discover -s tests -p 'test_*.py' -v`; verify the updated GitHub Actions workflow passes.
 2. Reconcile the new canonical IDs with legacy \`data/enemies/enemies.csv\`, \`data/items/items.csv\`, \`data/characters/characters.csv\`, and the skill catalog. Preserve useful legacy content; do not silently overwrite or discard it.
 3. Expand every main quest and sidequest into final authored dialogue, explicit choice labels, precise state mutations, reward IDs/amounts, and failure/recovery transitions. The catalog currently contains objective steps, key choices, consequence intent, reward intent, exit flags, and dialogue key slots; it does not yet contain all final dialogue text or balanced reward values.
 4. Finalize item stat/effect records, facility costs/upgrades, resource production/upkeep rates, and encounter AI parameters after the runtime data schema is established.
@@ -119,7 +119,7 @@ Do not start mass CG production, expand the enemy/item/skill count, or create ad
 ## 9. Final status
 
 **Content scope and content-lock baseline: AUTHORED.**  
-**Static JSON and cross-reference audit in this pass: PASSED.**  
+**One-off static JSON and cross-reference audit in this pass: PASSED. Validator/tests/CI step: AUTHORED, execution pending.**  
 **Formal Checkpoint C: NOT YET CLOSED.**  
 **Runtime implementation, balance, asset production, localization, QA and release readiness: PENDING.**
 

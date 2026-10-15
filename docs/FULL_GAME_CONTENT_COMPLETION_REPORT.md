@@ -9,14 +9,14 @@
 The repository now has a single canonical full-game content lock and three structured stable-ID catalogs. This converts the prior high-level narrative/system design into a concrete base-game plan suitable for implementation planning without inventing the core roster or act progression again.
 
 Canonical reference:
-- \`docs/FULL_GAME_CONTENT_LOCK.md\`
+- `docs/FULL_GAME_CONTENT_LOCK.md`
 
 Structured catalogs:
-- \`data/content/full_game_world_catalog.json\`
-- \`data/content/full_game_gameplay_catalog.json\`
-- \`data/content/full_game_character_arcs.json\`
+- `data/content/full_game_world_catalog.json`
+- `data/content/full_game_gameplay_catalog.json`
+- `data/content/full_game_character_arcs.json`
 
-The first eleven main quest stages retain cross-references to the existing vertical-slice IDs \`VS1_Q01\`–\`VS1_Q11\`; do not migrate or delete those IDs until save/data migration is explicitly designed.
+The first eleven main quest stages retain cross-references to the existing vertical-slice IDs `VS1_Q01`–`VS1_Q11`; do not migrate or delete those IDs until save/data migration is explicitly designed.
 
 ## 2. Content inventory now defined
 
@@ -99,16 +99,16 @@ This was a content-structure validation performed during this work. A reusable s
 These are production-detail tasks, not reasons to reopen the five-act premise or the locked roster unless a concrete contradiction is found.
 
 1. Run the newly committed `tools/validate_full_game_content.py` and `python -m unittest discover -s tests -p 'test_*.py' -v`; verify the updated GitHub Actions workflow passes.
-2. Reconcile the new canonical IDs with legacy \`data/enemies/enemies.csv\`, \`data/items/items.csv\`, \`data/characters/characters.csv\`, and the skill catalog. Preserve useful legacy content; do not silently overwrite or discard it.
+2. Reconcile the new canonical IDs with legacy `data/enemies/enemies.csv`, `data/items/items.csv`, `data/characters/characters.csv`, and the skill catalog. Preserve useful legacy content; do not silently overwrite or discard it.
 3. Expand every main quest and sidequest into final authored dialogue, explicit choice labels, precise state mutations, reward IDs/amounts, and failure/recovery transitions. The catalog currently contains objective steps, key choices, consequence intent, reward intent, exit flags, and dialogue key slots; it does not yet contain all final dialogue text or balanced reward values.
 4. Finalize item stat/effect records, facility costs/upgrades, resource production/upkeep rates, and encounter AI parameters after the runtime data schema is established.
-5. Build the asset registry: every stable content ID should map to \`KEEP\`, \`REFINE\`, \`REPLACE\`, \`MISSING\`, or \`NOT REQUIRED\` for relevant portraits, sprites, enemy visuals, icons, cut-ins, CGs, UI, audio and localization.
+5. Build the asset registry: every stable content ID should map to `KEEP`, `REFINE`, `REPLACE`, `MISSING`, or `NOT REQUIRED` for relevant portraits, sprites, enemy visuals, icons, cut-ins, CGs, UI, audio and localization.
 6. Define exact optional adult-scene unlock flags and scene scripts against character arcs; do not generate CGs merely to satisfy quotas.
 7. Conduct content review for narrative continuity, accessibility, consent framing, localization readiness and edge cases.
 
 ## 8. Recommended next steps
 
-1. Implement the reusable validator for \`data/content/\` and add it to CI.
+1. Execute the new content validator and regression tests, then verify CI passes.
 2. Reconcile legacy CSV data into the canonical IDs with a migration table.
 3. Complete the detailed data for Act I first, keeping the existing vertical-slice package as the implementation test case.
 4. Implement and playtest the vertical slice.

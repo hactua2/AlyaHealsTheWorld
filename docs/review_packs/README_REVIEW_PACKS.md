@@ -1,35 +1,36 @@
-# AHTW — Discipline Review Packs
+# AHTW — Discipline Review Dossiers
 
-These packs exist so external reviewers can assess one discipline without navigating the full repository. Each is a **self-contained review brief**: it includes the approved baseline, scope, constraints, open questions, and a short list of canonical deep sources. It is not a replacement for structured source data when a reviewer needs exact IDs or full records.
+This index is designed for manual review without requiring the reviewer to navigate the full repository. Use the complete dossier for the relevant discipline. Each dossier includes its domain's current decisions, inventories, rules, structured content and open work; references are retained for traceability, not as required reading.
 
-## Choose only what you need
+## Choose one dossier
 
-| Reviewer / purpose | Start with | Optional second file |
+| Reviewer / purpose | Self-contained dossier | Scope |
 |---|---|---|
-| Art director / character artist / CG artist | `ART_DIRECTION_AND_ASSET_REVIEW_PACK.md` | `CHARACTER_DESIGN_REVIEW_PACK.md` |
-| Character designer / cast reviewer | `CHARACTER_DESIGN_REVIEW_PACK.md` | `STORY_AND_NARRATIVE_REVIEW_PACK.md` |
-| Story editor / narrative designer | `STORY_AND_NARRATIVE_REVIEW_PACK.md` | `CONTENT_WRITING_REVIEW_PACK.md` |
-| Quest/dialogue/content writer | `CONTENT_WRITING_REVIEW_PACK.md` | `STORY_AND_NARRATIVE_REVIEW_PACK.md` |
-| Game designer / systems designer | `GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md` | `COMBAT_AND_SKILLS_REVIEW_PACK.md` |
-| Combat / skill designer | `COMBAT_AND_SKILLS_REVIEW_PACK.md` | `GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md` |
-| Economy / community / progression designer | `GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md` | `COMBAT_AND_SKILLS_REVIEW_PACK.md` |
-| Unity / implementation LLM | `../IMPLEMENTATION_LLM_MASTER_HANDOFF.md` | `../vertical_slice/UNITY_IMPLEMENTATION_HANDOFF.md` |
-| Producer / project auditor | `../LOCAL_LLM_KNOWLEDGE_PACK.md` | `../PROJECT_STATE_AND_ROADMAP.md` |
+| Art director / character artist / CG artist | [ART_DIRECTION_AND_ASSET_REVIEW_PACK.md](ART_DIRECTION_AND_ASSET_REVIEW_PACK.md) | Visual direction, cast visual anchors, visual safety rules, CG/asset planning, production gaps. |
+| Character designer / cast reviewer | [CHARACTER_DESIGN_REVIEW_PACK.md](CHARACTER_DESIGN_REVIEW_PACK.md) | Ten allies, named NPC roster, relationship constraints, H-content tiers, character guardrails. |
+| Story editor / narrative designer | [STORY_AND_NARRATIVE_REVIEW_PACK.md](STORY_AND_NARRATIVE_REVIEW_PACK.md) | Canon, character arcs, five-act story, all 47 main quest stages, 25 sidequests, regions, factions, Expeditions and ending families. |
+| Quest/dialogue/content writer | [WRITING_AND_DIALOGUE_DOSSIER.md](WRITING_AND_DIALOGUE_DOSSIER.md) | Editorial rules, voice, narrative canon, full world/quest catalog, authored Act I dialogue, quest graphs and Act I structured records. |
+| Game designer / systems / economy / progression | [GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md](GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md) | Player loop, base/community management, progression/economy, enemies, bosses, encounters, facilities, resources, items and outfits. |
+| Combat / skill designer / balance reviewer | [COMBAT_SKILLS_DOSSIER.md](COMBAT_SKILLS_DOSSIER.md) | Combat, effects and turn-resolution contracts; all 67 skill records; scaling profiles; semantic lock; reconciliation trail. |
+| Unity / implementation / technical lead / coding agent | [IMPLEMENTATION_AND_ENGINEERING_DOSSIER.md](IMPLEMENTATION_AND_ENGINEERING_DOSSIER.md) | Architecture, implementation contracts, acceptance criteria, full structured catalogs, Act I data and skill data. Starts with repository reconnaissance. |
+| Producer / project auditor | [../PROJECT_STATE_AND_ROADMAP.md](../PROJECT_STATE_AND_ROADMAP.md) and [../LOCAL_LLM_KNOWLEDGE_PACK.md](../LOCAL_LLM_KNOWLEDGE_PACK.md) | Status overview and project gates; these are concise orientation docs rather than full discipline dossiers. |
 
 ## Minimal download strategy
 
-Download **only the relevant review pack(s)** for a manual discipline review. The packs are intended to be readable as standalone Markdown documents. If the reviewer needs exact stable IDs, full quest records, skill definitions, or asset prompts, use the linked canonical sources listed at the end of that pack.
-
-For implementation, the current handoff is intentionally separate: a coding LLM must inspect the real repository and must not assume that a playable Unity project already exists.
+- For manual review, download **only the one dossier** matching the reviewer's discipline.
+- Writing, combat, and implementation dossiers are larger because they embed full catalogs/contracts to avoid dependencies on other files.
+- The art, character, story, and game-design packs also contain their domain inventories and constraints.
+- For actual coding, a full repository checkout is still strongly recommended. A Markdown dossier cannot replace runtime code, Unity project settings, assets, tests, build scripts, or Git history.
 
 ## Authority and conflict policy
 
-- These packs are review-oriented syntheses, not new sources of truth.
-- Story truth is governed by `docs/NARRATIVE_CANON.md`.
-- High-level gameplay architecture is governed by `docs/architecture/GAME_ARCHITECTURE.md`; detailed mechanics by current system specifications and implementation contracts.
-- Concrete full-game scope and stable IDs are governed by `docs/FULL_GAME_CONTENT_LOCK.md` and `data/`.
-- Character identity and roster details are governed by `docs/characters/`; visual direction by `docs/art/`.
-- The Act I vertical slice is governed by its quest graph, dialogue pack, content catalog, and structured JSON.
-- Historical/archive documents do not override current canonical sources.
+These dossiers preserve the distinction between designed/locked content and runtime-validated behavior. They are intended to be self-contained review copies; if a canonical source is later changed, update the relevant dossier to keep the offline copy current.
 
-If a reviewer finds a conflict, they should report the file/section/ID and propose a correction; they should not silently create a third version.
+- Story truth: narrative canon and full-game content lock, embedded in the story/writing dossiers.
+- High-level gameplay: architecture and game-design decisions, embedded in the game-design/implementation dossiers.
+- Combat behavior: turn, status-effect, and combat contracts, embedded in the combat/implementation dossiers.
+- Exact content: stable IDs and structured records are embedded in the relevant dossiers.
+- Historical reconciliation passes provide decision history; the semantic lock and current normalized catalog define the combat baseline.
+- Runtime readiness is not implied. The implementation dossier requires repository reconnaissance and evidence before any claim that a Unity project or tests are ready.
+
+If a reviewer finds a conflict, report the exact ID/section and propose a correction; do not silently create a third version.

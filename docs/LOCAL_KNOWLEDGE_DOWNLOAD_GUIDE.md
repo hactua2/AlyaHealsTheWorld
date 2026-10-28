@@ -66,3 +66,19 @@ A knowledge pack is not the runtime. Do not assume the repository contains a wor
 - [ ] Existing validators/tests run and results recorded.
 - [ ] Unity root/version verified before runtime changes.
 - [ ] No canonical IDs or legacy content overwritten without migration plan.
+
+## Download one self-contained discipline dossier
+
+For a **manual review** where you want to avoid navigating the repository, download just one of these Markdown files from GitHub using the file page's download/raw option:
+
+- Art: docs/review_packs/ART_DIRECTION_AND_ASSET_REVIEW_PACK.md
+- Character design: docs/review_packs/CHARACTER_DESIGN_REVIEW_PACK.md
+- Story/narrative: docs/review_packs/STORY_AND_NARRATIVE_REVIEW_PACK.md
+- Writing/dialogue: docs/review_packs/WRITING_AND_DIALOGUE_DOSSIER.md
+- Game design: docs/review_packs/GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md
+- Combat/skills: docs/review_packs/COMBAT_SKILLS_DOSSIER.md
+- Implementation/engineering: docs/review_packs/IMPLEMENTATION_AND_ENGINEERING_DOSSIER.md
+
+The writing, combat, and implementation dossiers embed the relevant catalogs and contracts rather than requiring separate source files. Because the complete records are included, those three files are substantially larger than the lighter review briefs. For coding work, a complete repository checkout is still preferable: a self-contained design dossier cannot substitute for source code, project settings, assets, tests, build scripts, or Git history.
+
+For any dossier, treat explicitly marked open work as open. A content-lock baseline is not proof that all dialogue, assets, runtime behavior, builds, or QA are complete.

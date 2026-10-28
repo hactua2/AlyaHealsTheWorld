@@ -139,16 +139,17 @@ The first full-game content lock baseline is authored. It is a content/design cl
 These are navigation/continuity artifacts. They summarize and point to canonical documents; they do not override the source-of-truth hierarchy stated in the knowledge pack.
 
 
-## Discipline-based manual review packs
+## Discipline-based self-contained dossiers
 
-These standalone briefs allow reviewers to download only the knowledge needed for their discipline. They summarize the current baseline and point to canonical sources for deeper verification; they do not override those sources.
+The following **complete dossiers** are intended to be downloaded individually for manual review. Each embeds its own relevant decisions, planning inventories, rules, structured records and unresolved work so the reviewer does not need to open other documents to understand the discipline baseline. Source-path headings are retained for traceability. The files are large by design where full catalogs are embedded.
 
-- [Review Pack Index](review_packs/README_REVIEW_PACKS.md) — choose the smallest pack set for a specific reviewer.
-- [Art Direction & Asset Review](review_packs/ART_DIRECTION_AND_ASSET_REVIEW_PACK.md) — visual guardrails, character visual anchors, CG/asset production and art gaps.
-- [Character Design Review](review_packs/CHARACTER_DESIGN_REVIEW_PACK.md) — ally and NPC identities, functions, relationship anchors, H tiers and roster constraints.
-- [Story & Narrative Review](review_packs/STORY_AND_NARRATIVE_REVIEW_PACK.md) — canon, Ferida/Organization framing, five-act spine, Act I beats and narrative gates.
-- [Content Writing Review](review_packs/CONTENT_WRITING_REVIEW_PACK.md) — voice, scene workflow, choices, consequences, adult-content framing and localization.
-- [Game Design & Player Loop Review](review_packs/GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md) — core loop, base/community management, progression, economy and design guardrails.
-- [Combat & Skills Review](review_packs/COMBAT_AND_SKILLS_REVIEW_PACK.md) — combat lifecycle, meters, effects, skill-catalog decisions and balance QA.
+- [Art direction & assets — complete dossier](review_packs/ART_DIRECTION_AND_ASSET_REVIEW_PACK.md) — visual identity anchors for the cast, visual safety rules, CG planning, asset gaps and production guidance.
+- [Character design — complete dossier](review_packs/CHARACTER_DESIGN_REVIEW_PACK.md) — ten allies, named NPC roster, relationship constraints, H-content tiers and visual/character guardrails.
+- [Story & narrative — complete dossier](review_packs/STORY_AND_NARRATIVE_REVIEW_PACK.md) — narrative canon, character arcs, five-act spine, all 47 main quest stages, 25 sidequests, regions, factions, Expeditions and ending families.
+- [Writing & dialogue — complete dossier](review_packs/WRITING_AND_DIALOGUE_DOSSIER.md) — voice/editorial rules, full narrative canon and world/quest catalog, authored Act I dialogue, quest graphs and Act I structured records.
+- [Game design & player loop — complete dossier](review_packs/GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md) — player loop, management/economy/progression and full enemy, boss, encounter, facility, resource, item and outfit inventories.
+- [Combat & skills — complete dossier](review_packs/COMBAT_SKILLS_DOSSIER.md) — combat/effect/turn contracts, all 67 normalized skill records, CSV catalog, scaling profiles, semantic lock and reconciliation trail.
+- [Implementation & engineering — complete dossier](review_packs/IMPLEMENTATION_AND_ENGINEERING_DOSSIER.md) — architecture, implementation contracts, acceptance criteria, full structured catalogs, Act I data and skills data. It explicitly requires repository reconnaissance before implementation and does not claim runtime readiness.
+- [Review pack index](review_packs/README_REVIEW_PACKS.md) — choose a discipline and minimum download.
 
-For manual review, start with the single relevant pack and add a second only when the task crosses disciplines. The full repository is still the authoritative working source for implementation and exact structured records.
+The older review-pack files remain useful as lighter entry briefs; the three complete dossiers for writing, combat, and implementation are the expanded offline handoffs. The art, character, story, and game-design packs have been expanded to include their domain inventories. These dossiers preserve the distinction between authored design and runtime-validated implementation.

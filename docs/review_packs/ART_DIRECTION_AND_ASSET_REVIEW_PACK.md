@@ -102,12 +102,7 @@ Do not assume the following are complete without a separate production pass:
 - Does the visual treatment preserve the story's material/political causes rather than attributing everything to supernatural corruption?
 - Is every approved asset traceable to a stable ID and actual file?
 
-## Canonical references
 
-- `docs/art/CHARACTER_IMAGE_PROMPTS.md`
-- `docs/art/CHARACTER_EROTIC_CG_MATRIX.md`
-- `docs/characters/CHARACTER_BIBLE.md`
-- `docs/characters/ALLIES_ROSTER.md`
-- `docs/characters/NPCS_DESIGN.md`
-- `docs/vertical_slice/ACT_I_CONTENT_CATALOG.md`
-- `docs/FULL_GAME_CONTENT_LOCK.md`
+## Self-contained status
+
+This dossier is intended to be the complete art-review entry point. A reviewer should not need to consult other project documents to understand the decisions recorded here. The following sections will consolidate the character prompt specifications, CG concepts, asset inventory rules, production status, and art-facing constraints into this file. Links to source files, where present, are optional provenance rather than required reading.

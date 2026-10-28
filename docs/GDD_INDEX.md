@@ -137,3 +137,18 @@ The first full-game content lock baseline is authored. It is a content/design cl
 - [IMPLEMENTATION_LLM_MASTER_HANDOFF.md](IMPLEMENTATION_LLM_MASTER_HANDOFF.md) — phased implementation plan, engineering constraints, test gates and first-task prompt.
 
 These are navigation/continuity artifacts. They summarize and point to canonical documents; they do not override the source-of-truth hierarchy stated in the knowledge pack.
+
+
+## Discipline-based manual review packs
+
+These standalone briefs allow reviewers to download only the knowledge needed for their discipline. They summarize the current baseline and point to canonical sources for deeper verification; they do not override those sources.
+
+- [Review Pack Index](review_packs/README_REVIEW_PACKS.md) — choose the smallest pack set for a specific reviewer.
+- [Art Direction & Asset Review](review_packs/ART_DIRECTION_AND_ASSET_REVIEW_PACK.md) — visual guardrails, character visual anchors, CG/asset production and art gaps.
+- [Character Design Review](review_packs/CHARACTER_DESIGN_REVIEW_PACK.md) — ally and NPC identities, functions, relationship anchors, H tiers and roster constraints.
+- [Story & Narrative Review](review_packs/STORY_AND_NARRATIVE_REVIEW_PACK.md) — canon, Ferida/Organization framing, five-act spine, Act I beats and narrative gates.
+- [Content Writing Review](review_packs/CONTENT_WRITING_REVIEW_PACK.md) — voice, scene workflow, choices, consequences, adult-content framing and localization.
+- [Game Design & Player Loop Review](review_packs/GAME_DESIGN_AND_PLAYER_LOOP_REVIEW_PACK.md) — core loop, base/community management, progression, economy and design guardrails.
+- [Combat & Skills Review](review_packs/COMBAT_AND_SKILLS_REVIEW_PACK.md) — combat lifecycle, meters, effects, skill-catalog decisions and balance QA.
+
+For manual review, start with the single relevant pack and add a second only when the task crosses disciplines. The full repository is still the authoritative working source for implementation and exact structured records.

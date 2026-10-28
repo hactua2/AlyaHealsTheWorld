@@ -128,3 +128,12 @@ Approved decisions: neutral implementation vocabulary is canonical; tiers repres
 ## Full-game content lock update — 2026-10-15
 
 The first full-game content lock baseline is authored. It is a content/design closure, not a claim that the project is runtime- or release-complete. The canonical scope and stable-ID inventories are in `docs/FULL_GAME_CONTENT_LOCK.md` and `data/content/`. The catalog's 47 main quest stages supersede the earlier planning estimate of 45. Static JSON parsing and duplicate-ID checks passed on the three new JSON catalogs. Remaining work is a formal schema/reference validator, reconciliation of legacy CSV IDs, per-quest objective/reward/dialogue completion, exact numeric balance, and asset/localization/QA mapping.
+
+
+## Local LLM handoff and offline continuity
+
+- [LOCAL_KNOWLEDGE_DOWNLOAD_GUIDE.md](LOCAL_KNOWLEDGE_DOWNLOAD_GUIDE.md) — repository download/clone instructions and minimum local context set.
+- [LOCAL_LLM_KNOWLEDGE_PACK.md](LOCAL_LLM_KNOWLEDGE_PACK.md) — concise game-design, mechanics, content, art and project-status orientation for a local LLM.
+- [IMPLEMENTATION_LLM_MASTER_HANDOFF.md](IMPLEMENTATION_LLM_MASTER_HANDOFF.md) — phased implementation plan, engineering constraints, test gates and first-task prompt.
+
+These are navigation/continuity artifacts. They summarize and point to canonical documents; they do not override the source-of-truth hierarchy stated in the knowledge pack.
